@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags   wagtailimages_tags  wagtailroutablepage_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block content %}
+{% main_menu template='menus/main_menu.html' %}
+  <div class="privacy_policy_banner">
+    {% image page.head_image fill-900x400 as img %}
+      <div class="pvc_banner"><img src="{{ img.url }}" alt="privacy"></div>
+      <div class="pvc_overlay_data">
+        <h3>{{ page.title }}</h3>
+      </div>
+    </div>
+
+    <div class="privacy_upper_informational_sec">
+      <h3>{{ page.sub_title }}</h3>
+      <p>{{ page.head_description|richtext }}
+    </div>
+{% for card in page.simplecrousal %}
+    {% include_block card %}
+{% endfor %}
+
+
+    <div class="complaints_sec_data">
+      <div class="complaints_headings">
+        <h2>{{page.footer_title}}</h2>
+        {% image page.footer_icon original as img %}
+        <img src="{{ img.url }}" alt="complaints">
+      </div>
+      <div class="complaints_descriptions">
+        <p>{{ page.footer_description|richtext }}</p>
+      </div>
+    </div>
+
+
+{% endblock content %}
+{% block extra_js %}
+<script>
+      $(document).ready(function() {
+        $('.sharing_carousel').owlCarousel({
+          loop: true,
+          margin: 0,
+          autoplay: false,
+          responsiveClass: true,
+          items: 1,
+          nav: true,
+        });
+        $('.third_parties_sliders').owlCarousel({
+          loop: true,
+          margin: 15,
+          autoplay: true,
+          responsiveClass: true,
+          responsive: {
+            0: {
+              items: 2,
+              nav: true
+            },
+            600: {
+              items: 2,
+              nav: false
+            },
+            1000: {
+              items: 3,
+              nav: true,
+              loop: true,
+              margin: 20
+            }
+          }
+        });
+        $('.app_kya_slider_data').owlCarousel({
+          loop: true,
+          margin: 0,
+          autoplay: false,
+          responsiveClass: true,
+          items: 1,
+          nav: true,
+        });
+
+      })
+    </script>
+{% endblock extra_js %}

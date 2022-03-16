@@ -1,0 +1,8 @@
+{% load wagtailcore_tags  wagtailimages_tags %}
+<div class="single-feat d-flex">
+    {% image self.icon original as icon %}
+    <img src="{{icon.url}}" alt="lock">
+    <div class="sk d-flex justify-content-center align-items-center">
+       {{self.description|safe}}
+    </div>
+</div>

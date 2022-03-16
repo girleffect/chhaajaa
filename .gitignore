@@ -1,0 +1,62 @@
+#[ PYTHON ]
+*.pyc
+*.*~
+
+#[ DJANGO ]
+media/
+files/temp/
+files/assets/
+*.log
+logs/
+.history/
+
+
+#[ VIRTUAL ENVIRONMENT ]
+venv
+env
+
+#[ ECLIPSE ]
+.project
+.idea/
+.settings
+.settings/
+.pydevproject
+
+#[ ATOM ]
+.magicindex.json
+
+#[ ENVIRONMENT SETTINGS ]
+development/
+development.py
+
+#[ PROJECT ]
+cachedb/
+Interests/
+static/css/production/*.css
+static/js/production/*.js
+
+#[ OPERATING SYSTEM ]
+.DS_Store
+
+#[ CELERY ]
+worker.pid
+celerybeat.pid
+celerybeat-schedule
+
+#[ DATABASE ]
+*.gz
+
+#[MISC]
+*.swp
+
+#[SASS]
+.sass-cache/
+*.scssc
+*.map
+
+#[ SUBLIME ]
+*.sublime-project
+*.sublime-workspace
+
+#[ TESTS ]
+.coverage

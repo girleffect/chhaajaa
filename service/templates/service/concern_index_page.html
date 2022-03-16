@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags  wagtailroutablepage_tags  filter %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block content %}
+{% main_menu template='menus/main_menu.html' %}
+<div class="period_info service_finder_period_data">
+  {{page.intro|safe}}
+</div>
+
+<div class="women_problems">
+  {% for concern in services %}
+  <div class="womenp_cols service_finder_women_cols">
+    <a class="upper_links_data" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}"></a>
+      <h3 class="service_finder_achor"><a href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}">{{concern.intro}}</a></h3>
+
+    <div class="peiord_anchors service_finder_tags">
+       {% for tag in concern.tags.all %}<a href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}&tag={{tag.slug}}" class="expert_link">{{tag}}</a>{% endfor %}
+    </div>
+    {% image concern.image original  as concern_image %}
+    <div class="period_overlay_img service_finder_images"><img src="{{concern_image.url}}" alt="{{concern.title}}"></div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="convinced_data_banner">
+  <div class="convinced_data_dete">
+    {{page.custom_text|richtext}}
+    <a href="{% slugurl 'blog-page' %}">Click here for SRH articles <img src="{% static 'images/right_arrow_icon.svg' %}"></a>
+  </div>
+</div>
+
+<div class="services_list">
+  <h3>Service List</h3>
+  <div class="accordion" id="servicelistaccordion">
+    {% for category in categories %}
+    <div class="card">
+      <div class="card-header">
+        <a href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#serviceaccordion{{category.id}}"
+          aria-expanded="true" aria-controls="serviceaccordion1">{{category.name}}</a>
+      </div>
+      <div id="serviceaccordion{{category.id}}" class="collapse {% if forloop.first %}show{% endif %}"
+        aria-labelledby="{{category.id}}" data-parent="#servicelistaccordion">
+        <div class="card-body">
+          <div class="service_tab_inner_data" id="{{ category }}">
+            {% for service in category.services.all %}
+            {% if forloop.counter == 1 or forloop.counter == 2 %}
+            <div class="service_helpline_data service_data_sec_cols helpline_centers concern-list cardhelp{{ category.id }}" id="helpline_centers{{ service.name }}"
+              style="display: block">
+              {% else %}
+              <div class="service_helpline_data service_data_sec_cols helpline_centers concern_services cardhelp{{ category.id }}" id="helpline_centers{{ service.name }}">
+                {% endif %}
+                <a class="absolte_link" href="{% slugurl 'service-finder' %}{{service.slug}}"></a>
+                <div class="center_header">
+                  {% image service.main_image fill-1000x500 as img %}
+                  <img src="{{img.url}}">
+                  <div class="service_call_icn">
+                    {% if service.external_link|integer == True %}
+                    <a href="tel:{{service.external_link}}" target="_blank">
+                      <img src="{% static 'images/call_icon.svg' %}" alt="call"></a>
+                    {% else %}
+                    <a href="{{service.external_link}}" target="_blank">
+                      <img src="{% static 'images/web-icon.svg' %}" alt="call"></a>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="center_body">
+                  <h4>{{service.name}}<a href="{% slugurl 'service.slug' %}"></a>
+                  </h4>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            {% if category.services.all|length > 2 %}
+            <div class="see_more_data"><a href="javascript:void(0);" class="seemore" onclick="seemore(this)"
+                id="{{ category.id }}">See More</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+  {% endblock content %}
+  {% block extra_js %}
+  <script type="text/javascript">
+    function seemore(e) {
+      console.log($(".cardhelp"+e.id+":hidden").length)
+      if ($(".cardhelp"+e.id+":hidden")) {
+        $(".cardhelp"+e.id+":hidden").slice(0, 2).fadeIn("slow");
+      }
+      if ($(".cardhelp"+e.id+":hidden").length == 0) {
+        $("#"+e.id).fadeOut("slow");
+      }
+    }
+  </script>
+
+  {% endblock extra_js %}

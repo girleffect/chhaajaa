@@ -1,0 +1,928 @@
+.pvc_banner img {
+    width: 100%;
+    max-width: 100%;
+}
+.privacy_policy_banner {
+    position: relative;
+}
+.pvc_overlay_data {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 9;
+    background: #8226FA;
+    max-width: 220px;
+    transform: rotate(0deg);
+    padding: 25px 30px 28px 30px;
+    margin-left: -10px;
+    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0% 100%);
+}
+.pvc_overlay_data h3 {
+    font-family: 'Fedra Sans Pro';
+    font-weight: bold;
+    font-size: 17px;
+    color: #FFE366;
+    margin: 0;
+    line-height: 20px;
+    transform: rotate(-7deg);
+    font-style: italic;
+}
+.privacy_upper_informational_sec {
+    background: #FFE559;
+    padding: 20px 15px;
+}
+.privacy_upper_informational_sec h3 {
+    color: #1A1717;
+    font-size: 23px;
+    font-family: 'fedra_sans_devanagari_bdemi';
+    margin-bottom: 12px;
+}
+.privacy_upper_informational_sec p {
+    font-size: 12px;
+}
+.privacy_upper_informational_sec p:last-child {
+	margin-bottom: 0px;
+}
+.item_shared_data {
+    display: flex;
+    justify-content: space-between;
+}
+.chaajja_sharing_information {
+    padding: 15px;
+    margin-top: 30px;
+}
+.chhaajaa_inner_shared {
+    background: #843AF5;
+    padding: 15px;
+    border-radius: 15px;
+}
+.item_shared_data p {
+    margin: 0px 10px 0px 0px;
+    font-size: 12px;
+}
+.item_shared_data p:last-child {
+	margin: 0px 0px 0px 10px;
+}
+.uppe_shared_data_parts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+.shared_heading_info {
+    background: #FFE559;
+    max-width: 220px;
+    transform: rotate(0deg);
+    padding: 28px 32px 28px 35px;
+    margin-left: -40px;
+    margin-top: -42px;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0% 100%);
+}
+.shared_heading_info h3 {
+    font-size: 18px;
+    color: #262626;
+    font-family: 'Fedra Sans Pro';
+    font-weight: bold;
+    margin: 0px;
+    line-height: 25px;
+    transform: rotate(-7deg);
+    font-style: italic;
+}
+.chaaja_sharing_info_slider {
+    padding: 5px;
+}
+.owl-theme.sharing_carousel .owl-dots .owl-dot span {
+    width: 8px;
+    height: 8px;
+    margin: 5px 5px;
+    background: #fff;
+}
+.owl-theme.sharing_carousel .owl-dots .owl-dot.active span {
+	background: #FF428A;
+}
+.owl-theme.sharing_carousel .owl-nav {
+    position: absolute;
+    bottom: 14px;
+    width: 100%;
+    margin: 0 !important;
+}
+.owl-theme.sharing_carousel .owl-dots {
+	margin-top: 25px;
+}
+.owl-theme.sharing_carousel .owl-nav button {
+    position: absolute;
+    bottom: 0;
+    font-size: 23px;
+    margin: 0;
+}
+.owl-theme.sharing_carousel .owl-nav button.owl-prev {
+    left: 0;
+    background: url("/static/images/left_arrow.png") no-repeat;
+    width: 9px;
+    height: 10px;
+    outline: none;
+}
+.owl-theme.sharing_carousel .owl-nav button.owl-next {
+    right: 0;
+    background: url("/static/images/right_arrow.png") no-repeat;
+    width: 9px;
+    height: 10px;
+    outline: none;
+}
+.owl-theme.sharing_carousel .owl-nav button span {color: #fff; font-size: 0px;}
+.owl-theme.sharing_carousel .owl-dots button {
+	outline: none;
+}
+.collecting_from_peoples {
+    padding: 15px;
+    margin-top: 20px;
+}
+.chhaaja_infromation_collecting {
+    background: #FF428A;
+    padding: 15px;
+    border-radius: 15px;
+}
+.colecting_paraps {
+    margin-top: 20px;
+    padding: 5px;
+}
+.colecting_paraps p {
+	font-size: 12px;
+	color: #fff;
+}
+.upjog_collection_info .shared_heading_info {
+    max-width: 260px;
+}
+.chhaajaa_inner_shared.upjog_collection_info {
+    background: #54FCA3;
+}
+.chhaajaa_inner_shared.upjog_collection_info .item_shared_data p {
+    color: #000;
+}
+.data_anjaane_collection_info .chhaajaa_inner_shared {
+    background: #fff;
+}
+.data_anjaane_collection_info {
+    background: #FF428A;
+    margin-top: 10px;
+}
+.data_anjaane_collection_info .shared_heading_info {
+    max-width: 250px;
+}
+.data_anjaane_collection_info .item_shared_data p {
+	color: #000;
+}
+.data_anjaane_collection_info .owl-theme.sharing_carousel .owl-dots .owl-dot span {
+	background: #EAEAEA;
+}
+.data_anjaane_collection_info .owl-theme.sharing_carousel .owl-dots .owl-dot.active span {
+	background: #FF428A;
+}
+.third_parties_data_sec {
+    background: #FFE559;
+    padding: 15px 20px 20px;
+}
+.third_parties_data_sec h2 {
+    color: #FF428A;
+    font-size: 19px;
+    font-family: 'Fedra Sans Pro';
+    font-weight: bold;
+    margin: 10px 0px 15px;
+    line-height: 27px;
+}
+.third_party_sliders_cons {
+    margin: 20px 0px 30px;
+}
+.third_positional_data h3 {
+    color: #7C2FE7;
+    font-size: 14px;
+    font-family: 'Fedra Sans Pro';
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+.third_positional_data p {
+	font-size: 12px;
+	color: #262626;
+	margin: 0px;
+}
+.third_positional_data img {
+    max-width: 130px;
+}
+.third_parties_sliders .owl-dots {
+    display: none;
+}
+.owl-theme.third_parties_sliders .owl-nav {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+}
+.owl-theme.third_parties_sliders .owl-nav button {
+    margin: 0 !important;
+    background: #fff !important;
+    width: 10px;
+    height: 10px;
+    line-height: 13px !important;
+    border-radius: 10px !important;
+    position: absolute;
+}
+.owl-theme.third_parties_sliders .owl-nav button.owl-prev {
+    left: -10px;
+    outline: none;
+}
+.owl-theme.third_parties_sliders .owl-nav button.owl-prev::after {
+    content: "";
+    background: url(/static/images/left_black_arrow.png) no-repeat;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.owl-theme.third_parties_sliders .owl-nav button.owl-next {
+    right: -10px;
+    outline: none;
+}
+.owl-theme.third_parties_sliders .owl-nav button.owl-next::after {
+	content: "";
+	background: url("/static/images/right_black_arrow.png") no-repeat;
+	width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.owl-theme.third_parties_sliders .owl-nav button span {
+	font-size: 0px;
+}
+.complaints_sec_data {
+    padding: 25px 20px;
+}
+.complaints_headings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.complaints_headings h2 {
+	font-family: 'Fedra Sans Pro';
+    font-weight: bold;
+    font-size: 19px;
+    color: #262626;
+    margin: 0px;
+}
+.complaints_descriptions {
+    margin-top: 10px;
+}
+.complaints_descriptions p {
+	font-size: 12px;
+	margin: 0px;
+}
+.app_kya_heading_data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.app_kya_kr_sec_data {
+    background: #843AF5;
+    padding: 25px 20px;
+}
+.app_kya_heading_data h2 {
+    font-family: 'Fedra Sans Pro';
+    font-weight: bold;
+    font-size: 19px;
+    color: #fff;
+    margin: 0px;
+    max-width: 140px;
+    line-height: 27px;
+}
+.app_kya_inner_content p {
+	margin: 0px;
+	color: #fff;
+	font-size: 12px;
+}
+.app_kya_data_carousel {
+	margin-top: 20px;
+}
+.owl-theme.app_kya_slider_data .owl-dots {
+	margin-top: 20px;
+}
+.owl-theme.app_kya_slider_data .owl-dots button {
+    outline: none;
+}
+.owl-theme.app_kya_slider_data .owl-dots .owl-dot.active span {
+    background: #FF428A;
+}
+.owl-theme.app_kya_slider_data .owl-dots .owl-dot span {
+    width: 8px;
+    height: 8px;
+    margin: 5px 5px;
+    background: #fff;
+}
+.owl-theme.app_kya_slider_data .owl-nav {
+    position: absolute;
+    bottom: 14px;
+    width: 100%;
+    margin: 0 !important;
+}
+.owl-theme.app_kya_slider_data .owl-nav button.owl-prev {
+    left: 0;
+    background: url(/static/images/left_arrow.png) no-repeat;
+    width: 9px;
+    height: 10px;
+    outline: none;
+}
+.owl-theme.app_kya_slider_data .owl-nav button {
+    position: absolute;
+    bottom: 0;
+    font-size: 23px;
+    margin: 0;
+}
+.owl-theme.app_kya_slider_data .owl-nav button.owl-next {
+    right: 0;
+    background: url(/static/images/right_arrow.png) no-repeat;
+    width: 9px;
+    height: 10px;
+    outline: none;
+}
+.owl-theme.app_kya_slider_data .owl-nav button span {
+    color: #fff;
+    font-size: 0px;
+}
+
+
+
+/*Terms and conditions css start here*/
+
+.pvc_overlay_data.terms_condition_overlays {
+    background: #FF428A;
+    max-width: 260px;
+}
+.pvc_overlay_data.terms_condition_overlays h3 {
+    transform: rotate(-5deg);
+}
+img.rules_bg_img {
+    width: 100%;
+    max-width: 100%;
+}
+.chajja_ke_rules {
+    position: relative;
+}
+.chajja_rules_overlays {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 25px;
+}
+.chajja_rules_overlays h5 {
+    font-size: 26px;
+    color: #fff;
+    margin: 4px 0px 0px 8px;
+    transform: rotate(-11deg);
+    text-transform: capitalize;
+}
+.terms_items {
+    padding: 20px;
+    display: flex;
+}
+.gurmukhi_number h5 {
+    background: #843AF5;
+    width: 55px;
+    height: 55px;
+    margin: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #54FCA3;
+    transform: rotate(-9deg);
+    font-size: 21px;
+    font-style: italic;
+    font-family: 'fedra_sans_devanagari_bmedium';
+}
+.gurmukhi_number {
+    margin-right: 20px;
+}
+.terms_content_data p {
+    font-size: 12px;
+}
+.terms_content_data p:last-child {
+	margin-bottom: 0px;
+}
+.second_terms_data {
+	background: #CCE9E5;
+}
+.second_terms_data .gurmukhi_number h5 {
+	background: #FEE26F;
+	color: #FA4A8A;
+}
+.terms_content_data ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.terms_content_data ul li {
+	font-size: 12px;
+	color: #FF428A;
+	position: relative;
+	margin-bottom: 3px;
+	padding-left: 13px;
+}
+.terms_content_data ul li::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    height: 1px;
+    width: 5px;
+    background: #FF428A;
+    transform: translate(0, -50%);
+}
+.terms_content_data ul li:last-child {
+	margin-bottom: 0px;
+}
+.third_terms_data .gurmukhi_number h5 {
+	background: #CDE8E5;
+	color: #EB375D;
+}
+.fourth_terms_data {
+	background: #F5E3A2;
+}
+.fourth_terms_data .gurmukhi_number h5 {
+	background: #843AF5;
+	color: #54FCA3;
+}
+.fifth_terms_data .gurmukhi_number h5 {
+	background: #FEE26F;
+	color: #EB375D;
+}
+.sixth_terms_data {
+    background: #F7ECEF;
+}
+.sixth_terms_data .gurmukhi_number h5 {
+	background: #CDE8E5;
+	color: #EB375D;
+}
+.seventh_terms_data .gurmukhi_number h5 {
+	background: #843AF5;
+	color: #54FCA3;
+}
+.eight_terms_data {
+	background: #CCE9E5;
+}
+.eight_terms_data .gurmukhi_number h5 {
+	background: #FEE26F;
+	color: #FA4A8A;
+}
+.ninth_terms_data .gurmukhi_number h5 {
+	background: #CDE8E5;
+	color: #EB375D;
+}
+.tenth_terms_data {
+	background: #F5E3A2;
+}
+.tenth_terms_data .gurmukhi_number h5 {
+	background: #843AF5;
+	color: #54FCA3;
+}
+.eleventh_terms_data .gurmukhi_number h5 {
+	background: #FEE26F;
+	color: #FF428A;
+}
+.twelve_terms_data {
+	background: #F7ECEF;
+}
+.twelve_terms_data .gurmukhi_number h5 {
+	background: #CDE8E5;
+	color: #EB375D;
+}
+.thirteen_terms_data .gurmukhi_number h5 {
+	background: #843AF5;
+	color: #54FCA3;
+}
+.fourteen_terms_data {
+	background: #CCE9E5;
+}
+.fourteen_terms_data .gurmukhi_number h5 {
+	background: #FEE26F;
+	color: #FF428A;
+}
+.chajja_contact_information_data {
+    padding: 20px;
+}
+.chajja_contact_information_data p {
+	font-size: 12px;
+}
+.chajja_contact_information_data p:last-child {
+	margin-bottom: 0px;
+}
+.highlighted {
+	color: #FF428A;
+	font-family: 'fedra_sans_devanagari_bmedium';
+}
+.chaajaa_positive_data {
+    position: relative;
+}
+.positive_chajja_overlay {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 35px;
+    max-width: 40%;
+}
+.positive_chajja_overlay h3 {
+    font-size: 19px;
+    color: #FFE559;
+    font-family: 'fedra_sans_devanagari_bdemi';
+    font-style: normal;
+    transform: rotate(0deg) skew(0deg, -10deg);
+    margin: 0;
+    position: relative;
+}
+.positive_chajja_overlay h3 img {
+    width: 38px;
+    transform: rotate(13deg);
+    margin-right: 3px;
+}
+.positive_chajja_overlay h3::after {
+    content: "";
+    background: url(/static/images/circled_line.png) no-repeat;
+    width: 42px;
+    height: 41px;
+    position: absolute;
+    bottom: -36px;
+    right: 7px;
+}
+.gurmukhi_number.comminity_gumukhi_first h5 {
+    background: #843af5;
+    color: #54FCA3;
+}
+.gurmukhi_number.comminity_gumukhi_second h5 {
+    background: #FEE26F;
+    color: #FA4A8A;
+}
+.gurmukhi_number.comminity_gumukhi_third h5 {
+    background: #CDE8E5;
+    color: #EB375D;
+}
+
+
+/*Responsive css start here*/
+
+@media (max-width: 320px) {
+
+.chajja_rules_overlays img {
+    max-width: 110px;
+}
+.chajja_rules_overlays h5 {
+    font-size: 20px;
+}
+.positive_chajja_overlay {
+    left: 20px;
+    max-width: 44%;
+}
+.positive_chajja_overlay h3::after {
+    bottom: -32px;
+    right: 0px;
+}
+
+
+
+
+
+}
+
+
+
+/*large screen css start here*/
+
+@media (min-width: 768px) {
+
+/*Terms Condition css start here*/
+.pvc_banner {
+    height: 500px;
+}
+.pvc_banner img {
+    height: 100%;
+    object-fit: cover;
+}
+body .pvc_overlay_data h3 {
+    font-size: 32px;
+    line-height: 32px;
+    transform: rotate(-4deg) !important;
+    display: flex;
+    position: relative;
+    top: -3px;
+}
+body .pvc_overlay_data {
+    background: #8226FA !important;
+    max-width: unset !important;
+    padding: 38px 70px 38px 100px;
+    transform: rotate(0deg);
+    margin-left: -10px;
+    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0% 100%);
+    margin-top: 10px;
+}
+.privacy_upper_informational_sec {
+    padding: 60px 150px;
+    margin-bottom: 70px;
+}
+.privacy_upper_informational_sec h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.privacy_upper_informational_sec p {
+    font-size: 20px;
+}
+.chajja_rules_overlays h5 {
+    font-size: 70px;
+    margin: -90px 0px 0px 22px;
+    transform: rotate(-14deg);
+    font-family: 'Fedra Sans Pro';
+}
+.chajja_rules_overlays img {
+    width: 280px;
+}
+.chajja_rules_overlays {
+    left: 50%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    top: 40%;
+}
+img.rules_bg_img {
+    width: 100%;
+    max-width: 100%;
+    height: 550px;
+    object-fit: contain;
+}
+.chajja_ke_rules {
+    position: relative;
+    background: #ff3d89;
+}
+.terms_items {
+    padding: 50px 150px;
+}
+.gurmukhi_number h5 {
+    width: 140px;
+    height: 140px;
+    font-size: 56px;
+}
+.terms_content_data p {
+    font-size: 20px;
+}
+.terms_content_data ul li {
+    font-size: 20px;
+    margin-bottom: 8px;
+    padding-left: 22px;
+}
+.terms_content_data ul li::before {
+    top: 11px;
+    left: 0px;
+    height: 2px;
+    width: 10px;
+    transform: translate(0, 0%);
+}
+.gurmukhi_number {
+    margin-right: 30px;
+}
+.chajja_contact_information_data {
+    padding: 50px 150px;
+}
+.chajja_contact_information_data p {
+    font-size: 20px;
+}
+.chaajaa_positive_data {
+    background: #843af5;
+}
+.positive_chajja_overlay {
+    position: absolute;
+    left: 50%;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+.positive_chajja_overlay h3 {
+    font-size: 60px;
+    display: table;
+    max-width: 400px;
+}
+.positive_chajja_overlay h3 img {
+    width: 100px;
+}
+.positive_chajja_overlay h3::after {
+    bottom: -36px;
+    right: 0px;
+}
+.complaints_sec_data {
+    padding: 50px 150px;
+}
+.complaints_headings h2 {
+    font-size: 32px;
+}
+.complaints_descriptions p {
+    font-size: 20px;
+}
+.chaajja_sharing_information .shared_heading_info {
+    max-width: 420px !important;
+    padding: 38px 50px 38px 80px;
+    transform: rotate(0deg);
+    margin-left: -170px;
+    clip-path: polygon(0 30%, 100% 0, 100% 70%, 0% 100%);
+    margin-top: -60px;
+}
+.chaajja_sharing_information .shared_heading_info h3 {
+    margin: 0;
+    font-style: italic;
+    font-family: 'Fedra Sans Pro';
+    font-size: 26px;
+    line-height: 27px;
+    transform: rotate(-7deg) !important;
+    display: flex;
+    position: relative;
+    top: -4px;
+}
+.chaajja_sharing_information {
+    padding: 30px 150px;
+    margin-top: 0px;
+    /* background: #843af5; */
+}
+.third_parties_data_sec {
+    padding: 50px 150px;
+    margin-bottom: 30px;
+}
+.third_party_sliders_cons {
+    margin: 20px 0px 0px;
+}
+.third_parties_data_sec h2 {
+    font-size: 32px;
+    margin: 10px 0px 45px;
+    line-height: 36px;
+}
+.item_shared_data p {
+    font-size: 20px;
+}
+.third_positional_data p {
+    font-size: 20px;
+}
+.privacy_upper_informational_sec.guideliness_sec_pvc {
+    margin-bottom: 0px;
+}
+.owl-theme.sharing_carousel .owl-dots .owl-dot span {
+    width: 13px;
+    height: 13px;
+}
+.owl-theme.sharing_carousel .owl-nav button.owl-prev {
+    left: 10px;
+}
+.owl-theme.sharing_carousel .owl-nav button.owl-next {
+    right: 10px;
+}
+.owl-theme.third_parties_sliders .owl-nav button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50% !important;
+}
+
+
+
+
+}
+
+
+@media (min-width: 1200px) and (max-width: 1440px) {
+
+.privacy_upper_informational_sec {
+    padding: 60px 80px;
+}
+.terms_items {
+    padding: 50px 80px;
+}
+.chajja_contact_information_data {
+    padding: 50px 80px;
+}
+
+
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .privacy_upper_informational_sec {
+        padding: 60px 60px;
+    }
+    .terms_items {
+        padding: 50px 60px;
+    }
+    .chajja_rules_overlays {
+        max-width: 800px;
+    }
+    .chajja_rules_overlays h5 {
+        margin: -80px 0px 0px 22px;
+    }
+    .chajja_rules_overlays img {
+        width: 250px;
+    }
+    img.rules_bg_img {
+        height: 450px;
+    }
+    .pvc_banner {
+        height: 450px;
+    }
+    .chajja_contact_information_data p {
+        font-size: 18px;
+    }
+    .terms_content_data p {
+        font-size: 18px;
+    }
+    .terms_content_data ul li {
+        font-size: 18px;
+    }
+    .privacy_upper_informational_sec p {
+        font-size: 18px;
+    }
+    .chajja_contact_information_data {
+        padding: 50px 60px;
+    }
+    .positive_chajja_overlay {
+        max-width: 800px;
+    }
+
+
+
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .privacy_upper_informational_sec {
+        padding: 40px 20px;
+    }
+    .terms_items {
+        padding: 40px 20px;
+    }
+    .chajja_rules_overlays {
+        max-width: 630px;
+    }
+    .chajja_rules_overlays h5 {
+        margin: -60px 0px 0px 22px;
+        font-size: 50px;
+    }
+    .chajja_rules_overlays img {
+        width: 250px;
+    }
+    img.rules_bg_img {
+        height: 350px;
+    }
+    .pvc_banner {
+        height: 350px;
+    }
+    .chajja_contact_information_data p {
+        font-size: 16px;
+    }
+    .terms_content_data p {
+        font-size: 16px;
+    }
+    .terms_content_data ul li {
+        font-size: 16px;
+    }
+    .chajja_rules_overlays img {
+        width: 200px;
+    }
+    .privacy_upper_informational_sec p {
+        font-size: 16px;
+    }
+    .chajja_contact_information_data {
+        padding: 40px 20px;
+    }
+    .gurmukhi_number h5 {
+        width: 120px;
+        height: 120px;
+        font-size: 46px;
+    }
+    .privacy_upper_informational_sec h3 {
+        font-size: 28px;
+    }
+    .positive_chajja_overlay {
+        max-width: 630px;
+    }
+    .positive_chajja_overlay h3 {
+        font-size: 40px;
+        display: table;
+        max-width: 290px;
+    }
+    .positive_chajja_overlay h3 img {
+        width: 70px;
+    }
+
+
+
+}

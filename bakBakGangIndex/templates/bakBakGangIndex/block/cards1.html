@@ -1,0 +1,9 @@
+{% load wagtailcore_tags   wagtailimages_tags %}
+
+<div class="col-md-4">
+    <div class="single-feature">
+        {% image self.icon original as img %}
+        <img src="{{img.url}}" alt="icon">
+        <h6>{{ self.description }}</h6>
+    </div>
+</div>

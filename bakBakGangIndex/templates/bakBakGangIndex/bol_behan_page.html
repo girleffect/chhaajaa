@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block body_class %}template-bolbehanpage{% endblock %}
+
+{% block content %}
+{% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
+
+
+<section class="bb-hero-sec">
+    {% image page.header_image original as header_image %}
+    <img src="{{header_image.url}}" alt="bol-behan-hero-section">
+    <div class="whats-app">
+
+        <a href="https://wa.me/{{page.whatsapp_text}}">
+            {% image page.whatsapp_icon original as whatsapp_icon %}
+            <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
+        </a>
+    </div>
+
+</section>
+
+
+<section class="bb-kya-hai">
+    {% image page.section_1_main_img_1 original as section_1_main_img_1 %}
+    <img class="bbkh-cmnt" src="{{section_1_main_img_1.url}}" alt="cmnt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="bbkh-img">
+                    {% image page.section_1_main_img_2 original as section_1_main_img_2 %}
+                    <img src="{{section_1_main_img_2.url}}" alt="phone-illustration">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="bbkh-text">
+                    <h4 class="heading">{{page.section_1}}</h4>
+                    {{page.section_1_title_1|richtext}}
+                  <p>  {{page.section_1_sub_title_1}}</p>   
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+<section class="second-sec">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-end">
+                <div class="fixed-whats-app" id="fixed-whats-app">
+                <a href="https://wa.me/{{page.whatsapp_text}}">
+                <div class="wht-text">
+                <div class="talk-bubble tri-right btm-right">
+                    <div class="talktext">
+                      <p>Chat Karo!</p>
+                    </div>
+                  </div>
+                </div>
+                <img src="{% static 'images/whatsapp-logo.png' %}" alt="whats-app-icon">
+            </a>      
+        </div>              
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="bol-behan-testimonials">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-5">
+                <div class="bob-img text-end">
+                    {% image page.section_2_main_img_1 original as section_2_main_img_1 %}
+                    <img src="{{section_2_main_img_1.url}}" alt="bobe">
+                </div>
+            </div>
+            <div class="col-md-7 text-end">
+                <div class="gray-sec">
+                    <h4 class="heading tst-bck">{{page.section_2}}</h4>
+                </div>
+                <div class="testi text-center">
+                    <div class="owl-carousel owl-theme" id="my-slider">
+                       {% for testimonial in page.section_2_card %}
+                        {% include_block testimonial %}
+                        {% endfor %}
+                    </div>                        
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="sky-blue-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                {% for section_3_card_item in page.section_3_card %}
+                {% include_block section_3_card_item %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="chat-sec">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-md-5 col-sm-12">
+                <div class="hands-illu text-end">
+                    {% image page.section_4_main_img_1 original as section_4_main_img_1 %}
+                    <img src="{{section_4_main_img_1.url}}" alt="hands">
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="gray-tab text-center">
+                    <h4 class="heading">{{page.section_4}}</h4>
+                </div>
+
+                <div class="gray-tab emoji-icon text-center">
+                {{page.section_4_description|richtext}}
+                </div>
+
+                {% for section_4_card_item in page.section_4_card %}
+                {% include_block section_4_card_item %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="l-chat">
+    <div class="container">
+        <div class="row d-none d-lg-flex d-xl-flex d-md-flex">
+            <div class="col-md-7">
+                <div class="sky-tab text-center margin-right-custom2">
+                    <h2 class="heading">{{page.section_5}}</h2>
+                </div>
+
+                <div class="sky-tab text-center">
+                    {{page.section_5_description|richtext}}
+            </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="girl-illu">
+                    {% image page.section_5_main_img_1 original as section_5_main_img_1 %}
+                    <img src="{{section_5_main_img_1.url}}" alt="girl-illustraion">
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex d-sm-block d-md-none">
+            
+
+            <div class="col-md-5">
+                <div class="girl-illu">
+                    {% image page.section_5_main_img_1 original as section_5_main_img_1 %}
+                    <img src="{{section_5_main_img_1.url}}" alt="girl-illustraion">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="sky-tab text-center margin-right-custom2">
+                    <h2 class="heading">{{page.section_5}}</h2>
+                </div>
+
+                <div class="sky-tab text-center">
+                    {{page.section_5_description|richtext}}
+            </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="last-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">                
+                {% for section_footer_item in page.section_footer %}
+                {% include_block section_footer_item %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% block extra_js %}
+<script type="text/javascript">
+    var owl = $('#my-slider');
+    owl.owlCarousel({
+        loop:true,
+        margin:10,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },            
+            960:{
+                items:1
+            },
+            1200:{
+                items:1
+            }
+        },
+        slideSpeed : 3000,
+        autoplay:true,
+autoplaySpeed:2000,
+    });
+    owl.on('mousewheel', '.owl-stage', function (e) {
+        if (e.deltaY>0) {
+            owl.trigger('next.owl');
+        } else {
+            owl.trigger('prev.owl');
+        }
+        e.preventDefault();
+    });
+</script>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("fixed-whats-app");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+{% endblock extra_js %}
+{% endblock %}

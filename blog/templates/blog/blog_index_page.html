@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+{% main_menu template='menus/main_menu.html' %}
+<div class="blog_banner_sec">
+  <div class="blg_inner_carousel_data">
+    <div class="blog_post_image">
+      {% image page.image original as img %}
+      <img src="{{img.url}}" alt="article">
+    </div>
+    <div class="post_overlay_data">
+      <!-- <div class="shape_content_info"> -->
+        <!-- {{page.intro|safe}} -->
+      <!-- </div> -->
+      <div class="blog_bann_desp_info">
+        <!-- <p>{{page.get_children.0.specific.body|richtext|safe|truncatechars:50}}</p> -->
+        <div class="blog_btn_info">
+          <a href="{{page.button.get_url}}" class="btn btn_click_here">Read more <img
+              src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow" class="home-related-icon"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="main_blog_articles_data">
+  <div class="tags_listing_data item-center">
+    <form action="{% url 'blogsearch' %}" class="w-100 search-form-blog" method="get">
+      <input type="text" name="query" class="form-control w-100" value="{{ search_query }}">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+
+  <div class="main_related_content_portion helpline_blog_portions blog_articles">
+    {% for blog in blogpages %}
+    <div class="related_posts_data blog-list" style="display:none;">
+      <div class="related_images">
+        {% image blog.main_image original as img %}
+        <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
+      </div>
+      <div class="related_contents">
+        <a href="{% slugurl 'blog-page' %}{{blog.slug}}">
+          <h3>{{blog.title}}</h3>
+        </a>
+        <div class="peiord_anchors_blogs" name="blog-{{forloop.counter}}">
+          {% for tag in blog.tags.all %}
+          {% if forloop.counter > 5 %}
+            <div class="tags-list" style="display:none">
+          {% else %}
+              <div class="tags-list" style="display:block">
+          {% endif %}
+            <a href="{% slugurl 'blog-page' %}?tag={{tag.slug}}" class="expert_link">{{tag.name}}</a>
+          </div>
+          {% endfor %}
+          {% if blog.tags.all|length > 4 %}
+          <span class="more_article_data custom_seemore_tags" id="seeMoreTags-{{forloop.counter}}">...more</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="more_article_data" id="seeMore"><a href="#!">See more articles</a></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  $(document).ready(function () {
+    $('.blog_post_banner').owlCarousel({
+      loop: true,
+      margin: 0,
+      autoplay: true,
+      responsiveClass: true,
+      items: 1,
+      nav: true,
+    })
+  })
+
+
+
+
+  $(".blog-list").slice(0, 4).show();
+  if ($(".blog-list").length == 1) {
+    $("#seeMore").hide();
+  }
+  $("#seeMore").click(function (e) {
+    e.preventDefault();
+    $(".blog-list:hidden").slice(0, 3).fadeIn("slow");
+    if ($(".blog-list:hidden").length == 0) {
+      $("#seeMore").hide();
+    }
+  });
+
+
+  $('.custom_seemore_tags').click(function () {
+    $(this).parent().find('.tags-list:hidden').fadeIn("slow");
+    $(this).hide();
+  });
+
+
+
+</script>
+{% endblock extra_js %}

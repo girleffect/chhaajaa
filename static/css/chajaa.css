@@ -1,0 +1,68 @@
+.concern_services {
+    display: block;
+}
+
+.home-related-icon{
+    width: 7px;
+}
+
+
+.platform_content img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.modal-title {
+    font-weight: 900
+}
+
+.modal-content {
+    border-radius: 13px
+}
+
+.modal-body {
+    color: #3b3b3b
+}
+
+.img-thumbnail {
+    border-radius: 33px;
+    width: 61px;
+    height: 61px
+}
+
+.fab:before {
+    position: relative;
+    top: 13px
+}
+
+.modal-footer {
+    display: block
+}
+
+.ur {
+    border: none;
+    background-color: #e6e2e2;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px
+}
+
+.cpy {
+    border: none;
+    background-color: #e6e2e2;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer
+}
+
+
+.ur.focus,
+.ur:focus {
+    outline: 0;
+    box-shadow: none !important
+}

@@ -1,0 +1,18 @@
+{% load wagtailcore_tags   wagtailimages_tags %}
+<div class="third_parties_data_sec">
+    <h2>{{ self.title }}</h2>
+    <div class="third_party_sliders_cons">
+        <div class="owl-carousel owl-theme third_parties_sliders">
+            {% for card in self.cards %}
+            <div class="item">
+                <div class="third_positional_data">
+                    {% image card.image original as img %}
+                    <img src="{{ img.url }}" alt="placeholder">
+                    <h3>{{ card.title }}</h3>
+                    <p>{{ card.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

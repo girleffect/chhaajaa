@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags   wagtailimages_tags  wagtailroutablepage_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block content %}
+{% main_menu template='menus/main_menu.html' %}
+<h2 class="">{{page.specific.title}}</h2>
+{{page.specific.description|richtext}}
+{% endblock content %}

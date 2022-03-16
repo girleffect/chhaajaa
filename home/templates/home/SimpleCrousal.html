@@ -1,0 +1,25 @@
+{% load wagtailcore_tags   wagtailimages_tags %}
+<div class="chaajja_sharing_information">
+    <div class="chhaajaa_inner_shared" style="background-color: {{ self.bg_color }};">
+        <div class="uppe_shared_data_parts">
+            <div class="shared_heading_info">
+                <h3>{{ self.title }}</h3>
+            </div>
+            <div class="roman_icons_number">
+                {% image self.image original as img %}
+                <img src="{{img.url}}" alt="numbering">
+            </div>
+        </div>
+        <div class="chaaja_sharing_info_slider">
+            <div class="owl-carousel owl-theme sharing_carousel">
+                {% for desc in self.description %}
+                <div class="item">
+                    <div class="item_shared_data" style="color: {{ self.text_color }};">
+                        {{desc.description}}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

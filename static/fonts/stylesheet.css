@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'fedra_sans_devanagari_bbold';
+    src: url('/static/fonts/fedrasansdevanagarib-bold-webfont.woff2') format('woff2'),
+         url('/static/fonts/fedrasansdevanagarib-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'fedra_sans_devanagari_bbook';
+    src: url('/static/fonts/fedrasansdevanagarib-book-webfont.woff2') format('woff2'),
+         url('/static/fonts/fedrasansdevanagarib-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'fedra_sans_devanagari_bdemi';
+    src: url('/static/fonts/fedrasansdevanagarib-demi-webfont.woff2') format('woff2'),
+         url('/static/fonts/fedrasansdevanagarib-demi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'fedra_sans_devanagari_bmedium';
+    src: url('/static/fonts/fedrasansdevanagarib-medium-webfont.woff2') format('woff2'),
+         url('/static/fonts/fedrasansdevanagarib-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Avenir Book';
+    src: url('/static/fonts/Avenir-Book.woff2') format('woff2'),
+        url('/static/fonts/Avenir-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fedra Sans Pro Book';
+    src: url('/static/fonts/FedraSansPro-Book.woff2') format('woff2'),
+        url('/static/fonts/FedraSansPro-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fedra Sans Pro';
+    src: url('/static/fonts/FedraSansPro-Bold.woff2') format('woff2'),
+        url('/static/fonts/FedraSansPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

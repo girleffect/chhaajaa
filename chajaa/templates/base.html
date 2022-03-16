@@ -1,0 +1,231 @@
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+        {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% with self.get_site.site_name as site_name %}
+        {% if site_name %}- {{ site_name }}{% endif %}
+        {% endwith %}
+        {% endblock %}
+    </title>
+    <meta name="description"
+        content="{% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% else %}{{ self.search_description }}{% endif %}{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="sJv2CIRu3z5hI5qxMyA4Px1yHVOjnV7mtalFmk3D4Vo" />
+    <meta name="facebook-domain-verification" content="3unpgyaqtx06a21a8f6tnlmr950rjq" />
+
+    {# Global stylesheets #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chajaa.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/static_pages.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-select.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/stylesheet.css' %}">
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'images/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'cimages/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{% static 'images/favicon/images/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/manifest.json' %}">
+
+    {% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+
+    <script type="application/ld+json">
+            {
+            "@context": "http://schema.org",
+            "@id": "https://chhaajaa.com/#organization",
+            "@type": "Organization",
+            "name": "Chhaa Jaa",
+            "legalName" : "GIRL EFFECT ENTERPRISE INDIA PRIVATE LIMITED",
+            "brand" : "Chhaa Jaa",
+            "alternateName" : "Chhaa Jaa",
+            "url": "https://chhaajaa.com",
+            "logo": "https://ge-chhaajaa.s3-eu-west-1.amazonaws.com/static/images/logo.svg",
+            "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "01A104 & 01A134, WeWork Raheja Platinum, 710G, Sag Baug, Marol Industrial Estate, Andheri East",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharastra",
+            "postalCode": "400059",
+            "addressCountry": "IN"
+            },
+            "sameAs": [
+            "https://www.youtube.com/c/chhaajaa",
+            "https://www.instagram.com/chhaajaa"
+            ]
+            }
+        </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PTX86G6');</script>
+    <!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Ads: 10844218946 -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10844218946"></script>
+
+<script>
+
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+
+
+
+  gtag('config', 'AW-10844218946');
+ 
+</script>
+<script>
+    function gtag_report_conversion(url) {
+        debugger;
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-10844218946/nqnFCMrKk5UDEMLM9rIo',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTX86G6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    {% wagtailuserbar %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="top_footer">
+            <div class="links_footer_info">
+                <h2>Contact us</h2>
+                <ul class="list-inline">
+                    <!--                        <li><a href="javascript:void(0);"><img src="{% static 'images/call_icon_black.svg' %}"-->
+                    <!--                                                               alt="call"><i>Telephone</i></a></li>-->
+                    <li><a href="mailto:contact@chhaajaa.com"><img src="{% static 'images/mail_icon.svg' %}"
+                                alt="mail"><i>Mail</i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="links_footer_info">
+                <h2>Useful links</h2>
+                <ul class="list-inline mb-none">
+                    <li><a href="{% slugurl 'guidelines' %}"><img
+                                src="{% static 'images/community_guidline_icon.svg' %}"
+                                alt="community guidelines"><i>Community
+                                <span>Guidelines</span></i></a></li>
+                    <li><a href="{% slugurl 'privacy-policy' %}"><img src="{% static 'images/privacy_icon.svg' %}"
+                                alt="privacy policy"><i>Privacy
+                                Policy</i></a></li>
+                    <li><a href="{% slugurl 'terms-and-condition' %}"><img
+                                src="{% static 'images/terms_condition_icon.svg' %}" alt="terms conditions"><i>Terms
+                                &amp; Conditions</i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <img src="{% static 'images/footer_logo.svg' %}" alt="footer logo">
+            <p>Chhaa Jaa © 2020 All Rights Reserved.</p>
+        </div>
+    </footer>
+    {% endblock footer %}
+    {# Global javascript #}
+    <script type="text/javascript" src="{% static 'js/chajaa.js' %}"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-select.js' %}"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e);
+            t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2468162103426122');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" src="https://www.facebook.com/tr?id=2468162103426122&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start': new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NH95KK4');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+</head>
+
+    <body>
+        <!--          <a class="skip-link" href="#wrapper">Skip to main</a>-->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45VN52" height="0" width="0"
+                style="display:none;visibility:hidden"></iframe>
+        </noscript>
+
+
+        {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+        {% endblock %}
+    </body>
+
+</html>

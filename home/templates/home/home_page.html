@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags wagtailroutablepage_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block content %}
+{% main_menu template='menus/main_menu.html' %}
+<div class="are_dekho_sec">
+
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>{{page.specific.section_video_title}} {% image page.specific.section_video_icon original %}</h2>
+    </div>
+  </div>
+
+  <div class="home_slider_data">
+    <div class="owl-carousel owl-theme home_video_carousel">
+      {% for video in videos %}
+      <div class="item">
+        <div class="inner_hm_video_data">
+          <div class="hm_videos">
+            {% if video.video_link %}
+            <iframe src="{{video.video_link}}" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            {% else %}
+            {% image video.image original as img %}
+            <a href="{{video.image_link}}"><img src="{{img.url}}"></a>
+            {% endif %}
+          </div>
+
+          <div class="video_content_data">
+            <h3>{{video.name}}</h3>
+            <p>{{video.description}}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<div class="platform_we_on">
+  <h3>{{page.specific.section_social_title}}</h3>
+  <div class="platform_content">
+    {% for sc in social%}
+    <a href="{{sc.website_link}}">{% image sc.image original %} <button class="social_buttons">{{ sc.name }}</button>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="service_finder_content">
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>{{page.specific.section_concern_title}} {% image page.specific.section_concern_icon original %}</h2>
+    </div>
+  </div>
+  <div class="inner_service_content_data">
+    <!--service content data start here-->
+    <div class="service_content_lft_sec">
+      <h4>Aapki problem choose karein</h4>
+      <a href="{% slugurl 'service-finder' %}">Baat karo Experts se <img
+          src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow"></a>
+    </div>
+    <div class="period_colmns_right_sec">
+
+      <div class="women_problems">
+        {% for concern in services %}
+        <div class="womenp_cols">
+          <a class="upper_links_data"
+            href="{% pageurl page.get_children.first %}services/?service={{concern.slug}}"></a>
+          <h3 class="service_finder_achor"><a
+              href="{% pageurl page.get_children.first %}services/?service={{concern.slug}}">{{concern.intro}}</a></h3>
+          <div class="period_overlay_img">{% image concern.image original as concern_image %}
+            <img src="{{concern_image.url}}" alt="period mein dard">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!--service content data close here-->
+</div>
+
+
+<div class="articles_data_sec">
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>{{page.specific.section_article_title}}{% image page.specific.section_article_icon original %}</h2>
+    </div>
+  </div>
+  <div class="inner_main_article_data">
+    <div class="article_chemp_line frst_chemp_left">
+      <h5>Doctor mere baare mein kya sochega?</h5>
+    </div>
+    <div class="article_chemp_line secnd_chemp_right">
+      <h5>Kitne sawaal puchegi???</h5>
+    </div>
+    <div class="article_chemp_line thrd_chemp_left">
+      <h5>Mujhe unko kya batana padega?</h5>
+    </div>
+    <div class="article_chemp_line frth_chemp_right">
+      <h5>Woh kisi ko batayegi toh nahin?</h5>
+    </div>
+    <div class="button_data_text ">
+      <a href="{% slugurl 'blog-page' %}" class="btn btn_articles">Read more articles here<img
+          src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow" class="home-related-icon"></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="about_us_sec">
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>{{page.specific.section_about_title}}{% image page.specific.section_about_icon original %}</h2>
+    </div>
+  </div>
+  <div class="about_us_data_content">
+    <div class="about_img">
+      {% image page.specific.section_about_image original %}
+    </div>
+    <div class="about_content_dt">
+      <h3 class="prichay_heading">Hamara Parichay</h3>
+      <p>{{page.specific.section_about_descripton}}</p>
+      <a href="https://www.girleffect.org/" class="btn btn_effects" target="_blank">Know more<img
+          src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow" class="home-related-icon"></a>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="about_us_sec" style="display:block">
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>FAQs</h2>
+    </div>
+  </div>
+  <div id="main">
+    <div class="container">
+      <div class="accordion" id="faq">
+        {% for faq in faqs %}
+        <div class="card">
+          <div class="card-header" id="faqhead{{forloop.counter}}">
+            <a href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq{{forloop.counter}}"
+              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="faq{{forloop.counter}}">{{faq.question}}</a>
+          </div>
+
+          <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% else %}hide{% endif %}"
+            aria-labelledby="faqhead{{forloop.counter}}" data-parent="#faq">
+            <div class="card-body">
+              {{faq.answer|safe}}
+            </div>
+          </div>
+        </div>
+
+
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock content %}
+
+{% block extra_js %}
+<script>
+  $(document).ready(function () {
+    $('.home_video_carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 2,
+          nav: true
+        },
+        600: {
+          items: 2,
+          nav: false
+        },
+        1000: {
+          items: 4,
+          nav: true,
+          loop: true,
+          margin: 20
+        }
+      }
+    })
+  })
+</script>
+{% endblock extra_js %}

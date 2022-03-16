@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+{% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
+
+
+<section class="hero-sec">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-content">
+                    <div class="ban-button">
+                        <a onclick="gtag_report_conversion('https://www.facebook.com/groups/BakBakGang')">Join now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="f-sec">
+    <div class="container">
+             <div class="bbg-heading">
+                    <!-- <p>{{ page.section_1 }}</p> -->
+                    <div class="peshkash_heading">
+                        <div class="peshkash_text">
+                            <h2>{{ page.section_1 }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-text">
+                    <h6>{{ page.section_1_title_1|safe }}
+                    </h6>
+                </div>
+           
+        <div class="row card_div">
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_1_card_01 }}
+                        </h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_1_card_02 }}</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_1_card_03 }}
+                        </h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_1_card_04 }}</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <h6 class="heading">{{ page.section_1_title_2 }}</h6>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<section class="feature">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <a href="#">{{ page.section_1_card_11 }}</a>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <a href="#">{{ page.section_1_card_12 }}</a>
+            </div>
+
+            <div class="col-md-4 text-center">
+                <a href="#">{{ page.section_1_card_13 }}</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="testimonials">
+    <!-- <p>{{ page.section_2 }}</p> -->
+    <div class="testimonials_heading">
+        <div class="peshkash_text">
+          <h2>{{ page.section_2 }}</h2>
+        </div>
+      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center mb-4">
+                <h2>{{ page.section_2_title_1|safe }}</h2>
+
+            </div>
+
+            <div class="col-md-12 padding_vertical">
+                <div class="single-testimonial">
+                    <span class="quotaion-left"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
+                    <span class="quotaion-right"><i class="fa fa-quote-right" aria-hidden="true"></i></span>
+                    <div class="owl-carousel owl-theme">
+                        {% for testimonial in page.section_2_card %}
+                        {% include_block testimonial %}
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="jkk-banner">
+    <div class="jkk-heading">
+        <!-- <p>{{ page.section_3 }}</p> -->
+        <div class="jkk_heading">
+            <div class="peshkash_text">
+              <h2>{{ page.section_3 }}</h2>
+            </div>
+          </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jk-btn">
+                    <a onclick="gtag_report_conversion('https://www.facebook.com/groups/BakBakGang')">Join now</a>
+                </div>
+
+                <h2 class="mt-4 text-center jkk-heading-h2">
+                    {{ page.section_3_title_1|safe }}
+                </h2>
+            </div>
+
+            {% for card1 in page.section_3_card %}
+            {% include_block card1 %}
+            {% endfor %}
+
+        </div>
+
+</section>
+
+
+
+
+<section class="rules">
+    <div class="bbg-rules">
+        <!-- <p>{{ page.section_4 }}</p> -->
+        <div class="rules_heading">
+            <div class="peshkash_text">
+              <h2>{{ page.section_4 }}</h2>
+            </div>
+          </div>
+    </div>
+    <div class="container">
+        <div class="row padding_vertical padding_hortizontal">
+            {% for card2 in page.section_4_card %}
+            {% include_block card2 %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="f-sec new-plan">
+    <div class="container">
+      
+                <div class="bbg-heading">
+                    <!-- <p>{{ page.section_5 }}</p> -->
+                    <div class="new_plan_heading">
+            <div class="peshkash_text">
+              <h2>{{ page.section_5 }}</h2>
+            </div>
+          </div>
+                </div>
+                <div class="h-text">
+                    <h6>{{ page.section_5_title|safe }}
+                    </h6>
+                </div>
+            
+        <div class="row card_div">
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_5_card_01 }}</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_5_card_02 }}</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_5_card_03 }}</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 my-4">
+                <a href="#">
+                    <div class="item">
+                        <h6>{{ page.section_5_card_04 }}</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</section>
+
+
+<section class="btm-banner">
+
+</section>
+
+<section class="footer-sec row">
+    <div class="col-lg-4 col-md-4 col-sm-12 margin-tops">
+        <h6>{{ page.section_footer_title|safe }}</h6>
+        <h2>{{ page.section_footer_subtitle|safe }}</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="footer-content">
+                    <div class="footer-button">
+                        <a onclick="gtag_report_conversion('https://www.facebook.com/groups/BakBakGang')">Join now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% block extra_js %}
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        item: 1,
+        singleItem: true,
+        smartSpeed: 1500,
+        slideSpeed: 20,
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+</script>
+{% endblock extra_js %}
+{% endblock %}

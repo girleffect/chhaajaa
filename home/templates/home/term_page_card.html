@@ -1,0 +1,9 @@
+{% load wagtailcore_tags   wagtailimages_tags %}
+<div class="terms_items first_terms_data" style="background-color: {{ self.bg_color }};">
+    <div class="gurmukhi_number">
+        <h5 style="background-color: {{ self.serial_bg_color }};">{{ self.serial_number }}</h5>
+    </div>
+    <div class="terms_content_data">
+        <p style="color: {{ self.serial_text_color }};">{{ self.description|richtext }}</p>
+    </div>
+</div>

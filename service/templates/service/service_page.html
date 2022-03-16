@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+<img class="img-fluid" src="{{service_image.url}}" alt="lybrate">
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags filter %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block content %}
+{% main_menu template='menus/main_menu.html' %}
+<section class="lybrate_banner_images">
+  <a class="back_data_btn" href="{{ request.META.HTTP_REFERER }}"><img src="{% static 'images/librate_back_icon.svg' %}"
+    alt="back"></a>
+  <div class="owl-carousel owl-theme librate_carousels">
+    {% for service_image in page.specific.gallery_images.all %}
+    <div class="item">
+      <div class="lybrate_help_data">
+          {% image service_image.image original as service_image %}
+          <img src="{{service_image.url}}" alt="share">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+</section>
+<section class="lybrate_description_data">
+  <div class="lybrate_share_info">
+    <div class="lyb_content_area">
+      <h3>{{page.name}}</h3>
+      <p>{{page.description|richtext}}</p>
+    </div>
+<!--    <div class="lybrate_share_send">-->
+<!--      <a href="javascript:void(0);">-->
+<!--        <img src="{% static 'images/send_icon.svg' %}" alt="share">-->
+<!--        <span>Share</span>-->
+<!--      </a>-->
+<!--    </div>-->
+  </div>
+  <div class="timing_price">
+    <ul class="list-inline">
+      <li>Timing <span>{{page.timing}}</span></li>
+      <li>Pricing<span>{{page.price}}</span></li>
+    </ul>
+  </div>
+  <div class="website_info">
+      {% if page.external_link|integer == True %}
+        <a href="tel:{{page.external_link}}" class="btn btn_web">Call Now</a>
+      {% else %}
+        <a href="{{page.external_link}}" class="btn btn_web">Visit Website</a>
+      {% endif %}
+      <a href=href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup" class="send_data_icon"><img src="{% static 'images/send_icon.svg' %}" alt="share"></a>
+  </div>
+</section>
+<section class="related_services_blog">
+    <h2>Related Services <a class="see_all_btn" href="{% slugurl 'service-finder' %}">See All</a></h2>
+    <div class="service_tab_inner_data blos_part_included">
+        {% for service in services %}
+        <div class="helpline_centers blog_helpline_center_data">
+            <div class="center_header">
+                {% image service.main_image original as img %}
+              <img src="{{img.url}}" alt="articles">
+              <div class="blog_call_data">
+                <a href="{% if service.external_link|integer == True %}tel:{{service.external_link}}{% else %}{{service.external_link}}{% endif %}" target="_blank"><img src="{% static 'images/call_icon.svg' %}" alt="call"></a>
+              </div>
+            </div>
+            <div class="center_body">
+                <h4><a href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
+                {{service.description|safe|truncatewords:20}}
+            </div>
+        </div>
+        {% empty %}
+      
+      <div class="alert  text-center text-white" role="alert" style="background-color:#ff428a;">
+        No services are currently available for this tag
+      </div>
+        {% endfor %}
+      </div>
+    </div>
+    <h2 class="mt-2">Related Blogs <a class="see_all_btn" href="{% slugurl 'blog-page' %}">See All</a></h2>
+    <div class="main_related_content_portion helpline_blog_portions">
+        {% for blog in articles %}
+        <div class="related_posts_data">
+            <div class="related_images">
+                {% image blog.main_image original as img %}
+                <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
+            </div>
+            <div class="related_contents">
+                <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.title}}</h3></a>
+            </div>
+        </div>
+        {% empty %}
+      <div class="alert  text-center text-white" role="alert" style="background-color:#ff428a;">
+       No blogs are currently available for this tag
+      </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+
+<!--POP UP-->
+<div class="modal fade sharing_modal" id="addTagPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content col-12">
+            <div class="modal-header">
+                <h5 class="modal-title">Share Kijiye</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+            </div>
+            <div class="modal-body">
+                <div class="icon-container1 d-flex">
+                    <div class="smd facebook_icons"> <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.get_site.root_url }}{% pageurl page %}&quote={{page.specific.search_description}}" target="_blank">
+                        <i class="fa fa-facebook fa-2x"></i></a>
+                    </div>
+                    <div class="smd whatsapp_icons"> <a href="https://wa.me/?text={{ page.get_site.root_url }}{% pageurl page %}" target="_blank">
+                        <i class="fa fa-whatsapp fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block extra_js %}
+<script>
+  $(document).ready(function() {
+    $('.librate_carousels').owlCarousel({
+      loop: true,
+      margin: 0,
+      autoplay: true,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 1,
+          nav: false
+        },
+        1000: {
+          items: 1,
+          nav: true,
+          loop: false,
+          margin: 0
+        }
+      }
+    })
+  })
+
+</script>
+{% endblock extra_js %}
