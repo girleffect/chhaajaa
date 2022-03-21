@@ -9,7 +9,7 @@ files/assets/
 *.log
 logs/
 .history/
-
+.env
 
 #[ VIRTUAL ENVIRONMENT ]
 venv

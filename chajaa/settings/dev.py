@@ -1,13 +1,16 @@
 from .base import *
+from dotenv import load_dotenv
 
+
+env_path = os.path.join(BASE_DIR, '.env')
+load_dotenv(env_path)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wmskpl&6giis9se_%6hl#(p^d-5ljas4-d^51@a(ufnzc1wlv+'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
-# SECURITY WARNING: define the correct hosts in production!
-ALLOWED_HOSTS = ['*'] 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -34,6 +37,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #         }
 #     }
 # }
+
+
+DATABASES = {
+    'default': dj_database_url.config(
+        # default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
+        default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
+        engine='django.db.backends.postgresql_psycopg2')
+ }
 
 
 try:
