@@ -1390,7 +1390,7 @@ a:hover {
 .peiord_anchors_blogs {
   display: flex;
   flex-wrap: wrap;
-  gap:20px;
+  gap: 20px;
 }
 .peiord_anchors_blogs a {
   font-family: "fedra_sans_devanagari_bdemi";
@@ -1805,11 +1805,12 @@ a.brand_logo img {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   padding: 10px;
-}.related_contents a {
+}
+.related_contents a {
   font-size: 11px;
   color: #333;
   text-decoration: none;
-  font-family: 'fedra_sans_devanagari_bmedium';
+  font-family: "fedra_sans_devanagari_bmedium";
 }
 .main_grid_realted_card {
   display: grid;
