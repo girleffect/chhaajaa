@@ -1911,6 +1911,13 @@
   .hero-sec .banner-content .ban-button {
     top: 130px;
   }
+  .service_content_lft_sec h4 {
+    font-size: 18px;
+    font-family: "Fedra Sans Pro";
+    color: #ff428a;
+    margin-top: 10px;
+    line-height: 26px;
+}
   .testimonials .single-testimonial .owl-dots {
     position: absolute;
     bottom: -70px;

@@ -1805,6 +1805,8 @@ a.brand_logo img {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   padding: 10px;
+  height: 250px;
+  overflow: scroll;
 }
 .related_contents a {
   font-size: 11px;
@@ -1827,4 +1829,9 @@ a.brand_logo img {
   font-size: 11px;
   outline: none;
   box-shadow: none;
+}
+.main_related_content_portion.helpline_blog_portions .related_contents h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: 'fedra_sans_devanagari_bdemi';
 }
