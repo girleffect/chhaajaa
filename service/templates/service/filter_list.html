@@ -70,11 +70,10 @@
         </div>
         <div class="librate_inner_carousels">
           <div class="librate_content_part">
-            <div class="content_left_data" id="truncate">
+            <div class="content_left_data">
               <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a href="javascript:void(0);"
                   class="helpline_links">{{service.specific.category.name}}</a></h4>
-           
-             <p>{{service.specific.description|richtext|truncatechars_html:200}}</p>
+              <p>{{service.specific.description|richtext|truncatechars_html:200}}</p>
               <div class="gynac_direct_links">
                 {% for tag in service.tags.all %}
                   <a href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&tag={{tag.slug}}">{{tag}}</a>

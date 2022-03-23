@@ -56,14 +56,14 @@
       <h2>{{page.specific.section_concern_title}} {% image page.specific.section_concern_icon original %}</h2>
     </div>
   </div>
-  <div class="inner_service_content_data">
+  <div class="inner_service_content_data row">
     <!--service content data start here-->
-    <div class="service_content_lft_sec">
+    <div class="service_content_lft_sec col-3">
       <h4>Aapki problem choose karein</h4>
       <a href="{% slugurl 'service-finder' %}">Baat karo Experts se <img
           src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow"></a>
     </div>
-    <div class="period_colmns_right_sec">
+    <div class="period_colmns_right_sec col-9">
 
       <div class="women_problems">
         {% for concern in services %}
