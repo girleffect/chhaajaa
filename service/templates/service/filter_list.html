@@ -33,14 +33,14 @@
           {% for tag in tags %}
           {% for tag_n in tags_name %}
           {% if tag.slug == tag_n %}
-          <a href="{% slugurl 'service-finder' %}services/?tag={{tag.slug}}">{{ tag }} <span>-</span></a>
+          <a target="_blank" href="{% slugurl 'service-finder' %}services/?tag={{tag.slug}}">{{ tag }} <span>-</span></a>
           {% endif %}
           {% endfor %}
           {% endfor %}
           {% endif %}
         </div>
         <div class="add_tgs">
-          <a href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup">Add Tag <span>+</span></a>
+          <a target="_blank" href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup">Add Tag <span>+</span></a>
         </div>
       </div>
     </div>
@@ -56,12 +56,12 @@
             <div class="liberate_img">
               {% image item.image original as service_image %}
               {% if service.specific.external_link|integer == True %}
-              <a href="tel:{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
-              <a href="tel:{{service.specific.external_link}}" class="call_data" target="_blank"><img src="{% static 'images/call_icon.svg' %}"
+              <a target="_blank" href="tel:{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
+              <a target="_blank" href="tel:{{service.specific.external_link}}" class="call_data" target="_blank"><img src="{% static 'images/call_icon.svg' %}"
                   alt="call"></a>
               {% else %}
-               <a href="{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
-                <a href="{{service.specific.external_link}}" class="call_data" target="_blank"><img src="{% static 'images/web-icon.svg' %}"
+               <a target="_blank" href="{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
+                <a target="_blank" href="{{service.specific.external_link}}" class="call_data" target="_blank"><img src="{% static 'images/web-icon.svg' %}"
                   alt="call"></a>
               {% endif %}
             </div>
@@ -71,12 +71,12 @@
         <div class="librate_inner_carousels">
           <div class="librate_content_part">
             <div class="content_left_data">
-              <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a href="javascript:void(0);"
+              <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="javascript:void(0);"
                   class="helpline_links">{{service.specific.category.name}}</a></h4>
               <p>{{service.specific.description|richtext|truncatechars_html:200}}</p>
               <div class="gynac_direct_links">
                 {% for tag in service.tags.all %}
-                  <a href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&tag={{tag.slug}}">{{tag}}</a>
+                  <a target="_blank" href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&tag={{tag.slug}}">{{tag}}</a>
                 {% endfor %}
               </div>
             </div>
@@ -98,7 +98,7 @@
 <section class="related_articles">
   <div class="related_headings">
     <h3>Related Blogs</h3>
-    <a href="{% slugurl 'blog-page' %}">See All ></a>
+    <a target="_blank" href="{% slugurl 'blog-page' %}">See All ></a>
   </div>
   <!--<div class="service_tab_inner_data blos_part_included">
         {% for service in services %}
@@ -108,16 +108,16 @@
               <img src="{{img.url}}" alt="articles">
               <div class="blog_call_data">
                 {% if service.external_link|integer == True %}
-                    <a href="tel:{{service.external_link}}" target="_blank">
+                    <a target="_blank" href="tel:{{service.external_link}}" target="_blank">
                       <img src="{% static 'images/call_icon.svg' %}" alt="call"></a>
                     {% else %}
-                    <a href="{{service.external_link}}" target="_blank">
+                    <a target="_blank" href="{{service.external_link}}" target="_blank">
                       <img src="{% static 'images/web-icon.svg' %}" alt="call"></a>
                     {% endif %}
               </div>
             </div>
             <div class="center_body">
-                <h4><a href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
+                <h4><a target="_blank" href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
                 {{service.description|richtext}}
             </div>
         </div>
@@ -128,11 +128,11 @@
     <div class="related_posts_data">
       <div class="related_images service_ral_sec">
         {% image blog.main_image original as img %}
-        <a href="{% slugurl 'blog-page' %}{{blog.slug}}"> <img src="{{img.url}}" alt="articles"></a>
+        <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"> <img src="{{img.url}}" alt="articles"></a>
       </div>
       <div class="related_contents">
-        <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.intro}}</h3></a>
-        {% for tag in blog.tags.all %}<a href="#!" class="service_related_tags">{{tag.name}}&nbsp;&nbsp;</a>{% endfor %}
+        <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.intro}}</h3></a>
+        {% for tag in blog.tags.all %}<a target="_blank" href="#!" class="service_related_tags">{{tag.name}}&nbsp;&nbsp;</a>{% endfor %}
       </div>
     </div>
     {% empty %}
@@ -162,7 +162,7 @@
         <div class="pop_data_tags">
 
           <div class="selected_tags_data" id="minus_tag_lists">
-            <h3 class="selected_tegs_search">Selected Tags <a href="javascript:void(0);"><i class="fa fa-search" onclick="submit_tag_filter()"></i></a></h3>
+            <h3 class="selected_tegs_search">Selected Tags <a target="_blank" href="javascript:void(0);"><i class="fa fa-search" onclick="submit_tag_filter()"></i></a></h3>
             <div class="add_tags_list_items minus_tags_added_list">
               <ul id="TextBoxContainer">
                 {% for tag in tags %}
@@ -185,7 +185,7 @@
             <div class="add_tags_list_items">
               <ul>
                 {% for tag in tags %}
-                <li><a href="javascript:void(0);" id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
+                <li><a target="_blank" href="javascript:void(0);" id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
                       onclick="selected_tag(this)" name="tag" value="{{ tag.slug }}"><span>{{ tag.slug }}</span> <img
                       src="{% static 'images/plus_icon.png' %}" alt="plus"></a></li>
                 {% endfor %}

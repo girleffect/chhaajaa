@@ -17,7 +17,7 @@
         <ul>
             {% for result in search_results %}
                 <li>
-                    <h4><a href="{% pageurl result %}">{{ result }}</a></h4>
+                    <h4><a target="_blank" href="{% pageurl result %}">{{ result }}</a></h4>
                     {% if result.search_description %}
                         {{ result.search_description }}
                     {% endif %}
@@ -26,11 +26,11 @@
         </ul>
 
         {% if search_results.has_previous %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
+            <a target="_blank" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.previous_page_number }}">Previous</a>
         {% endif %}
 
         {% if search_results.has_next %}
-            <a href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
+            <a target="_blank" href="{% url 'search' %}?query={{ search_query|urlencode }}&amp;page={{ search_results.next_page_number }}">Next</a>
         {% endif %}
     {% elif search_query %}
         No results found

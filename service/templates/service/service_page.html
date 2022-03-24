@@ -28,7 +28,7 @@
       <p>{{page.description|richtext}}</p>
     </div>
 <!--    <div class="lybrate_share_send">-->
-<!--      <a href="javascript:void(0);">-->
+<!--      <a target="_blank" href="javascript:void(0);">-->
 <!--        <img src="{% static 'images/send_icon.svg' %}" alt="share">-->
 <!--        <span>Share</span>-->
 <!--      </a>-->
@@ -42,11 +42,11 @@
   </div>
   <div class="website_info">
       {% if page.external_link|integer == True %}
-        <a href="tel:{{page.external_link}}" class="btn btn_web">Call Now</a>
+        <a target="_blank" href="tel:{{page.external_link}}" class="btn btn_web">Call Now</a>
       {% else %}
-        <a href="{{page.external_link}}" class="btn btn_web">Visit Website</a>
+        <a target="_blank" href="{{page.external_link}}" class="btn btn_web">Visit Website</a>
       {% endif %}
-      <a href=href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup" class="send_data_icon"><img src="{% static 'images/send_icon.svg' %}" alt="share"></a>
+      <a target="_blank" href=href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup" class="send_data_icon"><img src="{% static 'images/send_icon.svg' %}" alt="share"></a>
   </div>
 </section>
 <section class="related_services_blog">
@@ -58,11 +58,11 @@
                 {% image service.main_image original as img %}
               <img src="{{img.url}}" alt="articles">
               <div class="blog_call_data">
-                <a href="{% if service.external_link|integer == True %}tel:{{service.external_link}}{% else %}{{service.external_link}}{% endif %}" target="_blank"><img src="{% static 'images/call_icon.svg' %}" alt="call"></a>
+                <a target="_blank" href="{% if service.external_link|integer == True %}tel:{{service.external_link}}{% else %}{{service.external_link}}{% endif %}" target="_blank"><img src="{% static 'images/call_icon.svg' %}" alt="call"></a>
               </div>
             </div>
             <div class="center_body">
-                <h4><a href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
+                <h4><a target="_blank" href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
                 {{service.description|safe|truncatewords:20}}
             </div>
         </div>
@@ -80,10 +80,10 @@
         <div class="related_posts_data">
             <div class="related_images">
                 {% image blog.main_image original as img %}
-                <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
+                <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
             </div>
             <div class="related_contents">
-                <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.title}}</h3></a>
+                <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.title}}</h3></a>
             </div>
         </div>
         {% empty %}
@@ -105,10 +105,10 @@
             </div>
             <div class="modal-body">
                 <div class="icon-container1 d-flex">
-                    <div class="smd facebook_icons"> <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.get_site.root_url }}{% pageurl page %}&quote={{page.specific.search_description}}" target="_blank">
+                    <div class="smd facebook_icons"> <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ page.get_site.root_url }}{% pageurl page %}&quote={{page.specific.search_description}}" target="_blank">
                         <i class="fa fa-facebook fa-2x"></i></a>
                     </div>
-                    <div class="smd whatsapp_icons"> <a href="https://wa.me/?text={{ page.get_site.root_url }}{% pageurl page %}" target="_blank">
+                    <div class="smd whatsapp_icons"> <a target="_blank" href="https://wa.me/?text={{ page.get_site.root_url }}{% pageurl page %}" target="_blank">
                         <i class="fa fa-whatsapp fa-2x"></i></a>
                     </div>
                 </div>
