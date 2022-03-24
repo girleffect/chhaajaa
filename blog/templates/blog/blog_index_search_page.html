@@ -21,7 +21,7 @@
       <div class="blog_bann_desp_info">
         <!-- <p>{{blogindex.get_children.0.specific.body|richtext|safe|truncatechars:50}}</p> -->
         <div class="blog_btn_info">
-          <a href="{{blogindex.button.get_url}}" class="btn btn_click_here">Read more <img
+          <a target="_blank" href="{{blogindex.button.get_url}}" class="btn btn_click_here">Read more <img
               src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow" class="home-related-icon"></a>
         </div>
       </div>
@@ -42,10 +42,10 @@
     <div class="related_posts_data blog-list" style="display:none;">
       <div class="related_images">
         {% image blog.main_image original as img %}
-        <a href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
+        <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
       </div>
       <div class="related_contents">
-        <a href="{% slugurl 'blog-page' %}{{blog.slug}}">
+        <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}">
           <h3>{{blog.title}}</h3>
         </a>
         <div class="peiord_anchors_blogs"  name="blog-{{forloop.counter}}">
@@ -55,7 +55,7 @@
           {% else %}
               <div class="tags-list" style="display:block">
           {% endif %}
-              <a href="{% slugurl 'blog-page' %}?tag={{tag.slug}}" class="expert_link">{{tag.name}}</a>
+              <a target="_blank" href="{% slugurl 'blog-page' %}?tag={{tag.slug}}" class="expert_link">{{tag.name}}</a>
             </div>
           {% endfor %}
           {% if blog.tags.all|length > 3 %}
@@ -65,7 +65,7 @@
       </div>
     </div>
       {% endfor %}
-      <div class="more_article_data" id="seeMore"><a href="#!">See more articles</a></div>
+      <div class="more_article_data" id="seeMore"><a target="_blank" href="#!">See more articles</a></div>
   </div>
 
 </div>

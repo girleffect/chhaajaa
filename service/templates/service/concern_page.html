@@ -8,7 +8,7 @@
 {% main_menu template='menus/main_menu.html' %}
     <section class="searched_tags">
       <div class="searched_info">
-        <h3><a href="{{ page.get_parent.url }}"><img src="{% static 'images/back_btns.svg' %}" alt="back"></a>You searched for</h3>
+        <h3><a target="_blank" href="{{ page.get_parent.url }}"><img src="{% static 'images/back_btns.svg' %}" alt="back"></a>You searched for</h3>
         <div class="form-group-data">
           <select class="form-control">
             <option>Pregnancy ke Doubts</option>
@@ -24,11 +24,11 @@
         </div>
         <div class="tags_listing_data">
           <div class="left_updated_tags">
-            <a href="javascript:void(0);">Condoms <span>-</span></a>
-            <a href="javascript:void(0);">Gynac Advice <span>-</span></a>
+            <a target="_blank" href="javascript:void(0);">Condoms <span>-</span></a>
+            <a target="_blank" href="javascript:void(0);">Gynac Advice <span>-</span></a>
           </div>
           <div class="add_tgs">
-            <a href="javascript:void(0);">Add Service Tag <span>+</span></a>
+            <a target="_blank" href="javascript:void(0);">Add Service Tag <span>+</span></a>
           </div>
         </div>
 
@@ -41,7 +41,7 @@
                 <div class="liberate_img">
                   {% image item.image original as service_image %}
                   <img src="{{service_image.url}}" alt="service finder">
-                  <a href="javascript:void(0);" class="call_data"><img src="{%static 'images/call_icon.svg' %}" alt="call"></a>
+                  <a target="_blank" href="javascript:void(0);" class="call_data"><img src="{%static 'images/call_icon.svg' %}" alt="call"></a>
                 </div>
               </div>
               {% endfor %}
@@ -49,11 +49,11 @@
             <div class="librate_inner_carousels">
               <div class="librate_content_part">
                 <div class="content_left_data">
-                  <h4><a href="{% pageurl service %}">{{service.specific.name}}</a> | <a href="javascript:void(0);" class="helpline_links">Helpline</a></h4>
+                  <h4><a target="_blank" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="javascript:void(0);" class="helpline_links">Helpline</a></h4>
                   <p>{{service.specific.description|richtext}}</p>
                   <div class="gynac_direct_links">
-                    <a href="javascript:void(0);">Gynaec advice</a>
-                    <a href="javascript:void(0);">medicine</a>
+                    <a target="_blank" href="javascript:void(0);">Gynaec advice</a>
+                    <a target="_blank" href="javascript:void(0);">medicine</a>
                   </div>
                 </div>
                 <div class="right_time_call">
@@ -70,7 +70,7 @@
     <section class="related_articles">
       <div class="related_headings">
         <h3>Related Articles</h3>
-        <a href="javascript:void(0);">Read All ></a>
+        <a target="_blank" href="javascript:void(0);">Read All ></a>
       </div>
       <div class="main_related_content_portion">
         <div class="related_posts_data">
@@ -79,7 +79,7 @@
           </div>
           <div class="related_contents">
             <h3>Pregnancy kaise prevent kar sakte hai</h3>
-            <a href="javascript:void(0);">Gynaec advice</a>
+            <a target="_blank" href="javascript:void(0);">Gynaec advice</a>
           </div>
         </div>
         <div class="related_posts_data">
@@ -88,7 +88,7 @@
           </div>
           <div class="related_contents">
             <h3>Pregnancy kaise prevent kar sakte hai</h3>
-            <a href="javascript:void(0);">Gynaec advice</a>
+            <a target="_blank" href="javascript:void(0);">Gynaec advice</a>
           </div>
         </div>
       </div>

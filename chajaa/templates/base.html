@@ -112,7 +112,7 @@
         debugger;
       var callback = function () {
         if (typeof(url) != 'undefined') {
-          window.location = url;
+window.open(url)
         }
       };
       gtag('event', 'conversion', {
@@ -140,9 +140,9 @@
             <div class="links_footer_info">
                 <h2>Contact us</h2>
                 <ul class="list-inline">
-                    <!--                        <li><a href="javascript:void(0);"><img src="{% static 'images/call_icon_black.svg' %}"-->
+                    <!--                        <li><a target="_blank" href="javascript:void(0);"><img src="{% static 'images/call_icon_black.svg' %}"-->
                     <!--                                                               alt="call"><i>Telephone</i></a></li>-->
-                    <li><a href="mailto:contact@chhaajaa.com"><img src="{% static 'images/mail_icon.svg' %}"
+                    <li><a target="_blank" href="mailto:contact@chhaajaa.com"><img src="{% static 'images/mail_icon.svg' %}"
                                 alt="mail"><i>Mail</i></a>
                     </li>
                 </ul>
@@ -150,14 +150,14 @@
             <div class="links_footer_info">
                 <h2>Useful links</h2>
                 <ul class="list-inline mb-none">
-                    <li><a href="{% slugurl 'guidelines' %}"><img
+                    <li><a target="_blank" href="{% slugurl 'guidelines' %}"><img
                                 src="{% static 'images/community_guidline_icon.svg' %}"
                                 alt="community guidelines"><i>Community
                                 <span>Guidelines</span></i></a></li>
-                    <li><a href="{% slugurl 'privacy-policy' %}"><img src="{% static 'images/privacy_icon.svg' %}"
+                    <li><a target="_blank" href="{% slugurl 'privacy-policy' %}"><img src="{% static 'images/privacy_icon.svg' %}"
                                 alt="privacy policy"><i>Privacy
                                 Policy</i></a></li>
-                    <li><a href="{% slugurl 'terms-and-condition' %}"><img
+                    <li><a target="_blank" href="{% slugurl 'terms-and-condition' %}"><img
                                 src="{% static 'images/terms_condition_icon.svg' %}" alt="terms conditions"><i>Terms
                                 &amp; Conditions</i></a>
                     </li>

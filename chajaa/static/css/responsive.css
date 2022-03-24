@@ -122,6 +122,12 @@
   }
 }
 @media (min-width: 768px) {
+  .service_helpline_data.helpline_centers .center_body h4 {
+    font-size: 22px;
+    margin: 0px;
+    font-family: "fedra_sans_devanagari_bmedium";
+  margin-bottom: 5px;
+}
   a.brand_logo {
     padding-right: 55px;
   }
@@ -507,7 +513,7 @@
     max-width: 100%;
     width: 100%;
     max-height: 270px;
-    height: 200px;
+    height: 270px;
   }
   .service_helpline_data.service_data_sec_cols
     .center_header
@@ -582,13 +588,13 @@
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .main_related_content_portion.helpline_blog_portions.blog_articles
+  /* .main_related_content_portion.helpline_blog_portions.blog_articles
     .related_posts_data,
   .main_related_content_portion.helpline_blog_portions.blog_articles
     .related_posts_data:nth-child(3n) {
     width: 49%;
     margin: 17px 14px 0px 0px;
-  }
+  } */
   .main_related_content_portion.helpline_blog_portions
     .related_posts_data
     .related_images {
@@ -606,11 +612,11 @@
     position: relative;
     top: -2px;
   }
-  .main_related_content_portion.helpline_blog_portions.blog_articles {
+  /* .main_related_content_portion.helpline_blog_portions.blog_articles {
     margin-top: 0px;
     flex-wrap: wrap;
     padding: 0px 150px 60px;
-  }
+  } */
 
   .main_related_content_portion.helpline_blog_portions
     .related_posts_data
@@ -634,7 +640,7 @@
     align-items: flex-start;
   }
   .main_related_content_portion.helpline_blog_portions .related_posts_data {
-    width: 32%;
+    width: 30%;
     margin: 30px 2% 0px 0px;
   }
   .main_related_content_portion.helpline_blog_portions
@@ -643,9 +649,6 @@
     img {
     height: 270px;
     object-fit: cover;
-  }
-  .more_article_data {
-    margin-top: 40px;
   }
   .more_article_data a {
     font-size: 22px;
@@ -969,7 +972,7 @@
     padding: 60px 80px;
   }
   .hero-sec {
-    height: 82vh;
+    height: 65vh;
   }
   .hero-sec .banner-content .ban-button {
     position: absolute;
@@ -1858,6 +1861,10 @@
   .hero-sec .banner-content .ban-button a {
     font-size: 1.3rem;
   }
+  .main_related_content_portion.helpline_blog_portions.blog_articles {
+    grid-template-columns: 1fr 1fr;
+    padding: 0px 20px 40px;
+}
 }
 @media only screen and (max-width: 769px) and (orientation: landscape) {
   .hero-sec {
@@ -1905,6 +1912,7 @@
   .bbkh-cmnt {
     display: none !important;
   }
+
 }
 
 @media only screen and (max-width: 572px) {
@@ -2071,6 +2079,10 @@
   .last-sec {
     margin-top: 50px;
   }
+  .main_related_content_portion.helpline_blog_portions.blog_articles {
+    grid-template-columns: 1fr;
+    padding: 0px 20px 40px;
+}
 }
 @media only screen and (max-width: 414px) {
   .hero-sec {

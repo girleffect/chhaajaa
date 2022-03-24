@@ -26,7 +26,7 @@
               allowfullscreen></iframe>
             {% else %}
             {% image video.image original as img %}
-            <a href="{{video.image_link}}"><img src="{{img.url}}"></a>
+            <a target="_blank" href="{{video.image_link}}"><img src="{{img.url}}"></a>
             {% endif %}
           </div>
 
@@ -44,7 +44,7 @@
   <h3>{{page.specific.section_social_title}}</h3>
   <div class="platform_content">
     {% for sc in social%}
-    <a href="{{sc.website_link}}">{% image sc.image original %} <button class="social_buttons">{{ sc.name }}</button>
+    <a target="_blank" href="{{sc.website_link}}">{% image sc.image original %} <button class="social_buttons">{{ sc.name }}</button>
     </a>
     {% endfor %}
   </div>
@@ -60,7 +60,7 @@
     <!--service content data start here-->
     <div class="service_content_lft_sec col-3">
       <h4>Aapki problem choose karein</h4>
-      <a href="{% slugurl 'service-finder' %}">Baat karo Experts se <img
+      <a target="_blank" href="{% slugurl 'service-finder' %}">Baat karo Experts se <img
           src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow"></a>
     </div>
     <div class="period_colmns_right_sec col-9">
@@ -104,7 +104,7 @@
       <h5>Woh kisi ko batayegi toh nahin?</h5>
     </div>
     <div class="button_data_text ">
-      <a href="{% slugurl 'blog-page' %}" class="btn btn_articles">Read more articles here<img
+      <a target="_blank" href="{% slugurl 'blog-page' %}" class="btn btn_articles">Read more articles here<img
           src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow" class="home-related-icon"></a>
     </div>
   </div>
@@ -125,7 +125,7 @@
     <div class="about_content_dt">
       <h3 class="prichay_heading">Hamara Parichay</h3>
       <p>{{page.specific.section_about_descripton}}</p>
-      <a href="https://www.girleffect.org/" class="btn btn_effects" target="_blank">Know more<img
+      <a target="_blank" href="https://www.girleffect.org/" class="btn btn_effects" target="_blank">Know more<img
           src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow" class="home-related-icon"></a>
     </div>
   </div>
@@ -144,7 +144,7 @@
         {% for faq in faqs %}
         <div class="card">
           <div class="card-header" id="faqhead{{forloop.counter}}">
-            <a href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq{{forloop.counter}}"
+            <a target="_blank" href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq{{forloop.counter}}"
               aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
               aria-controls="faq{{forloop.counter}}">{{faq.question}}</a>
           </div>

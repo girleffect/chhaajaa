@@ -676,7 +676,7 @@ a.absolte_link {
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  height: 97vh;
+  height: 88vh;
   position: relative;
 }
 .hero-sec .banner-content .ban-button {
@@ -697,6 +697,17 @@ a.absolte_link {
   -webkit-transition: 0.4s ease-in-out;
   text-transform: uppercase;
   transition: 0.4s ease-in-out;
+}
+.hero-sec
+  .banner-content
+  .ban-button
+  a:hover,
+  .footer-content
+  .footer-button
+  a:hover,
+.jkk-banner .jk-btn a:hover {
+  color: #ffe366;
+  background-color: #ff428a;
 }
 .f-sec {
   padding: 80px 0;
@@ -747,6 +758,7 @@ a.absolte_link {
 }
 .f-sec .item {
   min-height: 150px;
+  height: 150px;
   padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1405,15 +1417,23 @@ a:hover {
   margin-right: 4px;
   margin-bottom: 4px;
 }
-.main_related_content_portion {
+/* .main_related_content_portion {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+} */
+.main_related_content_portion.helpline_blog_portions.blog_articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+  /* margin: 70px; */
+  padding: 0px 80px 60px;
+  align-items: center;
 }
 .main_related_content_portion.helpline_blog_portions.blog_articles
   .related_posts_data {
-  width: 48%;
+  width: 100%;
   margin: 13px 0px 0px;
 }
 .related_images img {
@@ -1426,15 +1446,13 @@ a:hover {
   margin-bottom: 15px;
   justify-content: space-between;
 }
-.more_article_data {
-  text-align: center;
-  width: 100%;
-  margin-top: 20px;
-}
 .more_article_data a {
   color: #ff428a;
   font-size: 14px;
   text-decoration: underline;
+  text-align: center;
+  margin: auto;
+  display: block;
   text-transform: capitalize;
 }
 
@@ -1745,12 +1763,6 @@ a.see_all_btn {
   right: 0;
   z-index: 99999;
 }
-.service_helpline_data.helpline_centers .center_body h4 {
-  font-size: 14px;
-  font-family: "fedra_sans_devanagari_bmedium";
-  margin-bottom: 5px;
-}
-
 .service_helpline_data.helpline_centers .center_body {
   padding: 12px 12px;
   background: none;
@@ -1807,6 +1819,11 @@ a.brand_logo img {
   padding: 10px;
   height: 250px;
   overflow: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.related_contents::-webkit-scrollbar {
+  display: none !important;
 }
 .related_contents a {
   font-size: 11px;
@@ -1833,5 +1850,5 @@ a.brand_logo img {
 .main_related_content_portion.helpline_blog_portions .related_contents h3 {
   font-size: 14px;
   margin-bottom: 5px;
-  font-family: 'fedra_sans_devanagari_bdemi';
+  font-family: "fedra_sans_devanagari_bdemi";
 }
