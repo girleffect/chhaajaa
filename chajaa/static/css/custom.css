@@ -1417,15 +1417,10 @@ a:hover {
   margin-right: 4px;
   margin-bottom: 4px;
 }
-/* .main_related_content_portion {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: wrap;
-} */
+
 .main_related_content_portion.helpline_blog_portions.blog_articles {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
   /* margin: 70px; */
   padding: 0px 80px 60px;
