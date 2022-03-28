@@ -60,3 +60,6 @@ celerybeat-schedule
 
 #[ TESTS ]
 .coverage
+
+#[ DIVIO ]
+.divio

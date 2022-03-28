@@ -11,11 +11,12 @@ ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: define the correct URL in production!
 REDIS_SERVER_URL = os.environ.get('REDIS_SERVER_URL', 'redis://127.0.0.1:6379')
+REDIS_CACHE_NAME = os.environ.get('REDIS_CACHE_NAME', 'chaajaa')
 
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': REDIS_SERVER_URL + "/chaajaa",
+        'LOCATION': REDIS_SERVER_URL + "/" + REDIS_CACHE_NAME,
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             "IGNORE_EXCEPTIONS": True,
@@ -51,7 +52,7 @@ if DEFAULT_STORAGE_DSN:
     DefaultStorageClass = dsn_configured_storage_class('DEFAULT_STORAGE_DSN')
 
     # Django's DEFAULT_FILE_STORAGE requires the class name
-    DEFAULT_FILE_STORAGE = 'myapp.settings.DefaultStorageClass'
+    DEFAULT_FILE_STORAGE = 'chajaa.settings.production.DefaultStorageClass'
 else:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
