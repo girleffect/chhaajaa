@@ -41,7 +41,7 @@ COPY --chown=wagtail:wagtail . .
 # Install the project requirements.
 COPY requirements.txt ./
 RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt -t .
+RUN pip install -r requirements.txt 
 
 ENV DJANGO_SETTINGS_MODULE=chajaa.settings.production 
 COPY entrypoint.sh ./entrypoint.sh
