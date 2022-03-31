@@ -1847,10 +1847,20 @@ a.brand_logo img {
   margin-bottom: 5px;
   font-family: "fedra_sans_devanagari_bdemi";
 }
-ul li{
+.blog_detail_contet_parts ul li{
   font-size:20px;
 }
 .main_related_content_portion.helpline_blog_portions{
   display:flex;
   flex-wrap: wrap;
+}
+.add_tags_list_items ul{
+  padding-left: 0;
+}
+.add_tags_list_items ul li{
+  list-style-type: none
+}
+#add_tags span, .remove_tags span{
+  margin: 10px;
+color:#000000
 }

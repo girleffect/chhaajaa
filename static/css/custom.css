@@ -1,1856 +1,1866 @@
 html {
-    overflow-x: hidden !important;
-  }
-  body {
-    font-family: "fedra_sans_devanagari_bdemi";
-    font-weight: normal;
-    overflow-x: hidden;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Fedra Sans Pro Book";
-    font-weight: normal;
-    font-style: normal;
-  }
-  p {
-    font-family: "fedra_sans_devanagari_bdemi" !important;
-  }
-  a:focus {
-    text-decoration: none;
-    outline: none;
-  }
-  /* Navbar Css */
-  nav.chazza_navbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 999999;
-    background: #ff428a;
-    display: flex;
-    align-items: center;
-    padding: 10px 150px;
-    justify-content: space-between;
-  }
-  .navbar-light .navbar-brand {
-    color: #ffe366;
-  }
-  .navbar-light .navbar-toggler {
-    border: none !important;
-  }
-  .navbar-light .navbar-toggler-icon {
-    background-image: url(../images/menu-button-of-three-horizontal-lines.png) !important;
-  }
-  
-  .navbar-light .navbar-nav .nav-link.active {
-    color: #ffe366;
-    border-bottom: 4px solid #ffe366;
-  }
-  
-  .navbar-light .navbar-nav .nav-link.active:hover {
-    color: #ffe366;
-  }
-  
-  .navbar-light .navbar-nav .nav-link {
-    color: #ffe366;
-    padding: 8px 28px;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  
-  .navbar-light .navbar-nav .nav-link:hover {
-    color: #ffe366;
-  }
-  a.brand_logo img {
-    width: 100px;
-  }
-  a.brand_logo {
-    padding-right: 15px;
-  }
-  .dropdown ul.dropdown-menu.show {
-    padding: 20px 30px !important;
-    border-radius: 12px !important;
-    background-color: #ffe366 !important;
-    width: 366px;
-    position: absolute;
-    z-index: 1;
-    left: 0%;
-  }
-  .dropdown ul.dropdown-menu li {
-    border-bottom: 1px solid lightgrey;
-    padding: 10px 0;
-  }
-  .dropdown ul.dropdown-menu li:last-child {
-    border: none;
-  }
-  .dropdown ul.dropdown-menu li a {
-    font-size: 18px;
-    color: #ff428a;
-    font-weight: 600;
-  }
-  
-  /* home page Css */
-  .are_dekho_sec {
-    padding: 45px 0px 20px;
-    position: relative;
-  }
-  .are_dekho_heading {
-    position: relative;
-    z-index: 9;
-    top: -10px;
-  }
-  .inner_are_dekho_text {
-    background: #ffe559;
-    display: inline-block;
-    padding: 32px 30px 30px 30px;
-    transform: rotate(0deg);
-    margin-left: -10px;
-    clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
-    margin-top: -23px;
-  }
-  .inner_are_dekho_text h2 {
-    margin: 0;
-    font-family: "Fedra Sans Pro";
-    font-size: 22px;
-    line-height: 23px;
-    color: #ff428a;
-    font-style: italic;
-    transform: rotate(-8deg);
-    display: flex;
-  }
-  .inner_are_dekho_text h2 img {
-    position: relative;
-    top: -1px;
-    margin-left: 15px;
-    width: 20px;
-    height: auto;
-  }
-  .home_slider_data {
-    padding: 0px 0px 0px 20px;
-    margin-top: -30px;
-  }
-  .inner_hm_video_data {
-    background: #f7f7f7;
-    border-radius: 10px;
-    height: 400px;
-  }
-  .hm_videos {
-    position: relative;
-    padding-top: 56.25%;
-    height: 0;
-    width: 100%;
-  }
-  .hm_videos img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .home_video_carousel .owl-nav {
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    width: 100%;
-    margin: 0px !important;
-  }
-  .home_video_carousel .owl-nav button[class*="owl-"] {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    outline: none;
-    color: #000 !important;
-    font-size: 0px;
-    background: #d8d8d8 !important;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-  }
-  .home_video_carousel .owl-nav button.owl-prev::before {
-    content: "\f104";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 15px;
-    transform: translate(-50%, -50%);
-  }
-  .home_video_carousel .owl-nav button.owl-next::after {
-    content: "\f105";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 15px;
-    transform: translate(-50%, -50%);
-  }
-  .home_video_carousel .owl-nav button[class*="owl-"] span {
-    width: 20px;
-    display: inline-block;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    opacity: 0;
-  }
-  .video_content_data h3 {
-    font-family: "fedra_sans_devanagari_bdemi";
-    font-size: 16px;
-    color: #ff428a;
-    margin: 0px 0px 3px;
-  }
-  .video_content_data p {
-    font-size: 13px;
-    line-height: 17px;
-    margin: 0;
-    color: #000;
-  }
-  .home_video_carousel .owl-dots,
-  .testimonials .single-testimonial .owl-nav {
-    display: none;
-  }
-  .platform_we_on h3 {
-    font-family: "fedra_sans_devanagari_bdemi";
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #ff428a;
-    letter-spacing: 0.5px;
-    font-size: 30px;
-    padding-left: 20px;
-  }
-  .platform_content {
-    padding: 5px 20px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .platform_content img {
-    width: 70px;
-    height: 70px;
-    object-fit: contain;
-  }
-  .service_finder_content {
-    background: #f7f7f7;
-    margin: 25px 0px 0px;
-  }
-  .inner_service_content_data {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 15px 50px 15px;
-  }
-  .service_content_lft_sec a {
-    background: #ff428a;
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 17px;
-    transition: all 0.5s ease-in-out 0s;
-    display: flex;
-    color: #fff;
-    font-size: 11px;
-    line-height: 14px;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    box-shadow: 2px 2px 0px 1px #d11863;
-  }
-  .period_colmns_right_sec .women_problems {
-    padding: 0;
-  }
-  .women_problems {
-    padding: 0px 5px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .women_problems .womenp_cols {
-    background: #ededed;
-    padding: 12px 12px;
-    flex: 0 0 46%;
-    margin: 2%;
-    border-radius: 12px;
-    box-shadow: 7px 7px 0px -2px #d1d1d1;
-    position: relative;
-    min-height: 120px;
-  }
-  .womenp_cols a.upper_links_data {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    border-radius: 14px;
-  }
-  .period_colmns_right_sec
-    .women_problems
-    .womenp_cols
-    h3.service_finder_achor
-    a {
-    color: #ff428a;
-  }
-  .women_problems .womenp_cols h3 {
-    font-size: 17px;
-    margin: 0;
-    font-family: "fedra_sans_devanagari_bmedium";
-    font-weight: normal;
-    color: #8226fa;
-  }
-  .period_overlay_img {
-    position: absolute;
-    right: 6px;
-    bottom: 20px;
-  }
-  .articles_data_sec {
-    background: url(../images/home_icon/article_bg_img.jpg) no-repeat;
-    background-size: cover;
-    height: 232px;
-    background-position: center;
-    position: relative;
-    margin-bottom: 40px;
-  }
-  .frst_chemp_left {
-    left: 40px;
-    transform: rotate(-15deg);
-    top: 65px;
-  }
-  .article_chemp_line {
-    position: absolute;
-    max-width: 80px;
-  }
-  .article_chemp_line h5 {
-    color: #fff;
-    font-size: 11px;
-    margin: 0px;
-    font-family: "fedra_sans_devanagari_bdemi";
-  }
-  .secnd_chemp_right {
-    right: 20px;
-    transform: rotate(13deg);
-  }
-  .thrd_chemp_left {
-    top: 145px;
-    left: 20px;
-    transform: rotate(10deg);
-  }
-  .article_chemp_line h5 {
-    color: #fff;
-    font-size: 11px;
-    margin: 0px;
-    font-family: "fedra_sans_devanagari_bdemi";
-  }
-  .frth_chemp_right {
-    top: 110px;
-    right: 20px;
-    transform: rotate(-15deg);
-  }
-  .button_data_text {
-    position: absolute;
-    left: 50%;
-    bottom: 25px;
-    transform: translate(-50%, 0);
-    width: 100%;
-    text-align: center;
-    z-index: 10;
-  }
-  .button_data_text a.btn.btn_articles {
-    background: #ff428a;
-    color: #fff;
-    border-radius: 40px;
-    font-size: 11px;
-    padding: 10px 20px;
-    transition: all 0.5s ease-in-out 0s;
-    position: relative;
-    box-shadow: none;
-    outline: none;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-  }
-  .button_data_text a.btn.btn_articles::before {
-    content: "";
-    background: #cc1962;
-    position: absolute;
-    top: 5px;
-    width: 100%;
-    height: 100%;
-    left: 4px;
-    z-index: -1;
-    border-radius: 40px;
-    transition: all 0.5s ease-in-out 0s;
-  }
-  .articles_data_sec:after {
-    content: "";
-    position: absolute;
-    background: url(../images/home_icon/GE_Banner-02.png) no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    background-position: bottom;
-    bottom: 0;
-    z-index: 1;
-    margin-left: 0;
-  }
-  .about_us_sec .are_dekho_heading {
-    position: absolute;
-  }
-  .about_us_data_content {
-    display: flex;
-    justify-content: space-between;
-  }
-  .about_img img {
-    height: 100%;
-    width: 100%;
-  }
-  .about_content_dt {
-    width: 50%;
-    padding: 20px 15px;
-  }
-  .about_content_dt p {
-    font-size: 14px;
-  }
-  .about_us_sec {
-    background: #f7f7f7;
-    position: relative;
-  }
-  .about_content_dt a.btn.btn_effects {
-    background: #ff428a;
-    border-radius: 40px;
-    box-shadow: 3px 3px 0px 1px #d11863;
-    padding: 15px 26px;
-    transition: all 0.5s ease-in-out 0s;
-    color: #fff;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    font-size: 11px;
-  }
-  div#faq .card-header {
-    padding: 0;
-  }
-  div#faq .card-header a.btn.btn-header-link {
-    color: #fff;
-    font-weight: 600;
-    font-size: 18px;
-    padding: 14px;
-    width: 100%;
-    background: #ff428a;
-    text-align: left;
-    border-radius: 0;
-    position: relative;
-    padding-right: 35px;
-  }
-  div#faq {
-    padding: 50px 0;
-  }
-  
-  /* Footer Css */
-  .top_footer {
-    background: #ff428a;
-    padding: 50px 150px;
-  }
-  .top_footer .links_footer_info h2 {
-    color: #fff;
-    font-size: 30px;
-    letter-spacing: 0.2px;
-    font-family: "Fedra Sans Pro Book";
-    margin-bottom: 20px;
-  }
-  .top_footer .links_footer_info ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-  .links_footer_info ul {
-    display: flex;
-    align-items: center;
-  }
-  .links_footer_info ul li:last-child {
-    margin-right: 0px;
-  }
-  .top_footer .links_footer_info ul li a {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    color: #fff;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-size: 20px;
-    text-decoration: none;
-  }
-  .top_footer .links_footer_info ul li a img {
-    width: 50px;
-    margin-right: 15px;
-  }
-  .links_footer_info li a i {
-    font-style: normal;
-  }
-  .bottom_footer {
-    background: #262626;
-    padding: 15px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  .bottom_footer p {
-    font-size: 14px;
-    padding-left: 15px;
-    color: #fff;
-    margin: 0;
-  }
-  /* Service Finder */
-  .period_info {
-    display: flex;
-    padding: 25px 30px 15px;
-  }
-  .period_info.service_finder_period_data p {
-    padding: 0;
-    text-transform: capitalize;
-    font-family: "Fedra Sans Pro" !important;
-    font-weight: 900;
-    font-size: 21px;
-    text-align: center;
-    width: 100%;
-  }
-  .period_info p {
-    margin: 0px;
-    font-family: "fedra_sans_devanagari_bdemi";
-    font-weight: normal;
-    font-size: 15px;
-    padding-left: 40px;
-  }
-  .women_problems .womenp_cols h3.service_finder_achor a {
-    color: #8226fa;
-    text-decoration: none;
-  }
-  .peiord_anchors {
-    position: absolute;
-    bottom: 10px;
-  }
-  .peiord_anchors.service_finder_tags a.expert_link {
-    position: unset;
-    background: #fff;
-    color: #ff428a;
-    border: 1px solid #d4d4d4;
-    text-decoration: none;
-    padding: 2px 5px;
-    transition: all 0.5s ease-in-out 0s;
-    margin: 2px 2px 0px 0px;
-    display: -webkit-inline-box;
-    width: auto;
-    height: auto;
-    font-size: 8px;
-    border-radius: 12px;
-  }
-  .period_overlay_img.service_finder_images {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    width: 22%;
-    text-align: right;
-  }
-  .convinced_data_banner {
-    background: #f4e2a6 url(../images/not_convinced_image.svg);
-    padding: 25px;
-    margin: 25px 0px 0px;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-size: 250px;
-  }
-  .convinced_data_banner a {
-    background: #ff428a;
-    border-radius: 40px;
-    box-shadow: 3px 3px 0px 1px #cc1962;
-    padding: 11px 15px;
-    transition: all 0.5s ease-in-out 0s;
-    color: #fff;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    font-size: 11px;
-    margin-top: 50px;
-    display: inline-block;
-  }
-  .services_list h3 {
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    font-size: 18px;
-    color: #333;
-    padding: 10px 15px;
-  }
-  .services_list .accordion .card {
-    margin-bottom: 15px;
-    border-radius: 17px;
-    border: none;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-    background-image: linear-gradient(#fff, #fff);
-  }
-  .services_list .accordion .card .card-header {
-    background: unset;
-    border: none;
-    padding: 0;
-  }
-  .services_list .accordion .card .card-header a.btn.btn-header-link {
-    width: 100%;
-    text-align: left;
-    padding: 12px 20px;
-    font-size: 17px;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: none;
-    box-shadow: none;
-    outline: none;
-  }
-  .services_list .accordion .card .card-header .btn-header-link:after {
-    content: "\f107";
-    font-family: FontAwesome;
-    font-weight: 900;
-    float: right;
-    font-size: 26px;
-  }
-  .services_list .accordion .card .card-body {
-    padding: 0px 2px;
-  }
-  .service_tab_inner_data {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .helpline_centers {
-    background: #f4f4f4;
-    border-radius: 6px;
-    width: 46%;
-    margin: 2%;
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04);
-    position: relative;
-  }
-  a.absolte_link {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 9;
-  }
-  .service_call_icn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 99999;
-  }
-  .service_helpline_data.helpline_centers .center_header .service_call_icn img {
-    width: 40px;
-    top: 12px;
-    right: 12px;
-    height: auto;
-  }
-  .service_helpline_data.helpline_centers .center_header .service_call_icn img {
-    width: 25px;
-    position: absolute;
-    top: 7px;
-    right: 7px;
-  }
-  .see_more_data {
-    text-align: right;
-    padding: 0px 8px 12px;
-  }
-  .see_more_data a {
-    color: #262626;
-    font-size: 15px;
-    text-decoration: none;
-    outline: none;
-    font-family: "fedra_sans_devanagari_bdemi";
-  }
-  /* Bak Bak Page */
-  .hero-sec {
-    background-image: url(../images/Top-Banner.png);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 88vh;
-    position: relative;
-  }
-  .hero-sec .banner-content .ban-button {
-    position: absolute;
-    right: 6%;
-    top: 450px;
-  }
-  .hero-sec .banner-content .ban-button a {
-    color: #ff428a;
-    background-color: #ffe366;
-    padding: 12px 28px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1.6rem;
-    -webkit-box-shadow: 4px 4px 0px 1px #d5ba42;
-    box-shadow: 4px 4px 0px 1px #d5ba42;
-    font-weight: bolder;
-    -webkit-transition: 0.4s ease-in-out;
-    text-transform: uppercase;
-    transition: 0.4s ease-in-out;
-  }
-  .hero-sec
-    .banner-content
-    .ban-button
-    a:hover,
-    .footer-content
-    .footer-button
-    a:hover,
-  .jkk-banner .jk-btn a:hover {
-    color: #ffe366;
-    background-color: #ff428a;
-  }
-  .f-sec {
-    padding: 80px 0;
-    position: relative;
-  }
-  .f-sec .bbg-heading {
-    position: absolute;
-    /* top: -6%; */
-    top: -110px;
-    left: -5px;
-  }
-  .peshkash_heading {
-    position: relative;
-    z-index: 9;
-    top: 18px;
-  }
-  .peshkash_text {
-    background: #ff428a;
-    display: inline-block;
-    padding: 45px 30px 30px 30px;
-    transform: rotate(-4deg);
-    margin-left: -5px;
-    clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
-    margin-top: 80px;
-  }
-  .peshkash_text h2 {
-    font-size: 2.8rem;
-    transform: rotate(-10deg);
-    display: flex;
-    position: relative;
-    top: 0;
-    color: #ffe559 !important;
-    font-style: italic;
-    font-family: "Fedra Sans Pro";
-  }
-  .f-sec .h-text h6 {
-    padding: 0 18%;
-    color: #000;
-    font-size: 2.2rem;
-    line-height: 1.3;
-    word-spacing: 0px;
-    text-align: center;
-  }
-  .card_div {
-    margin: auto;
-    display: flex;
-    padding: 0 16%;
-  }
-  .f-sec .item {
-    min-height: 150px;
-    height: 150px;
-    padding: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    border-radius: 12px;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-    background: #8080801c;
-  }
-  .f-sec .item h6 {
-    text-align: center;
-    color: #ff428a;
-    margin-bottom: 0px;
-    font-weight: 600;
-    font-size: 1.6rem;
-    line-height: 1.2;
-    padding: 0 15%;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .f-sec .item:hover {
-    background-color: #ff428a;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-  }
-  .f-sec .item:hover h6 {
-    color: #fff;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-  }
-  a:hover {
-    color: #0056b3;
-    text-decoration: none;
-  }
-  .heading {
-    color: #000;
-    font-size: 2.2rem;
-    font-weight: 600;
-    padding: 0px 24%;
-    line-height: 1.2;
-  }
-  .feature {
-    margin-bottom: 70px;
-    padding: 0 16%;
-  }
-  .feature a {
-    color: #ff428a;
-    font-size: 3.7rem;
-    font-weight: 600;
-  }
-  .testimonials {
-    position: relative;
-    padding-bottom: 70px;
-    background: #8080801c;
-  }
-  .testimonials_heading {
-    position: relative;
-    z-index: 9;
-    top: -23px;
-  }
-  .testimonials_heading .peshkash_text {
-    margin-top: 0;
-  }
-  
-  .testimonials h2 {
-    font-size: 2.75rem;
-    color: #000;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .padding_vertical {
-    padding: 0 10%;
-  }
-  .testimonials .single-testimonial {
-    padding: 60px 60px;
-    background-color: #d1d1d1;
-    position: relative;
-    border-radius: 12px;
-  }
-  .testimonials .single-testimonial .quotaion-left {
-    position: absolute;
-    top: -7%;
-    left: -2%;
-  }
-  .testimonials .single-testimonial .quotaion-left i {
-    color: #8226fa;
-    font-size: 80px;
-  }
-  .testimonials .single-testimonial .quotaion-right {
-    position: absolute;
-    bottom: -7%;
-    right: -2%;
-  }
-  .testimonials .single-testimonial .quotaion-right i {
-    color: #8226fa;
-    font-size: 80px;
-  }
-  .testimonials .single-testimonial h6 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #000;
-  }
-  .testimonials .single-testimonial .owl-dots {
-    position: absolute;
-    bottom: -100px;
-    left: 48%;
-  }
-  .owl-theme .owl-dots .owl-dot.active span,
-  .owl-theme .owl-dots .owl-dot:hover span {
-    background: #8226fa;
-  }
-  .jkk-banner {
-    background-color: #8226fa;
-    padding: 70px 0;
-    position: relative;
-  }
-  .jkk-banner .jkk-heading {
-    position: absolute;
-    top: -6%;
-    left: -4px;
-  }
-  .jkk_heading {
-    position: relative;
-    z-index: 9;
-    top: -50px;
-  }
-  .jkk_heading .peshkash_text h2 {
-    transform: rotate(-7deg);
-  }
-  .jkk-banner .jk-btn {
-    margin: 0 auto;
-    width: auto;
-    text-align: center;
-  }
-  .jkk-banner .jk-btn a {
-    color: #ff428a;
-    cursor: pointer;
-    background-color: #ffe366;
-    padding: 12px 41px;
-    border-radius: 50px;
-    font-size: 20px;
-    -webkit-box-shadow: 4px 4px 0px 1px #d5ba42;
-    box-shadow: 4px 4px 0px 1px #d5ba42;
-    font-weight: 700;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-  }
-  .jkk-heading-h2 {
-    font-size: 2.7rem;
-    color: #ffe366;
-    font-weight: 600;
-    padding: 1% 31%;
-    line-height: 1.2;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .jkk-banner .single-feature {
-    margin-top: 20px;
-    text-align: center;
-  }
-  .jkk-banner .single-feature h6 {
-    /* font-size: 36px; */
-    font-size: 2.2rem;
-    color: #ffe366;
-    font-weight: 700;
-    margin-top: 10px;
-    padding: 0px 8%;
-  }
-  .rules {
-    padding: 60px 0;
-    position: relative;
-  }
-  .rules .bbg-rules {
-    position: absolute;
-    top: -6%;
-    left: -4px;
-  }
-  .rules_heading {
-    position: relative;
-    z-index: 9;
-    top: -58px;
-  }
-  .padding_vertical {
-    padding: 0 10%;
-  }
-  .padding_hortizontal {
-    padding: 5% 0;
-  }
-  
-  .rules .single-rule {
-    text-align: center;
-    margin-top: 40px;
-  }
-  .single-rule img {
-    width: 180px;
-  }
-  .rules .single-rule h6 {
-    color: #000;
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-align: center;
-    padding: 20px 0;
-  }
-  .f-sec.new-plan .item {
-    background: #ffffff;
-  }
-  .f-sec.new-plan {
-    background: #8080801c;
-  }
-  .f-sec.new-plan .item h6 {
-    padding: 0 4%;
-  }
-  .f-sec .item:hover {
-    background-color: #ff428a;
-    -webkit-transition: 0.4s ease-in-out;
-    transition: 0.4s ease-in-out;
-  }
-  .btm-banner {
-    height: 120vh;
-    background-image: url(../images/btm-banner.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .footer-sec {
-    background-image: url(../images/Bottom\ banner.png);
-    min-height: auto;
-    height: auto;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 6% 6%;
-  }
-  
-  .footer-sec h6 {
-    color: #fff;
-    font-weight: 900;
-    padding: 0% 15% 0% 4%;
-    font-size: 1.8rem;
-    letter-spacing: 0px;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .footer-sec h2 {
-    font-size: 3rem;
-    color: #ffe366;
-    font-weight: 600;
-    padding: 0% 0% 0% 4%;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .footer-content {
-    margin-top: 40px;
-  }
-  .footer-content .footer-button a {
-    color: #ff428a;
-    background-color: #ffe366;
-    cursor: pointer;
-    padding: 12px 28px;
-    border-radius: 50px;
-    font-size: 1.6rem;
-    -webkit-box-shadow: 4px 4px 0px 1px #d5ba42;
-    box-shadow: 4px 4px 0px 1px #d5ba42;
-    font-weight: bolder;
-    -webkit-transition: 0.4s ease-in-out;
-    text-transform: uppercase;
-    transition: 0.4s ease-in-out;
-    width: 200px;
-    text-align: center;
-    margin: 0% 0% 0% 4%;
-  }
-  /* bol behen */
-  .bb-hero-sec {
-    padding: 0;
-    margin: 0;
-    position: relative;
-  }
-  .bb-hero-sec img {
-    width: 100%;
-    height: auto;
-  }
-  .whats-app {
-    position: absolute;
-    top: 60%;
-    right: 16%;
-  }
-  .bb-hero-sec img,
-  .bbkh-img img {
-    width: 100%;
-    height: auto;
-  }
-  .bb-kya-hai {
-    padding: 40px 0;
-    position: relative;
-  }
-  .bbkh-cmnt {
-    position: absolute;
-    bottom: 20%;
-    right: 27.7%;
-    z-index: 1000;
-  }
-  .bbkh-img {
-    width: auto;
-    height: auto;
-    text-align: left;
-  }
-  .bbkh-text {
-    text-align: center;
-  }
-  .bbkh-text .heading {
-    font-size: 36px !important;
-    font-weight: 700;
-    color: #000;
-    padding: 0;
-  }
-  .bbkh-text h6 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000;
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 0px;
-  }
-  .bbkh-text p {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 40px;
-  }
-  .sticky {
-    position: fixed;
-    top: 80%;
-    right: 2%;
-    z-index: 1000;
-  }
-  .wht-text {
-    position: absolute;
-    top: -75%;
-    right: 1%;
-  }
-  .talk-bubble {
-    margin: 40px;
-    display: inline-block;
-    position: relative;
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-    background-color: #ff428a;
-    transition: 0.4s ease-in-out;
-  }
-  .talktext p {
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 0;
-    color: #ffe366;
-  }
-  .tri-right.btm-right:after {
-    content: " ";
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: auto;
-    right: 0px;
-    bottom: -20px;
-    border: 12px solid;
-    border-color: #ff428a #ff428a transparent transparent;
-  }
-  .text-end {
-    text-align: right !important;
-  }
-  .bob-img.text-end img {
-    margin-top: 26%;
-  }
-  .bol-behan-testimonials .heading {
-    font-size: 42px;
-    font-weight: 700;
-    color: #000;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .bol-behan-testimonials .tst-bck {
-    background-color: #e5e5e5;
-    border-radius: 20px;
-    padding: 22px;
-    margin-left: 230px;
-    text-align: right;
-  }
-  .testi {
-    padding: 64px;
-    background-color: #e5e5e5;
-    border-radius: 20px;
-    margin-top: 40px;
-    box-shadow: 4px 8px 10px rgb(0 0 0 / 20%);
-  }
-  .testi p {
-    font-size: 30px;
-    font-weight: 500;
-    color: #000;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .owl-theme .owl-nav.disabled + .owl-dots {
-    margin-top: 10px;
-  }
-  .testi .owl-dots {
-    position: absolute;
-    right: -11%;
-    bottom: -66%;
-    background: #e4e4e4;
-    padding: 10px 10px 4px 10px;
-    border-radius: 5px;
-  }
-  .sm-height {
-    height: 250px;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-    display: flex;
-  }
-  .sky-blue-sec {
-    margin: 160px 0;
-  }
-  .single-feat {
-    margin-top: 16px;
-  }
-  .sk {
-    background-color: #cce8e5;
-    border-radius: 20px;
-    margin-left: 20px;
-    width: 100%;
-    height: 115px;
-    margin: auto;
-    padding: 40px 40px;
-    text-align: center;
-  }
-  .sk .rich-text p {
-    margin: auto;
-  }
-  .sk .rich-text {
-    font-size: 24px;
-  }
-  .hands-illu {
-    margin-top: 50%;
-  }
-  .gray-tab {
-    background-color: #e5e5e5;
-    border-radius: 20px;
-    margin-left: 20px;
-    padding: 30px 30px;
-    margin-top: 40px;
-  }
-  .gray-tab .heading {
-    font-size: 36px;
-    font-weight: 700;
-    color: #000;
-    padding: 0 !important;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .gray-tab p {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 0;
-  }
-  .gray-tab .rich-text {
-    display: inline;
-    gap: 10px;
-    margin: auto;
-  }
-  .gray-tab .rich-text,
-  .last-sec .rich-text,
-  .sky-tab .rich-text {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 0;
-  }
-  .gray-tab img {
-    width: 40px;
-    height: 40px;
-  }
-  .emoji-icon img {
-    width: 40px !important;
-  }
-  .richtext-image {
-    width: 80%;
-    height: 100%;
-  }
-  .margin-left-custom {
-    margin-left: 20px;
-  }
-  .sky-tab .rich-text p,
-  .gray-tab .rich-text p {
-    display: inline;
-    margin: auto 5px;
-  }
-  .l-chat {
-    margin-top: 120px;
-  }
-  
-  .sky-tab {
-    background-color: #cce8e5;
-    border-radius: 20px;
-    margin-left: 20px;
-    padding: 50px 50px;
-    margin-top: 40px;
-  }
-  .sky-tab .heading {
-    font-size: 36px;
-    font-weight: 700;
-    color: #000;
-    padding: 0;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .sky-tab .rich-text img {
-    width: 25px;
-    height: 25px;
-  }
-  .sky-tab p {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000;
-    margin-bottom: 0;
-  }
-  .girl-illu {
-    margin: 30% 0;
-  }
-  .last-sec {
-    background: linear-gradient(
-      0deg,
-      rgba(205, 232, 230, 1) 0%,
-      rgba(255, 255, 255, 1) 116%
-    );
-    width: 100%;
-    height: auto;
-    padding: 80px 0;
-    margin-top: 120px;
-  }
-  .blue-txt {
-    color: #8226fa;
-    font-size: 36px;
-    font-weight: 700;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  
-  /* Blog Page */
-  .blg_inner_carousel_data {
-    position: relative;
-  }
-  .blog_post_image img {
-    width: 100%;
-  }
-  .post_overlay_data {
-    position: absolute;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-  }
-  .blog_bann_desp_info {
-    display: flex;
-    align-items: flex-end;
-    padding: 0px 20px;
-    margin-top: 40px;
-    justify-content: space-between;
-  }
-  .blog_btn_info {
-    width: 60%;
-    text-align: right;
-  }
-  .blog_bann_desp_info a.btn.btn_click_here {
-    background: #ff428a;
-    border-radius: 40px;
-    box-shadow: 3px 3px 0px 1px #d11863;
-    padding: 11px 26px;
-    transition: all 0.5s ease-in-out 0s;
-    color: #fff;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    font-size: 11px;
-  }
-  .main_blog_articles_data {
-    padding: 15px;
-  }
-  .search-form-blog {
-    display: flex;
-    position: relative;
-    max-width: 700px;
-    margin: auto;
-  }
-  .search-form-blog input.form-control {
-    padding: 25px;
-    border-radius: 50px;
-  }
-  .search-form-blog input[type="submit"] {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50px;
-    border: 1px solid pink;
-    background: #ff428a;
-    color: #fff;
-    padding: 5px 25px;
-    line-height: initial;
-    font-size: 18px;
-    transition: all 0.5s ease-in-out 0s;
-  }
-  .related_images {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    overflow: hidden;
-  }
-  
-  .blog_bann_desp_info a.btn.btn_click_here {
-    background: #ff428a;
-    border-radius: 40px;
-    box-shadow: 3px 3px 0px 1px #d11863;
-    padding: 11px 26px;
-    transition: all 0.5s ease-in-out 0s;
-    color: #fff;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    font-size: 11px;
-  }
-  .main_related_content_portion.helpline_blog_portions.blog_articles
-    .related_posts_data
-    .related_contents {
-    background: #f7f7f7;
-  }
-  .related_contents a {
-    font-size: 11px;
-    color: #333;
-    text-decoration: none;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .peiord_anchors_blogs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .peiord_anchors_blogs a {
-    font-family: "fedra_sans_devanagari_bdemi";
-    font-weight: normal;
-    color: #ff428a !important;
-    text-decoration: none;
-    font-size: 10px;
-    background: #fff;
-    padding: 2px 6px;
-    border-radius: 15px;
-    border: 1px solid #ddd;
-    margin-right: 4px;
-    margin-bottom: 4px;
-  }
-  
-  .main_related_content_portion.helpline_blog_portions.blog_articles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 50px;
-    /* margin: 70px; */
-    padding: 0px 80px 60px;
-    align-items: center;
-  }
-  .main_related_content_portion.helpline_blog_portions.blog_articles
-    .related_posts_data {
-    width: 100%;
-    margin: 13px 0px 0px;
-  }
-  .related_images img {
-    width: 100%;
-  }
-  .tags_listing_data {
-    padding: 0px 10px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    justify-content: space-between;
-  }
-  .more_article_data a {
-    color: #ff428a;
-    font-size: 14px;
-    text-decoration: underline;
-    text-align: center;
-    margin: auto;
-    display: block;
-    text-transform: capitalize;
-  }
-  
-  section.searched_tags {
-    padding: 20px 15px;
-  }
-  .searched_info h3 a {
-    margin-right: 10px;
-  }
-  .searched_info h3 {
-    font-size: 18px;
-    font-family: "fedra_sans_devanagari_bdemi";
-  }
-  .dropdown ul.dropdown-menu.show {
-    padding: 20px 30px !important;
-    border-radius: 12px !important;
-    background-color: #ffe366 !important;
-    width: 366px;
-    position: absolute;
-    z-index: 1;
-    /* left: inherit; */
-    left: 0%;
-  }
-  .searched_info h3 img {
-    max-width: 12px;
-  }
-  .tags_listing_data {
-    padding: 0px 10px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    justify-content: space-between;
-  }
-  .add_tgs a {
-    color: #ff428a;
-    font-size: 12px;
-    outline: none;
-    text-decoration: none;
-  }
-  .add_tgs a span {
-    padding-left: 3px;
-    color: #000;
-    font-size: 14px;
-  }
-  .liberate_img img {
-    border-radius: 10px 10px 0px 0px;
-  }
-  a.call_data {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 99;
-  }
-  a.call_data img {
-    max-width: 34px;
-  }
-  .librate_inner_carousels {
-    background: #efefef;
-    border-radius: 0px 0px 10px 10px;
-    position: relative;
-    height: 250px;
-  }
-  .librate_content_part {
-    padding: 15px;
-    display: flex;
-  }
-  .content_left_data {
-    padding-right: 10px;
-    margin-right: 10px;
-  }
-  section.related_articles {
-    background: #f2f2f2;
-    padding: 20px 15px;
-  }
-  .related_headings {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  .related_headings h3 {
-    padding-left: 10px;
-    font-size: 17px;
-    color: #000;
-    font-family: "Fedra Sans Pro";
-    margin: 0px;
-  }
-  .related_headings a {
-    font-size: 14px;
-    color: #ff428a;
-    text-decoration: underline;
-    float: right;
-  }
-  .content_left_data h4 a.search_titles {
-    color: #000;
-  }
-  .content_left_data a.helpline_links {
-    font-size: 12px;
-    color: #ff428a;
-    text-transform: capitalize;
-    font-family: "fedra_sans_devanagari_bdemi";
-  }
-  
-  .gynac_direct_links a {
-    font-size: 11px;
-    color: #ff428a;
-    font-family: "fedra_sans_devanagari_bmedium";
-    margin-right: 3px;
-    padding: 2px 7px;
-    background: #fff;
-    border: 1px solid #d4d4d4;
-    border-radius: 20px;
-    text-decoration: none;
-  }
-  section.lybrate_banner_images {
-    position: relative;
-  }
-  a.back_data_btn {
-    position: absolute;
-    z-index: 99;
-    top: 10px;
-    left: 10px;
-  }
-  section.lybrate_banner_images .librate_carousels .owl-dots {
-    position: absolute;
-    top: 86%;
-    left: auto;
-    transform: unset;
-    right: 15px;
-  }
-  .librate_carousels .owl-dots button.owl-dot {
-    box-shadow: none !important;
-    outline: none;
-  }
-  .lybrate_share_info {
-    display: flex;
-  }
-  .lyb_content_area h3 {
-    font-size: 16px;
-    text-transform: uppercase;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-  }
-  .timing_price ul {
-    display: flex;
-  }
-  .timing_price ul li {
-    width: 40%;
-    margin-right: 10%;
-    font-size: 13px;
-    text-transform: uppercase;
-    color: #a6a6a6;
-  }
-  .timing_price ul li span {
-    display: block;
-    text-transform: capitalize;
-    color: #000;
-    font-family: "Fedra Sans Pro";
-    margin-top: 3px;
-  }
-  .website_info a.btn.btn_web {
-    background: #ff428a;
-    border-radius: 30px;
-    line-height: unset;
-    color: #fff;
-    padding: 7px 22px;
-    font-size: 12px;
-    margin-right: 10px;
-    box-shadow: 4px 4px 0px 0px #cc1962;
-    transition: all 0.5s ease-in-out 0s;
-    outline: none;
-  }
-  .send_data_icon img {
-    width: 38px;
-    position: relative;
-    top: 3px;
-  }
-  section.related_services_blog {
-    background: #f2f2f2;
-    padding: 20px 15px;
-  }
-  
-  .related_services_blog h2 {
-    font-size: 17px;
-    font-family: "Fedra Sans Pro";
-    font-weight: normal;
-    padding: 0px 15px;
-  }
-  a.see_all_btn {
-    font-family: "Fedra Sans Pro Book";
-    font-size: 13px;
-    text-decoration: underline;
-    float: right;
-    color: #ff428a;
-    position: relative;
-    top: 1px;
-  }
-  .service_tab_inner_data {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .helpline_centers {
-    background: #f4f4f4;
-    border-radius: 6px;
-    width: 46%;
-    margin: 2%;
-    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04);
-    position: relative;
-  }
-  .helpline_centers.blog_helpline_center_data .center_header {
-    position: relative;
-    padding: 0;
-  }
-  .blog_call_data {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    z-index: 999;
-  }
-  .service_tab_inner_data.blos_part_included .center_body {
-    background: #fff;
-  }
-  .helpline_centers.blog_helpline_center_data .center_body h4 {
-    font-size: 14px;
-    margin-bottom: 4px;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .helpline_centers.blog_helpline_center_data .center_body h4 a {
-    color: #333;
-  }
-  .center_body p {
-    font-size: 20px;
-  }
-  .blog_share_info {
-    display: flex;
-  }
-  .blog_share_info .lybrate_share_send_data {
-    width: 10%;
-    display: flex;
-    /* justify-content: flex-end; */
-    right: 0;
-    position: absolute;
-    margin-top: -35px;
-  }
-  .lybrate_share_send_data a span {
-    color: #ff428a;
-    font-size: 12px;
-    margin-top: 5px;
-    display: block;
-    text-align: center;
-  }
-  .blog_detail_contet_parts {
-    margin-top: 20px;
-  }
-  .bottom_footer img {
-    max-width: 55px;
-  }
-  .bubble {
-    display: inline-block;
-    position: relative;
-    padding: 27px 17px;
-    border-radius: 100%;
-    width: 232px;
-    background: white;
-    font-family: "fedra_sans_devanagari_bdemi";
-    font-weight: 500;
-    clear: both;
-    height: 178px;
-    font-size: 1.8rem;
-    text-align: center;
-    color: #8226fa;
-  }
-  .buuble_1 {
-    position: absolute;
-    left: -2%;
-    top: 200px;
-  }
-  .bubble:before {
-    content: "";
-    position: absolute;
-    bottom: 5px;
-    height: 26px;
-    width: 65px;
-  }
-  .bubble.right {
-    float: right;
-    margin: 10px 10px 60px 100px;
-  }
-  .right:before {
-    border-radius: 0 0 0 100%;
-    box-shadow: 2px -2px 0 0 #fff inset, 23px 0 0 0 #fff inset,
-      25px -2px 0 0 #fff inset;
-    right: 0;
-  }
-  .service_helpline_data.helpline_centers .center_header {
-    padding: 0;
-    position: relative;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    overflow: hidden;
-  }
-  .helpline_centers .center_header img {
-    max-width: 100%;
-  }
-  .service_call_icn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 99999;
-  }
-  .service_helpline_data.helpline_centers .center_body {
-    padding: 12px 12px;
-    background: none;
-  }
-  .services_list {
-    background: #f7f7f7;
-    padding: 20px;
-  }
-  button.social_buttons {
-    display: none;
-  }
-  .video_content_data {
-    padding: 10px 15px 10px;
-  }
-  .service_content_lft_sec h4 {
-    font-size: 24px;
-    font-family: "Fedra Sans Pro";
-    color: #ff428a;
-    margin-top: 10px;
-    line-height: 33px;
-  }
-  .service_content_lft_sec a img {
-    width: 7px;
-  }
-  .service_content_lft_sec {
-    width: 30%;
-    padding-top: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .button_data_text a.btn.btn_articles img.home-related-icon {
-    margin-left: 11px;
-  }
-  .home-related-icon {
-    width: 7px;
-  }
-  .about_img {
-    width: 50%;
-  }
-  .librate_list_content {
-    margin: 20px 0px 0px;
-  }
-  section.lybrate_description_data {
-    padding: 20px 20px 25px;
-  }
-  a.brand_logo img {
-    width: 70px;
-  }
+  overflow-x: hidden !important;
+}
+body {
+  font-family: "fedra_sans_devanagari_bdemi";
+  font-weight: normal;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fedra Sans Pro Book";
+  font-weight: normal;
+  font-style: normal;
+}
+p {
+  font-family: "fedra_sans_devanagari_bdemi" !important;
+}
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+/* Navbar Css */
+nav.chazza_navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+  background: #ff428a;
+  display: flex;
+  align-items: center;
+  padding: 10px 150px;
+  justify-content: space-between;
+}
+.navbar-light .navbar-brand {
+  color: #ffe366;
+}
+.navbar-light .navbar-toggler {
+  border: none !important;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url(../images/menu-button-of-three-horizontal-lines.png) !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #ffe366;
+  border-bottom: 4px solid #ffe366;
+}
+
+.navbar-light .navbar-nav .nav-link.active:hover {
+  color: #ffe366;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #ffe366;
+  padding: 8px 28px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ffe366;
+}
+a.brand_logo img {
+  width: 100px;
+}
+a.brand_logo {
+  padding-right: 15px;
+}
+.dropdown ul.dropdown-menu.show {
+  padding: 20px 30px !important;
+  border-radius: 12px !important;
+  background-color: #ffe366 !important;
+  width: 366px;
+  position: absolute;
+  z-index: 1;
+  left: 0%;
+}
+.dropdown ul.dropdown-menu li {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 0;
+}
+.dropdown ul.dropdown-menu li:last-child {
+  border: none;
+}
+.dropdown ul.dropdown-menu li a {
+  font-size: 18px;
+  color: #ff428a;
+  font-weight: 600;
+}
+
+/* home page Css */
+.are_dekho_sec {
+  padding: 45px 0px 20px;
+  position: relative;
+}
+.are_dekho_heading {
+  position: relative;
+  z-index: 9;
+  top: -10px;
+}
+.inner_are_dekho_text {
+  background: #ffe559;
+  display: inline-block;
+  padding: 32px 30px 30px 30px;
+  transform: rotate(0deg);
+  margin-left: -10px;
+  clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
+  margin-top: -23px;
+}
+.inner_are_dekho_text h2 {
+  margin: 0;
+  font-family: "Fedra Sans Pro";
+  font-size: 22px;
+  line-height: 23px;
+  color: #ff428a;
+  font-style: italic;
+  transform: rotate(-8deg);
+  display: flex;
+}
+.inner_are_dekho_text h2 img {
+  position: relative;
+  top: -1px;
+  margin-left: 15px;
+  width: 20px;
+  height: auto;
+}
+.home_slider_data {
+  padding: 0px 0px 0px 20px;
+  margin-top: -30px;
+}
+.inner_hm_video_data {
+  background: #f7f7f7;
+  border-radius: 10px;
+  height: 400px;
+}
+.hm_videos {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  width: 100%;
+}
+.hm_videos img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home_video_carousel .owl-nav {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+  margin: 0px !important;
+}
+.home_video_carousel .owl-nav button[class*="owl-"] {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  outline: none;
+  color: #000 !important;
+  font-size: 0px;
+  background: #d8d8d8 !important;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.home_video_carousel .owl-nav button.owl-prev::before {
+  content: "\f104";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+}
+.home_video_carousel .owl-nav button.owl-next::after {
+  content: "\f105";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 15px;
+  transform: translate(-50%, -50%);
+}
+.home_video_carousel .owl-nav button[class*="owl-"] span {
+  width: 20px;
+  display: inline-block;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+}
+.video_content_data h3 {
+  font-family: "fedra_sans_devanagari_bdemi";
+  font-size: 16px;
+  color: #ff428a;
+  margin: 0px 0px 3px;
+}
+.video_content_data p {
+  font-size: 13px;
+  line-height: 17px;
+  margin: 0;
+  color: #000;
+}
+.home_video_carousel .owl-dots,
+.testimonials .single-testimonial .owl-nav {
+  display: none;
+}
+.platform_we_on h3 {
+  font-family: "fedra_sans_devanagari_bdemi";
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ff428a;
+  letter-spacing: 0.5px;
+  font-size: 30px;
+  padding-left: 20px;
+}
+.platform_content {
+  padding: 5px 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.platform_content img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+.service_finder_content {
+  background: #f7f7f7;
+  margin: 25px 0px 0px;
+}
+.inner_service_content_data {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 50px 15px;
+}
+.service_content_lft_sec a {
+  background: #ff428a;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 17px;
+  transition: all 0.5s ease-in-out 0s;
+  display: flex;
+  color: #fff;
+  font-size: 11px;
+  line-height: 14px;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  box-shadow: 2px 2px 0px 1px #d11863;
+}
+.period_colmns_right_sec .women_problems {
+  padding: 0;
+}
+.women_problems {
+  padding: 0px 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.women_problems .womenp_cols {
+  background: #ededed;
+  padding: 12px 12px;
+  flex: 0 0 46%;
+  margin: 2%;
+  border-radius: 12px;
+  box-shadow: 7px 7px 0px -2px #d1d1d1;
+  position: relative;
+  min-height: 120px;
+}
+.womenp_cols a.upper_links_data {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 14px;
+}
+.period_colmns_right_sec
+  .women_problems
+  .womenp_cols
+  h3.service_finder_achor
+  a {
+  color: #ff428a;
+}
+.women_problems .womenp_cols h3 {
+  font-size: 17px;
+  margin: 0;
+  font-family: "fedra_sans_devanagari_bmedium";
+  font-weight: normal;
+  color: #8226fa;
+}
+.period_overlay_img {
+  position: absolute;
+  right: 6px;
+  bottom: 20px;
+}
+.articles_data_sec {
+  background: url(../images/home_icon/article_bg_img.jpg) no-repeat;
+  background-size: cover;
+  height: 232px;
+  background-position: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+.frst_chemp_left {
+  left: 40px;
+  transform: rotate(-15deg);
+  top: 65px;
+}
+.article_chemp_line {
+  position: absolute;
+  max-width: 80px;
+}
+.article_chemp_line h5 {
+  color: #fff;
+  font-size: 11px;
+  margin: 0px;
+  font-family: "fedra_sans_devanagari_bdemi";
+}
+.secnd_chemp_right {
+  right: 20px;
+  transform: rotate(13deg);
+}
+.thrd_chemp_left {
+  top: 145px;
+  left: 20px;
+  transform: rotate(10deg);
+}
+.article_chemp_line h5 {
+  color: #fff;
+  font-size: 11px;
+  margin: 0px;
+  font-family: "fedra_sans_devanagari_bdemi";
+}
+.frth_chemp_right {
+  top: 110px;
+  right: 20px;
+  transform: rotate(-15deg);
+}
+.button_data_text {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  transform: translate(-50%, 0);
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.button_data_text a.btn.btn_articles {
+  background: #ff428a;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 11px;
+  padding: 10px 20px;
+  transition: all 0.5s ease-in-out 0s;
+  position: relative;
+  box-shadow: none;
+  outline: none;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+}
+.button_data_text a.btn.btn_articles::before {
+  content: "";
+  background: #cc1962;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  height: 100%;
+  left: 4px;
+  z-index: -1;
+  border-radius: 40px;
+  transition: all 0.5s ease-in-out 0s;
+}
+.articles_data_sec:after {
+  content: "";
+  position: absolute;
+  background: url(../images/home_icon/GE_Banner-02.png) no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background-position: bottom;
+  bottom: 0;
+  z-index: 1;
+  margin-left: 0;
+}
+.about_us_sec .are_dekho_heading {
+  position: absolute;
+}
+.about_us_data_content {
+  display: flex;
+  justify-content: space-between;
+}
+.about_img img {
+  height: 100%;
+  width: 100%;
+}
+.about_content_dt {
+  width: 50%;
+  padding: 20px 15px;
+}
+.about_content_dt p {
+  font-size: 14px;
+}
+.about_us_sec {
+  background: #f7f7f7;
+  position: relative;
+}
+.about_content_dt a.btn.btn_effects {
+  background: #ff428a;
+  border-radius: 40px;
+  box-shadow: 3px 3px 0px 1px #d11863;
+  padding: 15px 26px;
+  transition: all 0.5s ease-in-out 0s;
+  color: #fff;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  font-size: 11px;
+}
+div#faq .card-header {
+  padding: 0;
+}
+div#faq .card-header a.btn.btn-header-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 14px;
+  width: 100%;
+  background: #ff428a;
+  text-align: left;
+  border-radius: 0;
+  position: relative;
+  padding-right: 35px;
+}
+div#faq {
+  padding: 50px 0;
+}
+
+/* Footer Css */
+.top_footer {
+  background: #ff428a;
+  padding: 50px 150px;
+}
+.top_footer .links_footer_info h2 {
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 0.2px;
+  font-family: "Fedra Sans Pro Book";
+  margin-bottom: 20px;
+}
+.top_footer .links_footer_info ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.links_footer_info ul {
+  display: flex;
+  align-items: center;
+}
+.links_footer_info ul li:last-child {
+  margin-right: 0px;
+}
+.top_footer .links_footer_info ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 20px;
+  text-decoration: none;
+}
+.top_footer .links_footer_info ul li a img {
+  width: 50px;
+  margin-right: 15px;
+}
+.links_footer_info li a i {
+  font-style: normal;
+}
+.bottom_footer {
+  background: #262626;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.bottom_footer p {
+  font-size: 14px;
+  padding-left: 15px;
+  color: #fff;
+  margin: 0;
+}
+/* Service Finder */
+.period_info {
+  display: flex;
+  padding: 25px 30px 15px;
+}
+.period_info.service_finder_period_data p {
+  padding: 0;
+  text-transform: capitalize;
+  font-family: "Fedra Sans Pro" !important;
+  font-weight: 900;
+  font-size: 21px;
+  text-align: center;
+  width: 100%;
+}
+.period_info p {
+  margin: 0px;
+  font-family: "fedra_sans_devanagari_bdemi";
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 40px;
+}
+.women_problems .womenp_cols h3.service_finder_achor a {
+  color: #8226fa;
+  text-decoration: none;
+}
+.peiord_anchors {
+  position: absolute;
+  bottom: 10px;
+}
+.peiord_anchors.service_finder_tags a.expert_link {
+  position: unset;
+  background: #fff;
+  color: #ff428a;
+  border: 1px solid #d4d4d4;
+  text-decoration: none;
+  padding: 2px 5px;
+  transition: all 0.5s ease-in-out 0s;
+  margin: 2px 2px 0px 0px;
+  display: -webkit-inline-box;
+  width: auto;
+  height: auto;
+  font-size: 8px;
+  border-radius: 12px;
+}
+.period_overlay_img.service_finder_images {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 22%;
+  text-align: right;
+}
+.convinced_data_banner {
+  background: #f4e2a6 url(../images/not_convinced_image.svg);
+  padding: 25px;
+  margin: 25px 0px 0px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 250px;
+}
+.convinced_data_banner a {
+  background: #ff428a;
+  border-radius: 40px;
+  box-shadow: 3px 3px 0px 1px #cc1962;
+  padding: 11px 15px;
+  transition: all 0.5s ease-in-out 0s;
+  color: #fff;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  font-size: 11px;
+  margin-top: 50px;
+  display: inline-block;
+}
+.services_list h3 {
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  font-size: 18px;
+  color: #333;
+  padding: 10px 15px;
+}
+.services_list .accordion .card {
+  margin-bottom: 15px;
+  border-radius: 17px;
+  border: none;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  background-image: linear-gradient(#fff, #fff);
+}
+.services_list .accordion .card .card-header {
+  background: unset;
+  border: none;
+  padding: 0;
+}
+.services_list .accordion .card .card-header a.btn.btn-header-link {
+  width: 100%;
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 17px;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+.services_list .accordion .card .card-header .btn-header-link:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-weight: 900;
+  float: right;
+  font-size: 26px;
+}
+.services_list .accordion .card .card-body {
+  padding: 0px 2px;
+}
+.service_tab_inner_data {
+  display: flex;
+  flex-wrap: wrap;
+}
+.helpline_centers {
+  background: #f4f4f4;
+  border-radius: 6px;
+  width: 46%;
+  margin: 2%;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+a.absolte_link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.service_call_icn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+}
+.service_helpline_data.helpline_centers .center_header .service_call_icn img {
+  width: 40px;
+  top: 12px;
+  right: 12px;
+  height: auto;
+}
+.service_helpline_data.helpline_centers .center_header .service_call_icn img {
+  width: 25px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+}
+.see_more_data {
+  text-align: right;
+  padding: 0px 8px 12px;
+}
+.see_more_data a {
+  color: #262626;
+  font-size: 15px;
+  text-decoration: none;
+  outline: none;
+  font-family: "fedra_sans_devanagari_bdemi";
+}
+/* Bak Bak Page */
+.hero-sec {
+  background-image: url(../images/Top-Banner.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 88vh;
+  position: relative;
+}
+.hero-sec .banner-content .ban-button {
+  position: absolute;
+  right: 6%;
+  top: 450px;
+}
+.hero-sec .banner-content .ban-button a {
+  color: #ff428a;
+  background-color: #ffe366;
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  -webkit-box-shadow: 4px 4px 0px 1px #d5ba42;
+  box-shadow: 4px 4px 0px 1px #d5ba42;
+  font-weight: bolder;
+  -webkit-transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+  transition: 0.4s ease-in-out;
+}
+.hero-sec
+  .banner-content
+  .ban-button
+  a:hover,
+  .footer-content
+  .footer-button
+  a:hover,
+.jkk-banner .jk-btn a:hover {
+  color: #ffe366;
+  background-color: #ff428a;
+}
+.f-sec {
+  padding: 80px 0;
+  position: relative;
+}
+.f-sec .bbg-heading {
+  position: absolute;
+  /* top: -6%; */
+  top: -110px;
+  left: -5px;
+}
+.peshkash_heading {
+  position: relative;
+  z-index: 9;
+  top: 18px;
+}
+.peshkash_text {
+  background: #ff428a;
+  display: inline-block;
+  padding: 45px 30px 30px 30px;
+  transform: rotate(-4deg);
+  margin-left: -5px;
+  clip-path: polygon(0 40%, 100% 0, 100% 60%, 0% 100%);
+  margin-top: 80px;
+}
+.peshkash_text h2 {
+  font-size: 2.8rem;
+  transform: rotate(-10deg);
+  display: flex;
+  position: relative;
+  top: 0;
+  color: #ffe559 !important;
+  font-style: italic;
+  font-family: "Fedra Sans Pro";
+}
+.f-sec .h-text h6 {
+  padding: 0 18%;
+  color: #000;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  word-spacing: 0px;
+  text-align: center;
+}
+.card_div {
+  margin: auto;
+  display: flex;
+  padding: 0 16%;
+}
+.f-sec .item {
+  min-height: 150px;
+  height: 150px;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 12px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  background: #8080801c;
+}
+.f-sec .item h6 {
+  text-align: center;
+  color: #ff428a;
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  padding: 0 15%;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.f-sec .item:hover {
+  background-color: #ff428a;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.f-sec .item:hover h6 {
+  color: #fff;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+.heading {
+  color: #000;
+  font-size: 2.2rem;
+  font-weight: 600;
+  padding: 0px 24%;
+  line-height: 1.2;
+}
+.feature {
+  margin-bottom: 70px;
+  padding: 0 16%;
+}
+.feature a {
+  color: #ff428a;
+  font-size: 3.7rem;
+  font-weight: 600;
+}
+.testimonials {
+  position: relative;
+  padding-bottom: 70px;
+  background: #8080801c;
+}
+.testimonials_heading {
+  position: relative;
+  z-index: 9;
+  top: -23px;
+}
+.testimonials_heading .peshkash_text {
+  margin-top: 0;
+}
+
+.testimonials h2 {
+  font-size: 2.75rem;
+  color: #000;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.padding_vertical {
+  padding: 0 10%;
+}
+.testimonials .single-testimonial {
+  padding: 60px 60px;
+  background-color: #d1d1d1;
+  position: relative;
+  border-radius: 12px;
+}
+.testimonials .single-testimonial .quotaion-left {
+  position: absolute;
+  top: -7%;
+  left: -2%;
+}
+.testimonials .single-testimonial .quotaion-left i {
+  color: #8226fa;
+  font-size: 80px;
+}
+.testimonials .single-testimonial .quotaion-right {
+  position: absolute;
+  bottom: -7%;
+  right: -2%;
+}
+.testimonials .single-testimonial .quotaion-right i {
+  color: #8226fa;
+  font-size: 80px;
+}
+.testimonials .single-testimonial h6 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
+}
+.testimonials .single-testimonial .owl-dots {
+  position: absolute;
+  bottom: -100px;
+  left: 48%;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #8226fa;
+}
+.jkk-banner {
+  background-color: #8226fa;
+  padding: 70px 0;
+  position: relative;
+}
+.jkk-banner .jkk-heading {
+  position: absolute;
+  top: -6%;
+  left: -4px;
+}
+.jkk_heading {
+  position: relative;
+  z-index: 9;
+  top: -50px;
+}
+.jkk_heading .peshkash_text h2 {
+  transform: rotate(-7deg);
+}
+.jkk-banner .jk-btn {
+  margin: 0 auto;
+  width: auto;
+  text-align: center;
+}
+.jkk-banner .jk-btn a {
+  color: #ff428a;
+  cursor: pointer;
+  background-color: #ffe366;
+  padding: 12px 41px;
+  border-radius: 50px;
+  font-size: 20px;
+  -webkit-box-shadow: 4px 4px 0px 1px #d5ba42;
+  box-shadow: 4px 4px 0px 1px #d5ba42;
+  font-weight: 700;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.jkk-heading-h2 {
+  font-size: 2.7rem;
+  color: #ffe366;
+  font-weight: 600;
+  padding: 1% 31%;
+  line-height: 1.2;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.jkk-banner .single-feature {
+  margin-top: 20px;
+  text-align: center;
+}
+.jkk-banner .single-feature h6 {
+  /* font-size: 36px; */
+  font-size: 2.2rem;
+  color: #ffe366;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 0px 8%;
+}
+.rules {
+  padding: 60px 0;
+  position: relative;
+}
+.rules .bbg-rules {
+  position: absolute;
+  top: -6%;
+  left: -4px;
+}
+.rules_heading {
+  position: relative;
+  z-index: 9;
+  top: -58px;
+}
+.padding_vertical {
+  padding: 0 10%;
+}
+.padding_hortizontal {
+  padding: 5% 0;
+}
+
+.rules .single-rule {
+  text-align: center;
+  margin-top: 40px;
+}
+.single-rule img {
+  width: 180px;
+}
+.rules .single-rule h6 {
+  color: #000;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px 0;
+}
+.f-sec.new-plan .item {
+  background: #ffffff;
+}
+.f-sec.new-plan {
+  background: #8080801c;
+}
+.f-sec.new-plan .item h6 {
+  padding: 0 4%;
+}
+.f-sec .item:hover {
+  background-color: #ff428a;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.btm-banner {
+  height: 120vh;
+  background-image: url(../images/btm-banner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.footer-sec {
+  background-image: url(../images/Bottom\ banner.png);
+  min-height: auto;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6% 6%;
+}
+
+.footer-sec h6 {
+  color: #fff;
+  font-weight: 900;
+  padding: 0% 15% 0% 4%;
+  font-size: 1.8rem;
+  letter-spacing: 0px;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.footer-sec h2 {
+  font-size: 3rem;
+  color: #ffe366;
+  font-weight: 600;
+  padding: 0% 0% 0% 4%;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.footer-content {
+  margin-top: 40px;
+}
+.footer-content .footer-button a {
+  color: #ff428a;
+  background-color: #ffe366;
+  cursor: pointer;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1.6rem;
+  -webkit-box-shadow: 4px 4px 0px 1px #d5ba42;
+  box-shadow: 4px 4px 0px 1px #d5ba42;
+  font-weight: bolder;
+  -webkit-transition: 0.4s ease-in-out;
+  text-transform: uppercase;
+  transition: 0.4s ease-in-out;
+  width: 200px;
+  text-align: center;
+  margin: 0% 0% 0% 4%;
+}
+/* bol behen */
+.bb-hero-sec {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.bb-hero-sec img {
+  width: 100%;
+  height: auto;
+}
+.whats-app {
+  position: absolute;
+  top: 60%;
+  right: 16%;
+}
+.bb-hero-sec img,
+.bbkh-img img {
+  width: 100%;
+  height: auto;
+}
+.bb-kya-hai {
+  padding: 40px 0;
+  position: relative;
+}
+.bbkh-cmnt {
+  position: absolute;
+  bottom: 20%;
+  right: 27.7%;
+  z-index: 1000;
+}
+.bbkh-img {
+  width: auto;
+  height: auto;
+  text-align: left;
+}
+.bbkh-text {
+  text-align: center;
+}
+.bbkh-text .heading {
+  font-size: 36px !important;
+  font-weight: 700;
+  color: #000;
+  padding: 0;
+}
+.bbkh-text h6 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+.bbkh-text p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.sticky {
+  position: fixed;
+  top: 80%;
+  right: 2%;
+  z-index: 1000;
+}
+.wht-text {
+  position: absolute;
+  top: -75%;
+  right: 1%;
+}
+.talk-bubble {
+  margin: 40px;
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  background-color: #ff428a;
+  transition: 0.4s ease-in-out;
+}
+.talktext p {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 0;
+  color: #ffe366;
+}
+.tri-right.btm-right:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: auto;
+  right: 0px;
+  bottom: -20px;
+  border: 12px solid;
+  border-color: #ff428a #ff428a transparent transparent;
+}
+.text-end {
+  text-align: right !important;
+}
+.bob-img.text-end img {
+  margin-top: 26%;
+}
+.bol-behan-testimonials .heading {
+  font-size: 42px;
+  font-weight: 700;
+  color: #000;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.bol-behan-testimonials .tst-bck {
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  padding: 22px;
+  margin-left: 230px;
+  text-align: right;
+}
+.testi {
+  padding: 64px;
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  margin-top: 40px;
+  box-shadow: 4px 8px 10px rgb(0 0 0 / 20%);
+}
+.testi p {
+  font-size: 30px;
+  font-weight: 500;
+  color: #000;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 10px;
+}
+.testi .owl-dots {
+  position: absolute;
+  right: -11%;
+  bottom: -66%;
+  background: #e4e4e4;
+  padding: 10px 10px 4px 10px;
+  border-radius: 5px;
+}
+.sm-height {
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  display: flex;
+}
+.sky-blue-sec {
+  margin: 160px 0;
+}
+.single-feat {
+  margin-top: 16px;
+}
+.sk {
+  background-color: #cce8e5;
+  border-radius: 20px;
+  margin-left: 20px;
+  width: 100%;
+  height: 115px;
+  margin: auto;
+  padding: 40px 40px;
+  text-align: center;
+}
+.sk .rich-text p {
+  margin: auto;
+}
+.sk .rich-text {
+  font-size: 24px;
+}
+.hands-illu {
+  margin-top: 50%;
+}
+.gray-tab {
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 30px 30px;
+  margin-top: 40px;
+}
+.gray-tab .heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  padding: 0 !important;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.gray-tab p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0;
+}
+.gray-tab .rich-text {
+  display: inline;
+  gap: 10px;
+  margin: auto;
+}
+.gray-tab .rich-text,
+.last-sec .rich-text,
+.sky-tab .rich-text {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0;
+}
+.gray-tab img {
+  width: 40px;
+  height: 40px;
+}
+.emoji-icon img {
+  width: 40px !important;
+}
+.richtext-image {
+  width: 80%;
+  height: 100%;
+}
+.margin-left-custom {
+  margin-left: 20px;
+}
+.sky-tab .rich-text p,
+.gray-tab .rich-text p {
+  display: inline;
+  margin: auto 5px;
+}
+.l-chat {
+  margin-top: 120px;
+}
+
+.sky-tab {
+  background-color: #cce8e5;
+  border-radius: 20px;
+  margin-left: 20px;
+  padding: 50px 50px;
+  margin-top: 40px;
+}
+.sky-tab .heading {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+  padding: 0;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.sky-tab .rich-text img {
+  width: 25px;
+  height: 25px;
+}
+.sky-tab p {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 0;
+}
+.girl-illu {
+  margin: 30% 0;
+}
+.last-sec {
+  background: linear-gradient(
+    0deg,
+    rgba(205, 232, 230, 1) 0%,
+    rgba(255, 255, 255, 1) 116%
+  );
+  width: 100%;
+  height: auto;
+  padding: 80px 0;
+  margin-top: 120px;
+}
+.blue-txt {
+  color: #8226fa;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+
+/* Blog Page */
+.blg_inner_carousel_data {
+  position: relative;
+}
+.blog_post_image img {
+  width: 100%;
+}
+.post_overlay_data {
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.blog_bann_desp_info {
+  display: flex;
+  align-items: flex-end;
+  padding: 0px 20px;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.blog_btn_info {
+  width: 60%;
+  text-align: right;
+}
+.blog_bann_desp_info a.btn.btn_click_here {
+  background: #ff428a;
+  border-radius: 40px;
+  box-shadow: 3px 3px 0px 1px #d11863;
+  padding: 11px 26px;
+  transition: all 0.5s ease-in-out 0s;
+  color: #fff;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  font-size: 11px;
+}
+.main_blog_articles_data {
+  padding: 15px;
+}
+.search-form-blog {
+  display: flex;
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+}
+.search-form-blog input.form-control {
+  padding: 25px;
+  border-radius: 50px;
+}
+.search-form-blog input[type="submit"] {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50px;
+  border: 1px solid pink;
+  background: #ff428a;
+  color: #fff;
+  padding: 5px 25px;
+  line-height: initial;
+  font-size: 18px;
+  transition: all 0.5s ease-in-out 0s;
+}
+.related_images {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+}
+
+.blog_bann_desp_info a.btn.btn_click_here {
+  background: #ff428a;
+  border-radius: 40px;
+  box-shadow: 3px 3px 0px 1px #d11863;
+  padding: 11px 26px;
+  transition: all 0.5s ease-in-out 0s;
+  color: #fff;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  font-size: 11px;
+}
+.main_related_content_portion.helpline_blog_portions.blog_articles
+  .related_posts_data
   .related_contents {
-    background: #fff;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    padding: 10px;
-    height: 250px;
-    overflow: scroll;
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-  }
-  .related_contents::-webkit-scrollbar {
-    display: none !important;
-  }
-  .related_contents a {
-    font-size: 11px;
-    color: #333;
-    text-decoration: none;
-    font-family: "fedra_sans_devanagari_bmedium";
-  }
-  .main_grid_realted_card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 50px;
-  }
-  .left_updated_tags a {
-    border: 1px solid #9e9e9e;
-    border-radius: 30px;
-    background: #f4f4f4;
-    padding: 2px 10px;
-    margin-right: 3px;
-    color: #ff428a;
-    font-size: 11px;
-    outline: none;
-    box-shadow: none;
-  }
-  .main_related_content_portion.helpline_blog_portions .related_contents h3 {
-    font-size: 14px;
-    margin-bottom: 5px;
-    font-family: "fedra_sans_devanagari_bdemi";
-  }
-  ul li{
-    font-size:20px;
-  }
-  .main_related_content_portion.helpline_blog_portions{
-    display:flex;
-    flex-wrap: wrap;
-  }
+  background: #f7f7f7;
+}
+.related_contents a {
+  font-size: 11px;
+  color: #333;
+  text-decoration: none;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.peiord_anchors_blogs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.peiord_anchors_blogs a {
+  font-family: "fedra_sans_devanagari_bdemi";
+  font-weight: normal;
+  color: #ff428a !important;
+  text-decoration: none;
+  font-size: 10px;
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+.main_related_content_portion.helpline_blog_portions.blog_articles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+  /* margin: 70px; */
+  padding: 0px 80px 60px;
+  align-items: center;
+}
+.main_related_content_portion.helpline_blog_portions.blog_articles
+  .related_posts_data {
+  width: 100%;
+  margin: 13px 0px 0px;
+}
+.related_images img {
+  width: 100%;
+}
+.tags_listing_data {
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.more_article_data a {
+  color: #ff428a;
+  font-size: 14px;
+  text-decoration: underline;
+  text-align: center;
+  margin: auto;
+  display: block;
+  text-transform: capitalize;
+}
+
+section.searched_tags {
+  padding: 20px 15px;
+}
+.searched_info h3 a {
+  margin-right: 10px;
+}
+.searched_info h3 {
+  font-size: 18px;
+  font-family: "fedra_sans_devanagari_bdemi";
+}
+.dropdown ul.dropdown-menu.show {
+  padding: 20px 30px !important;
+  border-radius: 12px !important;
+  background-color: #ffe366 !important;
+  width: 366px;
+  position: absolute;
+  z-index: 1;
+  /* left: inherit; */
+  left: 0%;
+}
+.searched_info h3 img {
+  max-width: 12px;
+}
+.tags_listing_data {
+  padding: 0px 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+.add_tgs a {
+  color: #ff428a;
+  font-size: 12px;
+  outline: none;
+  text-decoration: none;
+}
+.add_tgs a span {
+  padding-left: 3px;
+  color: #000;
+  font-size: 14px;
+}
+.liberate_img img {
+  border-radius: 10px 10px 0px 0px;
+}
+a.call_data {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 99;
+}
+a.call_data img {
+  max-width: 34px;
+}
+.librate_inner_carousels {
+  background: #efefef;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+  height: 250px;
+}
+.librate_content_part {
+  padding: 15px;
+  display: flex;
+}
+.content_left_data {
+  padding-right: 10px;
+  margin-right: 10px;
+}
+section.related_articles {
+  background: #f2f2f2;
+  padding: 20px 15px;
+}
+.related_headings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.related_headings h3 {
+  padding-left: 10px;
+  font-size: 17px;
+  color: #000;
+  font-family: "Fedra Sans Pro";
+  margin: 0px;
+}
+.related_headings a {
+  font-size: 14px;
+  color: #ff428a;
+  text-decoration: underline;
+  float: right;
+}
+.content_left_data h4 a.search_titles {
+  color: #000;
+}
+.content_left_data a.helpline_links {
+  font-size: 12px;
+  color: #ff428a;
+  text-transform: capitalize;
+  font-family: "fedra_sans_devanagari_bdemi";
+}
+
+.gynac_direct_links a {
+  font-size: 11px;
+  color: #ff428a;
+  font-family: "fedra_sans_devanagari_bmedium";
+  margin-right: 3px;
+  padding: 2px 7px;
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 20px;
+  text-decoration: none;
+}
+section.lybrate_banner_images {
+  position: relative;
+}
+a.back_data_btn {
+  position: absolute;
+  z-index: 99;
+  top: 10px;
+  left: 10px;
+}
+section.lybrate_banner_images .librate_carousels .owl-dots {
+  position: absolute;
+  top: 86%;
+  left: auto;
+  transform: unset;
+  right: 15px;
+}
+.librate_carousels .owl-dots button.owl-dot {
+  box-shadow: none !important;
+  outline: none;
+}
+.lybrate_share_info {
+  display: flex;
+}
+.lyb_content_area h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+}
+.timing_price ul {
+  display: flex;
+}
+.timing_price ul li {
+  width: 40%;
+  margin-right: 10%;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #a6a6a6;
+}
+.timing_price ul li span {
+  display: block;
+  text-transform: capitalize;
+  color: #000;
+  font-family: "Fedra Sans Pro";
+  margin-top: 3px;
+}
+.website_info a.btn.btn_web {
+  background: #ff428a;
+  border-radius: 30px;
+  line-height: unset;
+  color: #fff;
+  padding: 7px 22px;
+  font-size: 12px;
+  margin-right: 10px;
+  box-shadow: 4px 4px 0px 0px #cc1962;
+  transition: all 0.5s ease-in-out 0s;
+  outline: none;
+}
+.send_data_icon img {
+  width: 38px;
+  position: relative;
+  top: 3px;
+}
+section.related_services_blog {
+  background: #f2f2f2;
+  padding: 20px 15px;
+}
+
+.related_services_blog h2 {
+  font-size: 17px;
+  font-family: "Fedra Sans Pro";
+  font-weight: normal;
+  padding: 0px 15px;
+}
+a.see_all_btn {
+  font-family: "Fedra Sans Pro Book";
+  font-size: 13px;
+  text-decoration: underline;
+  float: right;
+  color: #ff428a;
+  position: relative;
+  top: 1px;
+}
+.service_tab_inner_data {
+  display: flex;
+  flex-wrap: wrap;
+}
+.helpline_centers {
+  background: #f4f4f4;
+  border-radius: 6px;
+  width: 46%;
+  margin: 2%;
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.04);
+  position: relative;
+}
+.helpline_centers.blog_helpline_center_data .center_header {
+  position: relative;
+  padding: 0;
+}
+.blog_call_data {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  z-index: 999;
+}
+.service_tab_inner_data.blos_part_included .center_body {
+  background: #fff;
+}
+.helpline_centers.blog_helpline_center_data .center_body h4 {
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.helpline_centers.blog_helpline_center_data .center_body h4 a {
+  color: #333;
+}
+.center_body p {
+  font-size: 20px;
+}
+.blog_share_info {
+  display: flex;
+}
+.blog_share_info .lybrate_share_send_data {
+  width: 10%;
+  display: flex;
+  /* justify-content: flex-end; */
+  right: 0;
+  position: absolute;
+  margin-top: -35px;
+}
+.lybrate_share_send_data a span {
+  color: #ff428a;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+  text-align: center;
+}
+.blog_detail_contet_parts {
+  margin-top: 20px;
+}
+.bottom_footer img {
+  max-width: 55px;
+}
+.bubble {
+  display: inline-block;
+  position: relative;
+  padding: 27px 17px;
+  border-radius: 100%;
+  width: 232px;
+  background: white;
+  font-family: "fedra_sans_devanagari_bdemi";
+  font-weight: 500;
+  clear: both;
+  height: 178px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #8226fa;
+}
+.buuble_1 {
+  position: absolute;
+  left: -2%;
+  top: 200px;
+}
+.bubble:before {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  height: 26px;
+  width: 65px;
+}
+.bubble.right {
+  float: right;
+  margin: 10px 10px 60px 100px;
+}
+.right:before {
+  border-radius: 0 0 0 100%;
+  box-shadow: 2px -2px 0 0 #fff inset, 23px 0 0 0 #fff inset,
+    25px -2px 0 0 #fff inset;
+  right: 0;
+}
+.service_helpline_data.helpline_centers .center_header {
+  padding: 0;
+  position: relative;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+}
+.helpline_centers .center_header img {
+  max-width: 100%;
+}
+.service_call_icn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99999;
+}
+.service_helpline_data.helpline_centers .center_body {
+  padding: 12px 12px;
+  background: none;
+}
+.services_list {
+  background: #f7f7f7;
+  padding: 20px;
+}
+button.social_buttons {
+  display: none;
+}
+.video_content_data {
+  padding: 10px 15px 10px;
+}
+.service_content_lft_sec h4 {
+  font-size: 24px;
+  font-family: "Fedra Sans Pro";
+  color: #ff428a;
+  margin-top: 10px;
+  line-height: 33px;
+}
+.service_content_lft_sec a img {
+  width: 7px;
+}
+.service_content_lft_sec {
+  width: 30%;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.button_data_text a.btn.btn_articles img.home-related-icon {
+  margin-left: 11px;
+}
+.home-related-icon {
+  width: 7px;
+}
+.about_img {
+  width: 50%;
+}
+.librate_list_content {
+  margin: 20px 0px 0px;
+}
+section.lybrate_description_data {
+  padding: 20px 20px 25px;
+}
+a.brand_logo img {
+  width: 70px;
+}
+.related_contents {
+  background: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 10px;
+  height: 250px;
+  overflow: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.related_contents::-webkit-scrollbar {
+  display: none !important;
+}
+.related_contents a {
+  font-size: 11px;
+  color: #333;
+  text-decoration: none;
+  font-family: "fedra_sans_devanagari_bmedium";
+}
+.main_grid_realted_card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 50px;
+}
+.left_updated_tags a {
+  border: 1px solid #9e9e9e;
+  border-radius: 30px;
+  background: #f4f4f4;
+  padding: 2px 10px;
+  margin-right: 3px;
+  color: #ff428a;
+  font-size: 11px;
+  outline: none;
+  box-shadow: none;
+}
+.main_related_content_portion.helpline_blog_portions .related_contents h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: "fedra_sans_devanagari_bdemi";
+}
+.blog_detail_contet_parts ul li{
+  font-size:20px;
+}
+.main_related_content_portion.helpline_blog_portions{
+  display:flex;
+  flex-wrap: wrap;
+}
+.add_tags_list_items ul{
+  padding-left: 0;
+}
+.add_tags_list_items ul li{
+  list-style-type: none
+}
+#add_tags span, .remove_tags span{
+  margin: 10px;
+color:#000000
+}

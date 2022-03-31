@@ -71,7 +71,7 @@
         <div class="librate_inner_carousels">
           <div class="librate_content_part">
             <div class="content_left_data">
-              <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="javascript:void(0);"
+              <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="{% pageurl service %}"
                   class="helpline_links">{{service.specific.category.name}}</a></h4>
               <p>{{service.specific.description|richtext|truncatechars_html:200}}</p>
               <div class="gynac_direct_links">
@@ -170,7 +170,7 @@
                 {% if tag.slug == tag_n %}
                 <li><input type="hidden" value="{{ tag.slug }}" class="tag_trace" id="tag_trace{{ tag.slug }}">
                   <a onclick="remove_tag('{{ tag.slug }}')" class="remove_tags"><input type="checkbox"
-                      name="{{ tag.slug }}"><span></span>{{ tag.name }}<img src="{% static 'images/minus_icon.png' %}"
+                      name="{{ tag.slug }}"><span>{{ tag.name }}</span><img src="{% static 'images/minus_icon.png' %}"
                       alt="minus"></a>
                 </li>
                 {% endif %}
@@ -185,9 +185,9 @@
             <div class="add_tags_list_items">
               <ul>
                 {% for tag in tags %}
-                <li><a target="_blank" href="javascript:void(0);" id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
+                <li><div id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
                       onclick="selected_tag(this)" name="tag" value="{{ tag.slug }}"><span>{{ tag.slug }}</span> <img
-                      src="{% static 'images/plus_icon.png' %}" alt="plus"></a></li>
+                      src="{% static 'images/plus_icon.png' %}" alt="plus"></div></li>
                 {% endfor %}
               </ul>
             </div>
