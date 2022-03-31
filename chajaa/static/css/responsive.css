@@ -2,7 +2,7 @@
   .searched_info .librate_main_slider {
     padding: 50px 140px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr !important;
   }
   .container {
     /* max-width: 1603px !important; */
@@ -122,6 +122,19 @@
   }
 }
 @media (min-width: 768px) {
+  .searched_info .librate_main_slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+a.call_data{
+  position: absolute;
+    top: 14px;
+    right: 100px;
+    z-index: 99;
+}
+.librate_inner_carousels{
+  height:320px;
+}
   .service_helpline_data.helpline_centers .center_body h4 {
     font-size: 22px;
     margin: 0px;
@@ -710,7 +723,7 @@
     font-size: 18px;
   }
   .searched_info .librate_main_slider .librate_list_content {
-    width: 500px;
+    width: 400px;
     padding: 0px 10px;
     margin: 20px auto;
   }
