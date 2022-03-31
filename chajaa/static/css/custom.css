@@ -1850,3 +1850,7 @@ a.brand_logo img {
 ul li{
   font-size:20px;
 }
+.main_related_content_portion.helpline_blog_portions{
+  display:flex;
+  flex-wrap: wrap;
+}
