@@ -1,0 +1,3 @@
+DELETE FROM rappidpro.staging_rpp_ftbl_flows_flowstart 
+USING rappidpro.rpp_ftbl_flows_flowstart 
+WHERE rpp_ftbl_flows_flowstart.id = staging_rpp_ftbl_flows_flowstart.id and rpp_ftbl_flows_flowstart.uuid = staging_rpp_ftbl_flows_flowstart.uuid;

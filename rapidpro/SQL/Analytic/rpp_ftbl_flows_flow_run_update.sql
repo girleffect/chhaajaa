@@ -1,0 +1,28 @@
+INSERT INTO rappidpro.rpp_ftbl_flows_flowrun
+select 
+    id,
+    cast(is_active as bigint),
+    cast(fields as VARCHAR(15540)),
+    exited_on,
+    created_on,
+    modified_on,
+    cast(exit_type as VARCHAR(1)),
+    expires_on,
+    timeout_on,  
+    responded,
+    contact_id,
+    flow_id,
+    org_id,
+    parent_id,
+    connection_id,
+    cast(start_id as bigint),
+    submitted_by_id,
+    cast(uuid as VARCHAR(37)),
+    session_id,
+    cast(results as VARCHAR(14441)),
+    cast(path as  VARCHAR(65535)),
+    message_ids,
+    current_node_uuid,
+    flowlabel_id,
+    cast(contact_uuid  as VARCHAR(65535))
+FROM rappidpro.staging_rpp_ftbl_flows_flowrun;

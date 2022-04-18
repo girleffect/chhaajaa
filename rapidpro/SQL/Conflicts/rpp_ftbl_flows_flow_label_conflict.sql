@@ -1,0 +1,3 @@
+DELETE FROM rappidpro.staging_rpp_ftbl_flows_flow_label 
+USING rappidpro.rpp_ftbl_flows_flow_labels 
+WHERE rpp_ftbl_flows_flow_labels.uuid = staging_rpp_ftbl_flows_flow_label.uuid and rpp_ftbl_flows_flow_labels.uuid is not null and staging_rpp_ftbl_flows_flow_label.uuid is not null;
