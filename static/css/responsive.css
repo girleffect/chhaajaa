@@ -859,9 +859,6 @@ a.call_data{
     text-decoration: none;
     transition: all 0.5s ease-in-out 0s;
   }
-  .blog_detail_content {
-    padding: 60px 150px;
-  }
   .lybrate_share_send_data a {
     display: flex;
     align-items: center;
@@ -980,9 +977,6 @@ a.call_data{
   }
   .blog_detail_slider_data a.back_data_btn {
     padding: 20px 80px;
-  }
-  .blog_detail_content {
-    padding: 60px 80px;
   }
   .hero-sec {
     height: 65vh;
@@ -1188,9 +1182,6 @@ a.call_data{
   }
   .blog_detail_slider_data a.back_data_btn {
     padding: 20px 60px;
-  }
-  .blog_detail_content {
-    padding: 60px 60px;
   }
   .hero-sec {
     height: 60vh;
@@ -1673,9 +1664,6 @@ a.call_data{
   }
   .blog_detail_slider_data a.back_data_btn {
     padding: 20px 20px;
-  }
-  .blog_detail_content {
-    padding: 30px 20px;
   }
   .blog_share_info h4 {
     font-size: 30px;
