@@ -7,7 +7,11 @@
 {% block content %}
 {% main_menu template='menus/main_menu.html' %}
 <div class="blog_detail_slider_data">
-      <a class="back_data_btn" href="{{ page.get_parent.url }}"><img src="{% static 'images/librate_back_icon.svg' %}" alt="back"></a>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-11">
+        <div class="blog-inside">
+      {% comment %} <a class="back_data_btn" href="{{ page.get_parent.url }}"><img src="{% static 'images/librate_back_icon.svg' %}" alt="back"></a>
       <div class="owl-carousel owl-theme blog_post_details">
           {% for blog_image in page.specific.gallery_images.all %}
         <div class="item">
@@ -19,10 +23,19 @@
           {% endfor %}
         </div>
       </div>
-    </div>
+    </div> {% endcomment %}
 
     <div class="blog_detail_content">
       <div class="blog_share_info">
+       
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+          </ol>
+        </nav>
         <div class="lybrate_share_send_data">
           <a target="_blank" href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup">
             <img src="{% static 'images/send_icon.svg' %}" alt="share">
@@ -30,12 +43,19 @@
           </a>
         </div>
       </div>
-      <div class="blog_detail_contet_parts">
+      <div class="blog-inside">
         {{ page.body|richtext }}
       </div>
     </div>
-
-    <section class="related_articles blog_detail_articles">
+  </div>
+  <div class="IframeMainBox-sidebar">
+    <a href="#"><img src="{% static 'images/left.png' %}" class="arrow-icon"/></a>
+    <p class="IframeMainBox-sidebar-content">Service Finder</p>
+</div>
+</div>
+</div>
+</div>
+    {% comment %} <section class="related_articles blog_detail_articles">
       <div class="related_headings">
         <h3>Related Blogs</h3>
         <a target="_blank" href="{% slugurl 'blog-page' %}">Read All</a>
@@ -54,7 +74,36 @@
           
             {% endfor %}
       </div>
+    </section> {% endcomment %}
+  
+
+    <section class="related-blogs">
+      <div class="container-fluid">
+          <div class="row mb-4">
+              <div class="col-md-12">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <h2>Related Blogs</h2>
+                     <span> <a target="_blank" href="{% slugurl 'blog-page' %}">Read All</a></span>
+                  </div>  
+                  </div>
+              </div>
+          <div class="row">
+            {% for blog in articles %}
+              <div class="col-md-4 mt-4">
+                  <div class="rl-blg pe-4">
+                    {% image blog.main_image original as img %}
+                    <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
+                   
+                     
+                    <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><h4>{{blog.title}}</h4></a>  
+                  </div>
+              </div>
+
+              {% endfor %}
+          </div>
+      </div>
     </section>
+  
 
 <!--POP UP-->
 <div class="modal fade" id="addTagPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
