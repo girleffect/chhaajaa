@@ -1,7 +1,7 @@
 import os
 
 from click import command
-from helpers.kslack import command_line_args
+from helpers.kslack import command_line_args, post_message
 
 os.environ["API_KEY"] = command_line_args.api_key
 os.environ["BASE_URL"] = command_line_args.base_url
@@ -34,11 +34,10 @@ if __name__ == '__main__':
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_contacts_contactgroupcount_update.sql')
 			warehouse.drop('staging_rpp_ftbl_contacts_contactgroupcount')
 
-			# post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. {cont_group.shape[0]} rows updated', channel="ds-spam")
+			post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. {cont_group.shape[0]} rows updated', channel="ds-spam")
 		else:
 			pass
-			# post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. No rows updated', channel="ds-spam")
+			post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. No rows updated', channel="ds-spam")
 	except Exception as e:
-		# post_message(message=f'rpp_ftbl_contacts_contactgroupcount.py failed: {e}', channel="ds-errors")
-		# raise 
-		pass
+		post_message(message=f'rpp_ftbl_contacts_contactgroupcount.py failed: {e}', channel="ds-errors")
+		raise
