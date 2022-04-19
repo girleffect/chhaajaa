@@ -25,5 +25,10 @@ class Runs:
         df['timeout_on'] = pd.to_datetime(df['timeout_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
         df['exited_on'] = pd.to_datetime(df['exited_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
         df.rename(columns={'start': 'start_id', 'flow_uuid':'uuid'}, inplace=True)
+
+        try:
+            df["org_id"] = params["org_id"]
+        except Exception:
+            pass
         
         return df

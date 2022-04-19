@@ -23,4 +23,10 @@ class Flows:
         df.rename(columns={'type': 'flow_type', 'runs_expired': 'expires_after_minutes'}, inplace=True)
         df["id"], df['entry_uuid'], df['entry_type'], df["created_by_id"], df["version_number"], df["is_test"], df["org_id"], df["is_active"], df["fields"], df["modified_by_id"], df['ignore_triggers'], df['saved_on'], df['flow_type'], df['base_language'], df['metadata'], df['saved_by_id'], df['is_archived'] = Na,Na,Na,Na,Na,Na,Na,Na,Na,Na,Na,Na,Na,Na,Na,Na, Na
         df['saved_on'] = pd.to_datetime(df['saved_on'], errors='coerce')
+
+        try:
+            df["org_id"] = params["org_id"]
+        except Exception:
+            pass
+        
         return df
