@@ -1,4 +1,4 @@
-# Web requirments
+# Web requirements
 wagtail==2.15.3
 wagtailmenus==3.0.2
 psycopg2==2.9.3
