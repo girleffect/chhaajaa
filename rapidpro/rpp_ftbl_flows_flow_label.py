@@ -27,7 +27,7 @@ if __name__ == '__main__':
 		warehouse.drop('staging_rpp_ftbl_flows_flowrun')
 
 		if general.is_not_empty(flow_label):
-			warehouse.load(contacts,'staging_rpp_ftbl_flows_flow_label', "replace")
+			warehouse.load(flow_label,'staging_rpp_ftbl_flows_flow_label', "replace")
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_flows_flow_label_update.sql')
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_flows_flow_label_update.sql')
 			warehouse.drop('staging_rpp_ftbl_flows_flowrun')
