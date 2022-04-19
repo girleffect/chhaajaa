@@ -36,7 +36,6 @@ if __name__ == '__main__':
 
 			post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. {cont_group.shape[0]} rows updated', channel="ds-spam")
 		else:
-			pass
 			post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. No rows updated', channel="ds-spam")
 	except Exception as e:
 		post_message(message=f'rpp_ftbl_contacts_contactgroupcount.py failed: {e}', channel="ds-errors")

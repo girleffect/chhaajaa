@@ -34,7 +34,6 @@ if __name__ == '__main__':
 
 			post_message(message=f'rpp_ftbl_flows_flow_label table ran successfull. {flow_label.shape[0]} rows updated', channel="ds-spam")
 		else:
-			pass
 			post_message(message=f'rpp_ftbl_flows_flow_label table ran successfull. No rows updated', channel="ds-spam")
 	except Exception as e:
 		post_message(message=f'rpp_ftbl_flows_flow_label.py failed: {e}', channel="ds-errors")

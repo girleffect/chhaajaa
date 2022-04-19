@@ -33,7 +33,6 @@ if __name__ == '__main__':
 
 			post_message(message=f'rpp_ftbl_msgs_msg table ran successfull. {msgs.shape[0]} rows updated', channel="ds-spam")
 		else:
-			pass
 			post_message(message=f'rpp_ftbl_msgs_msg table ran successfull. No rows updated', channel="ds-spam")
 	except Exception as e:
 		post_message(message=f'rpp_ftbl_msgs_msg.py failed: {e}', channel="ds-errors")
