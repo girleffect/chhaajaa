@@ -12,7 +12,7 @@ select
     responded,
     contact_id,
     flow_id,
-    org_id,
+    cast(org_id as int8),
     parent_id,
     connection_id,
     cast(start_id as bigint),

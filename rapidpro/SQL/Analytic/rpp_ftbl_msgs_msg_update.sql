@@ -23,7 +23,7 @@ SELECT  id,
         cast(connection_id as int4),
         cast(contact_id as int4),
         cast(contact_urn_id as int4),
-        cast(org_id as int4),
+        cast(org_id as int8),
         cast(response_to_id as int4),
         cast(topup_id as int4),
         cast(contact_uuid  as VARCHAR(65535))
