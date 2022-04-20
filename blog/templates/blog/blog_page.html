@@ -31,9 +31,9 @@
         
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Blog</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/blog-page/">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{page.slug}}</li>
           </ol>
         </nav>
         <div class="lybrate_share_send_data">
@@ -49,8 +49,8 @@
     </div>
   </div>
   <div class="IframeMainBox-sidebar">
-    <a href="#"><img src="{% static 'images/left.png' %}" class="arrow-icon"/></a>
-    <p class="IframeMainBox-sidebar-content">Service Finder</p>
+    <a href="/service-finder/"><img src="{% static 'images/left.png' %}" class="arrow-icon"/>
+    <p class="IframeMainBox-sidebar-content">Service Finder</p></a>
 </div>
 </div>
 </div>
