@@ -1,6 +1,10 @@
 #!/bin/bash
-python manage.py collectstatic --noinput
-python manage.py migrate --noinput
+if [ -n "$RUN_COLLECTSTATIC" ]; then
+    python manage.py collectstatic --noinput
+fi
+if [ -n "$RUN_MIGRATIONS" ]; then
+    python manage.py migrate --noinput
+fi
 
 if grep "{{DOMAIN}}" /etc/nginx/conf.d/django.conf; then
     if [ -n "$DOMAIN" ]; then

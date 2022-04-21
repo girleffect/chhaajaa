@@ -48,4 +48,4 @@ RUN pip install -r requirements.txt
 ENV DJANGO_SETTINGS_MODULE=chajaa.settings.production 
 COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
-ENTRYPOINT [ "./entrypoint.sh" ]
+CMD [ "./entrypoint.sh" ]
