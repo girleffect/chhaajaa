@@ -1,6 +1,12 @@
+import os
+
+from click import command
+from helpers.arg import command_line_args
+
+os.environ["API_KEY"] = command_line_args.api_key
+os.environ["BASE_URL"] = command_line_args.base_url
 
 from helpers.connector import Warehouse
-from helpers.kslack import post_message, command_line_args
 from helpers.utility_helpers import general
 import pandas as pd
 from api.rapidpro import pyRapid
@@ -28,9 +34,5 @@ if __name__ == '__main__':
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_contacts_contactgroupcount_update.sql')
 			warehouse.drop('staging_rpp_ftbl_contacts_contactgroupcount')
 
-			post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. {cont_group.shape[0]} rows updated', channel="ds-spam")
-		else:
-			post_message(message=f'rpp_ftbl_contacts_contactgroupcount table ran successfull. No rows updated', channel="ds-spam")
 	except Exception as e:
-		post_message(message=f'rpp_ftbl_contacts_contactgroupcount.py failed: {e}', channel="ds-errors")
-		raise 
+		raise

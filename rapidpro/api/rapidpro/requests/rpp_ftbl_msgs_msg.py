@@ -29,4 +29,9 @@ class Messages:
         df['attachments'] = df['attachments'].str.decode('utf8')
         df['contact_name'] = df['contact_name'].str.decode('utf8')
 
+        try:
+            df["org_id"] = params["org_id"]
+        except Exception:
+            pass
+
         return df

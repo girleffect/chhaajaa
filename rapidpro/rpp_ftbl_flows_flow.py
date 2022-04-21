@@ -1,6 +1,12 @@
+import os
+
+from click import command
+from helpers.arg import command_line_args
+
+os.environ["API_KEY"] = command_line_args.api_key
+os.environ["BASE_URL"] = command_line_args.base_url
 
 from helpers.connector import Warehouse
-from helpers.kslack import post_message, command_line_args
 from api.rapidpro import pyRapid
 from helpers.utility_helpers import general
 from helpers.date_formatter import format_date
@@ -18,7 +24,7 @@ if __name__ == '__main__':
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
 
-		flows_flow = pyRapid.rpp_ftbl_flows_flow.get_flows(before=end_time, after=start_time)
+		flows_flow = pyRapid.rpp_ftbl_flows_flow.get_flows(before=end_time, after=start_time, org_id=command_line_args.org_id)
 		warehouse.drop('staging_rpp_ftbl_flows_flow')
 		
 		if general.is_not_empty(flows_flow):
@@ -27,9 +33,5 @@ if __name__ == '__main__':
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_flows_flow_update.sql')
 			warehouse.drop('staging_rpp_ftbl_flows_flow')
 
-			post_message(message=f'rpp_ftbl_flows_flow table ran successfull. {flows_flow.shape[0]} rows updated', channel="ds-spam")
-		else:
-			post_message(message=f'rpp_ftbl_flows_flow table ran successfull. No rows updated', channel="ds-spam")
 	except Exception as e:
-		post_message(message=f'rpp_ftbl_flows_flow.py failed: {e}', channel="ds-errors")
-		raise 
+		raise
