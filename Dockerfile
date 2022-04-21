@@ -18,6 +18,8 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
     nginx \
     gosu \
+    # Below required for RapidPro cronjobs
+    unixodbc unixodbc-dev \
  && rm -rf /var/lib/apt/lists/*
 
 
