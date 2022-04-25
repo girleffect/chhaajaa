@@ -25,7 +25,8 @@ if __name__ == '__main__':
 			max_date = warehouse.query('SQL/MaxDates/get_max_auth_user.sql')
 			start_time = max_date[b'start_date']
 			end_time = max_date[b'end_date']
-
+        
+        print("Running rpp_ftbl_auth_user for start date and end date",start_time,end_time)
 		auth_user = pyRapid.rpp_ftbl_auth_user.get_auth_users(before=end_time, after=start_time)
 		warehouse.drop('staging_rpp_ftbl_auth_user')
 

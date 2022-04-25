@@ -25,7 +25,7 @@ if __name__ == '__main__':
 			max_date = warehouse.query('SQL/MaxDates/get_max_cont_t.sql')
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
-
+        print("Running rpp_ftbl_contacts_contactgroupcount for start date and end date",start_time,end_time)
 		cont_group = pyRapid.rpp_ftbl_contacts_contactgroupcount.get_contact_group_count(before=end_time, after=start_time)
 		warehouse.drop('staging_rpp_ftbl_contacts_contactgroupcount')
 

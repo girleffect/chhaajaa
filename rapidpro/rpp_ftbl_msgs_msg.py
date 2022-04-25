@@ -22,9 +22,10 @@ if __name__ == '__main__':
 			max_date = warehouse.query('SQL/MaxDates/get_max_msg.sql')
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
+        print("Running rpp_ftbl_msgs_msg for start date and end date",start_time,end_time)
 		msgs = pyRapid.rpp_ftbl_msgs_msg.get_messages(before=end_time, after=start_time, org_id=command_line_args.org_id)
 		warehouse.drop('staging_rpp_rpp_ftbl_msgs_msg') 
-
+        
 		if general.is_not_empty(msgs):	
 			warehouse.load(msgs,'staging_rpp_rpp_ftbl_msgs_msg', "replace")
 			warehouse.update(file_name="SQL/Conflicts/rpp_rpp_ftbl_msgs_msg_conflict.sql")

@@ -25,7 +25,8 @@ if __name__ == '__main__':
 			max_date = warehouse.query('SQL/MaxDates/get_max_flowrun.sql')
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
-
+        
+        print("Running rpp_ftbl_msgs_broadcast_urns for start date and end date",start_time,end_time)
 		msgs_broadcast_urns = pyRapid.rpp_ftbl_msgs_broadcast_urns.get_broadcast_urls(before=end_time, after=start_time)
 		
 		if general.is_not_empty(msgs_broadcast_urns):
