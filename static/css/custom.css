@@ -354,7 +354,7 @@ a.brand_logo {
 .articles_data_sec:after {
   content: "";
   position: absolute;
-    background:url("../images/GE_Banner-02.png");
+    background:url("../images/GE_Banner-02.png") no-repeat;
   background-size: contain;
   height: 100%;
   width: 100%;
