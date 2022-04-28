@@ -159,7 +159,7 @@ a.brand_logo {
   transform: translate(0, -50%);
   outline: 0;
   color: #000 !important;
-  font-size: 0;
+  font-size: 26px;
   background: #d8d8d8 !important;
   border-radius: 50%;
   width: 20px;
@@ -169,9 +169,9 @@ a.brand_logo {
   width: 20px;
   display: inline-block;
   height: 20px;
-  background: #fff;
+  /* background: #fff; */
   border-radius: 50%;
-  opacity: 0;
+  /* opacity: 0; */
 }
 .video_content_data h3 {
   font-family: fedra_sans_devanagari_bdemi;
@@ -354,8 +354,7 @@ a.brand_logo {
 .articles_data_sec:after {
   content: "";
   position: absolute;
-  background: url(https://chhaajaa-live-64ded3c5608741f8b65f45edb-87c3196.divio-media.org/static/images/home_icon/GE_Banner-02.png)
-    no-repeat;
+    background:url("../images/GE_Banner-02.png");
   background-size: contain;
   height: 100%;
   width: 100%;
@@ -1729,4 +1728,9 @@ a.see_all_btn {
   position: relative;
     left: 2px;
     top: 9px;
+}
+.hero-sec .banner-content .ban-button {
+  position: absolute;
+  right: 5%;
+  top: 400px;
 }
