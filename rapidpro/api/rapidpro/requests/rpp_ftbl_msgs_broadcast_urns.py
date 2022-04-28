@@ -17,5 +17,6 @@ class BroadcastUrls:
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
         Na = np.nan
+        df['contacts']=df['contacts'].apply(lambda x:x[0]['uuid'])
         df["broadcast_id"], df["contacturn_id"] = Na, Na
         return df
