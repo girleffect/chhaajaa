@@ -22,7 +22,7 @@ if __name__ == '__main__':
 			max_date = warehouse.query('SQL/MaxDates/get_max_cont_t.sql',command_line_args.org_id)
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
-		print("Running rpp_ftbl_flows_flow_label for start date and end date",start_time,end_time)
+		print("Running rpp_ftbl_flows_flow_label for start date, end date and org id",start_time,end_time,command_line_args.org_id)
 		flow_label = pyRapid.rpp_ftbl_flows_flow_label.get_flowlabel(before=end_time, after=start_time)
 		warehouse.drop('staging_rpp_ftbl_flows_flowrun')
 
