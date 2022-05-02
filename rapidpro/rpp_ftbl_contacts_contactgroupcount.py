@@ -22,7 +22,7 @@ if __name__ == '__main__':
 			end_time = format_date(command_line_args.end_time, b'end_date')
 		else:
 			print(f"Using start and end time from max date")
-			max_date = warehouse.query('SQL/MaxDates/get_max_cont_t.sql')
+			max_date = warehouse.query('SQL/MaxDates/get_max_cont_t.sql',command_line_args.org_id)
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
 		print("Running rpp_ftbl_contacts_contactgroupcount for start date and end date",start_time,end_time)

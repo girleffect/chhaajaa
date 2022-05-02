@@ -19,7 +19,7 @@ if __name__ == '__main__':
 			start_time = format_date(command_line_args.start_time, b'start_date')
 			end_time = format_date(command_line_args.end_time, b'end_date')
 		else:
-			max_date = warehouse.query('SQL/MaxDates/get_max_cont_t.sql')
+			max_date = warehouse.query('SQL/MaxDates/get_max_cont_t.sql',command_line_args.org_id)
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
 		print("Running rpp_ftbl_flows_flow_label for start date and end date",start_time,end_time)
