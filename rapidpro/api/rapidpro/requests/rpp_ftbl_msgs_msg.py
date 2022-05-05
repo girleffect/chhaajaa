@@ -18,6 +18,8 @@ class Messages:
         df = pd.concat(r_n)
         df = df[['id', 'broadcast', 'urn', 'direction', 'type', 'status', 'archived','visibility','text', 'labels', 'attachments', 'created_on', 'sent_on','modified_on', 'media', 'contact_uuid', 'contact_name', 'channel_uuid','channel_name']]
         df['created_on'] = pd.to_datetime(df['created_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
+        df['modified_on']=df['modified_on'].apply(lambda k: ':'.join(k.split(':')[:-1]) + ':' + k.split(':')[-1][:2] + '.00Z' if len(k.split(':')[-1]) < 6 else k)
+        
         df['modified_on'] = pd.to_datetime(df['modified_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
         Na = np.nan 
         df.rename(columns={'broadcast': 'broadcast_id', 'type':'msg_type'}, inplace=True)
