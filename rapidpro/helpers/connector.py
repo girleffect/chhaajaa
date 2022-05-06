@@ -249,7 +249,7 @@ class Warehouse(Connect):
 					index=False,
 					dtype={'name': types.NVARCHAR(length=6000)},
 					chunksize=1000)
-            else:
+			else:
 				dataframe.to_sql(
 					name=table_name,
 					schema=schema,
