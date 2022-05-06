@@ -849,6 +849,17 @@ a.brand_logo img {
 .blog-inside {
   margin: 48px 0;
 }
+.blog-inside h1{
+  font-size: 36px;
+  color:#ff428a;
+  font-weight: 600;
+}
+.blog-inside h2{
+  font-size: 32px;
+  color: #ff428a;
+  font-weight: 600;
+  font-family: "fedra_sans_devanagari_bdemi";  
+}
 .blog-inside h3 {
   font-size: 28px;
   color: #ff428a;
