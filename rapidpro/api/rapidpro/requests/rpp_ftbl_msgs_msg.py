@@ -27,7 +27,6 @@ class Messages:
 
         df['queued_on'] = pd.to_datetime(df['queued_on'], errors='coerce')
         df['next_attempt'] = pd.to_datetime(df['next_attempt'], errors='coerce')
-        df['text'] = df['text'].str.decode('utf8')
         df['attachments'] = df['attachments'].str.decode('utf8')
         df['contact_name'] = df['contact_name'].str.decode('utf8')
 
