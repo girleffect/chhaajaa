@@ -231,13 +231,32 @@ class Warehouse(Connect):
 		#schema = table_name.split('.')[0] if len(table_name.split('.')) > 1 else None
 		schema = 'rappidpro'
 		if schema is not None:
-			dataframe.to_sql(
-				name = table_name,
-				schema= schema,
-				con=self.engine,
-				if_exists=self.write_disposition,
-				index=False,
-				chunksize=1000)
+			if table_name=='staging_rpp_rpp_ftbl_msgs_msg':
+				dataframe.to_sql(
+					name = table_name,
+					schema= schema,
+					con=self.engine,
+					if_exists=self.write_disposition,
+					index=False,
+					dtype={'text': types.NVARCHAR(length=6000)},
+					chunksize=1000)
+			elif table_name=='staging_rpp_ftbl_contact':
+				dataframe.to_sql(
+					name=table_name,
+					schema=schema,
+					con=self.engine,
+					if_exists=self.write_disposition,
+					index=False,
+					dtype={'name': types.NVARCHAR(length=6000)},
+					chunksize=1000)
+            else:
+				dataframe.to_sql(
+					name=table_name,
+					schema=schema,
+					con=self.engine,
+					if_exists=self.write_disposition,
+					index=False,
+					chunksize=1000)
 		else:
 			dataframe.to_sql(
 				name=table_name,
