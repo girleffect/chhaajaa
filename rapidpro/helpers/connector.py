@@ -6,7 +6,7 @@ import codecs
 
 
 from helpers.ds_logger import DSLogger
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine,types
 import redshift_connector
 import sqlalchemy as sa
 
