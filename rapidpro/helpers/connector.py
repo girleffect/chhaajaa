@@ -238,7 +238,7 @@ class Warehouse(Connect):
 					con=self.engine,
 					if_exists=self.write_disposition,
 					index=False,
-					dtype={'text': types.NVARCHAR(length=6000)},
+					dtype={'text': types.NVARCHAR(length=65535)},
 					chunksize=1000)
 			elif table_name=='staging_rpp_ftbl_contact':
 				dataframe.to_sql(
@@ -247,7 +247,7 @@ class Warehouse(Connect):
 					con=self.engine,
 					if_exists=self.write_disposition,
 					index=False,
-					dtype={'name': types.NVARCHAR(length=6000)},
+					dtype={'name': types.NVARCHAR(length=65535)},
 					chunksize=1000)
 			else:
 				dataframe.to_sql(
