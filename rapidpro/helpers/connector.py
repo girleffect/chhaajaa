@@ -240,6 +240,15 @@ class Warehouse(Connect):
 					index=False,
 					dtype={'text': types.NVARCHAR(length=65535)},
 					chunksize=1000)
+			elif table_name=='staging_rpp_ftbl_flows_flowrun':
+				dataframe.to_sql(
+					name = table_name,
+					schema= schema,
+					con=self.engine,
+					if_exists=self.write_disposition,
+					index=False,
+					dtype={'results': types.NVARCHAR(length=65535)},
+					chunksize=1000)
 			elif table_name=='staging_rpp_ftbl_contact':
 				dataframe.to_sql(
 					name=table_name,
