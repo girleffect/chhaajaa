@@ -647,12 +647,20 @@ body .pvc_overlay_data {
     width: 280px;
 }
 .chajja_rules_overlays {
-    left: 50%;
+    left: -1%;
     max-width: 1000px;
-    width: 100%;
+    background: #8226FA !important;
+    /* max-width: unset !important; */
+    padding: 27px 56px 39px 42px;
+    transform: rotate(
+-12deg);
+    margin-left: -10px;
+    clip-path: polygon(0 35%, 100% 0, 100% 70%, 0% 100%);
+    margin-top: 10px;
+    /* width: 100%; */
     margin: 0 auto;
-    transform: translate(-50%, -50%);
-    top: 40%;
+    /* transform: translate(-9%, -33%); */
+    top: 85%;
 }
 img.rules_bg_img {
     width: 100%;

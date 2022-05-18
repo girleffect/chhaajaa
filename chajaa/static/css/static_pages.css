@@ -372,10 +372,20 @@ img.rules_bg_img {
     position: relative;
 }
 .chajja_rules_overlays {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    left: 25px;
+    left: -1%;
+    max-width: 1000px;
+    background: #8226FA !important;
+    padding: 16px 64px 18px 33px;
+    transform: rotate(
+-12deg);
+    margin-left: -10px;
+    clip-path: polygon(0 35%, 100% 0, 100% 70%, 0% 100%);
+    margin-top: 10px;
+
+    margin: 0 auto;
+
+    top: 70%;
+    position: absolute
 }
 .chajja_rules_overlays h5 {
     font-size: 26px;
@@ -596,7 +606,12 @@ img.rules_bg_img {
 }
 
 
-
+@media screen and (max-width:400px) {
+    .chajja_rules_overlays{
+        padding:16px 42px 18px 10px;
+        top:51%
+    }
+}
 /*large screen css start here*/
 
 @media (min-width: 768px) {
@@ -638,21 +653,29 @@ body .pvc_overlay_data {
     font-size: 20px;
 }
 .chajja_rules_overlays h5 {
-    font-size: 70px;
-    margin: -90px 0px 0px 22px;
-    transform: rotate(-14deg);
+    /* font-size: 70px;
+    margin: -90px 0px 0px 22px; */
+    transform: rotate(-10deg);
     font-family: 'Fedra Sans Pro';
 }
 .chajja_rules_overlays img {
     width: 280px;
 }
 .chajja_rules_overlays {
-    left: 50%;
+    left: -1%;
     max-width: 1000px;
-    width: 100%;
+    background: #8226FA !important;
+    /* max-width: unset !important; */
+    padding: 27px 56px 22px 42px;
+    transform: rotate(
+-12deg);
+    margin-left: -10px;
+    clip-path: polygon(0 35%, 100% 0, 100% 70%, 0% 100%);
+    margin-top: 10px;
+    /* width: 100%; */
     margin: 0 auto;
-    transform: translate(-50%, -50%);
-    top: 40%;
+    /* transform: translate(-9%, -33%); */
+    top: 85%;
 }
 img.rules_bg_img {
     width: 100%;
@@ -824,9 +847,9 @@ img.rules_bg_img {
     .chajja_rules_overlays {
         max-width: 800px;
     }
-    .chajja_rules_overlays h5 {
+    /* .chajja_rules_overlays h5 {
         margin: -80px 0px 0px 22px;
-    }
+    } */
     .chajja_rules_overlays img {
         width: 250px;
     }
@@ -873,7 +896,7 @@ img.rules_bg_img {
         max-width: 630px;
     }
     .chajja_rules_overlays h5 {
-        margin: -60px 0px 0px 22px;
+        /* margin: -60px 0px 0px 22px; */
         font-size: 50px;
     }
     .chajja_rules_overlays img {

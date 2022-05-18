@@ -23,9 +23,9 @@
     {% image page.image original as img %}
     <img class="rules_bg_img" src="{{ img.url }}" alt="chaajja image">
     <div class="chajja_rules_overlays">
-            {% image page.icon original as icon %}
+            {% comment %} {% image page.icon original as icon %} {% endcomment %}
 
-        <a target="_blank" href="javascript:void(0);"><img src="{{ icon.url }}" alt="chajja logo"></a>
+        {% comment %} <a target="_blank" href="javascript:void(0);"><img src="{{ icon.url }}" alt="chajja logo"></a> {% endcomment %}
         <h5>{{ page.icon_caption }}</h5>
     </div>
 </div>
