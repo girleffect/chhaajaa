@@ -107,21 +107,23 @@
   gtag('config', 'AW-10844218946');
  
 </script>
+
 <script>
-    function gtag_report_conversion(url) {
-        debugger;
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-window.open(url)
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-10844218946/nqnFCMrKk5UDEMLM9rIo',
-          'event_callback': callback
-      });
-      return false;
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
     }
-    </script>
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-10844218946/CbRzCP_9tb4DEMLM9rIo',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
 
     <!-- Knowledge Pannel Code -->
 
