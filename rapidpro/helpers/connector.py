@@ -256,7 +256,7 @@ class Warehouse(Connect):
 					con=self.engine,
 					if_exists=self.write_disposition,
 					index=False,
-					dtype={'name': types.NVARCHAR(length=65535)},
+					dtype={'name': types.NVARCHAR(length=65535),'fields': types.NVARCHAR(length=65535)},
 					chunksize=1000)
 			else:
 				dataframe.to_sql(
