@@ -15,7 +15,7 @@
     <img src="{{header_image.url}}" alt="bol-behan-hero-section">
     <div class="whats-app">
 
-        <a target="_blank" href="https://wa.me/{{page.whatsapp_text}}">
+        <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
             {% image page.whatsapp_icon original as whatsapp_icon %}
             <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
         </a>
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-md-12 text-end">
                 <div class="fixed-whats-app" id="fixed-whats-app">
-                <a target="_blank" href="https://wa.me/{{page.whatsapp_text}}">
+                <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
                 <div class="wht-text">
                 <div class="talk-bubble tri-right btm-right">
                     <div class="talktext">
