@@ -23,7 +23,7 @@ def health(request):
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
-    path('api/v2/', api_router.urls),
+    path('api/v1/', api_router.urls),
 
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
