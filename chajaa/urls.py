@@ -10,6 +10,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 from django.conf.urls import url
 from search import views as search_views
 from blog import views as blogsearch
+from .api import api_router
 from .feeds import *
 
 
@@ -21,6 +22,8 @@ def health(request):
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),
+
+    path('api/v2/', api_router.urls),
 
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
