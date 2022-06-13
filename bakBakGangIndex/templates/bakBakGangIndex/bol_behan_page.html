@@ -196,9 +196,26 @@
     </div>
 </section>
 
+{% if page.faqcard %}
+<div class="about_us_sec" style="display:block">
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>FAQs</h2>
+    </div>
+  </div>
+  <div id="main">
+    <div class="container">
+      <div class="accordion" id="faq">
 
+        {% for card in page.faqcard %}
+            {% include_block card %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
-
+</div>
+{% endif %}
 {% block extra_js %}
 <script type="text/javascript">
     var owl = $('#my-slider');

@@ -1,4 +1,5 @@
 from django.db import models
+from home.block import FAQCard
 
 # Create your models here.
 from wagtail.core.models import Page
@@ -110,6 +111,13 @@ class BakBakGangIndexPage(Page):
                                            on_delete=models.SET_NULL, related_name='+', null=True)
 
 
+    faqcard = StreamField(
+        [
+            ("faqcard", FAQCard()),          
+        ],
+        null=True,
+        blank=True,
+    )
     content_panels = Page.content_panels + [
         ImageChooserPanel('header_image'),
         FieldPanel('section_1'),
@@ -140,6 +148,7 @@ class BakBakGangIndexPage(Page):
         FieldPanel('section_footer_title', classname="full"),
         FieldPanel('section_footer_subtitle', classname="full"),
         ImageChooserPanel('section_footer_banner'),
+        StreamFieldPanel("faqcard"),
     ]
 
 
@@ -237,6 +246,15 @@ class BolBehanPage(Page):
         blank=True,
     )    
 
+
+    faqcard = StreamField(
+        [
+            ("faqcard", FAQCard()),          
+        ],
+        null=True,
+        blank=True,
+    )
+
     content_panels = Page.content_panels + [
         ImageChooserPanel('header_image'),
         FieldPanel('whatsapp_text'),
@@ -265,4 +283,5 @@ class BolBehanPage(Page):
         ImageChooserPanel('section_5_main_img_1'),
 
         StreamFieldPanel("section_footer"),
+        StreamFieldPanel("faqcard"),
     ]

@@ -389,7 +389,7 @@ a.call_data{
     margin-left: -570px;
   }
   .about_us_sec {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     display: inline-block;
   }
   .about_us_sec .are_dekho_heading {
