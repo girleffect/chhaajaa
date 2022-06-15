@@ -15,6 +15,7 @@ from blog.models import BlogPage
 from service.snippets import ConcernPage, ServiceLocation, ServiceCategory
 from django import forms
 
+from .api_serializers import CategorySerlializer
 
 class ConcernIndexPage(RoutablePageMixin, Page):
     """
@@ -225,12 +226,12 @@ class ServicePage(Page):
         blank=True,
         related_name="services",
     )
-    tags = ClusterTaggableManager(through=ServicePageTag, blank=True)
+    tags = ClusterTaggableManager(through=ServicePageTag, blank=True) 
 
     api_fields = [
         APIField("name"),
         APIField("description"),
-        APIField("category"),
+        APIField("category", serializer=CategorySerlializer()),
         APIField("timing"),
         APIField("price"),
         APIField("external_link"),
