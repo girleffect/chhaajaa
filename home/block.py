@@ -49,7 +49,7 @@ class TermPageCard(blocks.StructBlock):
 
 class FAQCard(blocks.StructBlock):
     title = blocks.CharBlock(required=True, help_text="Enter title")
-    description = blocks.TextBlock(required=True, help_text="Enter description")
+    description = blocks.RichTextBlock(required=False, help_text="Enter description")
 
     class Meta:
         template = "home/block/faq_page_card.html"
