@@ -1994,6 +1994,9 @@ a.call_data{
   }
 }
 @media only screen and (max-width: 480px) {
+  .talk-bubble{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  }
   .f-sec .bbg-heading {
     top: -50px;
   }
