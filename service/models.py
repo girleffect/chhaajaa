@@ -15,8 +15,6 @@ from blog.models import BlogPage
 from service.snippets import ConcernPage, ServiceLocation, ServiceCategory
 from django import forms
 
-from .api_serializers import CategorySerlializer, ConcernSerializer
-
 class ConcernIndexPage(RoutablePageMixin, Page):
     """
     This page use as index page of concern.
