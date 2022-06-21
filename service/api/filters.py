@@ -7,7 +7,7 @@ from taggit.managers import TaggableManager
 from wagtail.api.v2.utils import BadRequestError, parse_boolean
 
 
-from ..snippets import ServiceCategory
+from ..snippets import ServiceCategory, ServiceLocation
 
 
 
@@ -24,6 +24,8 @@ class CustomFieldsFilter(BaseFilterBackend):
             fields.remove('locale')
         if 'category' in fields:
             fields.remove('category')
+        if 'location' in fields:
+            fields.remove('location')
 
         for field_name, value in request.GET.items():
             if field_name in fields:
@@ -76,3 +78,20 @@ class CategoryFilter(BaseFilterBackend):
                 queryset._filtered_by_child_of = _filtered_by_child_of
 
         return queryset
+
+
+class LocationFilter(BaseFilterBackend):
+    def filter_queryset(self, request, queryset, view):
+        if 'location' in request.GET:
+            _filtered_by_child_of = getattr(queryset, '_filtered_by_child_of', None)
+
+            location_id = get_object_or_404(ServiceLocation, name=request.GET['location'])
+            queryset = queryset.filter(location=location_id)
+
+            if _filtered_by_child_of:
+                queryset._filtered_by_child_of = _filtered_by_child_of
+
+        return queryset
+
+
+
