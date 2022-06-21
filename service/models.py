@@ -15,6 +15,8 @@ from blog.models import BlogPage
 from service.snippets import ConcernPage, ServiceLocation, ServiceCategory
 from django import forms
 
+from .api.serializers import CategorySerlializer, ConcernSerlializer, LocationSerializer
+
 class ConcernIndexPage(RoutablePageMixin, Page):
     """
     This page use as index page of concern.
@@ -226,28 +228,17 @@ class ServicePage(Page):
     )
     tags = ClusterTaggableManager(through=ServicePageTag, blank=True) 
 
-    @property
-    def service_category(self):
-      return self.category.name
-
-    @property
-    def all_concerns(self):
-      return [c.intro for c in self.concern.all()]
-
-    @property
-    def all_locations(self):
-      return [l.name for l in self.location.all()]
 
     api_fields = [
         APIField("name"),
         APIField("description"),
-        APIField("service_category"),
         APIField("timing"),
         APIField("price"),
         APIField("external_link"),
-        APIField("all_concerns"),
+        APIField("concern", serializer=ConcernSerlializer()),
+        APIField("location", serializer=LocationSerializer()),
+        APIField("category", serializer=CategorySerlializer()),
         APIField("tags"),
-        APIField("all_locations"),
     ]
 
     content_panels = Page.content_panels + [
