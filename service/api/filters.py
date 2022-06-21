@@ -3,12 +3,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework.filters import BaseFilterBackend
 from taggit.managers import TaggableManager
 
-
 from wagtail.api.v2.utils import BadRequestError, parse_boolean
 
-
-from ..snippets import ServiceCategory, ServiceLocation
-
+from ..snippets import ServiceCategory, ServiceLocation, ConcernPage
 
 
 class CustomFieldsFilter(BaseFilterBackend):
@@ -20,12 +17,16 @@ class CustomFieldsFilter(BaseFilterBackend):
         fields = set(view.get_available_fields(queryset.model, db_fields_only=True))
 
         # Locale is a database field, but we provide a separate filter for it
-        if 'locale' in fields:
-            fields.remove('locale')
-        if 'category' in fields:
-            fields.remove('category')
-        if 'location' in fields:
-            fields.remove('location')
+        # Category, location, and concern, have their look_up field set to id
+        # so we provide separate filters for them.
+        if "locale" in fields:
+            fields.remove("locale")
+        if "category" in fields:
+            fields.remove("category")
+        if "location" in fields:
+            fields.remove("location")
+        if "concern" in fields:
+            fields.remove("concern")
 
         for field_name, value in request.GET.items():
             if field_name in fields:
@@ -36,23 +37,24 @@ class CustomFieldsFilter(BaseFilterBackend):
 
                 # Convert value into python
                 try:
-                    if isinstance(field, (models.BooleanField, models.NullBooleanField)):
+                    if isinstance(
+                        field, (models.BooleanField, models.NullBooleanField)
+                    ):
                         value = parse_boolean(value)
                     elif isinstance(field, (models.IntegerField, models.AutoField)):
                         value = int(value)
                     elif isinstance(field, models.ForeignKey):
                         value = field.target_field.get_prep_value(value)
-                        
+
                 except ValueError as e:
-                    raise BadRequestError("field filter error. '%s' is not a valid value for %s (%s)" % (
-                        value,
-                        field_name,
-                        str(e)
-                    ))
+                    raise BadRequestError(
+                        "field filter error. '%s' is not a valid value for %s (%s)"
+                        % (value, field_name, str(e))
+                    )
 
                 if isinstance(field, TaggableManager):
-                    for tag in value.split(','):
-                        queryset = queryset.filter(**{field_name + '__name': tag})
+                    for tag in value.split(","):
+                        queryset = queryset.filter(**{field_name + "__name": tag})
 
                     # Stick a message on the queryset to indicate that tag filtering has been performed
                     # This will let the do_search method know that it must raise an error as searching
@@ -64,14 +66,14 @@ class CustomFieldsFilter(BaseFilterBackend):
         return queryset
 
 
-
-
 class CategoryFilter(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
-        if 'category' in request.GET:
-            _filtered_by_child_of = getattr(queryset, '_filtered_by_child_of', None)
+        if "category" in request.GET:
+            _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            category_id = get_object_or_404(ServiceCategory, name=request.GET['category'])
+            category_id = get_object_or_404(
+                ServiceCategory, name=request.GET["category"]
+            )
             queryset = queryset.filter(category=category_id)
 
             if _filtered_by_child_of:
@@ -82,10 +84,12 @@ class CategoryFilter(BaseFilterBackend):
 
 class LocationFilter(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
-        if 'location' in request.GET:
-            _filtered_by_child_of = getattr(queryset, '_filtered_by_child_of', None)
+        if "location" in request.GET:
+            _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            location_id = get_object_or_404(ServiceLocation, name=request.GET['location'])
+            location_id = get_object_or_404(
+                ServiceLocation, name=request.GET["location"]
+            )
             queryset = queryset.filter(location=location_id)
 
             if _filtered_by_child_of:
@@ -94,4 +98,15 @@ class LocationFilter(BaseFilterBackend):
         return queryset
 
 
+class ConcernFilter(BaseFilterBackend):
+    def filter_queryset(self, request, queryset, view):
+        if "concern" in request.GET:
+            _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
+            concern_id = get_object_or_404(ConcernPage, intro=request.GET["concern"])
+            queryset = queryset.filter(concern=concern_id)
+
+            if _filtered_by_child_of:
+                queryset._filtered_by_child_of = _filtered_by_child_of
+
+        return queryset

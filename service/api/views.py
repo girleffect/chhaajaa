@@ -1,8 +1,7 @@
 from wagtail.api.v2.views import BaseAPIViewSet
 
+from .filters import CustomFieldsFilter, CategoryFilter, LocationFilter, ConcernFilter
 from ..models import ServicePage
-from ..snippets import ServiceCategory
-from .filters import CustomFieldsFilter, CategoryFilter, LocationFilter
 
 
 class ServicesAPIViewSet(BaseAPIViewSet):
@@ -17,6 +16,7 @@ class ServicesAPIViewSet(BaseAPIViewSet):
         CustomFieldsFilter,
         CategoryFilter,
         LocationFilter,
+        ConcernFilter,
     ]
 
     known_query_parameters = BaseAPIViewSet.known_query_parameters.union(
