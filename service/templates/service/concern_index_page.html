@@ -37,15 +37,17 @@
   <div class="accordion" id="servicelistaccordion">
     {% for category in categories %}
     <div class="card">
+      {% if category.services.live.count >= 1 %}
       <div class="card-header">
         <a target="_blank" href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#serviceaccordion{{category.id}}"
-          aria-expanded="true" aria-controls="serviceaccordion1">{{category.name}}</a>
+        aria-expanded="true" aria-controls="serviceaccordion1">{{category.name}}</a>
       </div>
+      {% endif %}
       <div id="serviceaccordion{{category.id}}" class="collapse {% if forloop.first %}show{% endif %}"
         aria-labelledby="{{category.id}}" data-parent="#servicelistaccordion">
         <div class="card-body">
           <div class="service_tab_inner_data" id="{{ category }}">
-            {% for service in category.services.all %}
+            {% for service in category.services.live.all %}
             {% if forloop.counter == 1 or forloop.counter == 2 %}
             <div class="service_helpline_data service_data_sec_cols helpline_centers concern-list cardhelp{{ category.id }}" id="helpline_centers{{ service.name }}"
               style="display: block">
