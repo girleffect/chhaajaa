@@ -9,6 +9,10 @@ from ..snippets import ServiceCategory, ServiceLocation, ConcernPage
 
 
 class CustomFieldsFilter(BaseFilterBackend):
+    """
+    A subclass of the BaseFilterBackend. Allows querying the service by location, category, and concern names rather than IDs.
+    """
+
     def filter_queryset(self, request, queryset, view):
         """
         This performs field level filtering on the result set
@@ -18,7 +22,7 @@ class CustomFieldsFilter(BaseFilterBackend):
 
         # Locale is a database field, but we provide a separate filter for it
         # Category, location, and concern, have their look_up field set to id
-        # so we provide separate filters for them.
+        # so we provide separate filters for them too.
         if "locale" in fields:
             fields.remove("locale")
         if "category" in fields:
@@ -68,13 +72,11 @@ class CustomFieldsFilter(BaseFilterBackend):
 
 class CategoryFilter(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
+        """Custom filter for category"""
         if "category" in request.GET:
             _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            category_id = get_object_or_404(
-                ServiceCategory, name=request.GET["category"]
-            )
-            queryset = queryset.filter(category=category_id)
+            queryset = queryset.filter(category__name=request.GET["category"])
 
             if _filtered_by_child_of:
                 queryset._filtered_by_child_of = _filtered_by_child_of
@@ -84,13 +86,11 @@ class CategoryFilter(BaseFilterBackend):
 
 class LocationFilter(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
+        """Custom filter for location"""
         if "location" in request.GET:
             _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            location_id = get_object_or_404(
-                ServiceLocation, name=request.GET["location"]
-            )
-            queryset = queryset.filter(location=location_id)
+            queryset = queryset.filter(location__name=request.GET["location"])
 
             if _filtered_by_child_of:
                 queryset._filtered_by_child_of = _filtered_by_child_of
@@ -100,11 +100,11 @@ class LocationFilter(BaseFilterBackend):
 
 class ConcernFilter(BaseFilterBackend):
     def filter_queryset(self, request, queryset, view):
+        """Custom filter for concern"""
         if "concern" in request.GET:
             _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            concern_id = get_object_or_404(ConcernPage, intro=request.GET["concern"])
-            queryset = queryset.filter(concern=concern_id)
+            queryset = queryset.filter(concern__intro=request.GET["concern"])
 
             if _filtered_by_child_of:
                 queryset._filtered_by_child_of = _filtered_by_child_of

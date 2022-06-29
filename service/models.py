@@ -17,6 +17,7 @@ from django import forms
 
 from .api.serializers import CategorySerlializer, ConcernSerlializer, LocationSerializer
 
+
 class ConcernIndexPage(RoutablePageMixin, Page):
     """
     This page use as index page of concern.
@@ -226,9 +227,9 @@ class ServicePage(Page):
         blank=True,
         related_name="services",
     )
-    tags = ClusterTaggableManager(through=ServicePageTag, blank=True) 
+    tags = ClusterTaggableManager(through=ServicePageTag, blank=True)
 
-
+    # API fields for the service API.
     api_fields = [
         APIField("name"),
         APIField("description"),

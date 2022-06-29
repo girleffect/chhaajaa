@@ -5,12 +5,12 @@ from ..models import ServicePage
 
 
 class ServicesAPIViewSet(BaseAPIViewSet):
-    name = 'services'
+    """API viewset for custom API endpoint 'services'"""
+
+    name = "services"
     model = ServicePage
 
-    meta_fields = [
-        'detail_url'
-    ]
+    meta_fields = ["detail_url"]
 
     filter_backends = [
         CustomFieldsFilter,
