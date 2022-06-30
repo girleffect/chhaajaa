@@ -75,7 +75,7 @@ class ConcernIndexPage(RoutablePageMixin, Page):
     def related_article(self, request, *args, **kwargs):
 
         tags = request.GET.getlist('tag')
-        queryset = BlogPage.objects.filter(tags__slug__in=tags)
+        queryset = BlogPage.objects.filter(tags__slug__in=tags).live()
 
         return queryset
 
@@ -167,8 +167,8 @@ class ServicePage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
         tags = [tag.slug for tag in self.tags.all()]
-        context['articles'] = BlogPage.objects.filter(tags__slug__in=tags)
-        context['services'] = ServicePage.objects.filter(tags__slug__in=tags).exclude(id=self.id)
+        context['articles'] = BlogPage.objects.filter(tags__slug__in=tags).live()
+        context['services'] = ServicePage.objects.filter(tags__slug__in=tags).exclude(id=self.id).live()
         return context
 
 
