@@ -11,20 +11,6 @@
     <div class="row justify-content-center">
       <div class="col-md-11">
         <div class="blog-inside">
-      {% comment %} <a class="back_data_btn" href="{{ page.get_parent.url }}"><img src="{% static 'images/librate_back_icon.svg' %}" alt="back"></a>
-      <div class="owl-carousel owl-theme blog_post_details">
-          {% for blog_image in page.specific.gallery_images.all %}
-        <div class="item">
-          <div class="main_inner_article_banner">
-              {% image blog_image.image original as blog_image %}
-            <img src="{{blog_image.url}}" alt="article">
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div> {% endcomment %}
-
     <div class="blog_detail_content">
       <div class="blog_share_info">
        
@@ -43,10 +29,19 @@
           </a>
         </div>
       </div>
+      {% if page.devnagri_btn %}
+      <a href="#hindi_mein_padho" class="btn btn-primary btn-devnagri">Hindi mein padho</a>
+      {% endif %}
       <div class="blog-inside">
         {{ page.body|richtext }}
       </div>
+    {% if page.devnagri_btn %}
+    <div class="blog-inside" id="hindi_mein_padho">
+        {{ page.devnagri_body|richtext }}
+      </div>
+    {% endif %}
     </div>
+
   </div>
   <div class="IframeMainBox-sidebar">
     <a href="/service-finder/"><img src="{% static 'images/left.png' %}" class="arrow-icon"/>
@@ -55,28 +50,6 @@
 </div>
 </div>
 </div>
-    {% comment %} <section class="related_articles blog_detail_articles">
-      <div class="related_headings">
-        <h3>Related Blogs</h3>
-        <a target="_blank" href="{% slugurl 'blog-page' %}">Read All</a>
-      </div>
-      <div class="main_related_content_portion main_grid_realted_card">
-          {% for blog in articles %}
-            <div class="related_posts_data">
-              <div class="related_images">
-                  {% image blog.main_image original as img %}
-                  <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><img src="{{img.url}}" alt="articles"></a>
-              </div>
-              <div class="related_contents blog_detail_related_blog">
-                  <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.title}}</h3></a>
-              </div>
-            </div>
-          
-            {% endfor %}
-      </div>
-    </section> {% endcomment %}
-  
-
     <section class="related-blogs">
       <div class="container-fluid">
           <div class="row mb-4">
