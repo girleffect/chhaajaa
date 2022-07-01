@@ -1758,3 +1758,6 @@ a.see_all_btn {
   background-color: #ffffff;
   border-color: #ff428a;
 }
+.blog-inside .rich-text ul li{
+  font-size:20px;
+}
