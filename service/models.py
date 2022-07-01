@@ -70,7 +70,7 @@ class ConcernIndexPage(RoutablePageMixin, Page):
             tags = request.GET.getlist('tag')
             filters['tags__slug__in'] = tags
 
-        return ServicePage.objects.filter(**filters).distinct()
+        return ServicePage.objects.filter(**filters).distinct().live()
 
     def related_article(self, request, *args, **kwargs):
 
@@ -78,17 +78,6 @@ class ConcernIndexPage(RoutablePageMixin, Page):
         queryset = BlogPage.objects.filter(tags__slug__in=tags).live()
 
         return queryset
-
-    # def related_services(self, request, *args, **kwargs):
-    #
-    #     if request.GET.get('tag', None):
-    #         tags = request.GET.getlist('tag')
-    #         print('here')
-    #         queryset = ServicePage.objects.filter(tags__slug__in=tags).distinct().exclude(id=self.id)
-    #     else:
-    #         queryset = ServicePage.objects.all()
-    #     return queryset
-
 
     @route(r'^services/$')
     def filter_services(self, request, *args, **kwargs):
@@ -102,7 +91,6 @@ class ConcernIndexPage(RoutablePageMixin, Page):
         context['tags'] = ServicePage.tags.all()
         context["tags_name"] = request.GET.getlist('tag')
         context['articles'] = self.related_article(request)
-        # context['services'] = self.related_services(request)
         return render(request, "service/filter_list.html", context)
 
 
