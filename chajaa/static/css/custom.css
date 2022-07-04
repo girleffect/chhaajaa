@@ -1757,6 +1757,7 @@ a.see_all_btn {
   color: #ff428a;
   background-color: #ffffff;
   border-color: #ff428a;
+
  
 }
 .responsive-object iframe{
@@ -1766,3 +1767,9 @@ a.see_all_btn {
 .responsive-object{
   padding-bottom: 0% !important;
 }
+
+
+.blog-inside .rich-text ul li{
+  font-size:20px;
+}
+
