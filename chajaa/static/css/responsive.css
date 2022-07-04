@@ -389,7 +389,7 @@ a.call_data{
     margin-left: -570px;
   }
   .about_us_sec {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     display: inline-block;
   }
   .about_us_sec .are_dekho_heading {
@@ -1994,6 +1994,9 @@ a.call_data{
   }
 }
 @media only screen and (max-width: 480px) {
+  .talk-bubble{
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  }
   .f-sec .bbg-heading {
     top: -50px;
   }

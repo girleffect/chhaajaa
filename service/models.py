@@ -133,38 +133,27 @@ class ConcernIndexPage(RoutablePageMixin, Page):
             tags = request.GET.getlist("tag")
             filters["tags__slug__in"] = tags
 
-        return ServicePage.objects.filter(**filters).distinct()
+        return ServicePage.objects.filter(**filters).distinct().live()
 
     def related_article(self, request, *args, **kwargs):
 
-        tags = request.GET.getlist("tag")
-        queryset = BlogPage.objects.filter(tags__slug__in=tags)
+        tags = request.GET.getlist('tag')
+        queryset = BlogPage.objects.filter(tags__slug__in=tags).live()
 
         return queryset
 
-    # def related_services(self, request, *args, **kwargs):
-    #
-    #     if request.GET.get('tag', None):
-    #         tags = request.GET.getlist('tag')
-    #         print('here')
-    #         queryset = ServicePage.objects.filter(tags__slug__in=tags).distinct().exclude(id=self.id)
-    #     else:
-    #         queryset = ServicePage.objects.all()
-    #     return queryset
-
-    @route(r"^services/$")
+    @route(r'^services/$')
     def filter_services(self, request, *args, **kwargs):
         """
         This is the routable page is used for show the service according to concern.
         """
         context = self.get_context(request, *args, **kwargs)
-        context["service_list"] = self.get_services(request)
-        context["concerns"] = ConcernPage.objects.all()
-        context["locations"] = ServiceLocation.objects.all()
-        context["tags"] = ServicePage.tags.all()
-        context["tags_name"] = request.GET.getlist("tag")
-        context["articles"] = self.related_article(request)
-        # context['services'] = self.related_services(request)
+        context['service_list'] = self.get_services(request)
+        context['concerns'] = ConcernPage.objects.all()
+        context['locations'] = ServiceLocation.objects.all()
+        context['tags'] = ServicePage.tags.all()
+        context["tags_name"] = request.GET.getlist('tag')
+        context['articles'] = self.related_article(request)
         return render(request, "service/filter_list.html", context)
 
 
@@ -265,10 +254,8 @@ class ServicePage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
         tags = [tag.slug for tag in self.tags.all()]
-        context["articles"] = BlogPage.objects.filter(tags__slug__in=tags)
-        context["services"] = ServicePage.objects.filter(tags__slug__in=tags).exclude(
-            id=self.id
-        )
+        context['articles'] = BlogPage.objects.filter(tags__slug__in=tags).live()
+        context['services'] = ServicePage.objects.filter(tags__slug__in=tags).exclude(id=self.id).live()
         return context
 
 

@@ -132,6 +132,8 @@
 </div>
 <br>
 <br>
+
+{% if page.faqcard %}
 <div class="about_us_sec" style="display:block">
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
@@ -141,30 +143,15 @@
   <div id="main">
     <div class="container">
       <div class="accordion" id="faq">
-        {% for faq in faqs %}
-        <div class="card">
-          <div class="card-header" id="faqhead{{forloop.counter}}">
-            <a target="_blank" href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq{{forloop.counter}}"
-              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
-              aria-controls="faq{{forloop.counter}}">{{faq.question}}</a>
-          </div>
 
-          <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% else %}hide{% endif %}"
-            aria-labelledby="faqhead{{forloop.counter}}" data-parent="#faq">
-            <div class="card-body">
-              {{faq.answer|safe}}
-            </div>
-          </div>
-        </div>
-
-
-
+        {% for card in page.faqcard %}
+            {% include_block card %}
         {% endfor %}
       </div>
     </div>
   </div>
-
 </div>
+{% endif %}
 {% endblock content %}
 
 {% block extra_js %}

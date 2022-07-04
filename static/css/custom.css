@@ -1745,3 +1745,19 @@ a.see_all_btn {
   right: 5%;
   top: 400px;
 }
+.btn-devnagri{
+  float: right;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #ff428a;
+    border-color: #ff428a;
+}
+.btn-devnagri:hover{
+  color: #ff428a;
+  background-color: #ffffff;
+  border-color: #ff428a;
+}
+.blog-inside .rich-text ul li{
+  font-size:20px;
+}

@@ -1,16 +1,14 @@
 from django.db import models
-from django.shortcuts import render
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.core.fields import RichTextField
 
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
-from wagtail.snippets.models import register_snippet
 
 from service.snippets import SocialPage, VideoSection, ConcernPage
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
-from home.block import SimpleCrousal, AdvanceCrousal, TermPageCard
+from home.block import FAQCard, SimpleCrousal, AdvanceCrousal, TermPageCard
 
 
 class HomePage(Page):
@@ -39,6 +37,14 @@ class HomePage(Page):
 
     section_about_descripton = models.TextField()
 
+    faqcard = StreamField(
+        [
+            ("faqcard", FAQCard()),          
+        ],
+        null=True,
+        blank=True,
+    )
+
     content_panels = Page.content_panels + [
         FieldPanel('section_video_title'),
         ImageChooserPanel('section_video_icon'),
@@ -52,6 +58,7 @@ class HomePage(Page):
         ImageChooserPanel('section_about_icon'),
         ImageChooserPanel('section_about_image'),
         FieldPanel('section_about_descripton', classname='full'),
+        StreamFieldPanel("faqcard"),
     ]
 
     def get_context(self, request, *args, **kwargs):
@@ -61,8 +68,6 @@ class HomePage(Page):
         context['videos'] = VideoSection.objects.all()
         concerns = ConcernPage.objects.all()[:4]
         context['services'] = concerns
-        faqs = FAQ.objects.filter(featured=True)
-        context['faqs'] = faqs
         return context
 
 
@@ -198,13 +203,3 @@ class CommunityGuidline(Page):
         FieldPanel('footer_description', classname='full'),
         StreamFieldPanel("cards"),
     ]
-
-
-@register_snippet
-class FAQ(models.Model):
-    question = models.CharField(max_length=200)
-    answer = RichTextField(blank=True)
-    featured = models.BooleanField(default=False)
-
-    def __str__(self) -> str:
-        return self.question

@@ -67,6 +67,14 @@ class BlogPage(Page):
            'code', 'blockquote', 'superscript', 'subscript', 'strikethrough'
         ]
         )
+    devnagri_btn = models.BooleanField(default=False)
+    devnagri_body = RichTextField(blank=True, features=[
+        'h1','h2', 'h3','h4','h5','h6', 'bold', 'italic',
+         'link','ul', 'ol', 'hr', 'document-link', 'image', 'embed',
+           'code', 'blockquote', 'superscript', 'subscript', 'strikethrough'
+        ]
+        )
+
     tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
 
     def main_image(self):
@@ -92,6 +100,8 @@ class BlogPage(Page):
         # FieldPanel('intro'),
         FieldPanel('tags'),
         FieldPanel('body', classname="full"),
+        FieldPanel('devnagri_btn'),
+        FieldPanel('devnagri_body', classname="full"),
         InlinePanel('gallery_images', label="Gallery images"),
     ]
 

@@ -6,12 +6,17 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('home', '0015_auto_20220207_1705'),
+        ('blog', '0014_auto_20220207_1705'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='faq',
+            model_name='blogpagegalleryimage',
+            name='id',
+            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
+        ),
+        migrations.AlterField(
+            model_name='blogpagetag',
             name='id',
             field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),
         ),

@@ -46,3 +46,13 @@ class TermPageCard(blocks.StructBlock):
         icon = "edit"
         label = "Term-Page Card"
 
+
+class FAQCard(blocks.StructBlock):
+    title = blocks.CharBlock(required=True, help_text="Enter title")
+    description = blocks.RichTextBlock(required=False, help_text="Enter description")
+
+    class Meta:
+        template = "home/block/faq_page_card.html"
+        icon = "edit"
+        label = "FAQ List"
+

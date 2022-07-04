@@ -100,29 +100,6 @@
     <h3>Related Blogs</h3>
     <a target="_blank" href="{% slugurl 'blog-page' %}">See All ></a>
   </div>
-  <!--<div class="service_tab_inner_data blos_part_included">
-        {% for service in services %}
-        <div class="helpline_centers blog_helpline_center_data">
-            <div class="center_header">
-              {% image service.main_image original as img %}
-              <img src="{{img.url}}" alt="articles">
-              <div class="blog_call_data">
-                {% if service.external_link|integer == True %}
-                    <a target="_blank" href="tel:{{service.external_link}}" target="_blank">
-                      <img src="{% static 'images/call_icon.svg' %}" alt="call"></a>
-                    {% else %}
-                    <a target="_blank" href="{{service.external_link}}" target="_blank">
-                      <img src="{% static 'images/web-icon.svg' %}" alt="call"></a>
-                    {% endif %}
-              </div>
-            </div>
-            <div class="center_body">
-                <h4><a target="_blank" href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
-                {{service.description|richtext}}
-            </div>
-        </div>
-        {% endfor %}
-    </div>-->
   <div class="main_related_content_portion">
     {% for blog in articles %}
     <div class="related_posts_data">
