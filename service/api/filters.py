@@ -76,7 +76,7 @@ class CategoryFilter(BaseFilterBackend):
         if "category" in request.GET:
             _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            queryset = queryset.filter(category__name=request.GET["category"])
+            queryset = queryset.filter(category__name__iexact=request.GET["category"])
 
             if _filtered_by_child_of:
                 queryset._filtered_by_child_of = _filtered_by_child_of
@@ -90,7 +90,7 @@ class LocationFilter(BaseFilterBackend):
         if "location" in request.GET:
             _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            queryset = queryset.filter(location__name=request.GET["location"])
+            queryset = queryset.filter(location__name__iexact=request.GET["location"])
 
             if _filtered_by_child_of:
                 queryset._filtered_by_child_of = _filtered_by_child_of
@@ -104,7 +104,7 @@ class ConcernFilter(BaseFilterBackend):
         if "concern" in request.GET:
             _filtered_by_child_of = getattr(queryset, "_filtered_by_child_of", None)
 
-            queryset = queryset.filter(concern__intro=request.GET["concern"])
+            queryset = queryset.filter(concern__intro__iexact=request.GET["concern"])
 
             if _filtered_by_child_of:
                 queryset._filtered_by_child_of = _filtered_by_child_of
