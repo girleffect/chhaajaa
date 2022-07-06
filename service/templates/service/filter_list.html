@@ -12,19 +12,25 @@
       <h3><a class="search_back_btn" href="/service-finder/"><img src="{% static 'images/back_btns.svg' %}" alt="back"></a>You searched for</h3>
       <form method="get">
         <div class="form-group-data">
-          <select class="selectpicker" name="service" onchange="this.form.submit()">
+          {% comment %} <select class="selectpicker" name="service" onchange="this.form.submit()">
             {% for concern in concerns %}
             <option value="{{concern.slug}}" {% if concern.slug == request.GET.service %}selected="selected" {% endif %}>
               {{concern.intro}}</option>
             {% endfor %}
-          </select>
-          <select class="selectpicker" name="location" onchange="this.form.submit()">
+          </select> {% endcomment %}
+       <select class="picker" name="service" onchange="this.form.submit()">
+        {% for concern in concerns %}
+        <option value="{{concern.slug}}" {% if concern.slug == request.GET.service %}selected="selected" {% endif %}>
+          {{concern.intro}}</option>
+        {% endfor %}
+          </select> 
+          <select class="picker" name="location" onchange="this.form.submit()">
             <option disabled selected>Select Location</option>
             {% for location in locations %}
             <option value="{{location.slug}}" {% if location.slug == request.GET.location %}selected="selected"
               {% endif %}>{{location.name}}</option>
             {% endfor %}
-          </select>
+          </select> 
         </div>
       </form>
       <div class="tags_listing_data">
@@ -139,7 +145,7 @@
         <div class="pop_data_tags">
 
           <div class="selected_tags_data" id="minus_tag_lists">
-            <h3 class="selected_tegs_search">Selected Tags <a target="_blank" href="javascript:void(0);"><i class="fa fa-search" onclick="submit_tag_filter()"></i></a></h3>
+            <h3 class="selected_tegs_search">Selected Tags <a><i class="fa fa-search" onclick="submit_tag_filter()"></i></a></h3>
             <div class="add_tags_list_items minus_tags_added_list">
               <ul id="TextBoxContainer">
                 {% for tag in tags %}
@@ -147,7 +153,9 @@
                 {% if tag.slug == tag_n %}
                 <li><input type="hidden" value="{{ tag.slug }}" class="tag_trace" id="tag_trace{{ tag.slug }}">
                   <a onclick="remove_tag('{{ tag.slug }}')" class="remove_tags"><input type="checkbox"
-                      name="{{ tag.slug }}"><span>{{ tag.name }}</span><img src="{% static 'images/minus_icon.png' %}"
+                      name="{{ tag.slug }}">
+                      <span class="ml-3">{{ tag.name }}</span>
+                      <img src="{% static 'images/minus_icon.png' %}"
                       alt="minus"></a>
                 </li>
                 {% endif %}
@@ -163,8 +171,8 @@
               <ul>
                 {% for tag in tags %}
                 <li><div id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
-                      onclick="selected_tag(this)" name="tag" value="{{ tag.slug }}"><span>{{ tag.slug }}</span> <img
-                      src="{% static 'images/plus_icon.png' %}" alt="plus"></div></li>
+                      onclick="selected_tag(this)" name="tag" value="{{ tag.slug }}"><span class="ml-3">{{ tag.slug }}</span> <img
+                      src="{% static 'images/plus_icon.png' %}" alt="plus" class="ml-3"></div></li>
                 {% endfor %}
               </ul>
             </div>

@@ -814,7 +814,7 @@
     }
   }
 
-  var Selectpicker = function (element, options) {
+  var picker = function (element, options) {
     var that = this;
 
     // bootstrap-select has been initialized - revert valHooks.select.set back to its original function
@@ -828,7 +828,7 @@
     this.$button = null;
     this.$menu = null;
     this.options = options;
-    this.selectpicker = {
+    this.picker = {
       main: {},
       search: {},
       current: {}, // current changes if a search is in progress
@@ -839,7 +839,7 @@
         resetKeyHistory: {
           start: function () {
             return setTimeout(function () {
-              that.selectpicker.keydown.keyHistory = '';
+              that.picker.keydown.keyHistory = '';
             }, 800);
           }
         }
@@ -861,24 +861,24 @@
     }
 
     // Expose public methods
-    this.val = Selectpicker.prototype.val;
-    this.render = Selectpicker.prototype.render;
-    this.refresh = Selectpicker.prototype.refresh;
-    this.setStyle = Selectpicker.prototype.setStyle;
-    this.selectAll = Selectpicker.prototype.selectAll;
-    this.deselectAll = Selectpicker.prototype.deselectAll;
-    this.destroy = Selectpicker.prototype.destroy;
-    this.remove = Selectpicker.prototype.remove;
-    this.show = Selectpicker.prototype.show;
-    this.hide = Selectpicker.prototype.hide;
+    this.val = picker.prototype.val;
+    this.render = picker.prototype.render;
+    this.refresh = picker.prototype.refresh;
+    this.setStyle = picker.prototype.setStyle;
+    this.selectAll = picker.prototype.selectAll;
+    this.deselectAll = picker.prototype.deselectAll;
+    this.destroy = picker.prototype.destroy;
+    this.remove = picker.prototype.remove;
+    this.show = picker.prototype.show;
+    this.hide = picker.prototype.hide;
 
     this.init();
   };
 
-  Selectpicker.VERSION = '1.13.18';
+  picker.VERSION = '1.13.18';
 
   // part of this is duplicated in i18n/defaults-en_US.js. Make sure to update both.
-  Selectpicker.DEFAULTS = {
+  picker.DEFAULTS = {
     noneSelectedText: 'Nothing selected',
     noneResultsText: 'No results matched {0}',
     countSelectedText: function (numSelected, numTotal) {
@@ -931,9 +931,9 @@
     whiteList: DefaultWhitelist
   };
 
-  Selectpicker.prototype = {
+  picker.prototype = {
 
-    constructor: Selectpicker,
+    constructor: picker,
 
     init: function () {
       var that = this,
@@ -1151,12 +1151,12 @@
     },
 
     setPositionData: function () {
-      this.selectpicker.view.canHighlight = [];
-      this.selectpicker.view.size = 0;
-      this.selectpicker.view.firstHighlightIndex = false;
+      this.picker.view.canHighlight = [];
+      this.picker.view.size = 0;
+      this.picker.view.firstHighlightIndex = false;
 
-      for (var i = 0; i < this.selectpicker.current.data.length; i++) {
-        var li = this.selectpicker.current.data[i],
+      for (var i = 0; i < this.picker.current.data.length; i++) {
+        var li = this.picker.current.data[i],
             canHighlight = true;
 
         if (li.type === 'divider') {
@@ -1171,20 +1171,20 @@
 
         if (li.disabled) canHighlight = false;
 
-        this.selectpicker.view.canHighlight.push(canHighlight);
+        this.picker.view.canHighlight.push(canHighlight);
 
         if (canHighlight) {
-          this.selectpicker.view.size++;
-          li.posinset = this.selectpicker.view.size;
-          if (this.selectpicker.view.firstHighlightIndex === false) this.selectpicker.view.firstHighlightIndex = i;
+          this.picker.view.size++;
+          li.posinset = this.picker.view.size;
+          if (this.picker.view.firstHighlightIndex === false) this.picker.view.firstHighlightIndex = i;
         }
 
-        li.position = (i === 0 ? 0 : this.selectpicker.current.data[i - 1].position) + li.height;
+        li.position = (i === 0 ? 0 : this.picker.current.data[i - 1].position) + li.height;
       }
     },
 
     isVirtual: function () {
-      return (this.options.virtualScroll !== false) && (this.selectpicker.main.elements.length >= this.options.virtualScroll) || this.options.virtualScroll === true;
+      return (this.options.virtualScroll !== false) && (this.picker.main.elements.length >= this.options.virtualScroll) || this.options.virtualScroll === true;
     },
 
     createView: function (isSearching, setSize, refresh) {
@@ -1194,8 +1194,8 @@
           selected,
           prevActive;
 
-      this.selectpicker.isSearching = isSearching;
-      this.selectpicker.current = isSearching ? this.selectpicker.search : this.selectpicker.main;
+      this.picker.isSearching = isSearching;
+      this.picker.current = isSearching ? this.picker.search : this.picker.main;
 
       this.setPositionData();
 
@@ -1207,7 +1207,7 @@
               selectedIndex = (element.options[element.selectedIndex] || {}).liIndex;
 
           if (typeof selectedIndex === 'number' && that.options.size !== false) {
-            var selectedData = that.selectpicker.main.data[selectedIndex],
+            var selectedData = that.picker.main.data[selectedIndex],
                 position = selectedData && selectedData.position;
 
             if (position) {
@@ -1225,7 +1225,7 @@
       });
 
       function scroll (scrollTop, init) {
-        var size = that.selectpicker.current.elements.length,
+        var size = that.picker.current.elements.length,
             chunks = [],
             chunkSize,
             chunkCount,
@@ -1238,7 +1238,7 @@
             menuIsDifferent = true,
             isVirtual = that.isVirtual();
 
-        that.selectpicker.view.scrollTop = scrollTop;
+        that.picker.view.scrollTop = scrollTop;
 
         chunkSize = Math.ceil(that.sizeInfo.menuInnerHeight / that.sizeInfo.liHeight * 1.5); // number of options in a chunk
         chunkCount = Math.round(size / chunkSize) || 1; // number of chunks
@@ -1257,28 +1257,28 @@
 
           if (!size) break;
 
-          if (currentChunk === undefined && scrollTop - 1 <= that.selectpicker.current.data[endOfChunk - 1].position - that.sizeInfo.menuInnerHeight) {
+          if (currentChunk === undefined && scrollTop - 1 <= that.picker.current.data[endOfChunk - 1].position - that.sizeInfo.menuInnerHeight) {
             currentChunk = i;
           }
         }
 
         if (currentChunk === undefined) currentChunk = 0;
 
-        prevPositions = [that.selectpicker.view.position0, that.selectpicker.view.position1];
+        prevPositions = [that.picker.view.position0, that.picker.view.position1];
 
         // always display previous, current, and next chunks
         firstChunk = Math.max(0, currentChunk - 1);
         lastChunk = Math.min(chunkCount - 1, currentChunk + 1);
 
-        that.selectpicker.view.position0 = isVirtual === false ? 0 : (Math.max(0, chunks[firstChunk][0]) || 0);
-        that.selectpicker.view.position1 = isVirtual === false ? size : (Math.min(size, chunks[lastChunk][1]) || 0);
+        that.picker.view.position0 = isVirtual === false ? 0 : (Math.max(0, chunks[firstChunk][0]) || 0);
+        that.picker.view.position1 = isVirtual === false ? size : (Math.min(size, chunks[lastChunk][1]) || 0);
 
-        positionIsDifferent = prevPositions[0] !== that.selectpicker.view.position0 || prevPositions[1] !== that.selectpicker.view.position1;
+        positionIsDifferent = prevPositions[0] !== that.picker.view.position0 || prevPositions[1] !== that.picker.view.position1;
 
         if (that.activeIndex !== undefined) {
-          prevActive = that.selectpicker.main.elements[that.prevActiveIndex];
-          active = that.selectpicker.main.elements[that.activeIndex];
-          selected = that.selectpicker.main.elements[that.selectedIndex];
+          prevActive = that.picker.main.elements[that.prevActiveIndex];
+          active = that.picker.main.elements[that.activeIndex];
+          selected = that.picker.main.elements[that.selectedIndex];
 
           if (init) {
             if (that.activeIndex !== that.selectedIndex) {
@@ -1297,19 +1297,19 @@
         }
 
         if (init || positionIsDifferent) {
-          previousElements = that.selectpicker.view.visibleElements ? that.selectpicker.view.visibleElements.slice() : [];
+          previousElements = that.picker.view.visibleElements ? that.picker.view.visibleElements.slice() : [];
 
           if (isVirtual === false) {
-            that.selectpicker.view.visibleElements = that.selectpicker.current.elements;
+            that.picker.view.visibleElements = that.picker.current.elements;
           } else {
-            that.selectpicker.view.visibleElements = that.selectpicker.current.elements.slice(that.selectpicker.view.position0, that.selectpicker.view.position1);
+            that.picker.view.visibleElements = that.picker.current.elements.slice(that.picker.view.position0, that.picker.view.position1);
           }
 
           that.setOptionStatus();
 
           // if searching, check to make sure the list has actually been updated before updating DOM
           // this prevents unnecessary repaints
-          if (isSearching || (isVirtual === false && init)) menuIsDifferent = !isEqual(previousElements, that.selectpicker.view.visibleElements);
+          if (isSearching || (isVirtual === false && init)) menuIsDifferent = !isEqual(previousElements, that.picker.view.visibleElements);
 
           // if virtual scroll is disabled and not searching,
           // menu should never need to be updated more than once
@@ -1319,7 +1319,7 @@
                 emptyMenu = menuInner.firstChild.cloneNode(false),
                 marginTop,
                 marginBottom,
-                elements = that.selectpicker.view.visibleElements,
+                elements = that.picker.view.visibleElements,
                 toSanitize = [];
 
             // replace the existing UL with an empty one - this is faster than $.empty()
@@ -1334,7 +1334,7 @@
                 elText = element.lastChild;
 
                 if (elText) {
-                  elementData = that.selectpicker.current.data[i + that.selectpicker.view.position0];
+                  elementData = that.picker.current.data[i + that.picker.view.position0];
 
                   if (elementData && elementData.content && !elementData.sanitized) {
                     toSanitize.push(elText);
@@ -1351,8 +1351,8 @@
             }
 
             if (isVirtual === true) {
-              marginTop = (that.selectpicker.view.position0 === 0 ? 0 : that.selectpicker.current.data[that.selectpicker.view.position0 - 1].position);
-              marginBottom = (that.selectpicker.view.position1 > size - 1 ? 0 : that.selectpicker.current.data[size - 1].position - that.selectpicker.current.data[that.selectpicker.view.position1 - 1].position);
+              marginTop = (that.picker.view.position0 === 0 ? 0 : that.picker.current.data[that.picker.view.position0 - 1].position);
+              marginBottom = (that.picker.view.position1 > size - 1 ? 0 : that.picker.current.data[size - 1].position - that.picker.current.data[that.picker.view.position1 - 1].position);
 
               menuInner.firstChild.style.marginTop = marginTop + 'px';
               menuInner.firstChild.style.marginBottom = marginBottom + 'px';
@@ -1396,15 +1396,15 @@
           var index = 0,
               newActive;
 
-          if (!that.selectpicker.view.canHighlight[index]) {
-            index = 1 + that.selectpicker.view.canHighlight.slice(1).indexOf(true);
+          if (!that.picker.view.canHighlight[index]) {
+            index = 1 + that.picker.view.canHighlight.slice(1).indexOf(true);
           }
 
-          newActive = that.selectpicker.view.visibleElements[index];
+          newActive = that.picker.view.visibleElements[index];
 
-          that.defocusItem(that.selectpicker.view.currentActive);
+          that.defocusItem(that.picker.view.currentActive);
 
-          that.activeIndex = (that.selectpicker.current.data[index] || {}).index;
+          that.activeIndex = (that.picker.current.data[index] || {}).index;
 
           that.focusItem(newActive);
         }
@@ -1421,11 +1421,11 @@
 
     focusItem: function (li, liData, noStyle) {
       if (li) {
-        liData = liData || this.selectpicker.main.data[this.activeIndex];
+        liData = liData || this.picker.main.data[this.activeIndex];
         var a = li.firstChild;
 
         if (a) {
-          a.setAttribute('aria-setsize', this.selectpicker.view.size);
+          a.setAttribute('aria-setsize', this.picker.view.size);
           a.setAttribute('aria-posinset', liData.posinset);
 
           if (noStyle !== true) {
@@ -1449,7 +1449,7 @@
           updateIndex = false;
 
       if (this.options.title && !this.multiple) {
-        if (!this.selectpicker.view.titleOption) this.selectpicker.view.titleOption = document.createElement('option');
+        if (!this.picker.view.titleOption) this.picker.view.titleOption = document.createElement('option');
 
         // this option doesn't create a new <li> element, but does add a new option at the start,
         // so startIndex should increase to prevent having to check every option for the bs-title-option class
@@ -1457,7 +1457,7 @@
 
         var element = this.$element[0],
             selectTitleOption = false,
-            titleNotAppended = !this.selectpicker.view.titleOption.parentNode,
+            titleNotAppended = !this.picker.view.titleOption.parentNode,
             selectedIndex = element.selectedIndex,
             selectedOption = element.options[selectedIndex],
             navigation = window.performance && window.performance.getEntriesByType('navigation'),
@@ -1466,8 +1466,8 @@
 
         if (titleNotAppended) {
           // Use native JS to prepend option (faster)
-          this.selectpicker.view.titleOption.className = 'bs-title-option';
-          this.selectpicker.view.titleOption.value = '';
+          this.picker.view.titleOption.className = 'bs-title-option';
+          this.picker.view.titleOption.value = '';
 
           // Check if selected or data-selected attribute is already set on an option. If not, select the titleOption option.
           // the selected item may have been changed by user or programmatically before the bootstrap select plugin runs,
@@ -1475,8 +1475,8 @@
           selectTitleOption = !selectedOption || (selectedIndex === 0 && selectedOption.defaultSelected === false && this.$element.data('selected') === undefined);
         }
 
-        if (titleNotAppended || this.selectpicker.view.titleOption.index !== 0) {
-          element.insertBefore(this.selectpicker.view.titleOption, element.firstChild);
+        if (titleNotAppended || this.picker.view.titleOption.index !== 0) {
+          element.insertBefore(this.picker.view.titleOption, element.firstChild);
         }
 
         // Set selected *after* appending to select,
@@ -1488,7 +1488,7 @@
           // if navigation type is back_forward, there's a chance the select will have its value set by BFCache
           // wait for that value to be set, then run render again
           window.addEventListener('pageshow', function () {
-            if (that.selectpicker.view.displayedValue !== element.value) that.render();
+            if (that.picker.view.displayedValue !== element.value) that.render();
           });
         }
       }
@@ -1624,12 +1624,12 @@
         }
       }
 
-      this.selectpicker.main.data = this.selectpicker.current.data = mainData;
+      this.picker.main.data = this.picker.current.data = mainData;
     },
 
     buildList: function () {
       var that = this,
-          selectData = this.selectpicker.main.data,
+          selectData = this.picker.main.data,
           mainElements = [],
           widestOptionLength = 0;
 
@@ -1694,7 +1694,7 @@
           // guess which option is the widest
           // use this when calculating menu width
           // not perfect, but it's fast, and the width will be updating accordingly when scrolling
-          that.selectpicker.view.widestOption = mainElements[mainElements.length - 1];
+          that.picker.view.widestOption = mainElements[mainElements.length - 1];
         }
       }
 
@@ -1704,7 +1704,7 @@
         buildElement(item);
       }
 
-      this.selectpicker.main.elements = this.selectpicker.current.elements = mainElements;
+      this.picker.main.elements = this.picker.current.elements = mainElements;
     },
 
     findLis: function () {
@@ -1729,7 +1729,7 @@
       button.classList.toggle('bs-placeholder', that.multiple ? !selectedCount : !getSelectValues(element, selectedOptions));
 
       if (!that.multiple && selectedOptions.length === 1) {
-        that.selectpicker.view.displayedValue = getSelectValues(element, selectedOptions);
+        that.picker.view.displayedValue = getSelectValues(element, selectedOptions);
       }
 
       if (this.options.selectedTextFormat === 'static') {
@@ -1749,7 +1749,7 @@
             for (var selectedIndex = 0; selectedIndex < selectedCount; selectedIndex++) {
               if (selectedIndex < 50) {
                 var option = selectedOptions[selectedIndex],
-                    thisData = this.selectpicker.main.data[option.liIndex],
+                    thisData = this.picker.main.data[option.liIndex],
                     titleOptions = {};
 
                 if (this.multiple && selectedIndex > 0) {
@@ -1845,7 +1845,7 @@
           buttonClass;
 
       if (this.$element.attr('class')) {
-        this.$newElement.addClass(this.$element.attr('class').replace(/selectpicker|mobile-device|bs-select-hidden|validate\[.*\]/gi, ''));
+        this.$newElement.addClass(this.$element.attr('class').replace(/picker|mobile-device|bs-select-hidden|validate\[.*\]/gi, ''));
       }
 
       if (version.major < 4) {
@@ -1908,9 +1908,9 @@
 
       text.appendChild(document.createTextNode('\u200b'));
 
-      if (this.selectpicker.current.data.length) {
-        for (var i = 0; i < this.selectpicker.current.data.length; i++) {
-          var data = this.selectpicker.current.data[i];
+      if (this.picker.current.data.length) {
+        for (var i = 0; i < this.picker.current.data.length; i++) {
+          var data = this.picker.current.data[i];
           if (data.type === 'option') {
             li = data.element;
             break;
@@ -1924,8 +1924,8 @@
 
       dropdownHeader.appendChild(text.cloneNode(true));
 
-      if (this.selectpicker.view.widestOption) {
-        menuInnerInner.appendChild(this.selectpicker.view.widestOption.cloneNode(true));
+      if (this.picker.view.widestOption) {
+        menuInnerInner.appendChild(this.picker.view.widestOption.cloneNode(true));
       }
 
       menuInnerInner.appendChild(li);
@@ -2053,21 +2053,21 @@
         // This is useful for smaller menus, where there might be plenty of room
         // below the button without setting dropup, but we can't know
         // the exact height of the menu until createView is called later
-        estimate = liHeight * this.selectpicker.current.elements.length + menuPadding.vert;
+        estimate = liHeight * this.picker.current.elements.length + menuPadding.vert;
 
         isDropup = this.sizeInfo.selectOffsetTop - this.sizeInfo.selectOffsetBot > this.sizeInfo.menuExtras.vert && estimate + this.sizeInfo.menuExtras.vert + 50 > this.sizeInfo.selectOffsetBot;
 
         // ensure dropup doesn't change while searching (so menu doesn't bounce back and forth)
-        if (this.selectpicker.isSearching === true) {
-          isDropup = this.selectpicker.dropup;
+        if (this.picker.isSearching === true) {
+          isDropup = this.picker.dropup;
         }
 
         this.$newElement.toggleClass(classNames.DROPUP, isDropup);
-        this.selectpicker.dropup = isDropup;
+        this.picker.dropup = isDropup;
       }
 
       if (this.options.size === 'auto') {
-        _minHeight = this.selectpicker.current.elements.length > 3 ? this.sizeInfo.liHeight * 3 + this.sizeInfo.menuExtras.vert - 2 : 0;
+        _minHeight = this.picker.current.elements.length > 3 ? this.sizeInfo.liHeight * 3 + this.sizeInfo.menuExtras.vert - 2 : 0;
         menuHeight = this.sizeInfo.selectOffsetBot - this.sizeInfo.menuExtras.vert;
         minHeight = _minHeight + headerHeight + searchHeight + actionsHeight + doneButtonHeight;
         menuInnerMinHeight = Math.max(_minHeight - menuPadding.vert, 0);
@@ -2078,9 +2078,9 @@
 
         maxHeight = menuHeight;
         menuInnerHeight = menuHeight - headerHeight - searchHeight - actionsHeight - doneButtonHeight - menuPadding.vert;
-      } else if (this.options.size && this.options.size != 'auto' && this.selectpicker.current.elements.length > this.options.size) {
+      } else if (this.options.size && this.options.size != 'auto' && this.picker.current.elements.length > this.options.size) {
         for (var i = 0; i < this.options.size; i++) {
-          if (this.selectpicker.current.data[i].type === 'divider') divLength++;
+          if (this.picker.current.data[i].type === 'divider') divLength++;
         }
 
         menuHeight = liHeight * this.options.size + divLength * divHeight + menuPadding.vert;
@@ -2104,7 +2104,7 @@
       // ensure menuInnerHeight is always a positive number to prevent issues calculating chunkSize in createView
       this.sizeInfo.menuInnerHeight = Math.max(menuInnerHeight, 1);
 
-      if (this.selectpicker.current.data.length && this.selectpicker.current.data[this.selectpicker.current.data.length - 1].position > this.sizeInfo.menuInnerHeight) {
+      if (this.picker.current.data.length && this.picker.current.data[this.picker.current.data.length - 1].position > this.sizeInfo.menuInnerHeight) {
         this.sizeInfo.hasScrollBar = true;
         this.sizeInfo.totalMenuWidth = this.sizeInfo.menuWidth + this.sizeInfo.scrollBarWidth;
       }
@@ -2141,7 +2141,7 @@
             .on('resize' + EVENT_KEY + '.' + this.selectId + '.setMenuSize' + ' scroll' + EVENT_KEY + '.' + this.selectId + '.setMenuSize', function () {
               return that.setMenuSize();
             });
-        } else if (this.options.size && this.options.size != 'auto' && this.selectpicker.current.elements.length > this.options.size) {
+        } else if (this.options.size && this.options.size != 'auto' && this.picker.current.elements.length > this.options.size) {
           $window.off('resize' + EVENT_KEY + '.' + this.selectId + '.setMenuSize' + ' scroll' + EVENT_KEY + '.' + this.selectId + '.setMenuSize');
         }
       }
@@ -2263,9 +2263,9 @@
 
       that.noScroll = false;
 
-      if (that.selectpicker.view.visibleElements && that.selectpicker.view.visibleElements.length) {
-        for (var i = 0; i < that.selectpicker.view.visibleElements.length; i++) {
-          var liData = that.selectpicker.current.data[i + that.selectpicker.view.position0],
+      if (that.picker.view.visibleElements && that.picker.view.visibleElements.length) {
+        for (var i = 0; i < that.picker.view.visibleElements.length; i++) {
+          var liData = that.picker.current.data[i + that.picker.view.position0],
               option = liData.option;
 
           if (option) {
@@ -2290,8 +2290,8 @@
      * @param {boolean} selected - true if the option is being selected, false if being deselected
      */
     setSelected: function (index, selected) {
-      var li = this.selectpicker.main.elements[index],
-          liData = this.selectpicker.main.data[index],
+      var li = this.picker.main.elements[index],
+          liData = this.picker.main.data[index],
           activeIndexIsSet = this.activeIndex !== undefined,
           thisIsActive = this.activeIndex === index,
           prevActive,
@@ -2317,7 +2317,7 @@
 
       if (keepActive) {
         this.focusItem(li, liData);
-        this.selectpicker.view.currentActive = li;
+        this.picker.view.currentActive = li;
         this.activeIndex = index;
       } else {
         this.defocusItem(li);
@@ -2338,7 +2338,7 @@
       }
 
       if (!keepActive && !activeIndexIsSet && selected && this.prevActiveIndex !== undefined) {
-        prevActive = this.selectpicker.main.elements[this.prevActiveIndex];
+        prevActive = this.picker.main.elements[this.prevActiveIndex];
 
         this.defocusItem(prevActive);
       }
@@ -2349,10 +2349,10 @@
      * @param {boolean} disabled - true if the option is being disabled, false if being enabled
      */
     setDisabled: function (index, disabled) {
-      var li = this.selectpicker.main.elements[index],
+      var li = this.picker.main.elements[index],
           a;
 
-      this.selectpicker.main.data[index].disabled = disabled;
+      this.picker.main.data[index].disabled = disabled;
 
       a = li.firstChild;
 
@@ -2430,8 +2430,8 @@
       }
 
       this.$element.on('shown' + EVENT_KEY, function () {
-        if (that.$menuInner[0].scrollTop !== that.selectpicker.view.scrollTop) {
-          that.$menuInner[0].scrollTop = that.selectpicker.view.scrollTop;
+        if (that.$menuInner[0].scrollTop !== that.picker.view.scrollTop) {
+          that.$menuInner[0].scrollTop = that.picker.view.scrollTop;
         }
 
         if (version.major > 3) {
@@ -2444,9 +2444,9 @@
       // ensure posinset and setsize are correct before selecting an option via a click
       this.$menuInner.on('mouseenter', 'li a', function (e) {
         var hoverLi = this.parentElement,
-            position0 = that.isVirtual() ? that.selectpicker.view.position0 : 0,
+            position0 = that.isVirtual() ? that.picker.view.position0 : 0,
             index = Array.prototype.indexOf.call(hoverLi.parentElement.children, hoverLi),
-            hoverData = that.selectpicker.current.data[index + position0];
+            hoverData = that.picker.current.data[index + position0];
 
         that.focusItem(hoverLi, hoverData, true);
       });
@@ -2454,8 +2454,8 @@
       this.$menuInner.on('click', 'li a', function (e, retainActive) {
         var $this = $(this),
             element = that.$element[0],
-            position0 = that.isVirtual() ? that.selectpicker.view.position0 : 0,
-            clickedData = that.selectpicker.current.data[$this.parent().index() + position0],
+            position0 = that.isVirtual() ? that.picker.view.position0 : 0,
+            clickedData = that.picker.current.data[$this.parent().index() + position0],
             clickedIndex = clickedData.index,
             prevValue = getSelectValues(element),
             prevIndex = element.selectedIndex,
@@ -2632,15 +2632,15 @@
             this.setAttribute('tabindex', tabindex);
             // set element's tabindex to -1 to allow for reverse tabbing
             that.$element[0].setAttribute('tabindex', -1);
-            that.selectpicker.view.tabindex = tabindex;
+            that.picker.view.tabindex = tabindex;
           }
         })
         .on('blur' + EVENT_KEY, function (e) {
           // revert everything to original tabindex
-          if (that.selectpicker.view.tabindex !== undefined && e.originalEvent && e.originalEvent.isTrusted) {
-            that.$element[0].setAttribute('tabindex', that.selectpicker.view.tabindex);
+          if (that.picker.view.tabindex !== undefined && e.originalEvent && e.originalEvent.isTrusted) {
+            that.$element[0].setAttribute('tabindex', that.picker.view.tabindex);
             this.setAttribute('tabindex', -1);
-            that.selectpicker.view.tabindex = undefined;
+            that.picker.view.tabindex = undefined;
           }
         });
 
@@ -2661,7 +2661,7 @@
       this.$button.on('click.bs.dropdown.data-api', function () {
         if (!!that.$searchbox.val()) {
           that.$searchbox.val('');
-          that.selectpicker.search.previousValue = undefined;
+          that.picker.search.previousValue = undefined;
         }
       });
 
@@ -2672,8 +2672,8 @@
       this.$searchbox.on('input propertychange', function () {
         var searchValue = that.$searchbox[0].value;
 
-        that.selectpicker.search.elements = [];
-        that.selectpicker.search.data = [];
+        that.picker.search.elements = [];
+        that.picker.search.data = [];
 
         if (searchValue) {
           var i,
@@ -2686,8 +2686,8 @@
 
           if (normalizeSearch) q = normalizeToBase(q);
 
-          for (var i = 0; i < that.selectpicker.main.data.length; i++) {
-            var li = that.selectpicker.main.data[i];
+          for (var i = 0; i < that.picker.main.data.length; i++) {
+            var li = that.picker.main.data[i];
 
             if (!cache[i]) {
               cache[i] = stringSearch(li, q, searchStyle, normalizeSearch);
@@ -2711,27 +2711,27 @@
           for (var i = 0, cacheLen = cacheArr.length; i < cacheLen; i++) {
             var index = cacheArr[i],
                 prevIndex = cacheArr[i - 1],
-                li = that.selectpicker.main.data[index],
-                liPrev = that.selectpicker.main.data[prevIndex];
+                li = that.picker.main.data[index],
+                liPrev = that.picker.main.data[prevIndex];
 
             if (li.type !== 'divider' || (li.type === 'divider' && liPrev && liPrev.type !== 'divider' && cacheLen - 1 !== i)) {
-              that.selectpicker.search.data.push(li);
-              searchMatch.push(that.selectpicker.main.elements[index]);
+              that.picker.search.data.push(li);
+              searchMatch.push(that.picker.main.elements[index]);
             }
           }
 
           that.activeIndex = undefined;
           that.noScroll = true;
           that.$menuInner.scrollTop(0);
-          that.selectpicker.search.elements = searchMatch;
+          that.picker.search.elements = searchMatch;
           that.createView(true);
           showNoResults.call(that, searchMatch, searchValue);
-        } else if (that.selectpicker.search.previousValue) { // for IE11 (#2402)
+        } else if (that.picker.search.previousValue) { // for IE11 (#2402)
           that.$menuInner.scrollTop(0);
           that.createView(false);
         }
 
-        that.selectpicker.search.previousValue =  searchValue;
+        that.picker.search.previousValue =  searchValue;
       });
     },
 
@@ -2785,7 +2785,7 @@
 
       element.classList.add('bs-select-hidden');
 
-      for (var i = 0, data = this.selectpicker.current.data, len = data.length; i < len; i++) {
+      for (var i = 0, data = this.picker.current.data, len = data.length; i < len; i++) {
         var liData = data[i],
             option = liData.option;
 
@@ -2840,7 +2840,7 @@
           isArrowKey = REGEXP_ARROW.test(e.which) || downOnTab,
           scrollTop = that.$menuInner[0].scrollTop,
           isVirtual = that.isVirtual(),
-          position0 = isVirtual === true ? that.selectpicker.view.position0 : 0;
+          position0 = isVirtual === true ? that.picker.view.position0 : 0;
 
       // do nothing if a function key is pressed
       if (e.which >= 112 && e.which <= 123) return;
@@ -2872,7 +2872,7 @@
       if (isArrowKey) { // if up or down
         if (!$items.length) return;
 
-        liActive = that.selectpicker.main.elements[that.activeIndex];
+        liActive = that.picker.main.elements[that.activeIndex];
         index = liActive ? Array.prototype.indexOf.call(liActive.parentElement.children, liActive) : -1;
 
         if (index !== -1) {
@@ -2883,16 +2883,16 @@
           if (index !== -1) index--;
           if (index + position0 < 0) index += $items.length;
 
-          if (!that.selectpicker.view.canHighlight[index + position0]) {
-            index = that.selectpicker.view.canHighlight.slice(0, index + position0).lastIndexOf(true) - position0;
+          if (!that.picker.view.canHighlight[index + position0]) {
+            index = that.picker.view.canHighlight.slice(0, index + position0).lastIndexOf(true) - position0;
             if (index === -1) index = $items.length - 1;
           }
         } else if (e.which === keyCodes.ARROW_DOWN || downOnTab) { // down
           index++;
-          if (index + position0 >= that.selectpicker.view.canHighlight.length) index = that.selectpicker.view.firstHighlightIndex;
+          if (index + position0 >= that.picker.view.canHighlight.length) index = that.picker.view.firstHighlightIndex;
 
-          if (!that.selectpicker.view.canHighlight[index + position0]) {
-            index = index + 1 + that.selectpicker.view.canHighlight.slice(index + position0 + 1).indexOf(true);
+          if (!that.picker.view.canHighlight[index + position0]) {
+            index = index + 1 + that.picker.view.canHighlight.slice(index + position0 + 1).indexOf(true);
           }
         }
 
@@ -2905,34 +2905,34 @@
           if (position0 === 0 && index === $items.length - 1) {
             that.$menuInner[0].scrollTop = that.$menuInner[0].scrollHeight;
 
-            liActiveIndex = that.selectpicker.current.elements.length - 1;
+            liActiveIndex = that.picker.current.elements.length - 1;
           } else {
-            activeLi = that.selectpicker.current.data[liActiveIndex];
+            activeLi = that.picker.current.data[liActiveIndex];
             offset = activeLi.position - activeLi.height;
 
             updateScroll = offset < scrollTop;
           }
         } else if (e.which === keyCodes.ARROW_DOWN || downOnTab) { // down
           // scroll to top and highlight first option
-          if (index === that.selectpicker.view.firstHighlightIndex) {
+          if (index === that.picker.view.firstHighlightIndex) {
             that.$menuInner[0].scrollTop = 0;
 
-            liActiveIndex = that.selectpicker.view.firstHighlightIndex;
+            liActiveIndex = that.picker.view.firstHighlightIndex;
           } else {
-            activeLi = that.selectpicker.current.data[liActiveIndex];
+            activeLi = that.picker.current.data[liActiveIndex];
             offset = activeLi.position - that.sizeInfo.menuInnerHeight;
 
             updateScroll = offset > scrollTop;
           }
         }
 
-        liActive = that.selectpicker.current.elements[liActiveIndex];
+        liActive = that.picker.current.elements[liActiveIndex];
 
-        that.activeIndex = that.selectpicker.current.data[liActiveIndex].index;
+        that.activeIndex = that.picker.current.data[liActiveIndex].index;
 
         that.focusItem(liActive);
 
-        that.selectpicker.view.currentActive = liActive;
+        that.picker.view.currentActive = liActive;
 
         if (updateScroll) that.$menuInner[0].scrollTop = offset;
 
@@ -2943,7 +2943,7 @@
         }
       } else if (
         (!$this.is('input') && !REGEXP_TAB_OR_ESCAPE.test(e.which)) ||
-        (e.which === keyCodes.SPACE && that.selectpicker.keydown.keyHistory)
+        (e.which === keyCodes.SPACE && that.picker.keydown.keyHistory)
       ) {
         var searchMatch,
             matches = [],
@@ -2951,12 +2951,12 @@
 
         e.preventDefault();
 
-        that.selectpicker.keydown.keyHistory += keyCodeMap[e.which];
+        that.picker.keydown.keyHistory += keyCodeMap[e.which];
 
-        if (that.selectpicker.keydown.resetKeyHistory.cancel) clearTimeout(that.selectpicker.keydown.resetKeyHistory.cancel);
-        that.selectpicker.keydown.resetKeyHistory.cancel = that.selectpicker.keydown.resetKeyHistory.start();
+        if (that.picker.keydown.resetKeyHistory.cancel) clearTimeout(that.picker.keydown.resetKeyHistory.cancel);
+        that.picker.keydown.resetKeyHistory.cancel = that.picker.keydown.resetKeyHistory.start();
 
-        keyHistory = that.selectpicker.keydown.keyHistory;
+        keyHistory = that.picker.keydown.keyHistory;
 
         // if all letters are the same, set keyHistory to just the first character when searching
         if (/^(.)\1+$/.test(keyHistory)) {
@@ -2964,13 +2964,13 @@
         }
 
         // find matches
-        for (var i = 0; i < that.selectpicker.current.data.length; i++) {
-          var li = that.selectpicker.current.data[i],
+        for (var i = 0; i < that.picker.current.data.length; i++) {
+          var li = that.picker.current.data[i],
               hasMatch;
 
           hasMatch = stringSearch(li, keyHistory, 'startsWith', true);
 
-          if (hasMatch && that.selectpicker.view.canHighlight[i]) {
+          if (hasMatch && that.picker.view.canHighlight[i]) {
             matches.push(li.index);
           }
         }
@@ -2993,7 +2993,7 @@
 
           searchMatch = matches[matchIndex];
 
-          activeLi = that.selectpicker.main.data[searchMatch];
+          activeLi = that.picker.main.data[searchMatch];
 
           if (scrollTop - activeLi.position > 0) {
             offset = activeLi.position - activeLi.height;
@@ -3004,7 +3004,7 @@
             updateScroll = activeLi.position > scrollTop + that.sizeInfo.menuInnerHeight;
           }
 
-          liActive = that.selectpicker.main.elements[searchMatch];
+          liActive = that.picker.main.elements[searchMatch];
 
           that.activeIndex = matches[matchIndex];
 
@@ -3022,7 +3022,7 @@
       if (
         isActive &&
         (
-          (e.which === keyCodes.SPACE && !that.selectpicker.keydown.keyHistory) ||
+          (e.which === keyCodes.SPACE && !that.picker.keydown.keyHistory) ||
           e.which === keyCodes.ENTER ||
           (e.which === keyCodes.TAB && that.options.selectOnTab)
         )
@@ -3088,20 +3088,20 @@
         this.$menu.remove();
       }
 
-      if (this.selectpicker.view.titleOption && this.selectpicker.view.titleOption.parentNode) {
-        this.selectpicker.view.titleOption.parentNode.removeChild(this.selectpicker.view.titleOption);
+      if (this.picker.view.titleOption && this.picker.view.titleOption.parentNode) {
+        this.picker.view.titleOption.parentNode.removeChild(this.picker.view.titleOption);
       }
 
       this.$element
         .off(EVENT_KEY)
-        .removeData('selectpicker')
-        .removeClass('bs-select-hidden selectpicker');
+        .removeData('picker')
+        .removeClass('bs-select-hidden picker');
 
       $(window).off(EVENT_KEY + '.' + this.selectId);
     }
   };
 
-  // SELECTPICKER PLUGIN DEFINITION
+  // picker PLUGIN DEFINITION
   // ==============================
   function Plugin (option) {
     // get the args of the outer function..
@@ -3119,15 +3119,15 @@
         version.full = ($.fn.dropdown.Constructor.VERSION || '').split(' ')[0].split('.');
       } catch (err) {
         // fall back to use BootstrapVersion if set
-        if (Selectpicker.BootstrapVersion) {
-          version.full = Selectpicker.BootstrapVersion.split(' ')[0].split('.');
+        if (picker.BootstrapVersion) {
+          version.full = picker.BootstrapVersion.split(' ')[0].split('.');
         } else {
           version.full = [version.major, '0', '0'];
 
           console.warn(
             'There was an issue retrieving Bootstrap\'s version. ' +
             'Ensure Bootstrap is being loaded before bootstrap-select and there is no namespace collision. ' +
-            'If loading Bootstrap asynchronously, the version may need to be manually specified via $.fn.selectpicker.Constructor.BootstrapVersion.',
+            'If loading Bootstrap asynchronously, the version may need to be manually specified via $.fn.picker.Constructor.BootstrapVersion.',
             err
           );
         }
@@ -3142,9 +3142,9 @@
       // check to see if they have already been manually changed before forcing them to update
       var toUpdate = [];
 
-      if (Selectpicker.DEFAULTS.style === classNames.BUTTONCLASS) toUpdate.push({ name: 'style', className: 'BUTTONCLASS' });
-      if (Selectpicker.DEFAULTS.iconBase === classNames.ICONBASE) toUpdate.push({ name: 'iconBase', className: 'ICONBASE' });
-      if (Selectpicker.DEFAULTS.tickIcon === classNames.TICKICON) toUpdate.push({ name: 'tickIcon', className: 'TICKICON' });
+      if (picker.DEFAULTS.style === classNames.BUTTONCLASS) toUpdate.push({ name: 'style', className: 'BUTTONCLASS' });
+      if (picker.DEFAULTS.iconBase === classNames.ICONBASE) toUpdate.push({ name: 'iconBase', className: 'ICONBASE' });
+      if (picker.DEFAULTS.tickIcon === classNames.TICKICON) toUpdate.push({ name: 'tickIcon', className: 'TICKICON' });
 
       classNames.DIVIDER = 'dropdown-divider';
       classNames.SHOW = 'show';
@@ -3155,7 +3155,7 @@
 
       for (var i = 0; i < toUpdate.length; i++) {
         var option = toUpdate[i];
-        Selectpicker.DEFAULTS[option.name] = classNames[option.className];
+        picker.DEFAULTS[option.name] = classNames[option.className];
       }
     }
 
@@ -3163,7 +3163,7 @@
     var chain = this.each(function () {
       var $this = $(this);
       if ($this.is('select')) {
-        var data = $this.data('selectpicker'),
+        var data = $this.data('picker'),
             options = typeof _option == 'object' && _option;
 
         if (!data) {
@@ -3175,9 +3175,9 @@
             }
           }
 
-          var config = $.extend({}, Selectpicker.DEFAULTS, $.fn.selectpicker.defaults || {}, dataAttributes, options);
-          config.template = $.extend({}, Selectpicker.DEFAULTS.template, ($.fn.selectpicker.defaults ? $.fn.selectpicker.defaults.template : {}), dataAttributes.template, options.template);
-          $this.data('selectpicker', (data = new Selectpicker(this, config)));
+          var config = $.extend({}, picker.DEFAULTS, $.fn.picker.defaults || {}, dataAttributes, options);
+          config.template = $.extend({}, picker.DEFAULTS.template, ($.fn.picker.defaults ? $.fn.picker.defaults.template : {}), dataAttributes.template, options.template);
+          $this.data('picker', (data = new picker(this, config)));
         } else if (options) {
           for (var i in options) {
             if (Object.prototype.hasOwnProperty.call(options, i)) {
@@ -3204,14 +3204,14 @@
     }
   }
 
-  var old = $.fn.selectpicker;
-  $.fn.selectpicker = Plugin;
-  $.fn.selectpicker.Constructor = Selectpicker;
+  var old = $.fn.picker;
+  $.fn.picker = Plugin;
+  $.fn.picker.Constructor = picker;
 
-  // SELECTPICKER NO CONFLICT
+  // picker NO CONFLICT
   // ========================
-  $.fn.selectpicker.noConflict = function () {
-    $.fn.selectpicker = old;
+  $.fn.picker.noConflict = function () {
+    $.fn.picker = old;
     return this;
   };
 
@@ -3228,17 +3228,17 @@
     .off('keydown.bs.dropdown.data-api')
     .on('keydown.bs.dropdown.data-api', ':not(.bootstrap-select) > [data-toggle="dropdown"]', keydownHandler)
     .on('keydown.bs.dropdown.data-api', ':not(.bootstrap-select) > .dropdown-menu', keydownHandler)
-    .on('keydown' + EVENT_KEY, '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bootstrap-select .bs-searchbox input', Selectpicker.prototype.keydown)
+    .on('keydown' + EVENT_KEY, '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bootstrap-select .bs-searchbox input', picker.prototype.keydown)
     .on('focusin.modal', '.bootstrap-select [data-toggle="dropdown"], .bootstrap-select [role="listbox"], .bootstrap-select .bs-searchbox input', function (e) {
       e.stopPropagation();
     });
 
-  // SELECTPICKER DATA-API
+  // picker DATA-API
   // =====================
   $(window).on('load' + EVENT_KEY + '.data-api', function () {
-    $('.selectpicker').each(function () {
-      var $selectpicker = $(this);
-      Plugin.call($selectpicker, $selectpicker.data());
+    $('.picker').each(function () {
+      var $picker = $(this);
+      Plugin.call($picker, $picker.data());
     })
   });
 })(jQuery);
