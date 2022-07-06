@@ -9,8 +9,19 @@ class ServicesAPIViewSet(BaseAPIViewSet):
 
     name = "services"
     model = ServicePage
-
-    meta_fields = ["detail_url"]
+    
+    body_fields = BaseAPIViewSet.body_fields + [
+        "name",
+    ]
+   
+    listing_default_fields = BaseAPIViewSet.listing_default_fields + [
+        "name",
+    ]
+    nested_default_fields = BaseAPIViewSet.nested_default_fields + [
+        "name",
+    ]
+    
+    meta_fields = ["type"]
 
     filter_backends = [
         CustomFieldsFilter,
