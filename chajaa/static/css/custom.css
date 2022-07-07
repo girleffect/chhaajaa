@@ -736,7 +736,7 @@ a:hover {
   display: block;
   text-transform: capitalize;
 }
-.dropdown ul.dropdown-menu.show {
+.header_dropdown .dropdown ul.dropdown-menu.show {
   padding: 20px 30px !important;
   border-radius: 12px !important;
   background-color: #ffe366 !important;
@@ -1767,9 +1767,35 @@ a.see_all_btn {
 .responsive-object{
   padding-bottom: 0% !important;
 }
+.picker{
+  width: 50% !important;
+    margin-right: 1%;
+    position: relative !important;
+    border-radius: 20px;
+    height: 50px;
+    padding: 0.375rem 1.2rem;
+    background: url(../images/caret_icon.svg) no-repeat  !important;
+    background-position: top 20px right 20px !important;
+    background-size: 12px !important; 
+    content: "";
+    appearance: none;
+    -webkit-appearance: none;
+  }
+#add_tags{
+
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+
+}
+.add_tags_list_items ul{
+  padding-left: 0 !important;
+}
+.add_tags_list_items ul li{
+  list-style: none
+}
 
 
 .blog-inside .rich-text ul li{
   font-size:20px;
 }
-
