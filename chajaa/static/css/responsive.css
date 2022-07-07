@@ -1918,6 +1918,9 @@ a.call_data{
 }
 
 @media only screen and (max-width: 572px) {
+  .picker{
+    width: 100% !important;
+  }
   .hero-sec .banner-content .ban-button {
     top: 130px;
   }
@@ -1994,6 +1997,9 @@ a.call_data{
   }
 }
 @media only screen and (max-width: 480px) {
+  .picker{
+    width: 100% !important;
+  }
   .talk-bubble{
     box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
   }
@@ -2090,6 +2096,10 @@ a.call_data{
 }
 }
 @media only screen and (max-width: 414px) {
+  .picker{
+    width: 100% !important;
+    margin: 6px 0;
+  }
   .hero-sec {
     height: 21vh;
   }
