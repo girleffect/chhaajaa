@@ -1785,3 +1785,8 @@ a.see_all_btn {
 .add_tags_list_items ul li{
   list-style: none
 }
+
+.blog-inside .rich-text ul li{
+  font-size:20px;
+}
+

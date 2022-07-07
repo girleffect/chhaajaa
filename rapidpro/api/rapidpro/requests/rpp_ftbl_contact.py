@@ -17,7 +17,8 @@ class Contacts:
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
         df['fields'] = pd.Series([str(response['fields']) for response in responses[0]])
-        df = df[['uuid', 'name', 'language', 'blocked', 'stopped','created_on', 'modified_on','fields']]
+        df['language']=pd.Series([response['urns'][0][0:3] for response in responses[0]])
+        df = df[['uuid', 'name', 'language', 'blocked', 'stopped','created_on', 'modified_on','fields','language']]
         df['created_on'] = pd.to_datetime(df['created_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
         df['modified_on'] = pd.to_datetime(df['modified_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
         Na = np.nan
