@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.modeladmin',  # Don't repeat if it's there already
     'django.contrib.sitemaps',
     'wagtailmenus',
+    'wagtail.api.v2',
     'robots',
 
     'modelcluster',
@@ -79,6 +80,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'storages',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
