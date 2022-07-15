@@ -16,6 +16,10 @@ class FlowStart:
 
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         df = df[['id', 'uuid', 'status', 'restart_participants','exclude_active', 'created_on', 'modified_on']]
         df['created_on'] = pd.to_datetime(df['created_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
         df['modified_on'] = pd.to_datetime(df['modified_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 

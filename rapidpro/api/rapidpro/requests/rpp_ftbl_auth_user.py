@@ -16,6 +16,10 @@ class AuthUser:
 
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         df.rename(columns={'created_on': 'date_joined','role': 'is_staff'}, inplace=True)
         Na = np.nan
         df['username'] = df['email']

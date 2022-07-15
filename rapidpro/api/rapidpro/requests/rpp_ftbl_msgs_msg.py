@@ -25,13 +25,16 @@ class Messages:
         Na = np.nan 
         df.rename(columns={'broadcast': 'broadcast_id', 'type':'msg_type'}, inplace=True)
         df['high_priority'], df['queued_on'], df['delete_reason'], df['channel_id'], df['connection_id'], df['contact_id'], df['contact_urn_id'], df['org_id'], df['response_to_id'], df['topup_id'], df['msg_count'], df['error_count'], df['next_attempt'], df['external_id'], df['metadata'], df['uuid'] = Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         if df.shape[0] > 0:
-            df['text'] = df['text'].apply(lambda x: x[:6000] if len(x)>6000 else x)
+            df['text'] = df['text'].apply(lambda x: x[:6000] if len(x) > 6000 else x)
         df['queued_on'] = pd.to_datetime(df['queued_on'], errors='coerce')
         df['next_attempt'] = pd.to_datetime(df['next_attempt'], errors='coerce')
         df['attachments'] = df['attachments'].str.decode('utf8')
         df['contact_name'] = df['contact_name'].str.decode('utf8')
-
         try:
             df["org_id"] = params["org_id"]
         except Exception:

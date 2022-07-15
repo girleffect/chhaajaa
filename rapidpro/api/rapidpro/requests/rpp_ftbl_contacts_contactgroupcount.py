@@ -16,6 +16,10 @@ class ContactGroupCount:
 
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         Na = np.nan
         df['id'], df['group_id'], df['is_squashed'] = Na, Na, Na
         return df

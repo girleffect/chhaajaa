@@ -16,6 +16,10 @@ class Contacts:
 
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         df['fields'] = pd.Series([str(response['fields']) for response in responses[0]])
         df['language']=pd.Series([response['urns'][0][0:3] for response in responses[0]])
         df = df[['uuid', 'name', 'language', 'blocked', 'stopped','created_on', 'modified_on','fields','language']]

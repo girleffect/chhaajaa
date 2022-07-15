@@ -16,6 +16,10 @@ class BroadcastUrls:
 
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         Na = np.nan
         if df.shape[0] >0:
             df['contacts']=df['contacts'].apply(lambda x:x[0]['uuid'] if x!='' else x)
