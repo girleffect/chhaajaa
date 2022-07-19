@@ -1,3 +1,3 @@
-DELETE FROM rappidpro.staging_rpp_ftbl_flows_flowrun 
-USING rappidpro.rpp_ftbl_flows_flowrun 
+DELETE FROM rappidpro.rpp_ftbl_flows_flowrun
+USING rappidpro.staging_rpp_ftbl_flows_flowrun
 WHERE rpp_ftbl_flows_flowrun.id = staging_rpp_ftbl_flows_flowrun.id and rpp_ftbl_flows_flowrun.uuid = staging_rpp_ftbl_flows_flowrun.uuid and rpp_ftbl_flows_flowrun.contact_uuid = staging_rpp_ftbl_flows_flowrun.contact_uuid;
