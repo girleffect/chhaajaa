@@ -1,13 +1,13 @@
 INSERT INTO rappidpro.rpp_ftbl_flows_flow
 SELECT 
-       cast(is_active as bigint),
+       is_active ,
        created_on,
        modified_on,
        uuid,
        name,
        entry_uuid,
        entry_type,
-       cast(is_archived as bigint),
+       is_archived,
        flow_type,
        metadata,
        expires_after_minutes,
