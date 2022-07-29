@@ -16,6 +16,10 @@ class Messages:
 
         r_n = [pd.json_normalize(response, sep="_") for response in responses]
         df = pd.concat(r_n)
+        if df.shape[0]==0:
+            print("No new data fetched from API")
+            print("Exiting the pipeline run.")
+            exit(0)
         df = df[['id', 'broadcast', 'urn', 'direction', 'type', 'status', 'archived','visibility','text', 'labels', 'attachments', 'created_on', 'sent_on','modified_on', 'media', 'contact_uuid', 'contact_name', 'channel_uuid','channel_name']]
         df['created_on']=df['created_on'].apply(lambda k: ':'.join(k.split(':')[:-1]) + ':' + k.split(':')[-1][:2] + '.00Z' if len(k.split(':')[-1]) < 6 else k)
         df['created_on'] = pd.to_datetime(df['created_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
@@ -25,10 +29,7 @@ class Messages:
         Na = np.nan 
         df.rename(columns={'broadcast': 'broadcast_id', 'type':'msg_type'}, inplace=True)
         df['high_priority'], df['queued_on'], df['delete_reason'], df['channel_id'], df['connection_id'], df['contact_id'], df['contact_urn_id'], df['org_id'], df['response_to_id'], df['topup_id'], df['msg_count'], df['error_count'], df['next_attempt'], df['external_id'], df['metadata'], df['uuid'] = Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na, Na
-        if df.shape[0]==0:
-            print("No new data fetched from API")
-            print("Exiting the pipeline run.")
-            exit(0)
+
         if df.shape[0] > 0:
             df['text'] = df['text'].apply(lambda x: x[:6000] if len(x) > 6000 else x)
         df['queued_on'] = pd.to_datetime(df['queued_on'], errors='coerce')
