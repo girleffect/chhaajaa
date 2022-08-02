@@ -1867,6 +1867,37 @@ a.call_data{
     grid-template-columns: 1fr 1fr;
     padding: 0px 20px 40px;
 }
+.convinced_data_dete {
+  background: #f4e2a6 url(../images/not_convinced_image.svg);
+  padding: 35px;
+  margin: 25px 0px 0px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 820px;
+  border-radius: 12px;
+  min-height: 500px;
+  position: relative;
+}
+.convinced_data_dete h4 {
+  color: #8226fa;
+  font-size: 42px;
+  font-family: "fedra_sans_devanagari_bmedium";
+  max-width: 50%;
+} 
+
+.convinced_data_banner a {
+padding: 19px 40px 17px;
+font-size: 17px;
+text-decoration: none;
+position: absolute;
+bottom: 50px;
+}
+.convinced_data_banner a img {
+width: 14px;
+margin-left: 40px;
+position: relative;
+top: -2px;
+}
 }
 @media only screen and (max-width: 769px) and (orientation: landscape) {
   .hero-sec {
@@ -1914,6 +1945,32 @@ a.call_data{
   .bbkh-cmnt {
     display: none !important;
   }
+  .convinced_data_dete h4 {
+    color: #8226fa;
+    font-size: 30px;
+    font-family: "fedra_sans_devanagari_bmedium";
+    max-width: 100%;
+  } 
+  
+  .convinced_data_banner a {
+  padding: 19px 40px 17px;
+  font-size: 14px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 50px;
+  }
+  .helpline_centers{
+    width:100%;
+  }
+  .helpline_centers .center_header img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 270px;
+    height: 270px;
+}
+.service_helpline_data .center_body{
+  padding:15px;
+}
 
 }
 
