@@ -1426,6 +1426,37 @@ a.call_data{
   .bbkh-text {
     margin-top: 40px;
   }
+  .convinced_data_dete {
+    background: #f4e2a6 url(../images/not_convinced_image.svg);
+    padding: 35px;
+    margin: 25px 0px 0px;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 820px;
+    border-radius: 12px;
+    min-height: 500px;
+    position: relative;
+  }
+  .convinced_data_dete h4 {
+    color: #8226fa;
+    font-size: 42px;
+    font-family: "fedra_sans_devanagari_bmedium";
+    max-width: 50%;
+} 
+
+.convinced_data_banner a {
+  padding: 19px 40px 17px;
+  font-size: 17px;
+  text-decoration: none;
+  position: absolute;
+  bottom: 50px;
+}
+.convinced_data_banner a img {
+  width: 14px;
+  margin-left: 40px;
+  position: relative;
+  top: -2px;
+}
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
