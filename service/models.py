@@ -171,6 +171,7 @@ class ServicePage(Page):
     """
 
     name = models.CharField(max_length=250)
+    caption = models.CharField(max_length=250, blank=True, null=True)
     description = RichTextField(
         blank=True,
         features=[
@@ -233,6 +234,7 @@ class ServicePage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel("name"),
+        FieldPanel("caption"),
         FieldPanel("concern", widget=forms.CheckboxSelectMultiple),
         FieldPanel("location", widget=forms.CheckboxSelectMultiple),
         FieldPanel("category"),

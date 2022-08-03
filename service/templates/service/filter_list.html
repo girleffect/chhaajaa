@@ -79,7 +79,7 @@
             <div class="content_left_data">
               <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="{% pageurl service %}"
                   class="helpline_links">{{service.specific.category.name}}</a></h4>
-              <p>{{service.specific.description|richtext|truncatechars_html:200}}</p>
+              <p>{{service.specific.caption}}</p>
               <div class="gynac_direct_links">
                 {% for tag in service.tags.all %}
                   <a target="_blank" href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&tag={{tag.slug}}">{{tag}}</a>
