@@ -7,7 +7,7 @@
 {% block content %}
 {% main_menu template='menus/main_menu.html' %}
 <div class="privacy_policy_banner">
-    {% image page.cover_image original as img_cover %}
+    {% image page.cover_image original format-webp as img_cover %}
     <div class="pvc_banner"><img src="{{ img_cover.url }}" alt="terms"></div>
     <div class="pvc_overlay_data terms_condition_overlays">
         <h3>{{ page.title }}</h3>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="chajja_ke_rules">
-    {% image page.image original as img %}
+    {% image page.image original format-webp as img %}
     <img class="rules_bg_img" src="{{ img.url }}" alt="chaajja image">
     <div class="chajja_rules_overlays">
             {% image page.icon original as icon %}

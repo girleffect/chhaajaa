@@ -11,12 +11,12 @@
 
 
 <section class="bb-hero-sec">
-    {% image page.header_image original as header_image %}
+    {% image page.header_image original format-webp as header_image %}
     <img src="{{header_image.url}}" alt="bol-behan-hero-section">
     <div class="whats-app">
 
         <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
-            {% image page.whatsapp_icon original as whatsapp_icon %}
+            {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
             <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
         </a>
     </div>
@@ -25,13 +25,13 @@
 
 
 <section class="bb-kya-hai">
-    {% image page.section_1_main_img_1 original as section_1_main_img_1 %}
+    {% image page.section_1_main_img_1 original format-webp as section_1_main_img_1 %}
     <img class="bbkh-cmnt" src="{{section_1_main_img_1.url}}" alt="cmnt">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="bbkh-img">
-                    {% image page.section_1_main_img_2 original as section_1_main_img_2 %}
+                    {% image page.section_1_main_img_2 original format-webp as section_1_main_img_2 %}
                     <img src="{{section_1_main_img_2.url}}" alt="phone-illustration">
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     </div>
                   </div>
                 </div>
-                <img src="{% static 'images/whatsapp-logo.png' %}" alt="whats-app-icon">
+                <img src="{% static 'images/whatsapp-logo.webp' %}" alt="whats-app-icon">
             </a>      
         </div>              
             </div>
@@ -76,7 +76,7 @@
         <div class="row justify-content-end">
             <div class="col-md-5">
                 <div class="bob-img text-end">
-                    {% image page.section_2_main_img_1 original as section_2_main_img_1 %}
+                    {% image page.section_2_main_img_1 original format-webp as section_2_main_img_1 %}
                     <img src="{{section_2_main_img_1.url}}" alt="bobe">
                 </div>
             </div>
@@ -116,7 +116,7 @@
         <div class="row justify-content-end">
             <div class="col-md-5 col-sm-12">
                 <div class="hands-illu text-end">
-                    {% image page.section_4_main_img_1 original as section_4_main_img_1 %}
+                    {% image page.section_4_main_img_1 original format-webp as section_4_main_img_1 %}
                     <img src="{{section_4_main_img_1.url}}" alt="hands">
                 </div>
             </div>
@@ -155,7 +155,7 @@
 
             <div class="col-md-5">
                 <div class="girl-illu">
-                    {% image page.section_5_main_img_1 original as section_5_main_img_1 %}
+                    {% image page.section_5_main_img_1 original format-webp as section_5_main_img_1 %}
                     <img src="{{section_5_main_img_1.url}}" alt="girl-illustraion">
                 </div>
             </div>
@@ -165,7 +165,7 @@
 
             <div class="col-md-5">
                 <div class="girl-illu">
-                    {% image page.section_5_main_img_1 original as section_5_main_img_1 %}
+                    {% image page.section_5_main_img_1 original format-webp as section_5_main_img_1 %}
                     <img src="{{section_5_main_img_1.url}}" alt="girl-illustraion">
                 </div>
             </div>

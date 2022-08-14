@@ -6,7 +6,7 @@
                 <h3>{{ self.title }}</h3>
             </div>
             <div class="roman_icons_number">
-                {% image self.image original as img %}
+                {% image self.image original format-webp as img %}
                 <img src="{{img.url}}" alt="numbering">
             </div>
         </div>

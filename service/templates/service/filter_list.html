@@ -155,7 +155,7 @@
                   <a onclick="remove_tag('{{ tag.slug }}')" class="remove_tags"><input type="checkbox"
                       name="{{ tag.slug }}">
                       <span class="ml-3">{{ tag.name }}</span>
-                      <img src="{% static 'images/minus_icon.png' %}"
+                      <img src="{% static 'images/minus_icon.webp' %}"
                       alt="minus"></a>
                 </li>
                 {% endif %}
@@ -172,7 +172,7 @@
                 {% for tag in tags %}
                 <li><div id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
                       onclick="selected_tag(this)" name="tag" value="{{ tag.slug }}"><span class="ml-3">{{ tag.slug }}</span> <img
-                      src="{% static 'images/plus_icon.png' %}" alt="plus" class="ml-3"></div></li>
+                      src="{% static 'images/plus_icon.webp' %}" alt="plus" class="ml-3"></div></li>
                 {% endfor %}
               </ul>
             </div>
@@ -234,7 +234,7 @@
     var t = "";
     for (var i = 0; i < arr.length; i++) {
       t += "<li>"
-      t += `<input type="hidden" value="${arr[i]}" class="tag_trace" id="tag_trace${arr[i]}"><a onclick="remove_tag('${arr[i]}')" class="remove_tags"><input type="checkbox" name="${arr[i]}"><span></span>${arr[i]}<img src="{% static 'images/minus_icon.png' %}" alt="minus"></a>`
+      t += `<input type="hidden" value="${arr[i]}" class="tag_trace" id="tag_trace${arr[i]}"><a onclick="remove_tag('${arr[i]}')" class="remove_tags"><input type="checkbox" name="${arr[i]}"><span></span>${arr[i]}<img src="{% static 'images/minus_icon.webp' %}" alt="minus"></a>`
       t += "</li>"
     }
     document.getElementById("TextBoxContainer").innerHTML = t
@@ -253,7 +253,7 @@
     var t = "";
     for (var i = 0; i < TextBoxContainer.length; i++) {
       t += "<li>"
-      t += `<input type="hidden" value="${arr[i]}" class="tag_trace" id="tag_trace${arr[i]}"><a onclick="remove_tag('${arr[i]}')" class="remove_tags"><input type="checkbox" name="${arr[i]}"><span></span>${arr[i]}<img src="{% static 'images/minus_icon.png' %}" alt="minus"></a>`
+      t += `<input type="hidden" value="${arr[i]}" class="tag_trace" id="tag_trace${arr[i]}"><a onclick="remove_tag('${arr[i]}')" class="remove_tags"><input type="checkbox" name="${arr[i]}"><span></span>${arr[i]}<img src="{% static 'images/minus_icon.webp' %}" alt="minus"></a>`
       t += "</li>"
     }
     document.getElementById("TextBoxContainer").innerHTML = t
