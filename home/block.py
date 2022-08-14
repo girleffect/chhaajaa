@@ -13,7 +13,7 @@ class SimpleCrousal(blocks.StructBlock):
     ]))
 
     class Meta:
-        template = "home/SimpleCrousal.html"
+        template = "home/block/SimpleCrousal.html"
         icon = "placeholder"
         label = "Simple Crousal Block"
 
@@ -27,7 +27,7 @@ class AdvanceCrousal(blocks.StructBlock):
     ]))
 
     class Meta:
-        template = "home/AdvanceCrousal.html"
+        template = "home/block/AdvanceCrousal.html"
         icon = "doc-full"
         label = "Advance Crousal Block"
 
@@ -42,7 +42,7 @@ class TermPageCard(blocks.StructBlock):
 
 
     class Meta:
-        template = "home/term_page_card.html"
+        template = "home/block/term_page_card.html"
         icon = "edit"
         label = "Term-Page Card"
 

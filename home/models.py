@@ -112,6 +112,8 @@ class PrivacyPage(Page):
         blank=True,
     )
 
+    subpage_types = []
+
     content_panels = Page.content_panels + [
         FieldPanel('sub_title'),
         ImageChooserPanel('head_image'),
@@ -151,6 +153,8 @@ class TermPage(Page):
         null=True,
         blank=True,
     )
+
+    subpage_types = []
 
     content_panels = Page.content_panels + [
         FieldPanel('sub_title'),
@@ -192,6 +196,8 @@ class CommunityGuidline(Page):
         null=True,
         blank=True,
     )
+
+    subpage_types = []
 
     content_panels = Page.content_panels + [
         FieldPanel('sub_title'),

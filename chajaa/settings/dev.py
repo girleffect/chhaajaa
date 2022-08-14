@@ -45,9 +45,3 @@ DATABASES = {
         default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
         engine='django.db.backends.postgresql_psycopg2')
  }
-
-
-try:
-    from .local import *
-except ImportError:
-    pass

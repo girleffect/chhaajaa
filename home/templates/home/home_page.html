@@ -10,7 +10,7 @@
 
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
-      <h2>{{page.specific.section_video_title}} {% image page.specific.section_video_icon original %}</h2>
+      <h2>{{page.specific.section_video_title}} {% image page.specific.section_video_icon format-webp original %}</h2>
     </div>
   </div>
 
@@ -25,7 +25,7 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
             {% else %}
-            {% image video.image original as img %}
+            {% image video.image original format-webp as img %}
             <a target="_blank" href="{{video.image_link}}"><img src="{{img.url}}"></a>
             {% endif %}
           </div>
@@ -44,7 +44,7 @@
   <h3>{{page.specific.section_social_title}}</h3>
   <div class="platform_content">
     {% for sc in social%}
-    <a target="_blank" href="{{sc.website_link}}">{% image sc.image original %} <button class="social_buttons">{{ sc.name }}</button>
+    <a target="_blank" href="{{sc.website_link}}">{% image sc.image original format-webp %} <button class="social_buttons">{{ sc.name }}</button>
     </a>
     {% endfor %}
   </div>
@@ -53,7 +53,7 @@
 <div class="service_finder_content">
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
-      <h2>{{page.specific.section_concern_title}} {% image page.specific.section_concern_icon original %}</h2>
+      <h2>{{page.specific.section_concern_title}} {% image page.specific.section_concern_icon original format-webp %}</h2>
     </div>
   </div>
   <div class="inner_service_content_data row">
@@ -87,7 +87,7 @@
 <div class="articles_data_sec">
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
-      <h2>{{page.specific.section_article_title}}{% image page.specific.section_article_icon original %}</h2>
+      <h2>{{page.specific.section_article_title}}{% image page.specific.section_article_icon original format-webp %}</h2>
     </div>
   </div>
   <div class="inner_main_article_data">
@@ -115,12 +115,12 @@
 <div class="about_us_sec">
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
-      <h2>{{page.specific.section_about_title}}{% image page.specific.section_about_icon original %}</h2>
+      <h2>{{page.specific.section_about_title}}{% image page.specific.section_about_icon original format-webp %}</h2>
     </div>
   </div>
   <div class="about_us_data_content">
     <div class="about_img">
-      {% image page.specific.section_about_image original %}
+      {% image page.specific.section_about_image original format-webp %}
     </div>
     <div class="about_content_dt">
       <h3 class="prichay_heading">Hamara Parichay</h3>

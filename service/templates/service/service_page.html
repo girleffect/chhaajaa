@@ -63,7 +63,7 @@
             </div>
             <div class="center_body">
                 <h4><a target="_blank" href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
-                {{service.description|richtext}}
+                {{service.caption}}
             </div>
         </div>
         {% empty %}

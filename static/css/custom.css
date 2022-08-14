@@ -41,7 +41,7 @@ nav.chazza_navbar {
   border: none !important;
 }
 .navbar-light .navbar-toggler-icon {
-  background-image: url(https://chhaajaa-live-64ded3c5608741f8b65f45edb-87c3196.divio-media.org/static/images/menu-button-of-three-horizontal-lines.png) !important;
+  background-image: url(https://chhaajaa-live-64ded3c5608741f8b65f45edb-87c3196.divio-media.org/static/images/menu-button-of-three-horizontal-lines.webp) !important;
 }
 .navbar-light .navbar-nav .nav-link.active {
   color: #ffe366;
@@ -354,7 +354,7 @@ a.brand_logo {
 .articles_data_sec:after {
   content: "";
   position: absolute;
-    background:url("../images/GE_Banner-02.png") no-repeat;
+    background:url("../images/GE_Banner-02.webp") no-repeat;
   background-size: contain;
   height: 100%;
   width: 100%;
@@ -650,7 +650,7 @@ a:hover {
   transition: 0.4s ease-in-out;
 }
 .footer-sec {
-  background-image: url("https://chhaajaa-live-64ded3c5608741f8b65f45edb-87c3196.divio-media.org/static/images/Bottom\ banner.png");
+  background-image: url("https://chhaajaa-live-64ded3c5608741f8b65f45edb-87c3196.divio-media.org/static/images/Bottom\ banner.webp");
   min-height: auto;
   height: auto;
   background-size: cover;
@@ -1002,7 +1002,7 @@ a.absolte_link {
   transition: 0.4s ease-in-out;
 }
 .hero-sec {
-  background-image: url(../images/Top-Banner.png);
+  background-image: url(../images/Top-Banner.webp);
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -1165,7 +1165,7 @@ a.absolte_link {
 }
 .btm-banner {
   height: 120vh;
-  background-image: url(../images/btm-banner.png);
+  background-image: url(../images/btm-banner.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

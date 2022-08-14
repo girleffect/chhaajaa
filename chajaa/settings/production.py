@@ -73,7 +73,4 @@ DATABASES = {
         engine='django.db.backends.postgresql_psycopg2')
  }
 
-try:
-    from .local import *
-except ImportError:
-    pass
+WAGTAILIMAGES_JPEG_QUALITY = 40

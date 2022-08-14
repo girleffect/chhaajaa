@@ -6,7 +6,7 @@
             {% for card in self.cards %}
             <div class="item">
                 <div class="third_positional_data">
-                    {% image card.image original as img %}
+                    {% image card.image original format-webp as img %}
                     <img src="{{ img.url }}" alt="placeholder">
                     <h3>{{ card.title }}</h3>
                     <p>{{ card.description }}</p>

@@ -53,7 +53,7 @@ nav {
 
 /* hero-section */
 .hero-sec {
-  background-image: url(../images/hero-sec-front.png);
+  background-image: url(../images/hero-sec-front.webp);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -329,14 +329,14 @@ nav {
 
 .btm-banner {
   height: 118vh;
-  background-image: url(../images/btm-banner.png);
+  background-image: url(../images/btm-banner.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .footer-sec {
-  background-image: url(../images/ftr-banner.png);
+  background-image: url(../images/ftr-banner.webp);
   min-height: 722px;
   background-size: cover;
   background-position: center;

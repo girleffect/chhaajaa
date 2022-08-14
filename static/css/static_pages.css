@@ -117,14 +117,14 @@
 }
 .owl-theme.sharing_carousel .owl-nav button.owl-prev {
     left: 0;
-    background: url("/static/images/left_arrow.png") no-repeat;
+    background: url("/static/images/left_arrow.webp") no-repeat;
     width: 9px;
     height: 10px;
     outline: none;
 }
 .owl-theme.sharing_carousel .owl-nav button.owl-next {
     right: 0;
-    background: url("/static/images/right_arrow.png") no-repeat;
+    background: url("/static/images/right_arrow.webp") no-repeat;
     width: 9px;
     height: 10px;
     outline: none;
@@ -234,7 +234,7 @@
 }
 .owl-theme.third_parties_sliders .owl-nav button.owl-prev::after {
     content: "";
-    background: url(/static/images/left_black_arrow.png) no-repeat;
+    background: url(/static/images/left_black_arrow.webp) no-repeat;
     width: 5px;
     height: 5px;
     position: absolute;
@@ -248,7 +248,7 @@
 }
 .owl-theme.third_parties_sliders .owl-nav button.owl-next::after {
 	content: "";
-	background: url("/static/images/right_black_arrow.png") no-repeat;
+	background: url("/static/images/right_black_arrow.webp") no-repeat;
 	width: 5px;
     height: 5px;
     position: absolute;
@@ -330,7 +330,7 @@
 }
 .owl-theme.app_kya_slider_data .owl-nav button.owl-prev {
     left: 0;
-    background: url(/static/images/left_arrow.png) no-repeat;
+    background: url(/static/images/left_arrow.webp) no-repeat;
     width: 9px;
     height: 10px;
     outline: none;
@@ -343,7 +343,7 @@
 }
 .owl-theme.app_kya_slider_data .owl-nav button.owl-next {
     right: 0;
-    background: url(/static/images/right_arrow.png) no-repeat;
+    background: url(/static/images/right_arrow.webp) no-repeat;
     width: 9px;
     height: 10px;
     outline: none;
@@ -549,7 +549,7 @@ img.rules_bg_img {
 }
 .positive_chajja_overlay h3::after {
     content: "";
-    background: url(/static/images/circled_line.png) no-repeat;
+    background: url(/static/images/circled_line.webp) no-repeat;
     width: 42px;
     height: 41px;
     position: absolute;
