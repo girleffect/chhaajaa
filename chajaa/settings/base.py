@@ -192,13 +192,13 @@ CORS_ORIGIN_WHITELIST = [
 ]
 WAGTAILEMBEDS_RESPONSIVE_HTML = True
 
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-SESSION_CACHE_ALIAS = "default"
+# SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# SESSION_CACHE_ALIAS = "default"
 # DJANGO_REDIS_IGNORE_EXCEPTIONS = True
 
-CACHE_TTL = 60 * 60
+# CACHE_TTL = 60 * 60
 
-ROBOTS_CACHE_TIMEOUT = 60*60*24
+# ROBOTS_CACHE_TIMEOUT = 60*60*24
 
 DEFAULT_AUTO_FIELD="django.db.models.BigAutoField"
 
