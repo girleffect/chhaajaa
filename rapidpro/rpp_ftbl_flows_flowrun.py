@@ -24,10 +24,10 @@ if __name__ == '__main__':
 			end_time = max_date[b'end_date']
 		print("Running rpp_ftbl_flows_flowrun for start date, end date and org id",start_time,end_time,command_line_args.org_id)
 		def fix_datetime(s):
-            		if "." not in s:
-                		assert s.endswith("Z")
-                		s = s[:-1] + ".0Z"
-           		return s
+            if "." not in s:
+             	assert s.endswith("Z")
+                s = s[:-1] + ".0Z"
+           	return s
 
         df['created_on'] = df['created_on'].apply(fix_datetime)
 		flows_flow_run = pyRapid.rpp_ftbl_flows_flowrun.get_runs(before=end_time, after=start_time, org_id=command_line_args.org_id)
