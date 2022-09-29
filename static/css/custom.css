@@ -23,6 +23,7 @@ a:focus {
   text-decoration: none;
   outline: 0;
 }
+
 nav.chazza_navbar {
   position: -webkit-sticky;
   position: sticky;
@@ -1789,4 +1790,3 @@ a.see_all_btn {
 .blog-inside .rich-text ul li{
   font-size:20px;
 }
-
