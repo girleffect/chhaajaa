@@ -40,6 +40,8 @@ if __name__ == '__main__':
 			warehouse.update(file_name='SQL/Conflicts/rpp_ftbl_flow_flows_run_conflict.sql')
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_flows_flow_run_update.sql')
 			warehouse.drop('staging_rpp_ftbl_flows_flowrun')
+		
+		print('data warehouse updated')
 
 	except Exception as e:
 		raise
