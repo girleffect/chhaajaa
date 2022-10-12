@@ -23,6 +23,8 @@ if __name__ == '__main__':
 			start_time= max_date[b'start_date']
 			end_time = max_date[b'end_date']
 		print("Running rpp_ftbl_flows_flowrun for start date, end date and org id",start_time,end_time,command_line_args.org_id)
+		print("Start time is ", start_time)
+		print("End time is ", end_time)
 		def fix_datetime(s):
 			if "." not in s:
 				assert s.endswith("Z")
