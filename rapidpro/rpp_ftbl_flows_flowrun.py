@@ -29,8 +29,8 @@ if __name__ == '__main__':
 				s = s[:-1] + ".0Z"
 			return s
 
-		df['created_on'] = df['created_on'].apply(fix_datetime)
 		flows_flow_run = pyRapid.rpp_ftbl_flows_flowrun.get_runs(before=end_time, after=start_time, org_id=command_line_args.org_id)
+		flows_flow_run['created_on'] = flows_flow_run['created_on'].apply(fix_datetime)
 		warehouse.drop('staging_rpp_ftbl_flows_flowrun')
 		
 		if general.is_not_empty(flows_flow_run):
