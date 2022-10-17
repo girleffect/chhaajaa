@@ -32,22 +32,14 @@ if __name__ == '__main__':
 			return s
 
 		flows_flow_run = pyRapid.rpp_ftbl_flows_flowrun.get_runs(before=end_time, after=start_time, org_id=command_line_args.org_id)
-		print('get_runs command set to flows_flow_run was successful')
 		flows_flow_run['created_on'] = flows_flow_run['created_on'].apply(fix_datetime)
-		print('fix_datetime function was successful')
 		warehouse.drop('staging_rpp_ftbl_flows_flowrun')
-		print('warehouse drop of old staging was successful')
 		
 		if general.is_not_empty(flows_flow_run):
-			print('flows_flow_run is successfully not empty')
 			warehouse.load(flows_flow_run,'staging_rpp_ftbl_flows_flowrun', "replace")
-			print('flows_flow_run successfully loaded into staging')
 			warehouse.update(file_name='SQL/Conflicts/rpp_ftbl_flow_flows_run_conflict.sql')
-			print('flowsrun conflict warehouse successful')
 			warehouse.update(file_name='SQL/Analytic/rpp_ftbl_flows_flow_run_update.sql')
-			print('flowsrun update warehouse successful')
 			warehouse.drop('staging_rpp_ftbl_flows_flowrun')
-			print('2nd time staging dropped successful')
 		
 		print('data warehouse updated')
 
