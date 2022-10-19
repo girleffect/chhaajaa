@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'wagtailmenus',
     'wagtail.api.v2',
     'robots',
+    'sahi_salah',
 
     'modelcluster',
     'taggit',

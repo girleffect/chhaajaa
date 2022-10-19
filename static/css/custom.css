@@ -1790,3 +1790,225 @@ a.see_all_btn {
 .blog-inside .rich-text ul li{
   font-size:20px;
 }
+
+
+.back_to_main {
+  background-color: #ED345A;
+  padding: 10px 0;
+}
+
+.back_to_main a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.back_to_main a svg {
+  margin-right: 6px;
+}
+
+.important_content {
+  padding: 80px 0;
+}
+
+.important_content h2 {
+  font-size: 41px;
+  font-weight: 600;
+}
+
+.important_content p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.important_content h6 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.important_content li {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.info {
+  margin-right: 40px;
+}
+
+.info p {
+  font-weight: 500 !important;
+  color: #989898;
+  text-transform: uppercase;
+}
+
+.info span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.event_page_btn {
+  margin-top: 60px;
+}
+
+.info-anchor {
+  border-radius: 50%;
+  padding: 14px 23px;
+  background-color: #C02C4B;
+}
+
+.event_page_btn_two {
+  margin-top: 52px;
+}
+
+.event_page_sec {
+  background-color: #F9F8F8;
+}
+
+.event_page_sec h6 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal-anchor a {
+  font-size: 17px;
+  font-weight: 500;
+  color: #ED345A;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .salah-btn a {
+    background: #ED345A;
+    padding: 10px 12px;
+    font-size: 15px;
+  }
+
+  .notif_what {
+    right: 18px;
+  }
+
+  .upcoming_events {
+    padding: 60px 0;
+  }
+
+  .upcoming_events p {
+    font-size: 14px;
+  }
+
+  .se_one {
+    margin-right: 0;
+  }
+
+  .se_two {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .se_three {
+    margin-left: 0;
+  }
+
+  .salah_event h6 {
+    font-size: 17px;
+  }
+
+  .salah-use img {
+    width: 82px;
+  }
+
+  .salah-use p {
+    font-size: 14px;
+  }
+
+  .past-event {
+    margin: 60px 0;
+  }
+
+  .past-event-card {
+    margin-bottom: 20px;
+  }
+
+  .past-event-card p {
+    font-size: 15px;
+  }
+
+  .past-event-card p {
+    padding: 10px !important;
+  }
+
+  .testimonial {
+    margin: 60px 0;
+  }
+
+  .testimonial-content h6 {
+    font-size: 30px;
+  }
+
+  .testimonial-content {
+    position: unset;
+    padding: 20px;
+  }
+
+  .testimonial img {
+    display: none;
+    width: 100%;
+  }
+
+  .testimonial-content p {
+    width: 89%;
+    font-size: 16px;
+  }
+
+  .faq {
+    padding: 60px 0;
+  }
+
+  .faq .accordion-button {
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 60px 0;
+  }
+
+  .copyright p {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  .important_content h2 {
+    font-size: 24px;
+  }
+
+  .important_content p {
+    font-size: 16px;
+  }
+
+  .important_content h6 {
+    font-size: 18px;
+  }
+
+  .important_content li {
+    font-size: 16px;
+  }
+
+  .info span {
+    font-size: 16px;
+  }
+
+  .event_page_btn {
+    margin-top: 32px;
+  }
+
+  .event_page_btn_two {
+    margin-top: 26px;
+  }
+
+  .info-anchor {
+    padding: 8px 17px;
+  }
+
+  .important_content {
+    padding: 60px 0;
+}

@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load menu_tags %}
+{% block extra_css %}
+{% endblock extra_css %}
+{% block body_class %}template-bolbehanpage{% endblock %}
+
+{% block content %}
+{% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
+
+<section class="sahi-salah-hero-sec">
+    {% image page.header_image original format-webp as header_image %}
+        <img src="{{header_image.url}}" alt="sahi-salah-banner" />
+        <div class="notif_what salah-btn">
+            <a href="#">Notify on WhatsApp</a>
+        </div>
+     </section>
+
+     <section class="upcoming_events">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 text-center">
+                    <p>{{page.body|richtext}}
+                    </p>
+                    <h2 class="mt-5">Upcoming Events</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="salah_event se_one">
+                        <img src="images/event_three.png" alt="event-images" />
+                        <h6 class="px-4 pt-4">Importance of Sexual and Reproductive Health</h6>
+                        <div class="d-flex justify-content-start mx-4 pb-4">
+                            <span class="event_tag me-2">14 Jul 2022 | 12:00 PM</span>
+                            <span class="event_tag me-2">Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="salah_event se_two">
+                        <img src="images/event_two.png" alt="event-images" />
+                        <h6 class="px-4 pt-4">All About <br> Mensturation</h6>
+                        <div class="d-flex justify-content-start mx-4 pb-4">
+                            <span class="event_tag me-2">15 Jul 2022 | 12:00 PM</span>
+                            <span class="event_tag me-2">Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="salah_event se_three">
+                        <img src="images/event_one.png" alt="event-images" />
+                        <h6 class="px-4 pt-4">Impact of COVID on <br> Mental Health</h6>
+                        <div class="d-flex justify-content-start mx-4 pb-4">
+                            <span class="event_tag me-2">10 Aug 2022 | 04:00 PM</span>
+                            <span class="event_tag me-2">Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5 pt-3">
+                <div class="salah-btn text-center">
+                    <a href="#">Load more events</a>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <section class="salah-use">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h6>{{page.section_1}}</h6>
+                </div>                
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 col-4 text-center">
+                    {% image page.card_1_image original format-webp as card_1_image %}
+                    <img src="{{card_1_image.url}}" alt="use-one" >
+                    <p>{{page.card_1}}</p>
+                </div>
+                <div class="col-md-4 col-4 text-center">
+                    {% image page.card_2_image original format-webp as card_2_image %}
+                    <img src="{{card_2_image.url}}" alt="use-one" >
+                    <p>{{page.card_2}}</p>
+                </div>
+                <div class="col-md-4 col-4 text-center">
+                    {% image page.card_3_image original format-webp as card_3_image %}
+                    <img src="{{card_3_image.url}}" alt="use-one" >
+                    <p>{{page.card_3}}</p>
+                </div>
+                
+            </div>
+        </div>
+     </section>
+
+     <section class="past-event">
+        <div class="container">
+            <h6 class="mb-4">Past Events</h6>
+            <div class="row">
+                <div class="col-md-4 col-6">
+                    <div class="past-event-card se_one">
+                        <img src="images/event_three.png" alt="past-event" />
+                        <p class="p-4 mb-0">Importance of Sexual and Reproductive Health</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="past-event-card se_two">
+                        <img src="images/event_two.png" alt="past-event" />
+                        <p class="p-4 mb-0">All About Mensturation</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="past-event-card se_three">
+                        <img src="images/event_one.png" alt="past-event" />
+                        <p class="p-4 mb-0">Impact of COVID on Mental Health</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5 pt-3">
+                <div class="salah-btn text-center">
+                    <a href="#">Show more past events</a>
+                </div>
+            </div>
+        </div>
+     </section>
+
+
+{% if page.content %}
+                            {% for card in page.content %}
+                            {% if card.block_type == "testimonial" %}
+     <section class="testimonial">
+        <div class="container">
+            <div class="testimonial-inner">
+                <img src="images/testimonial1.png" alt="testimonial" />
+                <div class="testimonial-content">
+                    <h6 class="mb-3">Testimonials</h6>
+                    <div class="owl-carousel owl-theme">
+                        {% include_block card %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+     </section>
+                {% endif %}
+                            {% endfor %}
+     {% endif %}
+
+{% if page.content %}
+                            {% for card in page.content %}
+                            {% if card.block_type == "faqcard" %}
+<section class="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6>FAQs</h6>
+                    <div class="accordion mt-4" id="accordionExample">
+
+
+                                {% include_block card %}
+                                          
+                      </div>
+                </div>
+            </div>
+        </div>
+     </section>
+                   
+                            {% endif %}
+                            {% endfor %}
+     {% endif %}
+{% endblock %}
+{% block footer %}
+     <footer class="text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h6>For Media Partnerships & Others Queries, Contact Us</h6>
+                <img class="footer-mail mt-4" src="../images/mail.png" alt="mail" />
+                <p class="mt-3">contact@chhaajaa.com</p>
+            </div>
+        </div>
+     </footer>
+     <div class="copyright text-center">
+        <p>Sahi Salah Terms & Conditions</p>
+     </div>
+{% endblock %}
