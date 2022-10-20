@@ -3,7 +3,7 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
-
+from django.utils.timezone import now
 from sahi_salah.block import TestimonialList, FAQCardList
 
 
@@ -41,6 +41,12 @@ class SahiSalahIndexPage(Page):
         null=True,
         blank=True,
     )
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request)
+        context['upcoming_event'] = SahiSalahPage.objects.live().filter(timing_date__gt=now()).exclude(id=self.id)
+        context['past_event'] = SahiSalahPage.objects.live().filter(timing_date__lt=now()).exclude(id=self.id)
+        return context
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('header_image'),
