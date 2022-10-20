@@ -4,7 +4,7 @@ from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from django.utils.timezone import now
-from sahi_salah.block import TestimonialList, FAQCardList
+from sahi_salah.block import TestimonialList, FAQCardList, CrousalHeader
 
 
 class SahiSalahIndexPage(Page):
@@ -35,7 +35,7 @@ class SahiSalahIndexPage(Page):
     card_3 = models.CharField(max_length=200, help_text="intro of the section")
     content = StreamField(
         [
-            ("faqcard", FAQCardList()),      
+            ("faqcard", FAQCardList()),   
             ("testimonial", TestimonialList()),      
         ],
         null=True,
@@ -96,6 +96,13 @@ class SahiSalahPage(Page):
 
     whatsapp_text = models.CharField(max_length=200, help_text="intro of the section")
     whatsapp_link = models.CharField(max_length=200, help_text="intro of the section")
+    content = StreamField(
+        [
+            ('crousalheader',CrousalHeader()),   
+        ],
+        null=True,
+        blank=True,
+    )
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
@@ -117,4 +124,5 @@ class SahiSalahPage(Page):
         FieldPanel('location_body'),
         FieldPanel('whatsapp_text'),
         FieldPanel('whatsapp_link'),
+        StreamFieldPanel("content"),
     ]

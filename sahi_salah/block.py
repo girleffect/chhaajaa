@@ -1,4 +1,5 @@
 from wagtail.core import blocks
+from wagtail.images.blocks import ImageChooserBlock
 
 class Testimonial(blocks.StructBlock):
     title = blocks.CharBlock(required=True, help_text="Enter title")
@@ -25,3 +26,13 @@ class FAQCardList(blocks.StructBlock):
         template = "block/faq_page.html"
         icon = "edit"
         label = "FAQ List"
+
+
+class CrousalHeader(blocks.StructBlock):
+    images = blocks.ListBlock(blocks.StructBlock([
+        ("image", ImageChooserBlock(required=False)),]))
+        
+    class Meta:
+        template = "block/CrousalHeader.html"
+        icon = "doc-full"
+        label = "Crousal Header Block"

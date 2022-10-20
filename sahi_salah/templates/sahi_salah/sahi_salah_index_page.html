@@ -10,10 +10,19 @@
 {% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
 
 <section class="sahi-salah-hero-sec">
-    {% image page.header_image original format-webp as header_image %}
-        <img src="{{header_image.url}}" alt="sahi-salah-banner" />
+    
+        <!-- <img src="{{header_image.url}}" alt="sahi-salah-banner" />
         <div class="notif_what salah-btn">
             <a href="#">Notify on WhatsApp</a>
+        </div> -->
+        <div class="owl-carousel owl-theme">
+            {% for card in page.content %}
+                            {% if card.block_type == "crousalheader" %}
+                            {% include card %}
+                            
+                            {% endif %}
+                            {% endfor %}
+
         </div>
      </section>
 
@@ -162,4 +171,28 @@
      <div class="copyright text-center">
         <p>Sahi Salah Terms & Conditions</p>
      </div>
+     {% block extra_js %}
+<script type="text/javascript">
+    $('.owl-carousel').owlCarousel({
+        item: 1,
+        singleItem: true,
+        smartSpeed: 1500,
+        slideSpeed: 20,
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+</script>
+{% endblock extra_js %}   
 {% endblock %}
