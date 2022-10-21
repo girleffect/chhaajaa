@@ -401,6 +401,25 @@ a.brand_logo {
 div#faq .card-header {
   padding: 0;
 }
+.sahi-salah#faq .card-header a.btn.btn-header-link {
+  color: #000 !important;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 14px;
+  width: 100%;
+  background: #fff !important;
+  text-align: left;
+  border-radius: 0;
+  position: relative;
+  padding-right: 35px;
+}
+.sahi-salah .card{
+  margin: 10px 0;
+  border-radius:10px !important;
+}
+.sahi-salah#faq{
+  padding: 10px 0;
+}
 div#faq .card-header a.btn.btn-header-link {
   color: #fff;
   font-weight: 600;
@@ -831,6 +850,46 @@ button.social_buttons {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.sahi-home-page{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+       gap:20px;
+}
+.sahi-home img{
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.sahi-salah a {
+  background: #ff428a;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 17px;
+  transition: all 0.5s ease-in-out 0s;
+  display: flex;
+  color: #fff;
+  font-size: 11px;
+  line-height: 14px;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  box-shadow: 2px 2px 0 1px #d11863;
+}
+.sahi-salah {
+    width: 30%;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sahi-salah a {
+  width: 250px;
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-size: 20px;
+  line-height: 25px;
+  text-decoration: none!important;
+  box-shadow: 4px 4px 0 1px #d11863;
 }
 .button_data_text a.btn.btn_articles img.home-related-icon {
   margin-left: 11px;
@@ -1967,7 +2026,6 @@ a.see_all_btn {
   .faq .accordion-button {
     font-size: 16px;
   }
-
   footer {
     padding: 60px 0;
   }

@@ -3,6 +3,11 @@ from wagtail.images.blocks import ImageChooserBlock
 
 class Testimonial(blocks.StructBlock):
     title = blocks.CharBlock(required=True, help_text="Enter title")
+    
+    class Meta:
+        template = "block/testimonials.html"
+        icon = "edit"
+        label = "Testimonial List"
 
 
 class TestimonialList(blocks.StructBlock):

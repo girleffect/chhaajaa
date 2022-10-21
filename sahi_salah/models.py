@@ -4,7 +4,8 @@ from wagtail.core.fields import RichTextField, StreamField
 from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 from django.utils.timezone import now
-from sahi_salah.block import TestimonialList, FAQCardList, CrousalHeader
+from sahi_salah.block import Testimonial, FAQCardList, CrousalHeader
+from home.block import FAQCard
 
 
 class SahiSalahIndexPage(Page):
@@ -33,10 +34,17 @@ class SahiSalahIndexPage(Page):
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
     card_3 = models.CharField(max_length=200, help_text="intro of the section")
-    content = StreamField(
+    faqs = StreamField(
         [
-            ("faqcard", FAQCardList()),   
-            ("testimonial", TestimonialList()),      
+            ("faqcard", FAQCard()),
+        ],
+        null=True,
+        blank=True,
+    )
+    
+    testimonials = StreamField(
+        [
+            ("testimonials", Testimonial()),
         ],
         null=True,
         blank=True,
@@ -58,7 +66,8 @@ class SahiSalahIndexPage(Page):
         FieldPanel('card_2'),
         ImageChooserPanel('card_3_image'),
         FieldPanel('card_3'),        
-        StreamFieldPanel("content"),
+        StreamFieldPanel("faqs"),
+        StreamFieldPanel('testimonials')
     ]
 
 

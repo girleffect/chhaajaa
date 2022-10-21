@@ -406,6 +406,25 @@ a.brand_logo {
 div#faq .card-header {
   padding: 0;
 }
+.sahi-salah-faq#faq .card-header a.btn.btn-header-link {
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 14px;
+  width: 100%;
+  background: #fff;
+  text-align: left;
+  border-radius: 0;
+  position: relative;
+  padding-right: 35px;
+}
+.sahi-salah-faq .card{
+  margin: 10px 0;
+  border-radius:10px !important;
+}
+.sahi-salah-faq#faq{
+  padding: 10px 0;
+}
 div#faq .card-header a.btn.btn-header-link {
   color: #fff;
   font-weight: 600;
@@ -820,17 +839,57 @@ button.social_buttons {
 .video_content_data {
   padding: 10px 15px 10px;
 }
-.service_content_lft_sec h4 {
-  font-size: 24px;
+.service_content_lft_sec h4, .sahi-salah h4{
+  font-size: 40px;
   font-family: "Fedra Sans Pro";
   color: #ff428a;
   margin-top: 10px;
-  line-height: 33px;
+  line-height: 58px;
 }
 .service_content_lft_sec a img {
   width: 7px;
 }
 .service_content_lft_sec {
+  width: 30%;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sahi-home-page{
+  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:20px;
+}
+.sahi-home img{
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+}
+.sahi-salah a {
+  background: #ff428a;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 17px;
+  transition: all 0.5s ease-in-out 0s;
+  display: flex;
+  color: #fff;
+  font-size: 11px;
+  line-height: 14px;
+  font-family: "Fedra Sans Pro";
+  font-weight: 900;
+  box-shadow: 2px 2px 0 1px #d11863;
+}
+.sahi-salah a {
+  width: 250px;
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-size: 20px;
+  line-height: 25px;
+  text-decoration: none!important;
+  box-shadow: 4px 4px 0 1px #d11863;
+}
+.sahi-salah {
   width: 30%;
   padding-top: 5px;
   display: flex;
@@ -1818,7 +1877,7 @@ a.see_all_btn {
 .notif_what {
   position: absolute;
   right: 150px;
-  bottom: 20%;
+  bottom: 30%;
 }
 
 .salah-btn a {
@@ -1958,10 +2017,11 @@ a.see_all_btn {
 }
 
 .testimonial-content p {
-  width: 40%;
-  color: #fff;
-  font-size: 17px;
-  font-weight: 400;
+  width: 100%;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 400;
+    padding-right: 56%;
 }
 
 .faq {
@@ -1990,7 +2050,7 @@ a.see_all_btn {
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
 }
 
-footer {
+.footer-sahi {
   padding: 80px 0;
   background-color: #FFE366;
 }
@@ -2079,7 +2139,9 @@ footer p {
 .event_page_btn {
   margin-top: 60px;
 }
-
+.flex-gap{
+  gap:20px;
+}
 .info-anchor {
   border-radius: 50%;
   padding: 14px 23px;

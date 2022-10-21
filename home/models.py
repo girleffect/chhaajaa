@@ -9,6 +9,8 @@ from service.snippets import SocialPage, VideoSection, ConcernPage
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from home.block import FAQCard, SimpleCrousal, AdvanceCrousal, TermPageCard
+from sahi_salah.models import SahiSalahPage
+from django.utils.timezone import now
 
 
 class HomePage(Page):
@@ -21,7 +23,8 @@ class HomePage(Page):
     section_concern_title = models.CharField(max_length=200, help_text="title of the concern section")
     section_concern_icon = models.ForeignKey('wagtailimages.Image',
                                            on_delete=models.SET_NULL, related_name='+', null=True)
-
+    section_event_title = models.CharField(max_length=200, help_text="title of the concern section")
+    
     section_article_title = models.CharField(max_length=200, help_text="title of the article section")
     section_article_icon = models.ForeignKey('wagtailimages.Image',
                                            on_delete=models.SET_NULL, related_name='+', null=True)
@@ -50,7 +53,7 @@ class HomePage(Page):
         ImageChooserPanel('section_video_icon'),
         FieldPanel('section_social_title'),
         FieldPanel('section_concern_title'),
-        ImageChooserPanel('section_concern_icon'),
+        FieldPanel('section_event_title'),
         FieldPanel('section_article_title'),
         ImageChooserPanel('section_article_icon'),
         ImageChooserPanel('section_article_banner'),
@@ -68,6 +71,7 @@ class HomePage(Page):
         context['videos'] = VideoSection.objects.all()
         concerns = ConcernPage.objects.all()[:4]
         context['services'] = concerns
+        context['upcoming_event'] = SahiSalahPage.objects.filter(timing_date__gt=now())[:4]
         return context
 
 
