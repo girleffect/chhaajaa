@@ -6,9 +6,8 @@ env_path = os.path.join(BASE_DIR, '.env')
 load_dotenv(env_path)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 SECRET_KEY = os.environ.get('SECRET_KEY')
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', "127.0.0.1, ").split(', ')
 
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
