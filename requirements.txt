@@ -55,7 +55,7 @@ SQLAlchemy==1.4.31
 sendgrid==6.1.0
 pytest==5.2.2
 pytest-mock==1.11.2
-redshift_connector===2.0.904
+redshift_connector===2.0.907
 numpy==1.19.5
 
 # Chhaajaa cronjob requirements
