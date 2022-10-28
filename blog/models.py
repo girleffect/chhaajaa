@@ -87,7 +87,7 @@ class BlogPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
-        context['articles'] = BlogPage.objects.filter(tags__in=self.tags.all()).distinct().order_by('-date').exclude(id=self.id)
+        context['articles'] = BlogPage.objects.filter(tags__in=self.tags.all()).distinct().order_by('-date').exclude(id=self.id)[:3]
         return context
 
     search_fields = Page.search_fields + [
