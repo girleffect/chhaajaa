@@ -830,7 +830,7 @@ a.call_data{
   }
   .helpline_centers.blog_helpline_center_data {
     overflow: hidden;
-    width: 32%;
+    /* width: 32%; */
     margin: 30px 2% 0px 0px;
   }
   .helpline_centers.blog_helpline_center_data .center_header img {
