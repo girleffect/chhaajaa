@@ -83,6 +83,34 @@
   <!--service content data close here-->
 </div>
 
+<div class="service_finder_content">
+  <div class="are_dekho_heading">
+    <div class="inner_are_dekho_text">
+      <h2>{{page.specific.section_event_title}} {% image page.specific.section_event_icon original format-webp %}</h2>
+    </div>
+  </div>
+  <div class="inner_service_content_data row">
+    <!--service content data start here-->
+    <div class="sahi-salah col-4">
+      <h4>Sahi decisions lene ka confidence badhao</h4>
+      <a target="_blank" href="{% slugurl 'sahi-slah-index' %}">Event browse kro</a>
+    </div>
+    <div class="col-8">
+
+      <div class="sahi-home-page">
+        {% for event in upcoming_event %}
+        <div class="sahi-home">
+          <div class="">{% image event.header_image original as event_image %}
+            <a target="_blank" href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">    
+              <img src="{{event_image.url}}" alt="period mein dard">
+       </a>   </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <!--service content data close here-->
+</div>
 
 <div class="articles_data_sec">
   <div class="are_dekho_heading">
@@ -131,7 +159,7 @@
   </div>
 </div>
 <br>
-<br>
+
 
 {% if page.faqcard %}
 <div class="about_us_sec" style="display:block">
