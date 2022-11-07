@@ -58,17 +58,17 @@
                 </div>                
             </div>
             <div class="row mt-5">
-                <div class="col-md-4 col-4 text-center">
+                <div class="col-md-4 text-center">
                     {% image page.card_1_image original format-webp as card_1_image %}
                     <img src="{{card_1_image.url}}" alt="use-one" >
                     <p>{{page.card_1}}</p>
                 </div>
-                <div class="col-md-4 col-4 text-center">
+                <div class="col-md-4 text-center">
                     {% image page.card_2_image original format-webp as card_2_image %}
                     <img src="{{card_2_image.url}}" alt="use-one" >
                     <p>{{page.card_2}}</p>
                 </div>
-                <div class="col-md-4 col-4 text-center">
+                <div class="col-md-4 text-center">
                     {% image page.card_3_image original format-webp as card_3_image %}
                     <img src="{{card_3_image.url}}" alt="use-one" >
                     <p>{{page.card_3}}</p>
@@ -91,10 +91,10 @@
                     </div>
                 </div>
                 {% endfor %}
-                    <div class="past-event-card se_three">
+                    {% comment %} <div class="past-event-card se_three">
                         <img src="images/event_one.png" alt="past-event" />
                         <p class="p-4 mb-0">Impact of COVID on Mental Health</p>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
             <div class="row justify-content-center mt-5 pt-3">
@@ -113,6 +113,7 @@
                 <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" />
                 <div class="testimonial-content">
                     <h6 class="mb-3">Testimonials</h6>
+                    <img src="{% static 'images/Vector.png' %}" alt="reviews" />
                     <div class="owl-carousel owl-theme">
                         {% for ts in page.testimonials %}
                         
@@ -172,7 +173,7 @@
         smartSpeed: 1500,
         slideSpeed: 20,
         loop: true,
-        margin: 10,
+        margin: 400,
         nav: true,
         responsive: {
             0: {

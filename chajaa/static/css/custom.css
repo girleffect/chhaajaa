@@ -1758,7 +1758,7 @@ a.see_all_btn {
   color: #a6a6a6;
 }
 .blog-inside h2 {
-  font-size: 36px;
+  font-size: 34px;
 }
 .breadcrumb {
   background: none;
@@ -1917,6 +1917,11 @@ a.see_all_btn {
   font-size: 24px;
   font-weight: 500;
   color: #ed345a;
+  height: 82px;
+}
+
+.salah_event img {
+  min-height: 182px;
 }
 
 .event_tag {
@@ -1930,6 +1935,16 @@ a.see_all_btn {
 
 .salah_event img {
   width: 100%;
+}
+
+.salah-use p {
+  font-size: 20px;
+  width: 400px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 20px;
 }
 
 .diff_event {
@@ -1992,7 +2007,7 @@ a.see_all_btn {
 
 .testimonial-inner {
   position: relative;
-  background-color: #7ABFAD;
+  background-color: #54FCA3;
   border-radius: 10px;
 }
 
@@ -2011,17 +2026,20 @@ a.see_all_btn {
 }
 
 .testimonial-content h6 {
-  color: #fff;
+  color: #000;
   font-size: 42px;
   font-weight: 600;
 }
 
 .testimonial-content p {
   width: 100%;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 400;
-    padding-right: 56%;
+  color: #000;
+  font-size: 17px;
+  font-weight: 400;
+  max-height: 173px;
+  overflow: hidden;
+  padding-right: 56%;
+  text-overflow: ellipsis;
 }
 
 .faq {
@@ -2051,7 +2069,7 @@ a.see_all_btn {
 }
 
 .footer-sahi {
-  padding: 80px 0;
+  padding: 55px 0;
   background-color: #FFE366;
 }
 
@@ -2210,6 +2228,7 @@ footer p {
 
   .salah-use p {
     font-size: 14px;
+    width: unset;
   }
 
   .past-event {
@@ -2234,6 +2253,7 @@ footer p {
 
   .testimonial-content h6 {
     font-size: 30px;
+    text-align: center;
   }
 
   .testimonial-content {
@@ -2247,8 +2267,14 @@ footer p {
   }
 
   .testimonial-content p {
-    width: 89%;
+    width: 100%;
+    text-align: center;
     font-size: 16px;
+    padding-right: 0;
+  }
+
+  .owl-nav {
+    display: none;
   }
 
   .faq {
