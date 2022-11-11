@@ -1,5 +1,6 @@
 {
     "python.formatting.provider": "black",
     "python.defaultInterpreterPath": "/home/ravikantgautam/office-work/techstriker/chhaajaa/venv/bin/python",
-    "python.terminal.activateEnvironment":true
+    "python.terminal.activateEnvironment": true,
+    "editor.formatOnSave": true
 }

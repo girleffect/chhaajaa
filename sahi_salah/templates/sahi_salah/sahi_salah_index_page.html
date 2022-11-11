@@ -13,7 +13,7 @@
     {% image page.header_image original format-webp as header_image %}
         <img src="{{header_image.url}}" alt="sahi-salah-banner" />
         <div class="notif_what salah-btn">
-            <a href="#">Notify on WhatsApp</a>
+            <a href="{{page.whatsapp_link}}">Notify on WhatsApp</a>
         </div>
        
      </section>
@@ -113,7 +113,7 @@
                 <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" />
                 <div class="testimonial-content">
                     <h6 class="mb-3">Testimonials</h6>
-                    <img src="{% static 'images/Vector.png' %}" alt="reviews" />
+                    {% comment %} <img src="{% static 'images/Vector.png' %}" alt="review" /> {% endcomment %}
                     <div class="owl-carousel owl-theme">
                         {% for ts in page.testimonials %}
                         
@@ -165,28 +165,31 @@
      <div class="copyright text-center">
         <p>Sahi Salah Terms & Conditions</p>
      </div>
+     {% endblock %}
      {% block extra_js %}
 <script type="text/javascript">
-    $('.owl-carousel').owlCarousel({
-        item: 1,
-        singleItem: true,
-        smartSpeed: 1500,
-        slideSpeed: 20,
-        loop: true,
-        margin: 400,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 1
-            },
-            1000: {
-                items: 1
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            item: 1,
+            singleItem: true,
+            smartSpeed: 1500,
+            slideSpeed: 20,
+            loop: true,
+            margin: 400,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
             }
-        }
+        });
     });
+   
 </script>
 {% endblock extra_js %}   
-{% endblock %}
