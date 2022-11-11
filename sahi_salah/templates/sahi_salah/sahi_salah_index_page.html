@@ -11,161 +11,165 @@
 
 <section class="sahi-salah-hero-sec">
     {% image page.header_image original format-webp as header_image %}
-        <img src="{{header_image.url}}" alt="sahi-salah-banner" />
-        <div class="notif_what salah-btn">
-            <a href="#">Notify on WhatsApp</a>
-        </div>
-       
-     </section>
+    <img src="{{header_image.url}}" alt="sahi-salah-banner" />
+    <div class="notif_what salah-btn">
+        <a href="#">Notify on WhatsApp</a>
+    </div>
 
-     <section class="upcoming_events">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 text-center">
-                    <p>{{page.body|richtext}}
-                    </p>
-                    <h2 class="mt-5">Upcoming Events</h2>
-                </div>
+</section>
+
+<section class="upcoming_events">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <p>{{page.body|richtext}}
+                </p>
+                <h2 class="mt-5">Upcoming Events</h2>
             </div>
-            <div class="row">
-                {% for event in upcoming_event %}
-                <div class="col-md-4">
-                    <div class="salah_event se_one">
-                        {% image event.header_image original format-webp as header_image_upcoming_event %}
-                        <img src="{{header_image_upcoming_event.url}}" alt="event-images" />
-                        <a href="{% slugurl 'sahi-slah-index' %}{{event.slug}}"> <h6 class="px-4 pt-4">{{event.event_title}}</h6></a>   
-                        <div class="d-flex justify-content-start mx-4 pb-4">
-                            <span class="event_tag me-2">{{event.timing_date}} | {{event.timing_time}}</span>
-                            <span class="event_tag me-2">{{event.price_body}}</span>
-                        </div>
+        </div>
+        <div class="row">
+            {% for event in upcoming_event %}
+            <div class="col-lg-4 col-md-6 col-sm-12 col-4 sahi-list" style="display:none;">
+                <div class="salah_event se_one">
+                    {% image event.header_image original format-webp as header_image_upcoming_event %}
+                    <img src="{{header_image_upcoming_event.url}}" alt="event-images" />
+                    <a href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">
+                        <h6 class="px-4 pt-4">{{event.event_title}}</h6>
+                    </a>
+                    <div class="d-flex justify-content-start mx-4 pb-4 mt-4">
+                        <span class="event_tag me-2">{{event.timing_date}} | {{event.timing_time}}</span>
+                        <span class="event_tag me-2">{{event.price_body}}</span>
                     </div>
                 </div>
-                {% endfor %}
             </div>
-            <div class="row justify-content-center mt-5 pt-3">
-                <div class="salah-btn text-center">
-                    <a href="#">Load more events</a>
-                </div>
+            {% endfor %}
+        </div>
+        <div class="row justify-content-center mt-5 pt-3" id="seeMore">
+            <div class="salah-btn text-center">
+                <a href="#">Load more events</a>
             </div>
         </div>
-     </section>
+    </div>
+</section>
 
-     <section class="salah-use">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h6>{{page.section_1}}</h6>
-                </div>                
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-4 text-center">
-                    {% image page.card_1_image original format-webp as card_1_image %}
-                    <img src="{{card_1_image.url}}" alt="use-one" >
-                    <p>{{page.card_1}}</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    {% image page.card_2_image original format-webp as card_2_image %}
-                    <img src="{{card_2_image.url}}" alt="use-one" >
-                    <p>{{page.card_2}}</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    {% image page.card_3_image original format-webp as card_3_image %}
-                    <img src="{{card_3_image.url}}" alt="use-one" >
-                    <p>{{page.card_3}}</p>
-                </div>
-                
+<section class="salah-use">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h6>{{page.section_1}}</h6>
             </div>
         </div>
-     </section>
+        <div class="row mt-5">
+            <div class="col-md-4 text-center">
+                {% image page.card_1_image original format-webp as card_1_image %}
+                <img src="{{card_1_image.url}}" alt="use-one">
+                <p>{{page.card_1}}</p>
+            </div>
+            <div class="col-md-4 text-center">
+                {% image page.card_2_image original format-webp as card_2_image %}
+                <img src="{{card_2_image.url}}" alt="use-one">
+                <p>{{page.card_2}}</p>
+            </div>
+            <div class="col-md-4 text-center">
+                {% image page.card_3_image original format-webp as card_3_image %}
+                <img src="{{card_3_image.url}}" alt="use-one">
+                <p>{{page.card_3}}</p>
+            </div>
 
-     <section class="past-event">
-        <div class="container">
-            <h6 class="mb-4">Past Events</h6>
-            <div class="row">
-                {% for event in past_event %}
-                <div class="col-md-4 col-6">
-                    <div class="past-event-card se_one">
-                        {% image event.header_image original format-webp as header_image_past_event %}
-                        <img src="{{header_image_past_event.url}}" alt="past-event" />
-                       <a href="{% slugurl 'sahi-slah-index' %}{{event.slug}}"> <p class="p-4 mb-0">{{event.event_title}}</p></a>
-                    </div>
-                </div>
-                {% endfor %}
-                    {% comment %} <div class="past-event-card se_three">
-                        <img src="images/event_one.png" alt="past-event" />
-                        <p class="p-4 mb-0">Impact of COVID on Mental Health</p>
-                    </div> {% endcomment %}
-                </div>
-            </div>
-            <div class="row justify-content-center mt-5 pt-3">
-                <div class="salah-btn text-center">
-                    <a href="#">Show more past events</a>
-                </div>
-            </div>
         </div>
-     </section>
+    </div>
+</section>
+
+<section class="past-event">
+    <div class="container">
+        <h6 class="mb-4">Past Events</h6>
+        <div class="row">
+            {% for event in past_event %}
+            <div class="col-lg-4 col-md-6 col-sm-12 col-4 past-list" style="display:none;">
+                <div class="past-event-card se_one">
+                    {% image event.header_image original format-webp as header_image_past_event %}
+                    <img src="{{header_image_past_event.url}}" alt="past-event" />
+                    <a href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">
+                        <p class="p-4 mb-0">{{event.event_title}}</p>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+            {% comment %} <div class="past-event-card se_three">
+                <img src="images/event_one.png" alt="past-event" />
+                <p class="p-4 mb-0">Impact of COVID on Mental Health</p>
+            </div> {% endcomment %}
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5 pt-3">
+        <div class="salah-btn text-center" id="MoreList">
+            <a href="#">Show more past events</a>
+        </div>
+    </div>
+    </div>
+</section>
 
 
 {% if page.testimonials %}
-     <section class="testimonial">
-        <div class="container">
-            <div class="testimonial-inner">
-                <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" />
-                <div class="testimonial-content">
-                    <h6 class="mb-3">Testimonials</h6>
-                    <img src="{% static 'images/Vector.png' %}" alt="reviews" />
-                    <div class="owl-carousel owl-theme">
-                        {% for ts in page.testimonials %}
-                        
-                        {% include_block ts %}
-                    
-                        {% endfor %}
-                    </div>
+<section class="testimonial">
+    <div class="container">
+        <div class="testimonial-inner">
+            <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" />
+            <div class="testimonial-content">
+                <h6 class="mb-3">Testimonials</h6>
+                <img src="{% static 'images/Vector.png' %}" alt="reviews" />
+                <div class="owl-carousel owl-theme">
+                    {% for ts in page.testimonials %}
+
+                    {% include_block ts %}
+
+                    {% endfor %}
                 </div>
             </div>
         </div>
-        </div>
-     </section>
-{% endif %}            
+    </div>
+    </div>
+</section>
+{% endif %}
 
 {% if page.faqs %}
 
-                            
+
 <section class="faq">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h6>FAQs</h6>
-                    <div class="accordion sahi-salah-faq" id="faq">
-                        {% for card in page.faqs %}
-                                {% include_block card %}                
-{% endfor %}
-                      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h6>FAQs</h6>
+                <div class="accordion sahi-salah-faq" id="faq">
+                    {% for card in page.faqs %}
+                    {% include_block card %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
-     </section>
-            
-     {% endif %}
-     
-    
+    </div>
+</section>
+
+{% endif %}
+
+
 {% endblock %}
 {% block footer %}
-     <footer class="text-center footer-sahi">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
+<footer class="text-center footer-sahi">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
                 <h6>For Media Partnerships & Others Queries, Contact Us</h6>
                 <img class="footer-mail mt-4" src="{% static 'images/mail.png' %}" alt="mail" />
                 <p class="mt-3">contact@chhaajaa.com</p>
             </div>
-            </div>
         </div>
-     </footer>
-     <div class="copyright text-center">
-        <p>Sahi Salah Terms & Conditions</p>
-     </div>
-     {% block extra_js %}
+    </div>
+</footer>
+<div class="copyright text-center">
+    <p>Sahi Salah Terms & Conditions</p>
+</div>
+{% block extra_js %}
 <script type="text/javascript">
     $('.owl-carousel').owlCarousel({
         item: 1,
@@ -187,6 +191,43 @@
             }
         }
     });
+    if ($(window).width() < 991) {
+        $(".sahi-list").slice(0, 2).show();
+    }
+    else {
+        $(".sahi-list").slice(0, 3).show();
+    }
+    if ($(".sahi-list").length <= 3) {
+        $("#seeMore").hide();
+    }
+    $("#seeMore").click(function (e) {
+        e.preventDefault();
+        $(".sahi-list:hidden").slice(0, 2).fadeIn("slow");
+        if ($(".sahi-list:hidden").length == 0) {
+            $("#seeMore").hide();
+        }
+    });
+
+    if ($(window).width() < 991) {
+        $(".past-list").slice(0, 2).show();
+    }
+    else {
+        $(".past-list").slice(0, 3).show();
+    }
+    if ($(".past-list").length <= 3) {
+        $("#MoreList").hide();
+    }
+    $("#MoreList").click(function (e) {
+        e.preventDefault();
+        $(".past-list:hidden").slice(0, 2).fadeIn("slow");
+        if ($(".past-list:hidden").length == 0) {
+
+            $("#MoreList").hide();
+        }
+    });
+
+
+
 </script>
-{% endblock extra_js %}   
+{% endblock extra_js %}
 {% endblock %}
