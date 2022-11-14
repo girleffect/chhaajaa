@@ -9,7 +9,7 @@ from service.snippets import SocialPage, VideoSection, ConcernPage
 from wagtail.core.fields import RichTextField, StreamField
 from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from home.block import FAQCard, SimpleCrousal, AdvanceCrousal, TermPageCard
-from sahi_salah.models import SahiSalahPage
+from sahi_salah.models import UpcomingEventsArticle
 from django.utils.timezone import now
 
 
@@ -71,7 +71,7 @@ class HomePage(Page):
         context['videos'] = VideoSection.objects.all()
         concerns = ConcernPage.objects.all()[:4]
         context['services'] = concerns
-        context['upcoming_event'] = SahiSalahPage.objects.filter(timing_date__gt=now())[:4]
+        context['upcoming_event'] = UpcomingEventsArticle.objects.filter(timing_date__gt=now())[:4]
         return context
 
 
