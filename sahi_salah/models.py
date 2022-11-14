@@ -106,7 +106,7 @@ class UpcomingEventsArticle(Page):
     location_title = models.CharField(max_length=250,blank=True, null=True)
     location_body = models.CharField(max_length=250,blank=True, null=True)
 
-    whatsapp_text = models.CharField(max_length=200, help_text="intro of the section")
+    cta_link= models.CharField(max_length=200, help_text="intro of the section")
     cta_button = models.CharField(max_length=200, help_text="intro of the section")
     content = StreamField(
         [
@@ -118,7 +118,7 @@ class UpcomingEventsArticle(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
-        context['events'] = UpcomingEventsArticle.objects.all().exclude(id=self.id)
+        context['events'] = UpcomingEventsArticle.objects.all().filter(timing_date__gt=now()).exclude(id=self.id)
         return context
 
     content_panels = Page.content_panels + [
@@ -134,7 +134,7 @@ class UpcomingEventsArticle(Page):
         FieldPanel('price_body'),
         FieldPanel('location_title'),
         FieldPanel('location_body'),
-        FieldPanel('whatsapp_text'),
+        FieldPanel('cta_link'),
         FieldPanel('cta_button'),
         StreamFieldPanel("content"),
     ]
