@@ -986,7 +986,7 @@ button.social_buttons {
 }
 
 .service_content_lft_sec {
-  width: 30%;
+  /* width: 30%; */
   padding-top: 5px;
   display: flex;
   flex-direction: column;
@@ -2174,6 +2174,8 @@ a.see_all_btn {
 
 .sahi-salah-hero-sec img {
   width: 100%;
+  height: 85vh;
+  object-fit: cover;
 }
 
 .notif_what {
@@ -2312,6 +2314,7 @@ a.see_all_btn {
   position: relative;
   background-color: #54FCA3;
   border-radius: 10px;
+  height: 30vh;
 }
 
 .testimonial {
@@ -2381,6 +2384,7 @@ footer h6 {
 footer p {
   font-size: 16px;
   font-weight: 500;
+  color: #000 !important;
 }
 
 .footer-mail {
@@ -2437,6 +2441,10 @@ footer p {
 .important_content li {
   font-size: 20px;
   font-weight: 400;
+}
+
+.important_content .instruction_body {
+  justify-content: space-between;
 }
 
 .info {

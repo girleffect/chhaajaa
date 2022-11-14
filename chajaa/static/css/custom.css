@@ -986,7 +986,7 @@ button.social_buttons {
 }
 
 .service_content_lft_sec {
-  width: 30%;
+  /* width: 30%; */
   padding-top: 5px;
   display: flex;
   flex-direction: column;
@@ -1031,7 +1031,7 @@ button.social_buttons {
 }
 
 .sahi-salah {
-  width: 30%;
+  /* width: 30%; */
   padding-top: 5px;
   display: flex;
   flex-direction: column;
@@ -1263,6 +1263,11 @@ a.absolte_link {
   position: relative;
   padding-bottom: 70px;
   background: #8080801c;
+}
+
+.testimonial-content .testimonial_vector {
+  width: 50px;
+  display: none;
 }
 
 .testimonials_heading {
@@ -2174,6 +2179,8 @@ a.see_all_btn {
 
 .sahi-salah-hero-sec img {
   width: 100%;
+  height: 85vh;
+  object-fit: cover;
 }
 
 .notif_what {
@@ -2305,6 +2312,7 @@ a.see_all_btn {
 .past-event-card p {
   font-size: 17px;
   font-weight: 400;
+  color: #ed345a;
 }
 
 .testimonial-inner {
@@ -2371,7 +2379,7 @@ a.see_all_btn {
 }
 
 .footer-sahi {
-  padding: 55px 0;
+  padding: 40px 0;
   background-color: #FFE366;
 }
 
@@ -2383,6 +2391,7 @@ footer h6 {
 footer p {
   font-size: 16px;
   font-weight: 500;
+  color: #000 !important;
 }
 
 .footer-mail {
@@ -2441,6 +2450,11 @@ footer p {
   font-weight: 400;
 }
 
+.important_content .instruction_body {
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .info {
   margin-right: 40px;
 }
@@ -2488,150 +2502,4 @@ footer p {
   font-weight: 500;
   color: #ED345A;
   text-decoration: none;
-}
-
-@media only screen and (max-width: 480px) {
-  .salah-btn a {
-    background: #ED345A;
-    padding: 10px 12px;
-    font-size: 15px;
-  }
-
-  .notif_what {
-    right: 18px;
-  }
-
-  .upcoming_events {
-    padding: 60px 0;
-  }
-
-  .upcoming_events p {
-    font-size: 14px;
-  }
-
-  .se_one {
-    margin-right: 0;
-  }
-
-  .se_two {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .se_three {
-    margin-left: 0;
-  }
-
-  .salah_event h6 {
-    font-size: 17px;
-  }
-
-  .salah-use img {
-    width: 82px;
-  }
-
-  .salah-use p {
-    font-size: 14px;
-    width: unset;
-  }
-
-  .past-event {
-    margin: 60px 0;
-  }
-
-  .past-event-card {
-    margin-bottom: 20px;
-  }
-
-  .past-event-card p {
-    font-size: 15px;
-  }
-
-  .past-event-card p {
-    padding: 10px !important;
-  }
-
-  .testimonial {
-    margin: 60px 0;
-  }
-
-  .testimonial-content h6 {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .testimonial-content {
-    position: unset;
-    padding: 20px;
-  }
-
-  .testimonial img {
-    display: none;
-    width: 100%;
-  }
-
-  .testimonial-content p {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    padding-right: 0;
-  }
-
-  .owl-nav {
-    display: none;
-  }
-
-  .faq {
-    padding: 60px 0;
-  }
-
-  .faq .accordion-button {
-    font-size: 16px;
-  }
-
-  footer {
-    padding: 60px 0;
-  }
-
-  .copyright p {
-    font-size: 12px;
-    margin-bottom: 0;
-  }
-
-  .important_content h2 {
-    font-size: 24px;
-  }
-
-  .important_content p {
-    font-size: 16px;
-  }
-
-  .important_content h6 {
-    font-size: 18px;
-  }
-
-  .important_content li {
-    font-size: 16px;
-  }
-
-  .info span {
-    font-size: 16px;
-  }
-
-  .event_page_btn {
-    margin-top: 32px;
-  }
-
-  .event_page_btn_two {
-    margin-top: 26px;
-  }
-
-  .info-anchor {
-    padding: 8px 17px;
-  }
-
-  .important_content {
-    padding: 60px 0;
-  }
-
 }

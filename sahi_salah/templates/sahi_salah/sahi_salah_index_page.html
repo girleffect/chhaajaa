@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             {% for event in upcoming_event %}
-            <div class="col-lg-4 col-md-6 col-sm-12 col-4 sahi-list" style="display:none;">
+            <div class="col-lg-4 col-md-6 col-sm-12  sahi-list" style="display:none;">
                 <div class="salah_event se_one">
                     {% image event.header_image original format-webp as header_image_upcoming_event %}
                     <img src="{{header_image_upcoming_event.url}}" alt="event-images" />
@@ -85,7 +85,7 @@
         <h6 class="mb-4">Past Events</h6>
         <div class="row">
             {% for event in past_event %}
-            <div class="col-lg-4 col-md-6 col-sm-12 col-4 past-list" style="display:none;">
+            <div class="col-lg-4 col-md-6 col-sm-12  past-list" style="display:none;">
                 <div class="past-event-card se_one">
                     {% image event.header_image original format-webp as header_image_past_event %}
                     <img src="{{header_image_past_event.url}}" alt="past-event" />
@@ -101,8 +101,8 @@
             </div> {% endcomment %}
         </div>
     </div>
-    <div class="row justify-content-center mt-5 pt-3">
-        <div class="salah-btn text-center" id="MoreList">
+    <div class="row justify-content-center mt-5 pt-3" id="MoreList">
+        <div class="salah-btn text-center">
             <a href="#">Show more past events</a>
         </div>
     </div>
@@ -117,7 +117,7 @@
             <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" />
             <div class="testimonial-content">
                 <h6 class="mb-3">Testimonials</h6>
-                <img src="{% static 'images/Vector.png' %}" alt="reviews" />
+                <img src="{% static 'images/Vector.png' %}" alt="reviews" class="testimonial_vector" />
                 <div class="owl-carousel owl-theme">
                     {% for ts in page.testimonials %}
 
@@ -160,14 +160,18 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h6>For Media Partnerships & Others Queries, Contact Us</h6>
-                <img class="footer-mail mt-4" src="{% static 'images/mail.png' %}" alt="mail" />
-                <p class="mt-3">contact@chhaajaa.com</p>
+                <a href="mailto:contact@chhaajaa.com" target=”_blank” rel=noopener noreferrer””> <img
+                        class="footer-mail mt-3" src="{% static 'images/mail.png' %}" alt="mail" />
+                    <p class="mt-3">contact@chhaajaa.com</p>
+                </a>
             </div>
         </div>
     </div>
 </footer>
 <div class="copyright text-center">
-    <p>Sahi Salah Terms & Conditions</p>
+    <a target="_blank" href="{% slugurl 'terms-and-condition' %}">
+        <p>Sahi Salah Terms & Conditions</p>
+    </a>
 </div>
 {% block extra_js %}
 <script type="text/javascript">
@@ -193,13 +197,17 @@
     });
     if ($(window).width() < 991) {
         $(".sahi-list").slice(0, 2).show();
+        if ($(".sahi-list").length <= 2) {
+            $("#seeMore").hide();
+        }
     }
     else {
         $(".sahi-list").slice(0, 3).show();
+        if ($(".sahi-list").length <= 3) {
+            $("#seeMore").hide();
+        }
     }
-    if ($(".sahi-list").length <= 3) {
-        $("#seeMore").hide();
-    }
+
     $("#seeMore").click(function (e) {
         e.preventDefault();
         $(".sahi-list:hidden").slice(0, 2).fadeIn("slow");
@@ -210,18 +218,22 @@
 
     if ($(window).width() < 991) {
         $(".past-list").slice(0, 2).show();
+        if ($(".past-list").length <= 2) {
+            $("#MoreList").hide();
+        }
     }
     else {
         $(".past-list").slice(0, 3).show();
+        if ($(".past-list").length <= 3) {
+            $("#MoreList").hide();
+        }
     }
-    if ($(".past-list").length <= 3) {
-        $("#MoreList").hide();
-    }
+
     $("#MoreList").click(function (e) {
         e.preventDefault();
         $(".past-list:hidden").slice(0, 2).fadeIn("slow");
         if ($(".past-list:hidden").length == 0) {
-
+            1
             $("#MoreList").hide();
         }
     });

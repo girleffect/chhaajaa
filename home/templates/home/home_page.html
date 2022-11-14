@@ -44,7 +44,8 @@
   <h3>{{page.specific.section_social_title}}</h3>
   <div class="platform_content">
     {% for sc in social%}
-    <a target="_blank" href="{{sc.website_link}}">{% image sc.image original format-webp %} <button class="social_buttons">{{ sc.name }}</button>
+    <a target="_blank" href="{{sc.website_link}}">{% image sc.image original format-webp %} <button
+        class="social_buttons">{{ sc.name }}</button>
     </a>
     {% endfor %}
   </div>
@@ -53,17 +54,18 @@
 <div class="service_finder_content">
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
-      <h2>{{page.specific.section_concern_title}} {% image page.specific.section_concern_icon original format-webp %}</h2>
+      <h2>{{page.specific.section_concern_title}} {% image page.specific.section_concern_icon original format-webp %}
+      </h2>
     </div>
   </div>
   <div class="inner_service_content_data row">
     <!--service content data start here-->
-    <div class="service_content_lft_sec col-3">
+    <div class="service_content_lft_sec col-lg-3 col-md-3 col-sm-12">
       <h4>Aapki problem choose karein</h4>
       <a target="_blank" href="{% slugurl 'service-finder' %}">Baat karo Experts se <img
           src="{% static 'images/right_arrow_icon.svg' %}" alt="arrow"></a>
     </div>
-    <div class="period_colmns_right_sec col-9">
+    <div class="period_colmns_right_sec col-lg-9 col-md-9 col-sm-12">
 
       <div class="women_problems">
         {% for concern in services %}
@@ -91,19 +93,20 @@
   </div>
   <div class="inner_service_content_data row">
     <!--service content data start here-->
-    <div class="sahi-salah col-4">
+    <div class="sahi-salah col-lg-4 col-md-4 col-sm-12">
       <h4>Sahi decisions lene ka confidence badhao</h4>
       <a target="_blank" href="{% slugurl 'sahi-slah-index' %}">Event browse kro</a>
     </div>
-    <div class="col-8">
+    <div class=" col-lg-8 col-md-8 col-sm-12">
 
       <div class="sahi-home-page">
         {% for event in upcoming_event %}
         <div class="sahi-home">
-          <div class="">{% image event.header_image original as event_image %}
-            <a target="_blank" href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">    
+          <div class="sahi-home-image">{% image event.header_image original as event_image %}
+            <a target="_blank" href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">
               <img src="{{event_image.url}}" alt="period mein dard">
-       </a>   </div>
+            </a>
+          </div>
         </div>
         {% endfor %}
       </div>
@@ -115,7 +118,8 @@
 <div class="articles_data_sec">
   <div class="are_dekho_heading">
     <div class="inner_are_dekho_text">
-      <h2>{{page.specific.section_article_title}}{% image page.specific.section_article_icon original format-webp %}</h2>
+      <h2>{{page.specific.section_article_title}}{% image page.specific.section_article_icon original format-webp %}
+      </h2>
     </div>
   </div>
   <div class="inner_main_article_data">
@@ -173,7 +177,7 @@
       <div class="accordion" id="faq">
 
         {% for card in page.faqcard %}
-            {% include_block card %}
+        {% include_block card %}
         {% endfor %}
       </div>
     </div>
