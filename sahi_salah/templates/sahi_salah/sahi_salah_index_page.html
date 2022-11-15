@@ -80,7 +80,7 @@
         </div>
     </div>
 </section>
-
+{% if past_event %}
 <section class="past-event">
     <div class="container">
         <div class="row justify-content-center">
@@ -106,14 +106,14 @@
             </div> {% endcomment %}
         </div>
     </div>
-    <div class="row justify-content-center mt-5 pt-3" id="MoreList">
+    <div class="row justify-content-center mt-5 pt-3" id="">
         <div class="salah-btn text-center">
-            <a href="#">Show more past events</a>
+            <a href="{{page.yt_channel}}">Show more past events</a>
         </div>
     </div>
     </div>
 </section>
-
+{% endif %}
 
 {% if page.testimonials %}
 <section class="testimonial">

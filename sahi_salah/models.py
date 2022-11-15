@@ -36,6 +36,7 @@ class SahiSalahIndexPage(Page):
     
     card_3 = models.CharField(max_length=200, help_text="intro of the section")
     whatsapp_link = models.CharField(max_length=200, help_text="intro of the section")
+    yt_channel =models.CharField(max_length=200,help_text="intro of the section")
     faqs = StreamField(
         [
             ("faqcard", FAQCard()),
@@ -55,7 +56,7 @@ class SahiSalahIndexPage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
         context['upcoming_event'] = UpcomingEventsArticle.objects.live().filter(timing_date__gt=now()).exclude(id=self.id)
-        context['past_event'] = UpcomingEventsArticle.objects.live().filter(timing_date__lt=now()).exclude(id=self.id)
+        context['past_event'] = UpcomingEventsArticle.objects.live().order_by('-timing_date').filter(timing_date__lt=now()).exclude(id=self.id)
         return context
 
     content_panels = Page.content_panels + [
@@ -68,7 +69,8 @@ class SahiSalahIndexPage(Page):
         ImageChooserPanel('card_2_image'),
         FieldPanel('card_2'),
         ImageChooserPanel('card_3_image'),
-        FieldPanel('card_3'),        
+        FieldPanel('card_3'),
+        FieldPanel('yt_channel'),
         StreamFieldPanel("faqs"),
         StreamFieldPanel('testimonials')
     ]
