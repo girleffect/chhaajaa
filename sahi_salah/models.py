@@ -35,8 +35,8 @@ class SahiSalahIndexPage(Page):
     )
     
     card_3 = models.CharField(max_length=200, help_text="intro of the section")
-    whatsapp_link = models.CharField(max_length=200, help_text="intro of the section")
-    yt_channel =models.CharField(max_length=200,help_text="intro of the section")
+    whatsapp_link = models.CharField(max_length=200, help_text="intro of the section", blank=True, null=True)
+    yt_channel =models.CharField(max_length=200,help_text="intro of the section", blank=True, null=True)
     faqs = StreamField(
         [
             ("faqcard", FAQCard()),
