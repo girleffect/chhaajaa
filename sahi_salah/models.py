@@ -33,7 +33,10 @@ class SahiSalahIndexPage(Page):
     card_3_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    
     card_3 = models.CharField(max_length=200, help_text="intro of the section")
+    whatsapp_link = models.CharField(max_length=200, help_text="intro of the section", blank=True, null=True)
+    yt_channel =models.CharField(max_length=200,help_text="intro of the section", blank=True, null=True)
     faqs = StreamField(
         [
             ("faqcard", FAQCard()),
@@ -52,26 +55,28 @@ class SahiSalahIndexPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
-        context['upcoming_event'] = SahiSalahPage.objects.live().filter(timing_date__gt=now()).exclude(id=self.id)
-        context['past_event'] = SahiSalahPage.objects.live().filter(timing_date__lt=now()).exclude(id=self.id)
+        context['upcoming_event'] = UpcomingEventsArticle.objects.live().filter(timing_date__gt=now()).exclude(id=self.id)
+        context['past_event'] = UpcomingEventsArticle.objects.live().order_by('-timing_date').filter(timing_date__lt=now()).exclude(id=self.id)
         return context
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('header_image'),
         FieldPanel('body'),
         FieldPanel('section_1'),
+        FieldPanel('whatsapp_link'),
         ImageChooserPanel('card_1_image'),
         FieldPanel('card_1'),
         ImageChooserPanel('card_2_image'),
         FieldPanel('card_2'),
         ImageChooserPanel('card_3_image'),
-        FieldPanel('card_3'),        
+        FieldPanel('card_3'),
+        FieldPanel('yt_channel'),
         StreamFieldPanel("faqs"),
         StreamFieldPanel('testimonials')
     ]
 
 
-class SahiSalahPage(Page):
+class UpcomingEventsArticle(Page):
     header_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
@@ -103,8 +108,8 @@ class SahiSalahPage(Page):
     location_title = models.CharField(max_length=250,blank=True, null=True)
     location_body = models.CharField(max_length=250,blank=True, null=True)
 
-    whatsapp_text = models.CharField(max_length=200, help_text="intro of the section")
-    whatsapp_link = models.CharField(max_length=200, help_text="intro of the section")
+    cta_link= models.CharField(max_length=200, help_text="intro of the section")
+    cta_button = models.CharField(max_length=200, help_text="intro of the section")
     content = StreamField(
         [
             ('crousalheader',CrousalHeader()),   
@@ -115,7 +120,7 @@ class SahiSalahPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
-        context['events'] = SahiSalahPage.objects.all().exclude(id=self.id)
+        context['events'] = UpcomingEventsArticle.objects.all().filter(timing_date__gt=now()).exclude(id=self.id)
         return context
 
     content_panels = Page.content_panels + [
@@ -131,7 +136,7 @@ class SahiSalahPage(Page):
         FieldPanel('price_body'),
         FieldPanel('location_title'),
         FieldPanel('location_body'),
-        FieldPanel('whatsapp_text'),
-        FieldPanel('whatsapp_link'),
+        FieldPanel('cta_link'),
+        FieldPanel('cta_button'),
         StreamFieldPanel("content"),
     ]

@@ -89,7 +89,7 @@
         {% for service in services %}
         <div class="helpline_centers blog_helpline_center_data">
             <div class="center_header">
-                {% image service.main_image original as img %}
+             {% image service.main_image original as img %}
               <img src="{{img.url}}" alt="articles">
               <div class="blog_call_data">
                 <a target="_blank" href="{% if service.external_link|integer == True %}tel:{{service.external_link}}{% else %}{{service.external_link}}{% endif %}" target="_blank"><?xml version="1.0" encoding="utf-8"?>
@@ -115,7 +115,12 @@
             </div>
             <div class="center_body">
                 <h4><a target="_blank" href="{% slugurl 'service-finder' %}{{service.slug}}">{{service.name}}</a></h4>
-                {{service.caption}}
+                {% if service.specific.caption %}
+                {{service.specific.caption}}
+                {% else %}
+                <p></p>
+                {% endif %}
+
             </div>
         </div>
         {% empty %}
