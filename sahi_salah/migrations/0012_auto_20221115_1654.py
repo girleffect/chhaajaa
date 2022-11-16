@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('wagtailredirects', '0006_redirect_increase_max_length'),
-        ('wagtailmenus', '0024_auto_20220610_1559'),
+        # ('wagtailmenus', '0024_auto_20220610_1559'),
         ('wagtailcore', '0066_collection_management_permissions'),
         ('wagtailforms', '0004_add_verbose_name_plural'),
         ('wagtailimages', '0023_add_choose_permissions'),
