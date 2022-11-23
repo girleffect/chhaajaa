@@ -19,11 +19,13 @@
         </a>
     </div>
 </section>
-
-<section class="sahi-salah-hero-sec">
+{% image page.header_image original format-webp as header_image %}
+<section class="sahi-salah-hero-sec" style="background-image: url({{header_image.url}})">
+</section>
+<!-- <section class="sahi-salah-hero-sec">
     {% image page.header_image original format-webp as header_image %}
     <img src="{{header_image.url}}" alt="sahi-salah-banner" />
-</section>
+</section> -->
 
 <section class="important_content">
     <div class="container">
@@ -36,7 +38,7 @@
                 <div class="d-flex instruction_body mt-5">
                     <div class="info">
                         <p>{{page.timing_title}}</p>
-                        <span>{{page.timing_date}} <br> {{ page.timing_time}}</span>
+                        <span>{{page.timing_date}}<span class="ml-3"> {{ page.timing_time}}</span></span>
                     </div>
                     <div class="info">
                         <p>{{page.price_title}}</p>
@@ -127,7 +129,7 @@
     </div>
 </footer> -->
 <div class="copyright text-center">
-    <a target="_blank" href="{% slugurl 'terms-and-condition' %}">
+    <a href="{% slugurl 'terms-and-condition' %}">
         <p>Sahi Salah Terms & Conditions</p>
     </a>
 </div>

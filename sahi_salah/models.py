@@ -120,7 +120,7 @@ class UpcomingEventsArticle(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
-        context['events'] = UpcomingEventsArticle.objects.all().filter(timing_date__gt=now()).exclude(id=self.id)
+        context['events'] = UpcomingEventsArticle.objects.all().filter(timing_date__gt=now()).exclude(id=self.id).live()
         return context
 
     content_panels = Page.content_panels + [
