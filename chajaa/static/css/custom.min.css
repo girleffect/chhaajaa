@@ -986,8 +986,7 @@ button.social_buttons {
 .blog-inside h2,
 .blog-inside h3,
 .blog-inside h4 {
-    font-family: fedra_sans_devanagari_bdemi;
-    color: #ff428a
+    font-family: fedra_sans_devanagari_bdemi
 }
 
 .blog-inside .richtext-image,
@@ -1019,21 +1018,25 @@ a.brand_logo img {
 }
 
 .blog-inside h2 {
+    color: #ff428a;
     font-weight: 600
 }
 
 .blog-inside h3 {
     font-size: 28px;
+    color: #7c24e2;
     font-weight: 600
 }
 
 .blog-inside h4 {
-    font-size: 20px
+    font-size: 20px;
+    color: #ff428a
 }
 
 .blog-inside p {
-    font-size: 20px;
-    font-family: fedra_sans_devanagari_bdemi !important
+    font-size: 24px;
+    font-family: fedra_sans_devanagari_bdemi !important;
+    line-height: 33px
 }
 
 .related-blogs {

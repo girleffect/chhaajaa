@@ -1079,7 +1079,7 @@ a.brand_logo img {
 
 .blog-inside h3 {
   font-size: 28px;
-  color: #ff428a;
+  color: #7c24e2;
   font-weight: 600;
   font-family: "fedra_sans_devanagari_bdemi";
 }
@@ -1091,8 +1091,9 @@ a.brand_logo img {
 }
 
 .blog-inside p {
-  font-size: 20px;
+  font-size: 24px;
   font-family: "fedra_sans_devanagari_bdemi" !important;
+  line-height: 33px;
 }
 
 .blog-inside .richtext-image {

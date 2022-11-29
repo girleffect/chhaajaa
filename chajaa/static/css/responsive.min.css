@@ -1,17 +1,13 @@
-@media (min-width:1400px) {
-    .searched_info .librate_main_slider {
-        padding: 50px 140px;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr !important
+@media (min-width:1400px) and (max-width:1600px) {
+    .sahi-salah-hero-sec .banner-content .ban-button {
+        position: absolute;
+        right: 6%;
+        top: 484px
     }
 
-    .past-event img,
-    .salah_event img {
-        height: 160px
-    }
-
-    .container {
-        max-width: 1320px !important
+    .sahi-salah-hero-sec {
+        height: 56vh;
+        position: relative
     }
 }
 
@@ -2191,6 +2187,11 @@
     .main_related_content_portion.helpline_blog_portions.blog_articles {
         grid-template-columns: 1fr 1fr;
         padding: 0 20px 40px
+    }
+
+    .past-event img,
+    .salah_event img {
+        height: 100%
     }
 
     .lybrate_help_data img {
