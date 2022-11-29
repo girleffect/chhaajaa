@@ -18,6 +18,12 @@ h6 {
     vertical-align: middle
 }
 
+.salah_event h6,
+.testimonial-content p {
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
 html {
     overflow-x: hidden !important
 }
@@ -486,6 +492,15 @@ div#faq .card-header {
     position: relative
 }
 
+.sahi-salah-faq#faq .card-header a.btn.btn-header-link:after,
+.services_list .accordion .card .card-header .btn-header-link:after {
+    content: "\f107";
+    font-family: FontAwesome;
+    font-weight: 900;
+    float: right;
+    font-size: 26px
+}
+
 .sahi-salah-faq .card {
     margin: 10px 0;
     border-radius: 10px !important
@@ -661,14 +676,6 @@ div#faq {
     border: none;
     box-shadow: none;
     outline: 0
-}
-
-.services_list .accordion .card .card-header .btn-header-link:after {
-    content: "\f107";
-    font-family: FontAwesome;
-    font-weight: 900;
-    float: right;
-    font-size: 26px
 }
 
 .services_list .accordion .card .card-body {
@@ -2063,6 +2070,12 @@ a.showMore {
     object-fit: cover
 }
 
+.past-event img,
+.salah_event img {
+    height: 182px;
+    width: 100%
+}
+
 .salah-btn a {
     background: #ed345a;
     border-radius: 40px;
@@ -2097,13 +2110,7 @@ a.showMore {
     font-size: 24px;
     font-weight: 500;
     color: #ed345a;
-    height: 82px
-}
-
-.past-event img,
-.salah_event img {
-    height: 182px;
-    width: 100%
+    white-space: nowrap
 }
 
 .event_tag {
@@ -2151,7 +2158,6 @@ a.showMore {
     margin: 80px 0
 }
 
-.event_page_sec h6,
 .faq h6,
 .important_content h6,
 .past-event h6 {
@@ -2215,9 +2221,7 @@ a.showMore.showLess::after {
     font-size: 17px;
     font-weight: 400;
     max-height: 173px;
-    overflow: hidden;
-    padding-right: 56%;
-    text-overflow: ellipsis
+    padding-right: 56%
 }
 
 .faq {
@@ -2341,6 +2345,11 @@ footer p {
 
 .event_page_sec {
     background-color: #f9f8f8
+}
+
+.event_page_sec h6 {
+    font-size: 24px;
+    font-weight: 500
 }
 
 .modal-anchor a {

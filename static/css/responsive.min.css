@@ -323,12 +323,6 @@
         align-items: flex-start
     }
 
-    .sahi-home-page {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 20px
-    }
-
     .sahi-home-image {
         align-items: center;
         display: flex;
@@ -1162,6 +1156,10 @@
         padding: 0 10px 0 60px
     }
 
+    .sahi-salah-hero-sec {
+        height: 65vh !important;
+    }
+
     .platform_we_on {
         padding: 10px 60px 20px
     }
@@ -1427,6 +1425,11 @@
 }
 
 @media screen and (max-width:1024px) {
+    .sahi-home-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px
+    }
 
     .past-event img,
     .salah_event img {
@@ -2120,6 +2123,48 @@
 }
 
 @media only screen and (max-width:767px) {
+    .sahi-home-page {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20PX
+    }
+
+    .important_content {
+        padding: 20px 0
+    }
+
+    .home-related-icon,
+    .service_content_lft_sec a img {
+        width: 7px;
+        margin-left: 20px
+    }
+
+    .sahi-salah,
+    .service_content_lft_sec {
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center
+    }
+
+    .sahi-salah h4,
+    .service_content_lft_sec h4 {
+        font-size: 20px;
+        font-family: "Fedra Sans Pro";
+        color: #ff428a;
+        margin-top: 10px;
+        line-height: 28px
+    }
+
+    .sahi-home img {
+        height: auto;
+        border-radius: 20px;
+        object-fit: revert;
+        width: 100%
+    }
+
     .f-sec .bbg-heading {
         top: -50px
     }
