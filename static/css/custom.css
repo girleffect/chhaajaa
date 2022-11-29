@@ -483,6 +483,14 @@ div#faq .card-header {
   padding-right: 35px;
 }
 
+.sahi-salah-faq#faq .card-header a.btn.btn-header-link:after {
+  content: "\f107";
+  font-family: FontAwesome;
+  font-weight: 900;
+  float: right;
+  font-size: 26px;
+}
+
 .sahi-salah-faq .card {
   margin: 10px 0;
   border-radius: 10px !important;
@@ -1079,7 +1087,7 @@ a.brand_logo img {
 
 .blog-inside h3 {
   font-size: 28px;
-  color: #ff428a;
+  color: #7c24e2;
   font-weight: 600;
   font-family: "fedra_sans_devanagari_bdemi";
 }
@@ -1091,8 +1099,9 @@ a.brand_logo img {
 }
 
 .blog-inside p {
-  font-size: 20px;
+  font-size: 24px;
   font-family: "fedra_sans_devanagari_bdemi" !important;
+  line-height: 33px;
 }
 
 .blog-inside .richtext-image {
@@ -2250,7 +2259,9 @@ a.see_all_btn {
   font-size: 24px;
   font-weight: 500;
   color: #ed345a;
-  height: 82px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .salah_event img {
@@ -2548,7 +2559,7 @@ footer p {
 
 .event_page_sec h6 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .modal-anchor a {

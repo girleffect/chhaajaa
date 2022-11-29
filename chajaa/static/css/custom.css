@@ -2251,7 +2251,9 @@ a.see_all_btn {
   font-size: 24px;
   font-weight: 500;
   color: #ed345a;
-  height: 82px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .salah_event img {
@@ -2336,6 +2338,9 @@ a.see_all_btn {
 
 .past-event-card p {
   font-size: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 400;
   color: #ed345a;
 }
@@ -2549,7 +2554,7 @@ footer p {
 
 .event_page_sec h6 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .modal-anchor a {
