@@ -1592,6 +1592,13 @@
     padding: 20px 30px 0 30px;
   }
 
+  .important_content h2 {
+    font-size: 20px;
+  }
+
+  .mobile_notify {
+    margin: 20px auto;
+  }
 
   .hero-sec .banner-content .ban-button,
   .sahi-salah-hero-sec .banner-content .ban-button {

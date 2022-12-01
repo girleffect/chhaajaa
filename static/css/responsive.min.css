@@ -1156,10 +1156,6 @@
         padding: 0 10px 0 60px
     }
 
-    .sahi-salah-hero-sec {
-        height: 65vh !important;
-    }
-
     .platform_we_on {
         padding: 10px 60px 20px
     }
@@ -1442,7 +1438,7 @@
 
     .hero-sec,
     .sahi-salah-hero-sec {
-        height: 27vh
+        height: 65vh
     }
 
     .bbkh-cmnt {
@@ -1459,6 +1455,14 @@
     .testimonial-inner {
         background-image: none !important;
         padding: 20px 30px 0
+    }
+
+    .important_content h2 {
+        font-size: 20px
+    }
+
+    .mobile_notify {
+        margin: 20px auto
     }
 
     .hero-sec .banner-content .ban-button,
