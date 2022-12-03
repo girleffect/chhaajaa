@@ -35,6 +35,7 @@ class SahiSalahIndexPage(Page):
     )
     
     card_3 = models.CharField(max_length=200, help_text="intro of the section")
+    btn_name = models.CharField(max_length=200, help_text="button name", blank=True, null=True)
     whatsapp_link = models.CharField(max_length=200, help_text="intro of the section", blank=True, null=True)
     yt_channel =models.CharField(max_length=200,help_text="intro of the section", blank=True, null=True)
     faqs = StreamField(
@@ -63,6 +64,7 @@ class SahiSalahIndexPage(Page):
         ImageChooserPanel('header_image'),
         FieldPanel('body'),
         FieldPanel('section_1'),
+        FieldPanel('btn_name'),
         FieldPanel('whatsapp_link'),
         ImageChooserPanel('card_1_image'),
         FieldPanel('card_1'),
