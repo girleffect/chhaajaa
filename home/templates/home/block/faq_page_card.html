@@ -1,17 +1,15 @@
-{% load wagtailcore_tags   wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 <div class="card">
-          <div class="card-header" id="faqhead{{forloop.counter}}">
-            <a target="_blank" href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq{{forloop.counter}}"
-              aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
-              aria-controls="faq{{forloop.counter}}">{{self.title}}</a>
-          </div>
+  <div class="card-header" id="faqhead{{forloop.counter}}">
+    <a target="_blank" href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#faq{{forloop.counter}}"
+      aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+      aria-controls="faq{{forloop.counter}}">{{self.title}}</a>
+  </div>
 
-          <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}show{% else %}hide{% endif %}"
-            aria-labelledby="faqhead{{forloop.counter}}" data-parent="#faq">
-            <div class="card-body">
-              {{self.description|safe}}
-            </div>
-          </div>
+  <div id="faq{{forloop.counter}}" class="collapse {% if forloop.first %}{% else %}hide{% endif %}"
+    aria-labelledby="faqhead{{forloop.counter}}" data-parent="#faq">
+    <div class="card-body">
+      {{self.description|safe}}
+    </div>
+  </div>
 </div>
-
-

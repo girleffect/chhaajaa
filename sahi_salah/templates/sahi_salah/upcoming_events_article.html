@@ -19,11 +19,13 @@
         </a>
     </div>
 </section>
-
-<section class="sahi-salah-hero-sec">
+{% image page.header_image original format-webp as header_image %}
+<section class="sahi-salah-hero-sec" style="background-image: url({{header_image.url}})">
+</section>
+<!-- <section class="sahi-salah-hero-sec">
     {% image page.header_image original format-webp as header_image %}
     <img src="{{header_image.url}}" alt="sahi-salah-banner" />
-</section>
+</section> -->
 
 <section class="important_content">
     <div class="container">
@@ -31,21 +33,46 @@
             <div class="col-md-12">
                 <h2>{{page.event_title}}</h2>
                 <p class="mt-4">{{page.event_body| richtext}}</p>
+                {% if page.instruction_title %}
                 <h6 class="mt-3">{{page.instruction_title}}</h6>
+                {% else %}
+                <p></p>
+                {% endif %}
                 {{page.instruction_body|richtext}}
                 <div class="d-flex instruction_body mt-5">
                     <div class="info">
                         <p>{{page.timing_title}}</p>
-                        <span>{{page.timing_date}} <br> {{ page.timing_time}}</span>
+                        <span>{{page.timing_date}}<span class="ml-3"> {{ page.timing_time}}</span></span>
                     </div>
+
+
+
+
+                    {% if page.price_title %}
                     <div class="info">
                         <p>{{page.price_title}}</p>
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                        {% if page.price_body %}
                         <span>{{page.price_body}}</span>
                     </div>
+                    {% else %}
+                    <p></p>
+                    {% endif %}
+                    {% if page.location_title %}
                     <div class="info">
                         <p>{{page.location_title}}</p>
+                        {% else %}
+                        <p></p>
+                        {% endif %}
+                        {% if page.location_body %}
                         <span>{{page.location_body}}</span>
+                        {% else %}
+                        <p></p>
+                        {% endif %}
                     </div>
+
                 </div>
                 <div class="d-flex justify-content-center flex-gap mobile_notify">
                     <div class="salah-btn event_page_btn">
@@ -93,7 +120,7 @@
         </div>
         <div class="row">
             {% for event in events %}
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="salah_event se_one">
                     {% image event.header_image original format-webp as header_image_upcoming_event %}
                     <img src="{{header_image_upcoming_event.url}}" alt="event-images" />
@@ -127,7 +154,7 @@
     </div>
 </footer> -->
 <div class="copyright text-center">
-    <a target="_blank" href="{% slugurl 'terms-and-condition' %}">
+    <a href="{% slugurl 'terms-and-condition' %}">
         <p>Sahi Salah Terms & Conditions</p>
     </a>
 </div>

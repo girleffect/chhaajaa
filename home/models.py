@@ -71,7 +71,7 @@ class HomePage(Page):
         context['videos'] = VideoSection.objects.all()
         concerns = ConcernPage.objects.all()[:4]
         context['services'] = concerns
-        context['upcoming_event'] = UpcomingEventsArticle.objects.filter(timing_date__gt=now())[:4]
+        context['upcoming_event'] = UpcomingEventsArticle.objects.filter(timing_date__gt=now()).live()[:4]
         return context
 
 

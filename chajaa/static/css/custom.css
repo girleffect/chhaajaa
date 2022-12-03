@@ -258,6 +258,7 @@ a.brand_logo {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px 50px 15px;
+  align-items: center;
 }
 
 .service_content_lft_sec a {
@@ -1000,9 +1001,10 @@ button.social_buttons {
 }
 
 .sahi-home img {
-  width: 200px;
   height: 200px;
   border-radius: 20px;
+  object-fit: revert;
+  width: 100%;
 }
 
 .sahi-salah a {
@@ -1077,7 +1079,7 @@ a.brand_logo img {
 
 .blog-inside h3 {
   font-size: 28px;
-  color: #ff428a;
+  color: #7c24e2;
   font-weight: 600;
   font-family: "fedra_sans_devanagari_bdemi";
 }
@@ -1089,8 +1091,9 @@ a.brand_logo img {
 }
 
 .blog-inside p {
-  font-size: 20px;
+  font-size: 24px;
   font-family: "fedra_sans_devanagari_bdemi" !important;
+  line-height: 33px;
 }
 
 .blog-inside .richtext-image {
@@ -2174,20 +2177,42 @@ a.see_all_btn {
 
 /* #service-image{min-width: 100%;max-width: 80%;min-height: 160px;max-height: 100px;} */
 .sahi-salah-hero-sec {
+  background-size: 100%;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  height: 80vh;
   position: relative;
+}
+
+.sahi-salah-hero-sec .banner-content .ban-button {
+  position: absolute;
+  right: 6%;
+  top: 600px;
+}
+
+.sahi-salah-hero-sec .banner-content .ban-button a {
+  color: #ffffff;
+  background-color: #ED345A;
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: bolder;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .sahi-salah-hero-sec img {
   width: 100%;
-  height: 85vh;
+  height: 100%;
   object-fit: cover;
 }
 
-.notif_what {
+/* .notif_what {
   position: absolute;
   right: 10%;
   bottom: 30%;
-}
+} */
 
 .salah-btn a {
   background: #ED345A;
@@ -2202,7 +2227,7 @@ a.see_all_btn {
 }
 
 .upcoming_events {
-  padding: 80px 0;
+  padding: 40px 0 40px 0;
 }
 
 .upcoming_events p {
@@ -2226,12 +2251,14 @@ a.see_all_btn {
   font-size: 24px;
   font-weight: 500;
   color: #ed345a;
-  height: 82px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .salah_event img {
   height: 182px;
-  object-fit: cover;
+
 }
 
 .event_tag {
@@ -2301,7 +2328,7 @@ a.see_all_btn {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 182px;
-  object-fit: cover;
+
 }
 
 .past-event-card {
@@ -2311,14 +2338,47 @@ a.see_all_btn {
 
 .past-event-card p {
   font-size: 17px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 400;
   color: #ed345a;
 }
 
 .testimonial-inner {
-  position: relative;
-  background-color: #54FCA3;
-  border-radius: 10px;
+  padding: 40px 50px 0 50px;
+  border-radius: 20px;
+  background-size: 100%;
+  background-color: #7ABFAD;
+  background-repeat: no-repeat;
+}
+
+a.showMore {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button_show_hide {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+a.showMore::after {
+  content: "Load more events ";
+}
+
+a.showMore.showLess::after {
+  content: "Less events";
+}
+
+.testimonial-inner .owl-theme .owl-nav {
+  display: none;
 }
 
 .testimonial {
@@ -2329,21 +2389,21 @@ a.see_all_btn {
   width: 100%;
 }
 
-.testimonial-content {
+/* .testimonial-content {
   position: absolute;
   left: 3%;
   top: 10%;
-}
+} */
 
 .testimonial-content h6 {
-  color: #000;
+  color: #fff;
   font-size: 42px;
   font-weight: 600;
 }
 
 .testimonial-content p {
   width: 100%;
-  color: #000;
+  color: #fff;
   font-size: 17px;
   font-weight: 400;
   max-height: 173px;
@@ -2379,12 +2439,12 @@ a.see_all_btn {
 }
 
 .footer-sahi {
-  padding: 40px 0;
+  padding: 30px 0 20px 0;
   background-color: #FFE366;
 }
 
 footer h6 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -2395,7 +2455,7 @@ footer p {
 }
 
 .footer-mail {
-  width: 69px !important;
+  width: 48px !important;
 }
 
 .copyright {
@@ -2494,7 +2554,7 @@ footer p {
 
 .event_page_sec h6 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .modal-anchor a {
