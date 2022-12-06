@@ -1,37 +1,13 @@
-@media (min-width: 1400px) {
-  .searched_info .librate_main_slider {
-    padding: 50px 140px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr !important;
+@media (min-width: 1400px) and (max-width:1600px) {
+  .sahi-salah-hero-sec .banner-content .ban-button {
+    position: absolute;
+    right: 6%;
+    top: 484px;
   }
 
-  .container {
-    /* max-width: 1603px !important; */
-    max-width: 1320px !important;
-  }
-}
-
-@media (max-width:1200px) {
-  .sahi-home {
-    margin: auto;
-  }
-
-  .service_content_lft_sec h4,
-  .sahi-salah h4 {
-    font-size: 30px;
-    line-height: 50px;
-  }
-
-  .sahi-home img {
-    width: 250px;
-    height: 200px;
-    border-radius: 20px;
-  }
-
-  .sahi-home-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+  .sahi-salah-hero-sec {
+    height: 56vh;
+    position: relative;
   }
 }
 
@@ -363,6 +339,20 @@
   .inner_service_content_data {
     padding: 10px 150px 90px;
     align-items: flex-start;
+  }
+
+  .sahi-home-image {
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .sahi-home img {
+    height: 150px;
+    border-radius: 20px;
+    object-fit: revert;
+    width: 100%;
   }
 
   .service_content_lft_sec h4 {
@@ -1010,7 +1000,7 @@
 
   .helpline_centers.blog_helpline_center_data {
     overflow: hidden;
-    /* width: 32%; */
+    width: 32%;
     margin: 30px 2% 0px 0px;
   }
 
@@ -1069,6 +1059,12 @@
 @media (min-width: 1200px) and (max-width: 1440px) {
   .peshkash_text h2 {
     top: -2px;
+  }
+
+  .salah_event img,
+  .past-event img {
+    height: 140px;
+
   }
 
   .home_slider_data {
@@ -1199,11 +1195,13 @@
     padding: 20px 80px;
   }
 
-  .hero-sec {
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 65vh;
   }
 
-  .hero-sec .banner-content .ban-button {
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     position: absolute;
     right: 5%;
     top: 400px;
@@ -1456,11 +1454,13 @@
     padding: 20px 60px;
   }
 
-  .hero-sec {
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 60vh;
   }
 
-  .hero-sec .banner-content .ban-button {
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     position: absolute;
     right: 3%;
     top: 280px;
@@ -1531,10 +1531,11 @@
 @media (min-width: 999px) and (max-width: 1100px) {
   .navbar-light .navbar-nav .nav-link {
     color: #ffe366;
-    padding: 8px 15px !important;
+    padding: 8px 15px;
   }
 
-  .hero-sec {
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 70vh;
   }
 
@@ -1554,18 +1555,25 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .hero-sec {
-    height: 35vh;
+  .sahi-home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 
-  .sahi-salah-hero-sec img {
-    width: 100%;
-    height: auto;
+  .salah_event img,
+  .past-event img {
+    height: 140px;
 
   }
 
-  .testimonial-inner {
-    height: 30vh;
+  .testimonial-content p {
+    padding-right: 30%;
+  }
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
+    height: 65vh;
   }
 
   .bbkh-cmnt {
@@ -1579,22 +1587,55 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .hero-sec .banner-content .ban-button {
+  .testimonial-inner {
+    background-image: none !important;
+    padding: 20px 30px 0 30px;
+  }
+
+  .important_content h2 {
+    font-size: 20px;
+  }
+
+  .mobile_notify {
+    margin: 20px auto;
+  }
+
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     top: 185px;
     right: 4%;
   }
 
-
-  .service_content_lft_sec h4,
-  .sahi-salah h4 {
-    font-size: 27px;
-    font-family: "Fedra Sans Pro";
-    color: #ff428a;
-    margin-top: 10px;
-    line-height: 41px;
+  .past-event-card {
+    margin-top: 20px;
   }
 
-  .hero-sec {
+  .testimonial-content {
+    padding: 20px 0;
+  }
+
+  .testimonial-content p {
+    padding-right: 5%;
+  }
+
+  .testimonial-content h6 {
+    font-size: 23px;
+  }
+
+  footer h6 {
+    font-size: 14px;
+  }
+
+  .footer-sahi {
+    padding: 15px 0 0 0;
+  }
+
+  .footer-mail {
+    width: 31px;
+  }
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 35vh;
   }
 }
@@ -1604,17 +1645,6 @@
     padding: 80px 30px 80px 40px !important;
     max-width: 280px !important;
     margin-bottom: 20px;
-  }
-
-  .testimonial-content p {
-    width: 100%;
-    color: #000;
-    font-size: 17px;
-    font-weight: 400;
-    max-height: 253px;
-    overflow: hidden;
-    padding-right: 20%;
-    text-overflow: ellipsis;
   }
 
   .bbkh-cmnt {
@@ -2132,12 +2162,10 @@
     right: 8px;
   }
 
-  .hero-sec {
-    height: 60vh;
-  }
 
-  .hero-sec .banner-content .ban-button {
-    top: 250px;
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
+    top: 230px;
     right: 4%;
   }
 
@@ -2264,11 +2292,18 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .hero-sec {
-    height: 36vh;
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
+    height: 29vh;
   }
 
-  .hero-sec .banner-content .ban-button a {
+  .upcoming_events {
+    padding: 40px 0 40px 0;
+  }
+
+  .hero-sec .banner-content .ban-button a,
+  .sahi-salah-hero-sec .banner-content .ban-button a {
     padding: 12px 20px;
   }
 
@@ -2286,6 +2321,48 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .sahi-home-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 20PX;
+  }
+
+  .important_content {
+    padding: 20px 0;
+  }
+
+  .home-related-icon,
+  .service_content_lft_sec a img {
+    width: 7px;
+    margin-left: 20px;
+  }
+
+  .sahi-salah,
+  .service_content_lft_sec {
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .sahi-salah h4,
+  .service_content_lft_sec h4 {
+    font-size: 20px;
+    font-family: "Fedra Sans Pro";
+    color: #ff428a;
+    margin-top: 10px;
+    line-height: 28px;
+  }
+
+  .sahi-home img {
+    height: auto;
+    border-radius: 20px;
+    object-fit: revert;
+    width: 100%;
+  }
+
   .f-sec .bbg-heading {
     top: -50px;
   }
@@ -2294,7 +2371,8 @@
     top: -6%;
   }
 
-  .hero-sec .banner-content .ban-button {
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     right: 3%;
     top: 200px;
   }
@@ -2344,8 +2422,9 @@
     height: auto;
   }
 
-  .hero-sec .banner-content .ban-button a {
-    font-size: 1.3rem;
+  .hero-sec .banner-content .ban-button a,
+  .sahi-salah-hero-sec .banner-content .ban-button a {
+    font-size: 1rem;
   }
 
   .main_related_content_portion.helpline_blog_portions.blog_articles {
@@ -2381,15 +2460,10 @@
     width: 40px;
   }
 
-  .sahi-home-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin: 20px 0;
-  }
+  .salah_event img,
+  .past-event img {
+    height: 100%;
 
-  .sahi-home {
-    margin: inherit;
   }
 
   .lybrate_help_data img {
@@ -2559,7 +2633,7 @@
   }
 
   .blog-inside h2 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .blog-inside h3 {
@@ -2589,7 +2663,9 @@
 }
 
 @media only screen and (max-width: 769px) and (orientation: landscape) {
-  .hero-sec {
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 100vh;
   }
 
@@ -2599,25 +2675,49 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .hero-sec {
-    height: 29vh;
+
+  .salah_event img,
+  .past-event img {
+    height: 100%;
+
   }
 
-  .important_content .instruction_body {
-    justify-content: space-between;
-    align-items: center;
+  .testimonial-content {
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .testimonial-content p {
+    padding-right: 5%;
+  }
+
+  .testimonial-content h6 {
+    font-size: 23px;
   }
 
   footer h6 {
     font-size: 14px;
   }
 
-  .footer-mail {
-    width: 35px !important;
+  .footer-sahi {
+    padding: 15px 0 0 0;
   }
 
-  .testimonial-inner {
-    height: 100%;
+  .footer-mail {
+    width: 31px;
+  }
+
+  .owl-theme .owl-nav {
+    display: none;
+  }
+
+  .testimonial img {
+    position: absolute;
+  }
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
+    height: 29vh;
   }
 
   .peshkash_text {
@@ -2705,16 +2805,17 @@
     width: 100% !important;
   }
 
-  .hero-sec .banner-content .ban-button {
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     top: 130px;
   }
 
   .service_content_lft_sec h4 {
-    font-size: 24px;
+    font-size: 18px;
     font-family: "Fedra Sans Pro";
     color: #ff428a;
     margin-top: 10px;
-    line-height: 38px;
+    line-height: 26px;
   }
 
   .testimonials .single-testimonial .owl-dots {
@@ -2784,7 +2885,9 @@
 }
 
 @media screen and (max-width: 572px) and (orientation: landscape) {
-  .hero-sec {
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 100vh;
   }
 
@@ -2792,7 +2895,8 @@
     top: -85px;
   }
 
-  .hero-sec .banner-content .ban-button {
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     top: 155px;
   }
 }
@@ -2803,50 +2907,8 @@
   }
 
   .important_content .instruction_body {
-    display: flex !important;
-    align-items: flex-start !important;
-  }
+    display: block !important;
 
-  .service_content_lft_sec h4,
-  .sahi-salah h4 {
-    font-size: 27px;
-    line-height: 41px;
-  }
-
-  .sahi-home-page {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  .sahi-home img {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    object-fit: cover;
-  }
-
-  .service_content_lft_sec a {
-    background: #ff428a;
-    width: 100%;
-    padding: 8px 12px;
-    border-radius: 17px;
-    transition: all 0.5s ease-in-out 0s;
-    display: flex;
-    color: #fff;
-    align-items: center;
-    font-size: 15px;
-    line-height: 14px;
-    font-family: "Fedra Sans Pro";
-    font-weight: 900;
-    box-shadow: 2px 2px 0 1px #d11863;
-    justify-content: center;
-  }
-
-  .testimonial-content .testimonial_vector {
-    display: block;
-    margin: 10px auto;
   }
 
   .talk-bubble {
@@ -2965,150 +3027,6 @@
     grid-template-columns: 1fr;
     padding: 0px 20px 40px;
   }
-
-  .salah-btn a {
-    background: #ED345A;
-    padding: 10px 32px;
-    font-size: 15px;
-  }
-
-  .notif_what {
-    right: 18px;
-  }
-
-  .upcoming_events {
-    padding: 60px 0;
-  }
-
-  .upcoming_events p {
-    font-size: 14px;
-  }
-
-  .se_one {
-    margin-right: 0;
-  }
-
-  .se_two {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .se_three {
-    margin-left: 0;
-  }
-
-  .salah_event h6 {
-    font-size: 17px;
-  }
-
-  .salah-use img {
-    width: 82px;
-  }
-
-  .salah-use p {
-    font-size: 14px;
-    width: unset;
-  }
-
-  .past-event {
-    margin: 60px 0;
-  }
-
-  .past-event-card {
-    margin-bottom: 20px;
-  }
-
-  .past-event-card p {
-    font-size: 15px;
-  }
-
-  .past-event-card p {
-    padding: 10px !important;
-  }
-
-  .testimonial {
-    margin: 60px 0;
-  }
-
-  .testimonial-content h6 {
-    font-size: 30px;
-    text-align: center;
-  }
-
-  .testimonial-content {
-    position: unset;
-    padding: 20px;
-  }
-
-  .testimonial img {
-    display: none;
-    width: 100%;
-  }
-
-  .testimonial-content p {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    padding-right: 0;
-  }
-
-  .owl-nav {
-    display: none;
-  }
-
-  .faq {
-    padding: 60px 0;
-  }
-
-  .faq .accordion-button {
-    font-size: 16px;
-  }
-
-  footer {
-    padding: 60px 0;
-  }
-
-  .copyright p {
-    font-size: 12px;
-    margin-bottom: 0;
-  }
-
-  .important_content h2 {
-    font-size: 24px;
-  }
-
-  .important_content p {
-    font-size: 16px;
-  }
-
-  .important_content h6 {
-    font-size: 20px;
-  }
-
-  .important_content li {
-    font-size: 16px;
-  }
-
-  .info span {
-    font-size: 16px;
-  }
-
-  .event_page_btn {
-    margin-top: 32px;
-  }
-
-  .event_page_btn_two {
-    margin-top: 26px;
-  }
-
-  .info-anchor {
-    padding: 8px 17px;
-  }
-
-  .important_content {
-    padding: 60px 0;
-  }
-
 }
 
 @media only screen and (max-width: 414px) {
@@ -3117,8 +3035,23 @@
     margin: 6px 0;
   }
 
-  .hero-sec {
+  .hero-sec .banner-content .ban-button a,
+  .sahi-salah-hero-sec .banner-content .ban-button a {
+    padding: 7px 14px;
+  }
+
+  .hero-sec .banner-content .ban-button a,
+  .sahi-salah-hero-sec .banner-content .ban-button a {
+    font-size: 0.8rem;
+  }
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 21vh;
+  }
+
+  .upcoming_events {
+    padding: 20px 0 40px 0;
   }
 
   .new_plan_heading {
@@ -3134,11 +3067,13 @@
     padding: 1% 15%;
   }
 
-  .hero-sec .banner-content .ban-button {
-    top: 100px;
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
+    top: 90px;
   }
 
-  .hero-sec .banner-content .ban-button a {
+  .hero-sec .banner-content .ban-button a,
+  .sahi-salah-hero-sec .banner-content.ban-button a {
     padding: 6px 10px;
     font-size: 1rem;
     box-shadow: 2px 2px 0px 1px #d5ba42;
@@ -3256,16 +3191,20 @@
 }
 
 @media only screen and (max-width: 322px) {
-  .hero-sec {
+
+  .hero-sec,
+  .sahi-salah-hero-sec {
     height: 25vh;
   }
 
-  .hero-sec .banner-content .ban-button a {
+  .hero-sec .banner-content .ban-button a,
+  .sahi-salah-hero-sec .banner-content .ban-button a {
     font-size: 0.6rem;
     padding: 6px 11px;
   }
 
-  .hero-sec .banner-content .ban-button {
+  .hero-sec .banner-content .ban-button,
+  .sahi-salah-hero-sec .banner-content .ban-button {
     top: 75px;
   }
 

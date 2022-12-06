@@ -8,12 +8,18 @@
 
 {% block content %}
 {% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
-
-<section class="sahi-salah-hero-sec">
-    {% image page.header_image original format-webp as header_image %}
-    <img src="{{header_image.url}}" alt="sahi-salah-banner" />
-    <div class="notif_what salah-btn">
-        <a href="{{page.whatsapp_link}}">Notify on WhatsApp</a>
+{% image page.header_image original format-webp as header_image %}
+<section class="sahi-salah-hero-sec" style="background-image: url({{header_image.url}})">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-content">
+                    <div class="ban-button">
+                        <a href="{{page.whatsapp_link}}">Notify on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </section>
@@ -28,9 +34,9 @@
             </div>
 
         </div>
-        <div class="row">
+        <div class="row up_coming">
             {% for event in upcoming_event %}
-            <div class="col-lg-4 col-md-6 col-sm-12  sahi-list" style="display:none;">
+            <div class="col-lg-4 col-md-6 col-sm-12  sahi-list">
                 <div class="salah_event se_one">
                     {% image event.header_image original format-webp as header_image_upcoming_event %}
                     <img src="{{header_image_upcoming_event.url}}" alt="event-images" />
@@ -45,11 +51,7 @@
             </div>
             {% endfor %}
         </div>
-        <div class="row justify-content-center mt-5 pt-3" id="seeMore">
-            <div class="salah-btn text-center">
-                <a href="#">Load more events</a>
-            </div>
-        </div>
+
     </div>
 </section>
 
@@ -118,8 +120,8 @@
 {% if page.testimonials %}
 <section class="testimonial">
     <div class="container">
-        <div class="testimonial-inner">
-            <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" />
+        <div class="testimonial-inner" style="background-image: url('/static/images/testimonial1.png')">
+            <!-- <img src="{% static 'images/testimonial1.png' %}" alt="testimonial" /> -->
             <div class="testimonial-content">
                 <h6 class="mb-3">Testimonials</h6>
                 <img src="{% static 'images/Vector.png' %}" alt="reviews" class="testimonial_vector" />
@@ -165,8 +167,8 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h6>For Media Partnerships & Others Queries, Contact Us</h6>
-                <a href="mailto:contact@chhaajaa.com" target=”_blank” rel=noopener noreferrer””> <img
-                        class="footer-mail mt-3" src="{% static 'images/mail.png' %}" alt="mail" />
+                <a href="mailto:contact@chhaajaa.com" rel=noopener noreferrer””> <img class="footer-mail mt-3"
+                        src="{% static 'images/mail.png' %}" alt="mail" />
                     <p class="mt-3">contact@chhaajaa.com</p>
                 </a>
             </div>
@@ -174,7 +176,7 @@
     </div>
 </footer>
 <div class="copyright text-center">
-    <a target="_blank" href="{% slugurl 'terms-and-condition' %}">
+    <a href="{% slugurl 'terms-and-condition' %}">
         <p>Sahi Salah Terms & Conditions</p>
     </a>
 </div>
@@ -202,25 +204,22 @@
             }
         });
     });
-    if ($(window).width() < 991) {
-        $(".sahi-list").slice(0, 2).show();
-        if ($(".sahi-list").length <= 2) {
-            $("#seeMore").hide();
-        }
-    }
-    else {
-        $(".sahi-list").slice(0, 3).show();
-        if ($(".sahi-list").length <= 3) {
-            $("#seeMore").hide();
-        }
-    }
+    jQuery(document).ready(function () {
 
-    $("#seeMore").click(function (e) {
-        e.preventDefault();
-        $(".sahi-list:hidden").slice(0, 2).fadeIn("slow");
-        if ($(".sahi-list:hidden").length == 0) {
-            $("#seeMore").hide();
+        var $this = $('.up_coming');
+        if ($('.up_coming .sahi-list').length > 3) {
+            $('.up_coming').append('<div class="row button_show_hide"><div class="salah-btn text-center"><a href="javascript:;" class="showMore"></a></div></div>');
         }
+
+        // If more than 2 Education up_coming, hide the remaining
+        $('.up_coming .sahi-list').slice(0, 3).addClass('shown');
+        $('.up_coming .sahi-list').not('.shown').hide();
+        $('.up_coming .showMore').on('click', function () {
+
+            $('.up_coming .sahi-list').not('.shown').toggle(300);
+            $(this).toggleClass('showLess');
+        });
+
     });
 
     if ($(window).width() < 991) {
@@ -238,7 +237,7 @@
 
     $("#MoreList").click(function (e) {
         e.preventDefault();
-        $(".past-list:hidden").slice(0, 2).fadeIn("slow");
+        $(".past-list:hidden").slice(0, 3).fadeIn("slow");
         if ($(".past-list:hidden").length == 0) {
             1
             $("#MoreList").hide();
