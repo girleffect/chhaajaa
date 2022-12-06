@@ -9,7 +9,7 @@
 {% block content %}
 {% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
 
-{% if page.whatsapp_link and page.btn_name  %}
+<!-- {% if page.whatsapp_link and page.btn_name  %}
 <section class="sahi-salah-hero-sec">
     {% image page.header_image original format-webp as header_image %}
     <img src="{{header_image.url}}" alt="sahi-salah-banner" />
@@ -17,8 +17,23 @@
         <a href="{{page.whatsapp_link}}">{{page.btn_name|default:"Notify on WhatsApp"}}</a>
     </div>
 </section>
-{% endif %}
-
+{% endif %} -->
+{% image page.header_image original format-webp as header_image %}
+<section class="sahi-salah-hero-sec" style="background-image: url({{header_image.url}})">
+    {% if page.whatsapp_link and page.btn_name %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="banner-content">
+                    <div class="ban-button">
+                        <a href="{{page.whatsapp_link}}">{{page.btn_name|default:"Notify on WhatsApp"}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</section>
 <section class="upcoming_events">
     <div class="container">
         <div class="row justify-content-center">
