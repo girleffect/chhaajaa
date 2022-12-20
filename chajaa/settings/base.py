@@ -15,6 +15,7 @@ import os
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+import dj_database_url
 from django_storage_url import dsn_configured_storage_class
 
 
