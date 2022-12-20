@@ -15,6 +15,8 @@ import os
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from django_storage_url import dsn_configured_storage_class
+
 
 SENTRY_DSN = os.environ.get("SENTRY_DSN", "")
 
