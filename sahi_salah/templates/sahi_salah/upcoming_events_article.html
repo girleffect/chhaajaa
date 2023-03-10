@@ -12,7 +12,7 @@
 
 <section class="back_to_main">
     <div class="container">
-        <a href="{% slugurl 'sahi-slah-index' %}"><svg width="8" height="13" viewBox="0 0 8 13" fill="none"
+        <a href="{% slugurl 'sahi-salah' %}"><svg width="8" height="13" viewBox="0 0 8 13" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 12L1 6.5L7 1" stroke="white" stroke-linejoin="round" />
             </svg> Back to Sahi Salah
@@ -124,7 +124,7 @@
                 <div class="salah_event se_one">
                     {% image event.header_image original format-webp as header_image_upcoming_event %}
                     <img src="{{header_image_upcoming_event.url}}" alt="event-images" />
-                    <a href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">
+                    <a href="{% slugurl 'sahi-salah' %}{{event.slug}}">
                         <h6 class="px-4 pt-4">{{event.event_title}}</h6>
                     </a>
                     <div class="d-flex justify-content-start mx-4 pb-4">

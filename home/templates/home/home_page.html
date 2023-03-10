@@ -95,7 +95,7 @@
     <!--service content data start here-->
     <div class="sahi-salah col-lg-4 col-md-4 col-sm-12">
       <h4>Sahi decisions lene ka confidence badhao</h4>
-      <a target="_blank" href="{% slugurl 'sahi-slah-index' %}">Event browse kro</a>
+      <a target="_blank" href="{% slugurl 'sahi-salah' %}">Event browse kro</a>
     </div>
     <div class=" col-lg-8 col-md-8 col-sm-12">
 
@@ -103,7 +103,7 @@
         {% for event in upcoming_event %}
         <div class="sahi-home">
           <div class="sahi-home-image">{% image event.header_image original as event_image %}
-            <a target="_blank" href="{% slugurl 'sahi-slah-index' %}{{event.slug}}">
+            <a target="_blank" href="{% slugurl 'sahi-salah' %}{{event.slug}}">
               <img src="{{event_image.url}}" alt="period mein dard">
             </a>
           </div>
