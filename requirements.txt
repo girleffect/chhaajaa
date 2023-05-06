@@ -16,7 +16,7 @@ asgiref==3.4.1
 beautifulsoup4==4.9.3
 certifi==2021.10.8
 charset-normalizer==2.0.12
-Django==3.2.12
+Django==3.2.19
 django-cogwheels==0.3
 django-filter==21.1
 django-modelcluster==5.2
