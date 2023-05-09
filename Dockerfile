@@ -41,9 +41,13 @@ RUN chown wagtail:wagtail /app
 COPY --chown=wagtail:wagtail . .
 
 # Install the project requirements.
-COPY requirements.txt ./
+#COPY requirements.txt ./
 RUN python -m pip install --upgrade pip
-RUN pip install -r requirements.txt 
+
+RUN pip install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install
+
 
 ENV DJANGO_SETTINGS_MODULE=chajaa.settings.production 
 COPY entrypoint.sh ./entrypoint.sh
