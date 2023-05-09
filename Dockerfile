@@ -1,5 +1,5 @@
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
-FROM python:3.8.1-slim-buster
+FROM python:3.10.11-slim-buster
 
 # Create the user and group first as they shouldn't change often.
 # Specify the UID/GIDs so that they do not change somehow and mess with the
