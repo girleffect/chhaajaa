@@ -11,7 +11,7 @@
         {% endblock %}
     </title>
     <meta name="description"
-        content="{% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% else %}{{ self.search_description }}{% endif %}{% endblock %}" />
+          content="{% block meta_description %}{% if self.search_description %}{{ self.search_description }}{% else %}{{ self.search_description }}{% endif %}{% endblock %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="sJv2CIRu3z5hI5qxMyA4Px1yHVOjnV7mtalFmk3D4Vo" />
     <meta name="facebook-domain-verification" content="3unpgyaqtx06a21a8f6tnlmr950rjq" />
@@ -19,20 +19,21 @@
     {# Global stylesheets #}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css"
-        integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css"
-        integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css"
+          integrity="sha512-ARJR74swou2y0Q2V9k0GbzQ/5vJ2RBSoCWokg4zkfM29Fb3vZEQyv0iWBMW/yvKgyHSR/7D64pFMmU8nYmbRkg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.min.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/custom.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="/data/css/custom.css">
     <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}"> -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.min.css' %}">
 
@@ -49,7 +50,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/favicon/apple-icon-152x152.png' %}">
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-icon-180x180.png' %}">
     <link rel="icon" type="image/png" sizes="192x192"
-        href="{% static 'images/favicon/images/android-icon-192x192.png' %}">
+          href="{% static 'images/favicon/images/android-icon-192x192.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="96x96" href="{% static 'images/favicon/favicon-96x96.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
@@ -58,6 +59,569 @@
     {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
     {% endblock %}
+
+    <style>
+        .bg-light {
+            background-color: #f2f2f2 !important;
+        }
+
+        .border-radius {
+            border-radius: 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: fedra_sans_devanagari_bbold;
+        }
+
+        a.text-black {
+            color: black;
+        }
+
+        .page-header h1 p {
+            font-family: fedra_sans_devanagari_bbold !important;
+        }
+
+        .helpline_centers {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .helpline_centers a {
+            height: 100%;
+        }
+
+        .helpline_centers:hover {
+            border-color: rgb(108, 107, 107);
+        }
+
+        .owl-item {
+            padding-bottom: 3px;
+        }
+
+        .owl-item.disabled {
+            height: 100%;
+        }
+
+        .owl-carousel .owl-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .owl-carousel .owl-nav button.owl-next,
+        .owl-carousel .owl-nav button.owl-prev {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            border-radius: 50% !important;
+            position: absolute;
+            top: 35%;
+            background-color: black;
+            color: white;
+        }
+
+        .owl-prev {
+            left: -25px;
+        }
+
+        .owl-next {
+            right: -25px;
+        }
+
+        .owl-prev.disabled,
+        .owl-next.disabled {
+            display: none !important;
+        }
+
+        .owl-stage {
+            display: flex !important
+        }
+
+        .women_problems {
+            padding: 0;
+        }
+
+        .problem {
+            display: block;
+            background: transparent;
+            border: 2px solid #8226FA;
+            color: #8226FA !important;
+            box-shadow: none;
+            border-radius: 15px;
+            padding: 25px;
+            min-height: 240px !important;
+            height: calc(100% - 20px);
+            /* flex: 0 0 calc(33.3% - 30px); */
+            min-height: 0 !important;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .problem:hover {
+            color: #8226FA !important;
+            background-color: #8226fa !important;
+            color: white !important;
+        }
+
+        .problem:hover a {}
+
+
+        .convinced_data_banner {
+            padding: 0 !important;
+        }
+
+        .convinced_data_banner a:hover,
+        .website_info a.btn.btn_web:hover {
+            background: #ce2066;
+            box-shadow: 4px 4px 0 0 #a3174f;
+        }
+
+        /* .women_problems .womenp_cols a:hover {
+            background-color: #8226FA !important;
+            color: white !important;
+        } */
+
+        .convinced_data_dete {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        .convinced_data_dete h4 {
+            max-width: 30vw;
+            margin-bottom: 30px;
+        }
+
+        .convinced_data_banner a {
+            position: relative;
+            font-size: 20px;
+        }
+
+
+        .service-sidebar {
+            padding: 30px;
+            width: auto;
+
+            @media (min-width: 768px) {
+
+                margin-left: 30px;
+            }
+        }
+
+        .service-sidebar .website_info {
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .women_problems .womenp_cols {
+                flex: 0 0 calc(50% - 30px);
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .women_problems .womenp_cols {
+                flex: 0 0 100%;
+            }
+        }
+
+        .responsive-object {
+            padding-bottom: 56.49% !important;
+            position: relative;
+            height: 0;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .responsive-object iframe {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* SERVICE PAGE */
+        .service-slider .owl-item {
+            padding-bottom: 10px;
+
+        }
+
+        .service-slider .owl-item a {
+            color: black;
+        }
+
+        .helpline_centers {
+            height: 100%;
+
+        }
+
+        .block {
+            display: block;
+        }
+
+        .helpline_centers .center_header img {
+            width: 100%;
+            height: auto;
+            max-width: unset;
+            max-height: unset;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .tag {
+            padding: 5px 25px;
+            font-size: 19px !important;
+            background-color: #f2f2f2;
+            color: black !important;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid transparent;
+        }
+
+        .tag:hover {
+            border-color: #8226fa;
+            color: #8226FA !important;
+        }
+
+        .tag-icon {
+            font-size: 25px !important;
+
+        }
+
+        .tags-list {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .tags-list .PillList-label {
+            min-height: 45px;
+            display: flex;
+            align-items: center
+        }
+
+        .tags-list .Icon {
+            min-width: 12px;
+            min-height: 12px;
+            display: block;
+        }
+
+        .tags-list li {
+            white-space: nowrap;
+        }
+
+        .PillList-item {
+
+            font-size: 19px !important;
+            background-color: #f2f2f2;
+            color: black !important;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid transparent;
+        }
+
+        .PillList-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .PillList-item input[type="checkbox"]:checked+.PillList-label {
+            background-color: #8226FA;
+            border-color: #8226FA;
+            color: white;
+            /* padding: 5px 25px; */
+        }
+
+        .PillList-label {
+            border: 1px solid #f2f2f2;
+            background: #f2f2f2;
+            border-radius: 20px;
+            color: black;
+            display: block;
+            padding: 7px 28px;
+            text-decoration: none;
+        }
+
+        .PillList-label:hover {
+            border-color: #8226FA;
+            color: #8226FA
+        }
+
+        .PillList-item input[type="checkbox"]:checked+.PillList-label .Icon--checkLight {
+            display: inline-block;
+        }
+
+        .PillList-item input[type="checkbox"]:checked+.PillList-label .Icon--addLight,
+        .PillList-label .Icon--checkLight,
+        .PillList-children {
+            display: none;
+        }
+
+        .PillList-item input[type="checkbox"]:checked+.PillList-label .Icon--Add {
+            display: none;
+        }
+
+        .PillList-item input[type="checkbox"]:checked+.PillList-label .Icon--addLight,
+        .PillList-label .Icon--Add,
+        .PillList-children {
+            display: inline-block;
+        }
+
+        .PillList-label .Icon {
+            width: 12px;
+            height: 12px;
+            margin: 0 0 0 12px;
+        }
+
+        .Icon--smallest {
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .Icon {
+            background: transparent;
+            display: inline-block;
+            font-style: normal;
+            vertical-align: baseline;
+            position: relative;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #ed345a;
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.6rem;
+            font-weight: bolder;
+            -webkit-transition: .4s ease-in-out;
+            transition: .4s ease-in-out;
+            display: block;
+        }
+
+        .modal-dialog {
+
+            max-width: 700px !important;
+        }
+
+        .modal-content {
+            border-radius: 30px;
+            padding: 30px;
+        }
+
+
+
+        select {
+            font-size: 20px;
+            border-radius: 10px !important;
+            border-color: black;
+            color: black;
+        }
+
+        .searched_info select {
+            max-width: 350px;
+        }
+
+
+        img {
+            max-width: 100%
+        }
+
+        /* related articles */
+        .service_ral_sec >  a{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .related_contents {
+            background: transparent;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            margin-bottom: 30px;
+            height:auto;
+        }
+
+        .related_posts_data img {
+            margin-bottom: 10px;
+        }
+
+        .related_contents h3 {
+            font-family: fedra_sans_devanagari_bbold, sans-serif !important;
+        }
+
+        .related_contents .tag {
+            border-color: darkgray;
+            font-size: 17px !important;
+            font-family: fedra_sans_devanagari_bdemi, sans-serif !important;
+            margin-bottom: 5px;
+            padding: 5px 20px;
+        }
+
+        .py-8 {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .pb-8 {
+
+            padding-bottom: 80px;
+        }
+
+        .pt-8 {
+            padding-top: 80px;
+        }
+
+        .librate_carousels .owl-nav button.owl-prev {
+            left: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border: transparent;
+
+        }
+
+        .librate_carousels .owl-nav button.owl-next {
+            right: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border: transparent;
+
+        }
+
+        .back_data_btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            z-index: 1000;
+            left: 30px;
+            top: 15px;
+            padding: 0 !important;
+        }
+
+        .container {
+            max-width: 1700px;
+            padding-left: 150px;
+            padding-right: 150px;
+
+        }
+
+        @media (min-width: 1200px) and (max-width: 1440px) {
+            .container {
+                max-width: unset;
+                padding-left: 80px;
+                padding-right: 80px;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 1200px) {
+            .container {
+                max-width: unset;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                max-width: unset;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        /* Bol Behen */
+
+        .bb-header {
+            height: calc(100vh - 69px);
+            background-size: cover;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .bb-header .col-md-5,
+        .bb-header .col-md-7 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bb-header .col-md-7 {
+            padding-left: 30px;
+        }
+
+        @media (max-width: 800px) {
+            .bb-header .col-md-7 {
+                order: 1;
+                margin-bottom: 30px;
+            }
+
+            .bb-header .col-md-5 {
+                order: 2;
+
+            }
+        }
+
+        h1.oversized {
+            font-size: 55px;
+        }
+
+        .richtext {
+            font-size: 130%;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+
+        }
+
+        .social-media a {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 70px;
+
+
+        }
+
+        .social-media a img {
+            max-width: 60px;
+        }
+
+
+
+        .bottom_footer p {
+            color: white !important;
+        }
+    </style>
+
 
     <script type="application/ld+json">
             {
@@ -154,7 +718,7 @@
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTX86G6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+                style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     {% wagtailuserbar %}
 
@@ -167,7 +731,7 @@
                 <h2>Contact us</h2>
                 <ul class="list-inline">
                     <li><a target="_blank" href="mailto:contact@chhaajaa.com"><img
-                                src="{% static 'images/mail_icon.svg' %}" alt="mail"><i>Mail</i></a>
+                                 src="{% static 'images/mail_icon.svg' %}" alt="mail"><i>Mail</i></a>
                     </li>
                 </ul>
             </div>
@@ -175,14 +739,14 @@
                 <h2>Useful links</h2>
                 <ul class="list-inline mb-none">
                     <li><a target="_blank" href="{% slugurl 'guidelines' %}"><img
-                                src="{% static 'images/community_guidline_icon.svg' %}"
-                                alt="community guidelines"><i>Community
+                                 src="{% static 'images/community_guidline_icon.svg' %}"
+                                 alt="community guidelines"><i>Community
                                 <span>Guidelines</span></i></a></li>
                     <li><a target="_blank" href="{% slugurl 'privacy-policy' %}"><img
-                                src="{% static 'images/privacy_icon.svg' %}" alt="privacy policy"><i>Privacy
+                                 src="{% static 'images/privacy_icon.svg' %}" alt="privacy policy"><i>Privacy
                                 Policy</i></a></li>
                     <li><a target="_blank" href="{% slugurl 'terms-and-condition' %}"><img
-                                src="{% static 'images/terms_condition_icon.svg' %}" alt="terms conditions"><i>Terms
+                                 src="{% static 'images/terms_condition_icon.svg' %}" alt="terms conditions"><i>Terms
                                 &amp; Conditions</i></a>
                     </li>
                 </ul>
@@ -192,8 +756,8 @@
             <?xml version="1.0" encoding="utf-8"?>
             <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 25" width="25" height="25"
-                style="enable-background:new 0 0 37 25;" xml:space="preserve">
+                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 25" width="25" height="25"
+                 style="enable-background:new 0 0 37 25;" xml:space="preserve">
                 <style type="text/css">
                     .st0 {
                         fill: #FFFFFF;
@@ -222,17 +786,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js"
-        integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"
-        integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Facebook Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -258,7 +822,7 @@
 
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45VN52" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
+                style="display:none;visibility:hidden"></iframe>
     </noscript>
 
 

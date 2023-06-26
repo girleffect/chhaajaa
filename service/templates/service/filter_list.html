@@ -6,211 +6,286 @@
 {% endblock extra_css %}
 {% block content %}
 {% main_menu template='menus/main_menu.html' %}
-<section class="searched_tags">
-  <div class="searched_info">
-    <div class="search_upper_filter_sec">
-      <h3><a class="search_back_btn" href="/service-finder/"><?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 11 14" style="enable-background:new 0 0 11 14;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-	
-		.st1{opacity:0.684;fill:none;stroke:#707070;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;enable-background:new    ;}
-</style>
-<g id="BackButton" transform="translate(3.096 -0.09)">
-	<ellipse id="Ellipse_40_2_" class="st0" cx="3.7" cy="7.3" rx="12" ry="11.5"/>
-	<path id="Path_75_2_" class="st1" d="M5.6,1.4l-6.9,5.8l6.9,5.8"/>
-</g>
-</svg>
-</a>You searched for</h3>
+<div class="bg-light py-4">
+  <div class="searched_info container">
+    <div class=" ">
+      <h1> Service Finder </h1>
       <form method="get">
         <div class="form-group-data">
           {% comment %} <select class="selectpicker" name="service" onchange="this.form.submit()">
             {% for concern in concerns %}
             <option value="{{concern.slug}}" {% if concern.slug == request.GET.service %}selected="selected" {% endif %}>
-              {{concern.intro}}</option>
+              {{concern.intro}}
+            </option>
             {% endfor %}
           </select> {% endcomment %}
-       <select class="picker" name="service" onchange="this.form.submit()">
-        {% for concern in concerns %}
-        <option value="{{concern.slug}}" {% if concern.slug == request.GET.service %}selected="selected" {% endif %}>
-          {{concern.intro}}</option>
-        {% endfor %}
-          </select> 
+          <select class="picker" name="service" onchange="this.form.submit()">
+            {% for concern in concerns %}
+            <option value="{{concern.slug}}" {% if concern.slug == request.GET.service %}selected="selected" {% endif %}>
+              {{concern.intro}}
+            </option>
+            {% endfor %}
+          </select>
           <select class="picker" name="location" onchange="this.form.submit()">
             <option disabled selected>Select Location</option>
             {% for location in locations %}
             <option value="{{location.slug}}" {% if location.slug == request.GET.location %}selected="selected"
-              {% endif %}>{{location.name}}</option>
+                    {% endif %}>{{location.name}}</option>
             {% endfor %}
-          </select> 
+          </select>
         </div>
       </form>
-      <div class="tags_listing_data">
-        <div class="left_updated_tags">
-          {% if tags.count %}
-          {% for tag in tags %}
-          {% for tag_n in tags_name %}
-          {% if tag.slug == tag_n %}
+
+    </div>
+  </div>
+</div>
+<section class="container pt-4">
+  <div class=" mt-2">
+    <div class="tags_listing_data ">
+      <ul class="tags-list">
+        <li>
+
+          <a class="tag" target="_blank" href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup"><span class="tag-icon">+</span> <span> Add Tag to Filter</span></a>
+        </li>
+        {% if tags.count %}
+        {% for tag in tags %}
+        {% for tag_n in tags_name %}
+        {% if tag.slug == tag_n %}
+
+        <li>
+          <label class="PillList-item ">
+
+            <input
+                   type="checkbox"
+                   id="tag{{ tag.slug }}"
+                   onclick="selected_tag(this); submit_tag_filter()"
+                   name="tag"
+                   value="{{ tag.slug }}"
+                   checked="true">
+            <span class="PillList-label">
+              {{ tag.slug }}
+              <span class="Icon Icon--checkLight Icon--smallest tag-icon">-</span>
+              <span class="Icon Icon--Add Icon--smallest tag-icon">+ </span>
+
+
+        </li>
+        <li class="tag">
+
           <a target="_blank" href="{% slugurl 'service-finder' %}services/?tag={{tag.slug}}">{{ tag }} <span>-</span></a>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-          {% endif %}
-        </div>
-        <div class="add_tgs">
-          <a target="_blank" href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup">Add Tag <span>+</span></a>
-        </div>
-      </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% endif %}
     </div>
 
+  </div>
+</section>
 
+<section class="container">
+<div class="row pb-5 mb-5">
+  {% for service in service_list %}
+  <div class="librate_list_content col-lg-4 col-md-6 col-sm-12">
+    <div class="helpline_centers bg-light border-radius mt-5 " style="display:flex; flex-direction:column; height:calc(100% - 30px);">
+      <a href="{% pageurl service %}" class="text-black">
+        
+        {% for item in service.specific.gallery_images.all %}
+        {% if forloop.first %} 
+          {% image item.image fill-800x600 as service_image %}
+          <img src="{{service_image.url}}" alt="service finder" style="max-width:100%;">
 
-    <div class="librate_main_slider">
-      {% for service in service_list %}
-      <div class="librate_list_content">
-        <div class="owl-carousel owl-theme librate_carousels">
-          {% for item in service.specific.gallery_images.all %}
-          <div class="item">
-            <div class="liberate_img">
-              {% image item.image original as service_image %}
-              {% if service.specific.external_link|integer == True %}
-              <a target="_blank" href="tel:{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
-              <a target="_blank" href="tel:{{service.specific.external_link}}" class="call_data" target="_blank"><?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 28 29" style="enable-background:new 0 0 28 29;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#ff428a;}
-	.st1{fill:#FFFFFF;}
-</style>
-<circle class="st0" cx="13.9" cy="14.7" r="14.1"/>
-<g id="iGTu5F_19_">
-	<g>
-		<path class="st1" d="M12,13.7c0.8,2,2.2,3.4,4.2,4.2c0.1-0.2,0.1-0.4,0.2-0.5c0.1-0.3,0.1-0.3,0.5-0.3c1.2,0.2,2.4,0.4,3.7,0.6
-			c0.2,0,0.2,0,0.3,0.3c0.2,1.1-0.6,2.3-1.9,2.6c-0.3,0.1-0.6,0-0.9,0c-1.2-0.1-2.4-0.3-3.5-0.9c-1.4-0.7-2.6-1.6-3.5-2.9
-			c-0.9-1.2-1.4-2.4-1.6-3.8c-0.1-0.6-0.2-1.3-0.1-1.9c0.1-1,1-1.8,1.9-1.9c0.3,0,0.5,0,0.8,0c0.1,0,0.1,0,0.1,0.1
-			c0.2,1.3,0.4,2.7,0.6,4c0,0.1,0,0.1-0.1,0.2C12.5,13.5,12.2,13.6,12,13.7z"/>
-	</g>
-</g>
-</svg>
-</a>
-              {% else %}
-               <a target="_blank" href="{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
-                <a target="_blank" href="{{service.specific.external_link}}" class="call_data" target="_blank"><img src="{% static 'images/web-icon.svg' %}"
-                  alt="call"></a>
-              {% endif %}
+          {% endif %}
+        {% comment %}
+        {% if service.specific.external_link|integer == True %}
+        <a target="_blank" href="tel:{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
+        <a target="_blank" href="tel:{{service.specific.external_link}}" class="call_data" target="_blank">
+          <?xml version="1.0" encoding="utf-8"?>
+          <!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+          <svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 28 29" style="enable-background:new 0 0 28 29;" xml:space="preserve">
+            <style type="text/css">
+              .st0 {
+                fill: #ff428a;
+              }
+
+              .st1 {
+                fill: #FFFFFF;
+              }
+            </style>
+            <circle class="st0" cx="13.9" cy="14.7" r="14.1" />
+            <g id="iGTu5F_19_">
+              <g>
+                <path class="st1" d="M12,13.7c0.8,2,2.2,3.4,4.2,4.2c0.1-0.2,0.1-0.4,0.2-0.5c0.1-0.3,0.1-0.3,0.5-0.3c1.2,0.2,2.4,0.4,3.7,0.6
+    c0.2,0,0.2,0,0.3,0.3c0.2,1.1-0.6,2.3-1.9,2.6c-0.3,0.1-0.6,0-0.9,0c-1.2-0.1-2.4-0.3-3.5-0.9c-1.4-0.7-2.6-1.6-3.5-2.9
+    c-0.9-1.2-1.4-2.4-1.6-3.8c-0.1-0.6-0.2-1.3-0.1-1.9c0.1-1,1-1.8,1.9-1.9c0.3,0,0.5,0,0.8,0c0.1,0,0.1,0,0.1,0.1
+    c0.2,1.3,0.4,2.7,0.6,4c0,0.1,0,0.1-0.1,0.2C12.5,13.5,12.2,13.6,12,13.7z" />
+              </g>
+            </g>
+          </svg>
+        </a>
+        {% else %}
+        <a target="_blank" href="{{service.specific.external_link}}" target="_blank"><img src="{{service_image.url}}" alt="service finder"></a>
+        <a target="_blank" href="{{service.specific.external_link}}" class="call_data" target="_blank"><img src="{% static 'images/web-icon.svg' %}"
+               alt="call"></a>
+        {% endif %}
+        {% endcomment %}
+
+        {% endfor %}
+
+        <div class="librate_content_part">
+          <div class="content_left_data">
+            <h3>
+              {{service.specific.name}}
+            </h3>
+            {% comment %}
+            | <a target="_blank" href="{% pageurl service %}"
+               class="helpline_links">{{service.specific.category.name}}</a>
+            {% if service.specific.caption %}
+            <p>{{service.specific.caption}}</p>
+            {% else %}
+            <p></p>
+            {% endif %}
+            <div class="gynac_direct_links">
+              {% for tag in service.tags.all %}
+              <a target="_blank" href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&tag={{tag.slug}}">{{tag}}</a>
+              {% endfor %}
             </div>
+            {% endcomment %}
           </div>
-          {% endfor %}
+          <!--<div class="right_time_call">
+            <p class="time_date">9am <span>- 12pm</span> <i>Free</i></p>
+          </div>-->
         </div>
-        <div class="librate_inner_carousels">
-          <div class="librate_content_part">
-            <div class="content_left_data">
-              <h4><a class="search_titles" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="{% pageurl service %}"
-                  class="helpline_links">{{service.specific.category.name}}</a></h4>
-                  {% if service.specific.caption %}
-              <p>{{service.specific.caption}}</p>
-              {% else %}
-              <p></p>
-              {% endif %}
-              <div class="gynac_direct_links">
-                {% for tag in service.tags.all %}
-                  <a target="_blank" href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&tag={{tag.slug}}">{{tag}}</a>
+      </a>
+    </div>
+  </div>
+  {% empty %}
+  <div class="alert  text-center mt-5 text-center " role="alert">
+    <h4>
+
+      Sorry! No Result Found
+    </h4>
+  </div>
+  {% endfor %}
+</div>
+</section>
+
+<section class="bg-light py-8">
+  <div class="container">
+
+    <div class="related_headings">
+      <h3>Related Blogs</h3>
+
+    </div>
+    <div class="main_related_content_portion row">
+      {% for blog in articles %}
+      <div class="related_posts_data col-4">
+        <div class="related_images service_ral_sec">
+          <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}">
+            {% image blog.main_image fill-500x281 as img %}
+
+            <img src="{{img.url}}" alt="articles">
+
+            <div class="related_contents">
+              <h3>{{blog.title}}</h3>
+              <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}">
+              </a>
+              <div>
+
+                {% for tag in blog.tags.all %}
+                <a target="_blank" href="#!" class="tag service_related_tags">{{tag.name}}</a>
                 {% endfor %}
               </div>
             </div>
-            <!--<div class="right_time_call">
-              <p class="time_date">9am <span>- 12pm</span> <i>Free</i></p>
-            </div>-->
-          </div>
+          </a>
         </div>
       </div>
       {% empty %}
       <div class="alert  text-center text-white" role="alert" style="background-color:#ff428a;">
-        Sorry! No Result Found
+        {% if request.GET.tag %}
+        No blogs are currently available for this tag
+        {% else %}
+        You have not selected any tag
+        {% endif %}
       </div>
       {% endfor %}
     </div>
+    <div class="text-center">
+
+      <a class="see_all_btn float-none" href="{% slugurl 'blog-page' %}">All Articles</a>
+    </div>
   </div>
 </section>
 
-<section class="related_articles">
-  <div class="related_headings">
-    <h3>Related Blogs</h3>
-    <a target="_blank" href="{% slugurl 'blog-page' %}">See All ></a>
-  </div>
-  <div class="main_related_content_portion">
-    {% for blog in articles %}
-    <div class="related_posts_data">
-      <div class="related_images service_ral_sec">
-        {% image blog.main_image original as img %}
-        <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"> <img src="{{img.url}}" alt="articles"></a>
-      </div>
-      <div class="related_contents">
-        <a target="_blank" href="{% slugurl 'blog-page' %}{{blog.slug}}"><h3>{{blog.intro}}</h3></a>
-        {% for tag in blog.tags.all %}<a target="_blank" href="#!" class="service_related_tags">{{tag.name}}&nbsp;&nbsp;</a>{% endfor %}
-      </div>
-    </div>
-    {% empty %}
-      <div class="alert  text-center text-white" role="alert" style="background-color:#ff428a;">
-          {% if request.GET.tag %}
-            No blogs are currently available for this tag
-          {% else %}
-            You have not selected any tag
-          {% endif %}
-      </div>
-    {% endfor %}
-  </div>
-</section>
+
 
 <!--POP UP-->
-<div class="modal add_tags_modal" id="addTagPopup">
+<div class="modal add_tags_modal border-radius" id="addTagPopup">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <div class="modal-header">
-      <button type="button" onclick="submit_tag_filter()" style="float: right;" class="close" data-dismiss="modal"
-        aria-label="Close">
+
+      <button type="button" onclick="submit_tag_filter()" style="position:absolute; right:20px; top:20px; font-size:40px;" class="close" data-dismiss="modal"
+              aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-    </div>
+
       <!-- Modal body -->
       <div class="modal-body">
         <div class="pop_data_tags">
-
+          {% comment %}
           <div class="selected_tags_data" id="minus_tag_lists">
-            <h3 class="selected_tegs_search">Selected Tags <a><i class="fa fa-search" onclick="submit_tag_filter()"></i></a></h3>
+
+
             <div class="add_tags_list_items minus_tags_added_list">
               <ul id="TextBoxContainer">
                 {% for tag in tags %}
                 {% for tag_n in tags_name %}
                 {% if tag.slug == tag_n %}
-                <li><input type="hidden" value="{{ tag.slug }}" class="tag_trace" id="tag_trace{{ tag.slug }}">
+                <li>
+                  <input type="hidden" value="{{ tag.slug }}" class="tag_trace" id="tag_trace{{ tag.slug }}">
                   <a onclick="remove_tag('{{ tag.slug }}')" class="remove_tags"><input type="checkbox"
-                      name="{{ tag.slug }}">
-                      <span class="ml-3">{{ tag.name }}</span>
-                      <img src="{% static 'images/minus_icon.webp' %}"
-                      alt="minus"></a>
+                           name="{{ tag.slug }}">
+                    <span class="ml-3">{{ tag.name }}</span>
+                    <img src="{% static 'images/minus_icon.webp' %}"
+                         alt="minus"></a>
                 </li>
                 {% endif %}
                 {% endfor %}
                 {% endfor %}
               </ul>
+
             </div>
           </div>
+          {% endcomment %}
 
           <div class="selected_tags_data">
-            <h3>Add Tags</h3>
+
             <div class="add_tags_list_items">
-              <ul>
+              <ul class="tags-list">
                 {% for tag in tags %}
-                <li><div id="add_tags"><input type="checkbox" id="tag{{ tag.slug }}"
-                      onclick="selected_tag(this)" name="tag" value="{{ tag.slug }}"><span class="ml-3">{{ tag.slug }}</span> <img
-                      src="{% static 'images/plus_icon.webp' %}" alt="plus" class="ml-3"></div></li>
+                <li>
+                  <div id="add_tags">
+                    <label class="PillList-item ">
+
+                      <input
+                             type="checkbox"
+                             id="tag{{ tag.slug }}"
+                             onclick="selected_tag(this)"
+                             name="tag"
+                             value="{{ tag.slug }}">
+                      <span class="PillList-label">
+                        {{ tag.slug }}
+                        <span class="Icon Icon--checkLight Icon--smallest tag-icon">-</span>
+                        <span class="Icon Icon--Add Icon--smallest tag-icon">+ </span>
+
+                  </div>
+
+                </li>
                 {% endfor %}
               </ul>
             </div>
+
+            <div class="btn" onclick="submit_tag_filter()"> Filter</div>
           </div>
 
 
@@ -278,7 +353,7 @@
 
   function selected_tag(tag) {
     var temparr = []
-    if (tag.className != "selected_tag_list"){
+    if (tag.className != "selected_tag_list") {
       document.getElementById("tag" + tag.value).classList.add("selected_tag_list");
       if (arr.includes(tag.value) == false) {
         arr.push(tag.value)
@@ -298,8 +373,8 @@
 
   function submit_tag_filter() {
     var url_path = window.location.href;
-    if (url_path.indexOf("&tag=")!=-1){
-      url_path = url_path.slice(0,url_path.indexOf("&tag="))
+    if (url_path.indexOf("&tag=") != -1) {
+      url_path = url_path.slice(0, url_path.indexOf("&tag="))
     }
     var TextBoxContainer = document.getElementsByClassName("selected_tag_list");
     var t = "";

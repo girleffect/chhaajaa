@@ -10,15 +10,36 @@
 {% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
 
 
-<section class="bb-hero-sec">
-    {% image page.header_image original format-webp as header_image %}
-    <img src="{{header_image.url}}" alt="bol-behan-hero-section">
-    <div class="whats-app">
 
-        <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
-            {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
-            <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
-        </a>
+{% image page.header_image original format-webp as header_image %}
+<section class="bb-header" style="background-image:url('{{header_image.url}}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h1 class="oversized">Header Text goes here</h1>
+                <div class="richtext">
+                    <p>And any subtitle goes here</p>
+                </div>
+                <div class="social-media">
+
+                    <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
+                        {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
+                        <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
+                        Chat on WhatsApp
+                    </a>
+
+                    <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
+                        {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
+                        <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
+                        Chat on Facebook
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-md-7">
+                <img src="{{header_image.url}}" alt="">
+            </div>
+        </div>
     </div>
 
 </section>
@@ -39,12 +60,12 @@
                 <div class="bbkh-text">
                     <h1 class="heading">{{page.section_1}}</h1>
                     {{page.section_1_title_1|richtext}}
-                  <p>  {{page.section_1_sub_title_1}}</p>   
+                    <p> {{page.section_1_sub_title_1}}</p>
                 </div>
             </div>
         </div>
     </div>
-    
+
 </section>
 
 
@@ -53,17 +74,17 @@
         <div class="row">
             <div class="col-md-12 text-end">
                 <div class="fixed-whats-app" id="fixed-whats-app">
-                <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
-                <div class="wht-text">
-                <div class="talk-bubble tri-right btm-right">
-                    <div class="talktext">
-                      <p>Chat Karo!</p>
-                    </div>
-                  </div>
+                    <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
+                        <div class="wht-text">
+                            <div class="talk-bubble tri-right btm-right">
+                                <div class="talktext">
+                                    <p>Chat Karo!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="{% static 'images/whatsapp-logo.webp' %}" alt="whats-app-icon">
+                    </a>
                 </div>
-                <img src="{% static 'images/whatsapp-logo.webp' %}" alt="whats-app-icon">
-            </a>      
-        </div>              
             </div>
         </div>
     </div>
@@ -86,13 +107,13 @@
                 </div>
                 <div class="testi text-center">
                     <div class="owl-carousel owl-theme" id="my-slider">
-                       {% for testimonial in page.section_2_card %}
+                        {% for testimonial in page.section_2_card %}
                         {% include_block testimonial %}
                         {% endfor %}
-                    </div>                        
+                    </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </section>
@@ -126,7 +147,7 @@
                 </div>
 
                 <div class="gray-tab emoji-icon text-center">
-                {{page.section_4_description|richtext}}
+                    {{page.section_4_description|richtext}}
                 </div>
 
                 {% for section_4_card_item in page.section_4_card %}
@@ -150,7 +171,7 @@
 
                 <div class="sky-tab text-center">
                     {{page.section_5_description|richtext}}
-            </div>
+                </div>
             </div>
 
             <div class="col-md-5">
@@ -161,7 +182,7 @@
             </div>
         </div>
         <div class="row d-flex d-sm-block d-md-none">
-            
+
 
             <div class="col-md-5">
                 <div class="girl-illu">
@@ -176,7 +197,7 @@
 
                 <div class="sky-tab text-center">
                     {{page.section_5_description|richtext}}
-            </div>
+                </div>
             </div>
         </div>
     </div>
@@ -187,7 +208,7 @@
 <section class="last-sec">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">                
+            <div class="col-md-12 text-center">
                 {% for section_footer_item in page.section_footer %}
                 {% include_block section_footer_item %}
                 {% endfor %}
@@ -198,21 +219,21 @@
 
 {% if page.faqcard %}
 <div class="about_us_sec" style="display:block">
-  <div class="are_dekho_heading">
-    <div class="inner_are_dekho_text">
-      <h2>FAQs</h2>
+    <div class="are_dekho_heading">
+        <div class="inner_are_dekho_text">
+            <h2>FAQs</h2>
+        </div>
     </div>
-  </div>
-  <div id="main">
-    <div class="container">
-      <div class="accordion" id="faq">
+    <div id="main">
+        <div class="container">
+            <div class="accordion" id="faq">
 
-        {% for card in page.faqcard %}
-            {% include_block card %}
-        {% endfor %}
-      </div>
+                {% for card in page.faqcard %}
+                {% include_block card %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
-  </div>
 
 </div>
 {% endif %}
@@ -220,28 +241,28 @@
 <script type="text/javascript">
     var owl = $('#my-slider');
     owl.owlCarousel({
-        loop:true,
-        margin:10,
-        responsive:{
-            0:{
-                items:1
+        loop: true,
+        margin: 10,
+        responsive: {
+            0: {
+                items: 1
             },
-            600:{
-                items:1
-            },            
-            960:{
-                items:1
+            600: {
+                items: 1
             },
-            1200:{
-                items:1
+            960: {
+                items: 1
+            },
+            1200: {
+                items: 1
             }
         },
-        slideSpeed : 3000,
-        autoplay:true,
-autoplaySpeed:2000,
+        slideSpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 2000,
     });
     owl.on('mousewheel', '.owl-stage', function (e) {
-        if (e.deltaY>0) {
+        if (e.deltaY > 0) {
             owl.trigger('next.owl');
         } else {
             owl.trigger('prev.owl');
@@ -251,18 +272,18 @@ autoplaySpeed:2000,
 </script>
 
 <script>
-window.onscroll = function() {myFunction()};
+    window.onscroll = function () { myFunction() };
 
-var header = document.getElementById("fixed-whats-app");
-var sticky = header.offsetTop;
+    var header = document.getElementById("fixed-whats-app");
+    var sticky = header.offsetTop;
 
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+    function myFunction() {
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    }
 </script>
 {% endblock extra_js %}
 {% endblock %}

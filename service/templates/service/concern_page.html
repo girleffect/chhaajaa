@@ -6,142 +6,171 @@
 {% endblock extra_css %}
 {% block content %}
 {% main_menu template='menus/main_menu.html' %}
-    <section class="searched_tags">
-      <div class="searched_info">
-        <h3><a target="_blank" href="{{ page.get_parent.url }}"><?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 11 14" style="enable-background:new 0 0 11 14;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-	
-		.st1{opacity:0.684;fill:none;stroke:#707070;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;enable-background:new    ;}
-</style>
-<g id="BackButton" transform="translate(3.096 -0.09)">
-	<ellipse id="Ellipse_40_2_" class="st0" cx="3.7" cy="7.3" rx="12" ry="11.5"/>
-	<path id="Path_75_2_" class="st1" d="M5.6,1.4l-6.9,5.8l6.9,5.8"/>
-</g>
-</svg>
-</a>You searched for</h3>
-        <div class="form-group-data">
-          <select class="form-control">
-            <option>Pregnancy ke Doubts</option>
-            <option>Pregnancy ke Doubts 2</option>
-            <option>Pregnancy ke Doubts 3</option>
-          </select>
-          <select class="form-control">
-            <option>Location</option>
-            <option>Delhi</option>
-            <option>Mumbai</option>
-            <option>Chandigarh</option>
-          </select>
-        </div>
-        <div class="tags_listing_data">
-          <div class="left_updated_tags">
-            <a target="_blank" href="javascript:void(0);">Condoms <span>-</span></a>
-            <a target="_blank" href="javascript:void(0);">Gynac Advice <span>-</span></a>
-          </div>
-          <div class="add_tgs">
-            <a target="_blank" href="javascript:void(0);">Add Service Tag <span>+</span></a>
-          </div>
-        </div>
+<section class="searched_tags">
+	<div class="searched_info">
+		<h3><a target="_blank" href="{{ page.get_parent.url }}">
+				<?xml version="1.0" encoding="utf-8"?>
+				<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+				<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 11 14" style="enable-background:new 0 0 11 14;" xml:space="preserve">
+					<style type="text/css">
+						.st0 {
+							fill: #FFFFFF;
+						}
 
-        <div class="librate_main_slider">
-        {% for service in services %}
-          <div class="librate_list_content">
-            <div class="owl-carousel owl-theme librate_carousels">
-              {% for item in service.specific.gallery_images.all %}
-              <div class="item">
-                <div class="liberate_img">
-                  {% image item.image original as service_image %}
-                  <img src="{{service_image.url}}" alt="service finder">
-                  <a target="_blank" href="javascript:void(0);" class="call_data"><?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 28 29" style="enable-background:new 0 0 28 29;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#ff428a;}
-	.st1{fill:#FFFFFF;}
-</style>
-<circle class="st0" cx="13.9" cy="14.7" r="14.1"/>
-<g id="iGTu5F_19_">
-	<g>
-		<path class="st1" d="M12,13.7c0.8,2,2.2,3.4,4.2,4.2c0.1-0.2,0.1-0.4,0.2-0.5c0.1-0.3,0.1-0.3,0.5-0.3c1.2,0.2,2.4,0.4,3.7,0.6
+						.st1 {
+							opacity: 0.684;
+							fill: none;
+							stroke: #707070;
+							stroke-width: 2;
+							stroke-linecap: round;
+							stroke-linejoin: round;
+							enable-background: new;
+						}
+					</style>
+					<g id="BackButton" transform="translate(3.096 -0.09)">
+						<ellipse id="Ellipse_40_2_" class="st0" cx="3.7" cy="7.3" rx="12" ry="11.5" />
+						<path id="Path_75_2_" class="st1" d="M5.6,1.4l-6.9,5.8l6.9,5.8" />
+					</g>
+				</svg>
+			</a>You searched for</h3>
+		<div class="form-group-data">
+			<select class="form-control">
+				<option>Pregnancy ke Doubts</option>
+				<option>Pregnancy ke Doubts 2</option>
+				<option>Pregnancy ke Doubts 3</option>
+			</select>
+			<select class="form-control">
+				<option>Location</option>
+				<option>Delhi</option>
+				<option>Mumbai</option>
+				<option>Chandigarh</option>
+			</select>
+		</div>
+		<div class="tags_listing_data">
+			<div class="left_updated_tags">
+				<a target="_blank" href="javascript:void(0);">Condoms <span>-</span></a>
+				<a target="_blank" href="javascript:void(0);">Gynac Advice <span>-</span></a>
+			</div>
+			<div class="add_tgs">
+				<a target="_blank" href="javascript:void(0);">Add Service Tag <span>+</span></a>
+			</div>
+		</div>
+
+		<div class="librate_main_slider">
+			{% for service in services %}
+			<div class="librate_list_content">
+				<div class="owl-carousel owl-theme librate_carousels">
+					{% for item in service.specific.gallery_images.all %}
+					<div class="item">
+						<div class="liberate_img">
+							{% image item.image original as service_image %}
+							<img src="{{service_image.url}}" alt="service finder">
+							<a target="_blank" href="javascript:void(0);" class="call_data">
+								<?xml version="1.0" encoding="utf-8"?>
+								<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+								<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 viewBox="0 0 28 29" style="enable-background:new 0 0 28 29;" xml:space="preserve">
+									<style type="text/css">
+										.st0 {
+											fill: #ff428a;
+										}
+
+										.st1 {
+											fill: #FFFFFF;
+										}
+									</style>
+									<circle class="st0" cx="13.9" cy="14.7" r="14.1" />
+									<g id="iGTu5F_19_">
+										<g>
+											<path class="st1" d="M12,13.7c0.8,2,2.2,3.4,4.2,4.2c0.1-0.2,0.1-0.4,0.2-0.5c0.1-0.3,0.1-0.3,0.5-0.3c1.2,0.2,2.4,0.4,3.7,0.6
 			c0.2,0,0.2,0,0.3,0.3c0.2,1.1-0.6,2.3-1.9,2.6c-0.3,0.1-0.6,0-0.9,0c-1.2-0.1-2.4-0.3-3.5-0.9c-1.4-0.7-2.6-1.6-3.5-2.9
 			c-0.9-1.2-1.4-2.4-1.6-3.8c-0.1-0.6-0.2-1.3-0.1-1.9c0.1-1,1-1.8,1.9-1.9c0.3,0,0.5,0,0.8,0c0.1,0,0.1,0,0.1,0.1
-			c0.2,1.3,0.4,2.7,0.6,4c0,0.1,0,0.1-0.1,0.2C12.5,13.5,12.2,13.6,12,13.7z"/>
-	</g>
-</g>
-</svg>
-</a>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-            <div class="librate_inner_carousels">
-              <div class="librate_content_part">
-                <div class="content_left_data">
-                  <h4><a target="_blank" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="javascript:void(0);" class="helpline_links">Helpline</a></h4>
-                  <p>{{service.specific.description|richtext}}</p>
-                  <div class="gynac_direct_links">
-                    <a target="_blank" href="javascript:void(0);">Gynaec advice</a>
-                    <a target="_blank" href="javascript:void(0);">medicine</a>
-                  </div>
-                </div>
-                <div class="right_time_call">
-                  <p class="time_date">9am <span>- 12pm</span> <i>Free</i></p>
-                </div>
-              </div>
-            </div>
-          </div>
-      {% endfor %}
-        </div>
-      </div>
-    </section>
+			c0.2,1.3,0.4,2.7,0.6,4c0,0.1,0,0.1-0.1,0.2C12.5,13.5,12.2,13.6,12,13.7z" />
+										</g>
+									</g>
+								</svg>
+							</a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="librate_inner_carousels">
+					<div class="librate_content_part">
+						<div class="content_left_data">
+							<h4><a target="_blank" href="{% pageurl service %}">{{service.specific.name}}</a> | <a target="_blank" href="javascript:void(0);" class="helpline_links">Helpline</a></h4>
+							<p>{{service.specific.description|richtext}}</p>
+							<div class="gynac_direct_links">
+								<a target="_blank" href="javascript:void(0);">Gynaec advice</a>
+								<a target="_blank" href="javascript:void(0);">medicine</a>
+							</div>
+						</div>
+						<div class="right_time_call">
+							<p class="time_date">9am <span>- 12pm</span> <i>Free</i></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
 
-    <section class="related_articles">
-      <div class="related_headings">
-        <h3>Related Articles</h3>
-        <a target="_blank" href="javascript:void(0);">Read All ></a>
-      </div>
-      <div class="main_related_content_portion">
-        <div class="related_posts_data">
-          <div class="related_images">
-            <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 155 77" style="enable-background:new 0 0 155 77;" xml:space="preserve">
-<style type="text/css">
-	.st0{clip-path:url(#SVGID_2_);}
-	.st1{clip-path:url(#SVGID_4_);fill:#54FCA3;}
-	.st2{clip-path:url(#SVGID_4_);}
-	.st3{clip-path:url(#SVGID_8_);}
-</style>
-<g>
-	<defs>
-		<path id="SVGID_1_" d="M9.5-0.1h135.7c5.4,0,9.8,4.4,9.8,9.8v66.8H-0.4V9.7C-0.4,4.3,4.1-0.1,9.5-0.1z"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<g class="st0">
-		<defs>
-			<rect id="SVGID_3_" x="-0.7" y="-5.3" width="156.6" height="154.9"/>
-		</defs>
-		<clipPath id="SVGID_4_">
-			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
-		</clipPath>
-		<rect x="-0.5" y="-5.4" class="st1" width="253.6" height="154.9"/>
-		<g class="st2">
-			<defs>
-				<rect id="SVGID_5_" x="-0.4" y="-4.6" width="253.5" height="154.3"/>
-			</defs>
-			<clipPath id="SVGID_6_">
-				<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
-			</clipPath>
-			<g style="opacity:0.12;clip-path:url(#SVGID_6_);">
-				
-					<image style="overflow:visible;" width="785" height="528" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxEAAAIQCAYAAAD+TON3AAAKqGlDQ1BJQ0MgUHJvZmlsZQAASImV
+<section class="related_articles">
+	<div class="related_headings">
+		<h3>Related Articles</h3>
+		<a target="_blank" href="javascript:void(0);">Read All ></a>
+	</div>
+	<div class="main_related_content_portion">
+		<div class="related_posts_data">
+			<div class="related_images">
+				<?xml version="1.0" encoding="utf-8"?>
+				<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+				<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 155 77" style="enable-background:new 0 0 155 77;" xml:space="preserve">
+					<style type="text/css">
+						.st0 {
+							clip-path: url(#SVGID_2_);
+						}
+
+						.st1 {
+							clip-path: url(#SVGID_4_);
+							fill: #54FCA3;
+						}
+
+						.st2 {
+							clip-path: url(#SVGID_4_);
+						}
+
+						.st3 {
+							clip-path: url(#SVGID_8_);
+						}
+					</style>
+					<g>
+						<defs>
+							<path id="SVGID_1_" d="M9.5-0.1h135.7c5.4,0,9.8,4.4,9.8,9.8v66.8H-0.4V9.7C-0.4,4.3,4.1-0.1,9.5-0.1z" />
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_" style="overflow:visible;" />
+						</clipPath>
+						<g class="st0">
+							<defs>
+								<rect id="SVGID_3_" x="-0.7" y="-5.3" width="156.6" height="154.9" />
+							</defs>
+							<clipPath id="SVGID_4_">
+								<use xlink:href="#SVGID_3_" style="overflow:visible;" />
+							</clipPath>
+							<rect x="-0.5" y="-5.4" class="st1" width="253.6" height="154.9" />
+							<g class="st2">
+								<defs>
+									<rect id="SVGID_5_" x="-0.4" y="-4.6" width="253.5" height="154.3" />
+								</defs>
+								<clipPath id="SVGID_6_">
+									<use xlink:href="#SVGID_5_" style="overflow:visible;" />
+								</clipPath>
+								<g style="opacity:0.12;clip-path:url(#SVGID_6_);">
+
+									<image style="overflow:visible;" width="785" height="528" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxEAAAIQCAYAAAD+TON3AAAKqGlDQ1BJQ0MgUHJvZmlsZQAASImV
 lgdUU1kax+976Y2WEOmE3pEiXUrooQjSwUZIQhJKDAlBxY6IIzgWRESwjOhQFRyVIoOKWBBlEOx9
 QERFHQcLNlT2RZYws3t29+z/nJv3O1+++93vvnfvOX8AyNfZYnEGrAJApihbEhXky0hITGLgHgMI
 wIAEcMCOzZGKmZGRYQDR1PPven8TyUZ0zUZe69///69S5fKkHACgSIRTuFJOJsLHkdHOEUuyAUCJ
@@ -8688,22 +8717,22 @@ DEWXlJV0Chw09P4BdxccacmFIXiVaLJqD8koieImRzvtNQmRJKw2vzg5fsBc3xutU1ibWEQZ0fH9
 ubrD9b78pJkFiynzo9EeRyNxvN/GV5OccpUHleCU8VL8X6IwYWJ0/QckkrsrDYQsgOidr6DQ0Jo+
 ld5b+c5YDek0kf1++zA+od1kuifsPu4Gs5jRz2FSrWSvMrFWERMpJiKD4AgZAIVR4sdiNC3nWhIT
 066vnEPoJaFozDWdvOn+L/ZSvTUzsJswAAAAAElFTkSuQmCC" transform="matrix(0.3227 0 0 0.3214 -0.2301 -15.4257)">
-				</image>
-			</g>
-		</g>
-		<g class="st2">
-			<defs>
-				<path id="SVGID_7_" d="M25.8,92.6c0,0-0.1-29.5,21.5-35.4c0,0,3.9-12.5,5.4-14.6c0,0-2-33.2,13.8-40.3c0,0,19.3-7.5,25.6,19.6
+									</image>
+								</g>
+							</g>
+							<g class="st2">
+								<defs>
+									<path id="SVGID_7_" d="M25.8,92.6c0,0-0.1-29.5,21.5-35.4c0,0,3.9-12.5,5.4-14.6c0,0-2-33.2,13.8-40.3c0,0,19.3-7.5,25.6,19.6
 					c0,0,1.3,17,1,20.4c-0.3,3.4,1.4,8.8,1.4,8.8s6.4,0.9,9.8,4.6c0,0,3.4-1.6,1.8-7.8c0,0-5.5-9.2-4.2-11.6c0,0,1.4-1.6,3.9,5.5
 					l3,4.2c0,0-2.9-11.1-2.2-11.8c0.7-0.8,3.5,2.3,5.9,9.8c0,0,0.8,0.9,0.5-1.6c-0.3-2.5-2.1-8.6-1.6-9c0.5-0.4,2.6-0.4,5.4,9.8
-					c0,0,2.9,4.4,2.9,2.3l0.9-8.7c0,0,2.9-1.7,2.5,8.2l-0.1,1.4c0,0,1.8,15.7,1.4,17.9s7.3,15.3,7.3,15.3l-0.1,11.3L25.8,92.6z"/>
-			</defs>
-			<clipPath id="SVGID_8_">
-				<use xlink:href="#SVGID_7_"  style="overflow:visible;"/>
-			</clipPath>
-			<g id="_x36_33Ndz_31_" class="st3">
-				
-					<image style="overflow:visible;" width="246" height="138" id="_x36_33Ndz_32_" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAXgBeAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
+					c0,0,2.9,4.4,2.9,2.3l0.9-8.7c0,0,2.9-1.7,2.5,8.2l-0.1,1.4c0,0,1.8,15.7,1.4,17.9s7.3,15.3,7.3,15.3l-0.1,11.3L25.8,92.6z" />
+								</defs>
+								<clipPath id="SVGID_8_">
+									<use xlink:href="#SVGID_7_" style="overflow:visible;" />
+								</clipPath>
+								<g id="_x36_33Ndz_31_" class="st3">
+
+									<image style="overflow:visible;" width="246" height="138" id="_x36_33Ndz_32_" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAXgBeAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
 EAMCAwYAAAalAAAMNgAAGzH/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
 Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
 JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIAIkA9QMBIgACEQEDEQH/
@@ -8826,56 +8855,68 @@ SMbDdarjWsUGQX/lQWfMBfuoIx1E+2th4VM1zv7jL+Nq0rSoI7quLUa0rStOFaUeytK0rzfWaBRV
 pBBseyihMiLGhjQk7bse08KBc7RxjWlx41gCjAkxRJIaZgj6tqgndFp6+hnH1xuQ9o1FLlAurC1K
 3AqDVrsh0rzcBQZRqdTUHQ6Gprnf3GX8bfwH/AFL39A7jWT74/lQ7v69BpPvGj39GP79N7Kx/do9
 /QaT2fy6P//Z" transform="matrix(0.763 0 0 0.7599 -55.9663 -11.9156)">
-				</image>
-			</g>
-		</g>
-	</g>
-</g>
-</svg>
+									</image>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
 
-          </div>
-          <div class="related_contents">
-            <h3>Pregnancy kaise prevent kar sakte hai</h3>
-            <a target="_blank" href="javascript:void(0);">Gynaec advice</a>
-          </div>
-        </div>
-        <div class="related_posts_data">
-          <div class="related_images">
-            <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 155 77" style="enable-background:new 0 0 155 77;" xml:space="preserve">
-<style type="text/css">
-	.st0{clip-path:url(#SVGID_2_);}
-	.st1{clip-path:url(#SVGID_4_);fill:#54FCA3;}
-	.st2{clip-path:url(#SVGID_4_);}
-	.st3{clip-path:url(#SVGID_8_);}
-</style>
-<g>
-	<defs>
-		<path id="SVGID_1_" d="M9.5-0.1h135.7c5.4,0,9.8,4.4,9.8,9.8v66.8H-0.4V9.7C-0.4,4.3,4.1-0.1,9.5-0.1z"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<g class="st0">
-		<defs>
-			<rect id="SVGID_3_" x="-0.7" y="-5.3" width="156.6" height="154.9"/>
-		</defs>
-		<clipPath id="SVGID_4_">
-			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
-		</clipPath>
-		<rect x="-0.5" y="-5.4" class="st1" width="253.6" height="154.9"/>
-		<g class="st2">
-			<defs>
-				<rect id="SVGID_5_" x="-0.4" y="-4.6" width="253.5" height="154.3"/>
-			</defs>
-			<clipPath id="SVGID_6_">
-				<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
-			</clipPath>
-			<g style="opacity:0.12;clip-path:url(#SVGID_6_);">
-				
-					<image style="overflow:visible;" width="785" height="528" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxEAAAIQCAYAAAD+TON3AAAKqGlDQ1BJQ0MgUHJvZmlsZQAASImV
+			</div>
+			<div class="related_contents">
+				<h3>Pregnancy kaise prevent kar sakte hai</h3>
+				<a target="_blank" href="javascript:void(0);">Gynaec advice</a>
+			</div>
+		</div>
+		<div class="related_posts_data">
+			<div class="related_images">
+				<?xml version="1.0" encoding="utf-8"?>
+				<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+				<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 155 77" style="enable-background:new 0 0 155 77;" xml:space="preserve">
+					<style type="text/css">
+						.st0 {
+							clip-path: url(#SVGID_2_);
+						}
+
+						.st1 {
+							clip-path: url(#SVGID_4_);
+							fill: #54FCA3;
+						}
+
+						.st2 {
+							clip-path: url(#SVGID_4_);
+						}
+
+						.st3 {
+							clip-path: url(#SVGID_8_);
+						}
+					</style>
+					<g>
+						<defs>
+							<path id="SVGID_1_" d="M9.5-0.1h135.7c5.4,0,9.8,4.4,9.8,9.8v66.8H-0.4V9.7C-0.4,4.3,4.1-0.1,9.5-0.1z" />
+						</defs>
+						<clipPath id="SVGID_2_">
+							<use xlink:href="#SVGID_1_" style="overflow:visible;" />
+						</clipPath>
+						<g class="st0">
+							<defs>
+								<rect id="SVGID_3_" x="-0.7" y="-5.3" width="156.6" height="154.9" />
+							</defs>
+							<clipPath id="SVGID_4_">
+								<use xlink:href="#SVGID_3_" style="overflow:visible;" />
+							</clipPath>
+							<rect x="-0.5" y="-5.4" class="st1" width="253.6" height="154.9" />
+							<g class="st2">
+								<defs>
+									<rect id="SVGID_5_" x="-0.4" y="-4.6" width="253.5" height="154.3" />
+								</defs>
+								<clipPath id="SVGID_6_">
+									<use xlink:href="#SVGID_5_" style="overflow:visible;" />
+								</clipPath>
+								<g style="opacity:0.12;clip-path:url(#SVGID_6_);">
+
+									<image style="overflow:visible;" width="785" height="528" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxEAAAIQCAYAAAD+TON3AAAKqGlDQ1BJQ0MgUHJvZmlsZQAASImV
 lgdUU1kax+976Y2WEOmE3pEiXUrooQjSwUZIQhJKDAlBxY6IIzgWRESwjOhQFRyVIoOKWBBlEOx9
 QERFHQcLNlT2RZYws3t29+z/nJv3O1+++93vvnfvOX8AyNfZYnEGrAJApihbEhXky0hITGLgHgMI
 wIAEcMCOzZGKmZGRYQDR1PPven8TyUZ0zUZe69///69S5fKkHACgSIRTuFJOJsLHkdHOEUuyAUCJ
@@ -17422,22 +17463,22 @@ DEWXlJV0Chw09P4BdxccacmFIXiVaLJqD8koieImRzvtNQmRJKw2vzg5fsBc3xutU1ibWEQZ0fH9
 ubrD9b78pJkFiynzo9EeRyNxvN/GV5OccpUHleCU8VL8X6IwYWJ0/QckkrsrDYQsgOidr6DQ0Jo+
 ld5b+c5YDek0kf1++zA+od1kuifsPu4Gs5jRz2FSrWSvMrFWERMpJiKD4AgZAIVR4sdiNC3nWhIT
 066vnEPoJaFozDWdvOn+L/ZSvTUzsJswAAAAAElFTkSuQmCC" transform="matrix(0.3227 0 0 0.3214 -0.2301 -15.4257)">
-				</image>
-			</g>
-		</g>
-		<g class="st2">
-			<defs>
-				<path id="SVGID_7_" d="M25.8,92.6c0,0-0.1-29.5,21.5-35.4c0,0,3.9-12.5,5.4-14.6c0,0-2-33.2,13.8-40.3c0,0,19.3-7.5,25.6,19.6
+									</image>
+								</g>
+							</g>
+							<g class="st2">
+								<defs>
+									<path id="SVGID_7_" d="M25.8,92.6c0,0-0.1-29.5,21.5-35.4c0,0,3.9-12.5,5.4-14.6c0,0-2-33.2,13.8-40.3c0,0,19.3-7.5,25.6,19.6
 					c0,0,1.3,17,1,20.4c-0.3,3.4,1.4,8.8,1.4,8.8s6.4,0.9,9.8,4.6c0,0,3.4-1.6,1.8-7.8c0,0-5.5-9.2-4.2-11.6c0,0,1.4-1.6,3.9,5.5
 					l3,4.2c0,0-2.9-11.1-2.2-11.8c0.7-0.8,3.5,2.3,5.9,9.8c0,0,0.8,0.9,0.5-1.6c-0.3-2.5-2.1-8.6-1.6-9c0.5-0.4,2.6-0.4,5.4,9.8
-					c0,0,2.9,4.4,2.9,2.3l0.9-8.7c0,0,2.9-1.7,2.5,8.2l-0.1,1.4c0,0,1.8,15.7,1.4,17.9s7.3,15.3,7.3,15.3l-0.1,11.3L25.8,92.6z"/>
-			</defs>
-			<clipPath id="SVGID_8_">
-				<use xlink:href="#SVGID_7_"  style="overflow:visible;"/>
-			</clipPath>
-			<g id="_x36_33Ndz_31_" class="st3">
-				
-					<image style="overflow:visible;" width="246" height="138" id="_x36_33Ndz_32_" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAXgBeAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
+					c0,0,2.9,4.4,2.9,2.3l0.9-8.7c0,0,2.9-1.7,2.5,8.2l-0.1,1.4c0,0,1.8,15.7,1.4,17.9s7.3,15.3,7.3,15.3l-0.1,11.3L25.8,92.6z" />
+								</defs>
+								<clipPath id="SVGID_8_">
+									<use xlink:href="#SVGID_7_" style="overflow:visible;" />
+								</clipPath>
+								<g id="_x36_33Ndz_31_" class="st3">
+
+									<image style="overflow:visible;" width="246" height="138" id="_x36_33Ndz_32_" xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAgEAXgBeAAD/7AARRHVja3kAAQAEAAAAHgAA/+4AIUFkb2JlAGTAAAAAAQMA
 EAMCAwYAAAalAAAMNgAAGzH/2wCEABALCwsMCxAMDBAXDw0PFxsUEBAUGx8XFxcXFx8eFxoaGhoX
 Hh4jJSclIx4vLzMzLy9AQEBAQEBAQEBAQEBAQEABEQ8PERMRFRISFRQRFBEUGhQWFhQaJhoaHBoa
 JjAjHh4eHiMwKy4nJycuKzU1MDA1NUBAP0BAQEBAQEBAQEBAQP/CABEIAIkA9QMBIgACEQEDEQH/
@@ -17560,47 +17601,47 @@ SMbDdarjWsUGQX/lQWfMBfuoIx1E+2th4VM1zv7jL+Nq0rSoI7quLUa0rStOFaUeytK0rzfWaBRV
 pBBseyihMiLGhjQk7bse08KBc7RxjWlx41gCjAkxRJIaZgj6tqgndFp6+hnH1xuQ9o1FLlAurC1K
 3AqDVrsh0rzcBQZRqdTUHQ6Gprnf3GX8bfwH/AFL39A7jWT74/lQ7v69BpPvGj39GP79N7Kx/do9
 /QaT2fy6P//Z" transform="matrix(0.763 0 0 0.7599 -55.9663 -11.9156)">
-				</image>
-			</g>
-		</g>
-	</g>
-</g>
-</svg>
+									</image>
+								</g>
+							</g>
+						</g>
+					</g>
+				</svg>
 
-          </div>
-          <div class="related_contents">
-            <h3>Pregnancy kaise prevent kar sakte hai</h3>
-            <a target="_blank" href="javascript:void(0);">Gynaec advice</a>
-          </div>
-        </div>
-      </div>
-    </section>
+			</div>
+			<div class="related_contents">
+				<h3>Pregnancy kaise prevent kar sakte hai</h3>
+				<a target="_blank" href="javascript:void(0);">Gynaec advice</a>
+			</div>
+		</div>
+	</div>
+</section>
 {% endblock content %}
 {% block extra_js %}
 <script>
-      $(document).ready(function() {
-        $('.librate_carousels').owlCarousel({
-          loop: true,
-          margin: 0,
-          autoplay: true,
-          responsiveClass: true,
-          responsive: {
-            0: {
-              items: 1,
-              nav: true
-            },
-            600: {
-              items: 1,
-              nav: false
-            },
-            1000: {
-              items: 1,
-              nav: true,
-              loop: false,
-              margin: 0
-            }
-          }
-        })
-      })
-    </script>
+	$(document).ready(function () {
+		$('.librate_carousels').owlCarousel({
+			loop: true,
+			margin: 0,
+			autoplay: true,
+			responsiveClass: true,
+			responsive: {
+				0: {
+					items: 1,
+					nav: true
+				},
+				600: {
+					items: 1,
+					nav: false
+				},
+				1000: {
+					items: 1,
+					nav: true,
+					loop: false,
+					margin: 0
+				}
+			}
+		})
+	})
+</script>
 {% endblock extra_js %}

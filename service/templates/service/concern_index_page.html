@@ -6,117 +6,160 @@
 {% endblock extra_css %}
 {% block content %}
 {% main_menu template='menus/main_menu.html' %}
-<div class="period_info service_finder_period_data">
-  {{page.intro|safe}}
-</div>
+<div class=" bg-light py-4 page-header">
+  <div class="container">
 
-<div class="women_problems">
-  {% for concern in services %}
-  <div class="womenp_cols service_finder_women_cols">
-    <a class="upper_links_data" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}"></a>
-      <h3 class="service_finder_achor"><a target="_blank" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}">{{concern.intro}}</a></h3>
+    <h1 style="margin-bottom:-20px">
 
-    <div class="peiord_anchors service_finder_tags">
-       {% for tag in concern.tags.all %}<a target="_blank" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}&tag={{tag.slug}}" class="expert_link">{{tag}}</a>{% endfor %}
-    </div>
-    {% image concern.image original  as concern_image %}
-    <div class="period_overlay_img service_finder_images"><img src="{{concern_image.url}}" alt="{{concern.title}}"></div>
-  </div>
-  {% endfor %}
-</div>
-
-<div class="convinced_data_banner">
-  <div class="convinced_data_dete">
-    {{page.custom_text|richtext}}
-    <a target="_blank" href="{% slugurl 'blog-page' %}">Click here for SRH articles <img src="{% static 'images/right_arrow_icon.svg' %}"></a>
+      {{page.intro|safe}}
+    </h1>
   </div>
 </div>
+<div class="container py-5">
 
-<div class="services_list">
-  <h3>Service List</h3>
-  <div class="accordion" id="servicelistaccordion">
-    {% for category in categories %}
-    <div class="card">
-      {% if category.services.live.count >= 1 %}
-      <div class="card-header">
-        <a target="_blank" href="#" class="btn btn-header-link" data-toggle="collapse" data-target="#serviceaccordion{{category.id}}"
-        aria-expanded="true" aria-controls="serviceaccordion1">{{category.name}}</a>
-      </div>
-      {% endif %}
-      <div id="serviceaccordion{{category.id}}" class="collapse {% if forloop.first %}show{% endif %}"
-        aria-labelledby="{{category.id}}" data-parent="#servicelistaccordion">
-        <div class="card-body">
-          <div class="service_tab_inner_data" id="{{ category }}">
-            {% for service in category.services.live.all %}
-            {% if forloop.counter == 1 or forloop.counter == 2 %}
-            <div class="service_helpline_data service_data_sec_cols helpline_centers concern-list cardhelp{{ category.id }}" id="helpline_centers{{ service.name }}"
-              style="display: block">
-              {% else %}
-              <div class="service_helpline_data service_data_sec_cols helpline_centers concern_services cardhelp{{ category.id }}" id="helpline_centers{{ service.name }}">
-                {% endif %}
-                <a class="absolte_link" href="{% slugurl 'service-finder' %}{{service.slug}}"></a>
-                <div class="center_header">
-                  {% image service.main_image fill-1000x500 as img %}
-                  <img src="{{img.url}}">
-                  <div class="service_call_icn">
-                    {% if service.external_link|integer == True %}
-                    <a target="_blank" href="tel:{{service.external_link}}" target="_blank">
-                      <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" width="25" height="25" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 28 29" style="enable-background:new 0 0 28 29;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#ff428a;}
-	.st1{fill:#FFFFFF;}
-</style>
-<circle class="st0" cx="13.9" cy="14.7" r="14.1"/>
-<g id="iGTu5F_19_">
-	<g>
-		<path class="st1" d="M12,13.7c0.8,2,2.2,3.4,4.2,4.2c0.1-0.2,0.1-0.4,0.2-0.5c0.1-0.3,0.1-0.3,0.5-0.3c1.2,0.2,2.4,0.4,3.7,0.6
-			c0.2,0,0.2,0,0.3,0.3c0.2,1.1-0.6,2.3-1.9,2.6c-0.3,0.1-0.6,0-0.9,0c-1.2-0.1-2.4-0.3-3.5-0.9c-1.4-0.7-2.6-1.6-3.5-2.9
-			c-0.9-1.2-1.4-2.4-1.6-3.8c-0.1-0.6-0.2-1.3-0.1-1.9c0.1-1,1-1.8,1.9-1.9c0.3,0,0.5,0,0.8,0c0.1,0,0.1,0,0.1,0.1
-			c0.2,1.3,0.4,2.7,0.6,4c0,0.1,0,0.1-0.1,0.2C12.5,13.5,12.2,13.6,12,13.7z"/>
-	</g>
-</g>
-</svg>
-</a>
-                    {% else %}
-                    <a target="_blank" href="{{service.external_link}}" target="_blank">
-                      <img src="{% static 'images/web-icon.svg' %}" alt="call"></a>
-                    {% endif %}
-                  </div>
-                </div>
-                <div class="center_body">
-                  <h4>{{service.name}}<a target="_blank" href="{% slugurl 'service.slug' %}"></a>
-                  </h4>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-            {% if category.services.all|length > 3 %}
-            <div class="see_more_data"><a target="_blank" class="seemore" onclick="seemore(this)"
-                id="{{ category.id }}">See More</a>
-            </div>
-            {% endif %}
-          </div>
+  {% for category in categories %}
+  {% if category.services.live.all %}
+  <div class="py-4">
+
+    <h3 class="strong">
+      {{category.name}}
+    </h3>
+
+    <div class="owl-carousel owl-theme service-slider ">
+
+      {% for service in category.services.live.all %}
+
+
+      <div class=" helpline_centers cardhelp{{ category.id }}" id="helpline_centers{{ service.name }}"
+           style="display: block">
+
+        <a class="absolte_link" href="{% slugurl 'service-finder' %}{{service.slug}}"></a>
+        <div class="center_header ">
+          {% image service.main_image fill-800x600 as img %}
+          <img src="{{img.url}}">
+
+        </div>
+        <div class="center_body px-4 py-3">
+          <h4 class="my-0">{{service.name}}<a target="_blank" href="{% slugurl 'service.slug' %}"></a>
+          </h4>
         </div>
       </div>
 
       {% endfor %}
+
+
+
+
     </div>
   </div>
-  {% endblock content %}
-  {% block extra_js %}
-  <script type="text/javascript">
-    function seemore(e) {
-      console.log($(".cardhelp"+e.id+":hidden").length)
-      if ($(".cardhelp"+e.id+":hidden")) {
-        $(".cardhelp"+e.id+":hidden").slice(0, 2).fadeIn("slow");
-      }
-      if ($(".cardhelp"+e.id+":hidden").length == 0) {
-        $("#"+e.id).fadeOut("slow");
-      }
-    }
-  </script>
+  {% endif %}
+  {% endfor %}
+</div>
 
-  {% endblock extra_js %}
+
+<div class="container py-5">
+  <h2 class="text-center mb-3">Aapki Problem Choose Karein</h2>
+  <div class="women_problems row ">
+    {% for concern in services %}
+    <div class=" col-lg-4 col-md-6 col-sm-12 px-2">
+      
+
+        <a class=" problem upper_links_data" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}">
+        <h4 class="service_finder_achor">{{concern.intro}}</h4>
+        </a>
+        
+  
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+
+<div class="container">
+<div class="convinced_data_banner py-4">
+
+    <div class="convinced_data_dete">
+      {{page.custom_text|richtext}}
+      <a target="_blank" href="{% slugurl 'blog-page' %}">RH articles <img src="{% static 'images/right_arrow_icon.svg' %}"></a>
+    </div>
+  </div>
+</div>    
+
+
+{% endblock content %}
+{% block extra_js %}
+<script type="text/javascript">
+  $('.service-slider').each(function () {
+    var owl = $(this);
+    var items = owl.find('.owl-item');
+
+    owl.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+      // Reset the height of all items
+      items.css('height', '');
+
+      // Find the height of the tallest item
+      var tallestHeight = 0;
+      items.each(function () {
+        var itemHeight = $(this).height();
+        if (itemHeight > tallestHeight) {
+          tallestHeight = itemHeight;
+        }
+      });
+
+      // Set the height of all items to the tallest height
+      items.css('height', tallestHeight + 'px');
+    });
+
+    owl.owlCarousel({
+      loop: false,
+      margin: 20,
+      responsive: {
+        0: {
+          items: 1.5
+        },
+        600: {
+          items: 1.5
+        },
+        960: {
+          items: 2.5
+        },
+        1200: {
+          items: 3
+        }
+      },
+      slideSpeed: 3000,
+      autoplay: false,
+      autoplaySpeed: 2000,
+      nav: true, // Enable navigation
+      navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'], // Customize navigation arrow icons
+      dots: false // Hide the dots
+    });
+
+    owl.on('initialized.owl.carousel', function (event) {
+      var itemLength = event.item.count;
+      var navigation = owl.find('.owl-nav');
+
+      if (itemLength <= 3) {
+        navigation.hide();
+      } else {
+        navigation.show();
+      }
+    });
+  });
+
+</script>
+<script type="text/javascript">
+  function seemore(e) {
+    console.log($(".cardhelp" + e.id + ":hidden").length)
+    if ($(".cardhelp" + e.id + ":hidden")) {
+      $(".cardhelp" + e.id + ":hidden").slice(0, 2).fadeIn("slow");
+    }
+    if ($(".cardhelp" + e.id + ":hidden").length == 0) {
+      $("#" + e.id).fadeOut("slow");
+    }
+  }
+</script>
+
+{% endblock extra_js %}
