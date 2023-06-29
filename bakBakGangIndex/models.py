@@ -160,6 +160,11 @@ class BolBehanPage(Page):
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
     header_title = models.CharField(max_length=255,blank=True)
+    header_subtitle = RichTextField(blank=True,features=[
+        'h1','h2', 'h3','h4','h5','h6', 'bold', 'italic',
+         'link', 'ol', 'ul', 'hr', 'document-link', 'image', 'embed',
+           'code', 'blockquote', 'superscript', 'subscript', 'strikethrough'
+        ])
     whatsapp_text = models.CharField(max_length=200, help_text="intro of the section")
     whatsapp_icon = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
@@ -260,6 +265,7 @@ class BolBehanPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('header_title'),
+        FieldPanel('header_subtitle'),
         ImageChooserPanel('background_header_image'),
         ImageChooserPanel('header_image'),
         FieldPanel('whatsapp_text'),

@@ -20,9 +20,11 @@
                 {% if page.header_title %}
                     <h1 class="oversized">{{page.header_title}}</h1>
                 {% endif %}
+                {% if page.header_subtitle %}
                 <div class="richtext">
-                    <p>And any subtitle goes here</p>
+                    {{ page.header_subtitle|richtext }}
                 </div>
+                {% endif %}
                 <div class="social-media">
 
                     <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
