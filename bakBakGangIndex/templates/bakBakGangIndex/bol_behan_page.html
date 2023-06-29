@@ -27,16 +27,23 @@
                 {% endif %}
                 <div class="social-media">
 
-                    <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
-                        {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
-                        <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
-                        Chat on WhatsApp
+                    <a {% if page.whatsapp_url %} target="_blank" onclick="gtag_report_conversion('{{page.whatsapp_url}}')" {% endif %}>
+                        {% if page.whatsapp_icon %}
+                            {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
+                            <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
+                        {% endif %}
+                        {% if page.whatsapp_text %}
+                            {{page.whatsapp_text}}
+                        {% endif %}
                     </a>
-
-                    <a target="_blank" onclick="gtag_report_conversion('https://wa.me/{{page.whatsapp_text}}')">
-                        {% image page.whatsapp_icon original format-webp as whatsapp_icon %}
-                        <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
-                        Chat on Facebook
+                    <a {% if page.messenger_url %} target="_blank" onclick="gtag_report_conversion('{{page.messenger_url}}')" {% endif %}>
+                        {% if page.messenger_icon %}
+                            {% image page.messenger_icon original format-webp as whatsapp_icon %}
+                            <img src="{{whatsapp_icon.url}}" alt="whats-app-icon">
+                        {% endif %}
+                        {% if page.messenger_text %}
+                            {{page.messenger_text}}
+                        {% endif %}
                     </a>
                 </div>
 

@@ -166,10 +166,15 @@ class BolBehanPage(Page):
            'code', 'blockquote', 'superscript', 'subscript', 'strikethrough'
         ])
     whatsapp_text = models.CharField(max_length=200, help_text="intro of the section")
+    whatsapp_url = models.CharField(max_length=200,blank=True)
     whatsapp_icon = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
-
+    messenger_text = models.CharField(max_length=200,blank=True)
+    messenger_url = models.CharField(max_length=200,blank=True)
+    messenger_icon = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
+    )
     section_1 = models.CharField(max_length=250,blank=True, null=True)
 
     
@@ -269,7 +274,11 @@ class BolBehanPage(Page):
         ImageChooserPanel('background_header_image'),
         ImageChooserPanel('header_image'),
         FieldPanel('whatsapp_text'),
+        FieldPanel('whatsapp_url'),
         ImageChooserPanel('whatsapp_icon'),
+        FieldPanel('messenger_text'),
+        FieldPanel('messenger_url'),
+        ImageChooserPanel('messenger_icon'),
         FieldPanel('section_1'),
         FieldPanel('section_1_title_1'),
         FieldPanel('section_1_sub_title_1'),
