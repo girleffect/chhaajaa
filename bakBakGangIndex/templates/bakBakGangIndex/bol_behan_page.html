@@ -10,9 +10,10 @@
 {% main_menu template='menus/main_menu.html' sub_menu_template="menus/sub_menu.html" %}
 
 
-
-{% image page.header_image original format-webp as header_image %}
-<section class="bb-header" style="background-image:url('{{header_image.url}}')">
+{% if  page.background_header_image %}
+{% image page.background_header_image original format-webp as background_header_image %}
+{% endif %}
+<section class="bb-header" style="background-image:url('{{background_header_image.url}}')">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -36,9 +37,12 @@
                 </div>
 
             </div>
-            <div class="col-md-7">
-                <img src="{{header_image.url}}" alt="">
-            </div>
+            {% if page.header_image %}
+                {% image page.header_image original format-webp as header_image %}
+                <div class="col-md-7">
+                    <img src="{{header_image.url}}" alt="">
+                </div>
+            {% endif %}
         </div>
     </div>
 
