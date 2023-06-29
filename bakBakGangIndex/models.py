@@ -159,6 +159,7 @@ class BolBehanPage(Page):
     background_header_image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
     )
+    header_title = models.CharField(max_length=255,blank=True)
     whatsapp_text = models.CharField(max_length=200, help_text="intro of the section")
     whatsapp_icon = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.SET_NULL, null=True, related_name='+'
@@ -258,6 +259,7 @@ class BolBehanPage(Page):
     )
 
     content_panels = Page.content_panels + [
+        FieldPanel('header_title'),
         ImageChooserPanel('background_header_image'),
         ImageChooserPanel('header_image'),
         FieldPanel('whatsapp_text'),
