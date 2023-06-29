@@ -35,7 +35,7 @@
   </a>
   <div class="owl-carousel owl-theme librate_carousels">
     {% for service_image in page.specific.gallery_images.all %}
-    <a href="" class="item">
+    <div  class="item">
       <div class="lybrate_help_data">
         {% image service_image.image original as service_image %}
 
@@ -43,7 +43,7 @@
         <img src="{{service_image.url}}" alt="share">
 
       </div>
-    </a>
+    </div>
     {% endfor %}
   </div>
 </section>
@@ -180,6 +180,7 @@
     </div>
 
   </div>
+  {% if articles %}
   <div class="container pt-8">
     <h2 class="mt-2">Related Blogs </h2>
     <div class="main_related_content_portion row">
@@ -220,7 +221,7 @@
       <a class="see_all_btn float-none" href="{% slugurl 'blog-page' %}">See All</a>
     </div>
   </div>
-  </div>
+  {% endif %}
 </section>
 
 

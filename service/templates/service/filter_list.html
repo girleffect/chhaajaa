@@ -6,6 +6,9 @@
 {% endblock extra_css %}
 {% block content %}
 {% main_menu template='menus/main_menu.html' %}
+<script>
+   var arr = [];
+ </script>
 <div class="bg-light py-4">
   <div class="searched_info container">
     <div class=" ">
@@ -49,8 +52,8 @@
         </li>
         {% if tags.count %}
         {% for tag in tags %}
-        {% for tag_n in tags_name %}
-        {% if tag.slug == tag_n %}
+
+        {% if tag.slug in  tags_name %}
 
         <li>
           <label class="PillList-item ">
@@ -63,18 +66,20 @@
                    value="{{ tag.slug }}"
                    checked="true">
             <span class="PillList-label">
-              {{ tag.slug }}
+              {{ tag }}
               <span class="Icon Icon--checkLight Icon--smallest tag-icon">-</span>
               <span class="Icon Icon--Add Icon--smallest tag-icon">+ </span>
 
 
         </li>
+        {% comment %}
         <li class="tag">
 
           <a target="_blank" href="{% slugurl 'service-finder' %}services/?tag={{tag.slug}}">{{ tag }} <span>-</span></a>
         </li>
+        {% endcomment %}
         {% endif %}
-        {% endfor %}
+
         {% endfor %}
         {% endif %}
     </div>
@@ -169,7 +174,7 @@
   {% endfor %}
 </div>
 </section>
-
+{% if articles %}
 <section class="bg-light py-8">
   <div class="container">
 
@@ -216,7 +221,7 @@
     </div>
   </div>
 </section>
-
+{% endif %}
 
 
 <!--POP UP-->
@@ -272,7 +277,11 @@
                              id="tag{{ tag.slug }}"
                              onclick="selected_tag(this)"
                              name="tag"
-                             value="{{ tag.slug }}">
+                             value="{{ tag.slug }}"
+                             {% if tag.slug in tags_name %}
+                             checked="checked"
+                             {% endif %}
+                      >
                       <span class="PillList-label">
                         {{ tag.slug }}
                         <span class="Icon Icon--checkLight Icon--smallest tag-icon">-</span>
@@ -281,7 +290,22 @@
                   </div>
 
                 </li>
+
+                   {% if tag.slug in tags_name %}
+                      <script>
+                        if (arr.includes('{{tag.slug}}') == false) {
+                          document.getElementById("tag" + '{{tag.slug}}').classList.add("selected_tag_list");
+                          arr.push('{{tag.slug}}')
+                          console.log(arr)
+                          }
+                      </script>
+                   {% endif %}
+
+
                 {% endfor %}
+                                  <script>
+                    console.log(arr)
+                  </script>
               </ul>
             </div>
 
@@ -323,7 +347,7 @@
     })
   })
 
-  var arr = [];
+
   function main() {
     var TextBoxContainer = document.getElementsByClassName("tag_trace");
     for (var i = 0; i < TextBoxContainer.length; i++) {
@@ -354,9 +378,19 @@
   function selected_tag(tag) {
     var temparr = []
     if (tag.className != "selected_tag_list") {
-      document.getElementById("tag" + tag.value).classList.add("selected_tag_list");
+
       if (arr.includes(tag.value) == false) {
+        document.getElementById("tag" + tag.value).classList.add("selected_tag_list");
         arr.push(tag.value)
+        console.log(arr)
+      }else{
+        document.getElementById("tag" + tag.value).classList.remove("selected_tag_list");
+            for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === tag.value) {
+        arr.splice(i, 1);
+      }
+    }
+        console.log(arr)
       }
     }
     var TextBoxContainer = document.getElementsByClassName("selected_tag_list");
@@ -366,7 +400,7 @@
       t += `<input type="hidden" value="${arr[i]}" class="tag_trace" id="tag_trace${arr[i]}"><a onclick="remove_tag('${arr[i]}')" class="remove_tags"><input type="checkbox" name="${arr[i]}"><span></span>${arr[i]}<img src="{% static 'images/minus_icon.webp' %}" alt="minus"></a>`
       t += "</li>"
     }
-    document.getElementById("TextBoxContainer").innerHTML = t
+    //document.getElementById("TextBoxContainer").innerHTML = t
     $("#minus_tag_lists").show();
   }
 
