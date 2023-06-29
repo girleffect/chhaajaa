@@ -57,7 +57,7 @@
 
         <li>
           <label class="PillList-item ">
-
+            {% comment %}
             <input
                    type="checkbox"
                    id="tag{{ tag.slug }}"
@@ -65,19 +65,13 @@
                    name="tag"
                    value="{{ tag.slug }}"
                    checked="true">
-            <span class="PillList-label">
-              {{ tag }}
-              <span class="Icon Icon--checkLight Icon--smallest tag-icon">-</span>
-              <span class="Icon Icon--Add Icon--smallest tag-icon">+ </span>
+            {% endcomment %}
+             <li class="tag">
+            <a href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&location={{request.GET.location}}{% for active_tag in tags_name %}{% if active_tag != tag.slug %}&tag={{ active_tag }}{%endif %}{%endfor %}">{{tag}} <span>-</span></a>
+
 
 
         </li>
-        {% comment %}
-        <li class="tag">
-
-          <a target="_blank" href="{% slugurl 'service-finder' %}services/?tag={{tag.slug}}">{{ tag }} <span>-</span></a>
-        </li>
-        {% endcomment %}
         {% endif %}
 
         {% endfor %}
@@ -283,7 +277,7 @@
                              {% endif %}
                       >
                       <span class="PillList-label">
-                        {{ tag.slug }}
+                        {{ tag }}
                         <span class="Icon Icon--checkLight Icon--smallest tag-icon">-</span>
                         <span class="Icon Icon--Add Icon--smallest tag-icon">+ </span>
 
@@ -294,9 +288,9 @@
                    {% if tag.slug in tags_name %}
                       <script>
                         if (arr.includes('{{tag.slug}}') == false) {
-                          document.getElementById("tag" + '{{tag.slug}}').classList.add("selected_tag_list");
+                          //document.getElementById("tag" + '{{tag.slug}}').classList.add("selected_tag_list");
                           arr.push('{{tag.slug}}')
-                          console.log(arr)
+
                           }
                       </script>
                    {% endif %}
@@ -304,7 +298,6 @@
 
                 {% endfor %}
                                   <script>
-                    console.log(arr)
                   </script>
               </ul>
             </div>
@@ -376,13 +369,15 @@
   }
 
   function selected_tag(tag) {
+
     var temparr = []
     if (tag.className != "selected_tag_list") {
+
 
       if (arr.includes(tag.value) == false) {
         document.getElementById("tag" + tag.value).classList.add("selected_tag_list");
         arr.push(tag.value)
-        console.log(arr)
+
       }else{
         document.getElementById("tag" + tag.value).classList.remove("selected_tag_list");
             for (var i = 0; i < arr.length; i++) {
@@ -390,7 +385,7 @@
         arr.splice(i, 1);
       }
     }
-        console.log(arr)
+
       }
     }
     var TextBoxContainer = document.getElementsByClassName("selected_tag_list");
