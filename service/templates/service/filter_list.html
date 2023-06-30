@@ -55,8 +55,7 @@
 
         {% if tag.slug in  tags_name %}
 
-        <li>
-          <label class="PillList-item ">
+        <li class="PillList-item ">
             {% comment %}
             <input
                    type="checkbox"
@@ -66,8 +65,8 @@
                    value="{{ tag.slug }}"
                    checked="true">
             {% endcomment %}
-             <li class="tag">
-            <a href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&location={{request.GET.location}}{% for active_tag in tags_name %}{% if active_tag != tag.slug %}&tag={{ active_tag }}{%endif %}{%endfor %}">{{tag}} <span>-</span></a>
+            
+            <a class="tag is-active" href="{% slugurl 'service-finder' %}services/?service={{request.GET.service}}&location={{request.GET.location}}{% for active_tag in tags_name %}{% if active_tag != tag.slug %}&tag={{ active_tag }}{%endif %}{%endfor %}">{{tag}} <span>-</span></a>
 
 
 
