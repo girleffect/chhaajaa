@@ -59,7 +59,26 @@
     {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
     {% endblock %}
-
+    <script src="https://storage.googleapis.com/push-webchat/wwc-latest.js"></script>
+    <!-- <script src="./widget-latest.js"></script> -->
+    <style>
+      /* .push-widget-container{
+            margin-right: 100px;
+        } */
+      .push-launcher {
+        border-radius: px !important;
+      }
+      .push-doc-viewer-open-modal-link {
+        font-size: 0 !important;
+      }
+      .push-doc-viewer-open-modal-link:before {
+        content: "Visualizar" !important;
+        font-size: 14px;
+      }
+      .push-full-screen .push-doc-viewer-open-modal-link:before {
+        font-size: 22px;
+      }
+    </style>
     <style>
         .bg-light {
             background-color: #f2f2f2 !important;
@@ -731,7 +750,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTX86G6" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    {% wagtailuserbar %}
+    {% wagtailuserbar 'bottom-left' %}
 
     {% block content %}{% endblock %}
 
@@ -835,7 +854,61 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P45VN52" height="0" width="0"
                 style="display:none;visibility:hidden"></iframe>
     </noscript>
-
+    <div id="webchat"></div>
+    <script>
+      WebChat.default.init({
+        //Size of images inside the conversation
+        params: {
+          storage: "session", // This will make the webchat save the chat state and history only while the browser tab is open.
+          images: {
+            //Needed to show images within the script
+            dims: {
+              width: 300,
+              height: 200,
+            },
+          },
+        },
+        selector: "#webchat",
+        //initPayload: "start",
+        channelUuid: "4185e216-9e55-4892-9a4a-81b23ef369cc",
+        host: "https://rapidpro.ilhasoft.mobi",
+        socketUrl: "https://websocket.weni.ai",
+        title: "Bol Behen",
+        subtitle: "Chat here!",
+        inputTextFieldHint: "Type your message...",
+        showFullScreenButton: true,
+        startFullScreen: false,
+        embedded: false,
+        // profile image
+        // openLauncherImage: 'https://push.al/wp-content/uploads/2020/02/avatar4.png',
+        profileAvatar: "https://i.imgur.com/ADzSCum.jpg",
+        // Interface customization params
+        customizeWidget: {
+          // titleColor: "#",
+          // subtitleColor: "#",
+          // inputFontColor: '#',
+          // launcherHeight: "70px",
+          // launcherWidth: "70px",
+          // widgetHeight: "75%",
+          // widgetWidth: "",
+          headerBackgroundColor: "#4444aa",
+          launcherColor: "#4444aa",
+          userMessageBubbleColor: "#4444aa",
+          // chatBackgroundColor: "#F2F2F2",
+          botMessageBubbleColor: "#F4F7F9",
+          // botMessageTextColor: "#fff",
+          // userMessageBubbleColor: "#fff",
+          // userMessageTextColor: "#fcbb76",
+          quickRepliesFontColor: "#4444aa",
+          quickRepliesBorderColor: "#4444aa",
+          // inputBackgroundColor: "#fcbb76",
+          // inputPlaceholderColor: "#fff",
+          //  quickRepliesBackgroundColor: "#",
+          //  quickRepliesBorderWidth: "#"
+        },
+      });
+      // WebChat.open() // Enable to automatically open the script
+    </script>
 
     {% block extra_js %}
     {# Override this in templates to add extra javascript #}

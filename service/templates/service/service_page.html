@@ -34,14 +34,18 @@
     Back
   </a>
   <div class="owl-carousel owl-theme librate_carousels">
-    {% for service_image in page.specific.gallery_images.all %}
+    {% for gallery_object in page.specific.gallery_images.all %}
     <div  class="item">
       <div class="lybrate_help_data">
-        {% image service_image.image original as service_image %}
+        {% image gallery_object.image original as service_image %}
 
-
+        {% if gallery_object.url %}
+           <a href="{{gallery_object.url}}">
+        {% endif %}
         <img src="{{service_image.url}}" alt="share">
-
+        {% if service_image.url %}
+          </a>
+        {% endif %}
       </div>
     </div>
     {% endfor %}

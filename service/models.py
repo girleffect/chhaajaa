@@ -273,8 +273,9 @@ class ServicePageGalleryImage(Orderable):
         "wagtailimages.Image", on_delete=models.CASCADE, related_name="+"
     )
     caption = models.CharField(blank=True, max_length=250)
-
+    url = models.URLField(blank=True,help_text='')
     panels = [
         ImageChooserPanel("image"),
         FieldPanel("caption"),
+        FieldPanel("url"),
     ]
