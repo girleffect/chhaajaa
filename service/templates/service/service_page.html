@@ -126,6 +126,7 @@
 </section>
 
 <section class="bg-light py-8">
+  {% if services %}
   <div class="container">
     <h2>Related Services </h2>
     <div class="owl-carousel owl-theme service-slider mb-4 ">
@@ -175,15 +176,12 @@
 
         </div>
       </a>
-      {% empty %}
-
-      <div class="alert  text-center text-white" role="alert" style="background-color:#ff428a;">
-        No services are currently available for this tag
-      </div>
+     
       {% endfor %}
     </div>
 
   </div>
+  {% endif %}
   {% if articles %}
   <div class="container pt-8">
     <h2 class="mt-2">Related Blogs </h2>
