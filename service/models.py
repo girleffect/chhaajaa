@@ -257,7 +257,7 @@ class ServicePage(Page):
         context = super().get_context(request)
         tags = [tag.slug for tag in self.tags.all()]
         context['articles'] = BlogPage.objects.filter(tags__slug__in=tags).live()
-        context['services'] = ServicePage.objects.filter(tags__slug__in=tags).exclude(id=self.id).live()
+        context['services'] = ServicePage.objects.filter(tags__slug__in=tags).exclude(id=self.id).live().distinct()
         return context
 
 
