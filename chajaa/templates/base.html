@@ -62,22 +62,25 @@
     <script src="https://storage.googleapis.com/push-webchat/wwc-latest.js"></script>
     <!-- <script src="./widget-latest.js"></script> -->
     <style>
-      /* .push-widget-container{
+        /* .push-widget-container{
             margin-right: 100px;
         } */
-      .push-launcher {
-        border-radius: px !important;
-      }
-      .push-doc-viewer-open-modal-link {
-        font-size: 0 !important;
-      }
-      .push-doc-viewer-open-modal-link:before {
-        content: "Visualizar" !important;
-        font-size: 14px;
-      }
-      .push-full-screen .push-doc-viewer-open-modal-link:before {
-        font-size: 22px;
-      }
+        .push-launcher {
+            border-radius: px !important;
+        }
+
+        .push-doc-viewer-open-modal-link {
+            font-size: 0 !important;
+        }
+
+        .push-doc-viewer-open-modal-link:before {
+            content: "Visualizar" !important;
+            font-size: 14px;
+        }
+
+        .push-full-screen .push-doc-viewer-open-modal-link:before {
+            font-size: 22px;
+        }
     </style>
     <style>
         .bg-light {
@@ -114,9 +117,11 @@
             margin-bottom: 20px;
             transition: all 0.2s;
         }
-        .helpline_centers img{
-            width:100%;
+
+        .helpline_centers img {
+            width: 100%;
         }
+
         .helpline_centers a {
             height: 100%;
         }
@@ -246,7 +251,9 @@
         .service-sidebar .website_info {
             margin-bottom: 20px;
         }
-
+        .service-slider.owl-carousel .owl-stage {
+                padding-left: 0 !important;
+            }
         @media (min-width: 768px) and (max-width: 991px) {
             .women_problems .womenp_cols {
                 flex: 0 0 calc(50% - 30px);
@@ -257,6 +264,8 @@
             .women_problems .womenp_cols {
                 flex: 0 0 100%;
             }
+
+       
         }
 
         .responsive-object {
@@ -302,7 +311,7 @@
 
         a {
             color: inherit;
-            cursor:pointer;
+            cursor: pointer;
         }
 
         .tag {
@@ -326,14 +335,16 @@
             font-size: 25px !important;
 
         }
-        .tag.is-active{
-            background-color:#8226FA;
-            color:white !important;
-            height:100%;
+
+        .tag.is-active {
+            background-color: #8226FA;
+            color: white !important;
+            height: 100%;
         }
-        .tag.is-active:hover{
-            background-color:#591ca8;
-            color:white !important;
+
+        .tag.is-active:hover {
+            background-color: #591ca8;
+            color: white !important;
         }
 
         .tags-list {
@@ -479,7 +490,7 @@
         }
 
         /* related articles */
-        .service_ral_sec >  a{
+        .service_ral_sec>a {
             display: flex;
             flex-direction: column;
         }
@@ -492,7 +503,7 @@
             gap: 10px;
             flex-direction: column;
             margin-bottom: 30px;
-            height:auto;
+            height: auto;
         }
 
         .related_posts_data img {
@@ -857,57 +868,57 @@
     </noscript>
     <div id="webchat"></div>
     <script>
-      WebChat.default.init({
-        //Size of images inside the conversation
-        params: {
-          storage: "session", // This will make the webchat save the chat state and history only while the browser tab is open.
-          images: {
-            //Needed to show images within the script
-            dims: {
-              width: 300,
-              height: 200,
+        WebChat.default.init({
+            //Size of images inside the conversation
+            params: {
+                storage: "session", // This will make the webchat save the chat state and history only while the browser tab is open.
+                images: {
+                    //Needed to show images within the script
+                    dims: {
+                        width: 300,
+                        height: 200,
+                    },
+                },
             },
-          },
-        },
-        selector: "#webchat",
-        //initPayload: "start",
-        channelUuid: "4185e216-9e55-4892-9a4a-81b23ef369cc",
-        host: "https://rapidpro.ilhasoft.mobi",
-        socketUrl: "https://websocket.weni.ai",
-        title: "Bol Behen",
-        subtitle: "Chat here!",
-        inputTextFieldHint: "Type your message...",
-        showFullScreenButton: true,
-        startFullScreen: false,
-        embedded: false,
-        // profile image
-        // openLauncherImage: 'https://push.al/wp-content/uploads/2020/02/avatar4.png',
-        profileAvatar: "https://i.imgur.com/ADzSCum.jpg",
-        // Interface customization params
-        customizeWidget: {
-          // titleColor: "#",
-          // subtitleColor: "#",
-          // inputFontColor: '#',
-          // launcherHeight: "70px",
-          // launcherWidth: "70px",
-          // widgetHeight: "75%",
-          // widgetWidth: "",
-          headerBackgroundColor: "#4444aa",
-          launcherColor: "#4444aa",
-          userMessageBubbleColor: "#4444aa",
-          // chatBackgroundColor: "#F2F2F2",
-          botMessageBubbleColor: "#F4F7F9",
-          // botMessageTextColor: "#fff",
-          // userMessageBubbleColor: "#fff",
-          // userMessageTextColor: "#fcbb76",
-          quickRepliesFontColor: "#4444aa",
-          quickRepliesBorderColor: "#4444aa",
-          // inputBackgroundColor: "#fcbb76",
-          // inputPlaceholderColor: "#fff",
-          //  quickRepliesBackgroundColor: "#",
-          //  quickRepliesBorderWidth: "#"
-        },
-      });
+            selector: "#webchat",
+            //initPayload: "start",
+            channelUuid: "4185e216-9e55-4892-9a4a-81b23ef369cc",
+            host: "https://rapidpro.ilhasoft.mobi",
+            socketUrl: "https://websocket.weni.ai",
+            title: "Bol Behen",
+            subtitle: "Chat here!",
+            inputTextFieldHint: "Type your message...",
+            showFullScreenButton: true,
+            startFullScreen: false,
+            embedded: false,
+            // profile image
+            // openLauncherImage: 'https://push.al/wp-content/uploads/2020/02/avatar4.png',
+            profileAvatar: "https://i.imgur.com/ADzSCum.jpg",
+            // Interface customization params
+            customizeWidget: {
+                // titleColor: "#",
+                // subtitleColor: "#",
+                // inputFontColor: '#',
+                // launcherHeight: "70px",
+                // launcherWidth: "70px",
+                // widgetHeight: "75%",
+                // widgetWidth: "",
+                headerBackgroundColor: "#4444aa",
+                launcherColor: "#4444aa",
+                userMessageBubbleColor: "#4444aa",
+                // chatBackgroundColor: "#F2F2F2",
+                botMessageBubbleColor: "#F4F7F9",
+                // botMessageTextColor: "#fff",
+                // userMessageBubbleColor: "#fff",
+                // userMessageTextColor: "#fcbb76",
+                quickRepliesFontColor: "#4444aa",
+                quickRepliesBorderColor: "#4444aa",
+                // inputBackgroundColor: "#fcbb76",
+                // inputPlaceholderColor: "#fff",
+                //  quickRepliesBackgroundColor: "#",
+                //  quickRepliesBorderWidth: "#"
+            },
+        });
       // WebChat.open() // Enable to automatically open the script
     </script>
 

@@ -62,13 +62,13 @@
   <div class="women_problems row ">
     {% for concern in services %}
     <div class=" col-lg-4 col-md-6 col-sm-12 px-2">
-      
 
-        <a class=" problem upper_links_data" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}">
+
+      <a class=" problem upper_links_data" href="{% routablepageurl page 'filter_services' %}?service={{concern.slug}}">
         <h4 class="service_finder_achor">{{concern.intro}}</h4>
-        </a>
-        
-  
+      </a>
+
+
     </div>
     {% endfor %}
   </div>
@@ -78,14 +78,14 @@
 
 
 <div class="container">
-<div class="convinced_data_banner py-4">
+  <div class="convinced_data_banner py-4">
 
     <div class="convinced_data_dete">
       {{page.custom_text|richtext}}
       <a target="_blank" href="{% slugurl 'blog-page' %}">RH articles <img src="{% static 'images/right_arrow_icon.svg' %}"></a>
     </div>
   </div>
-</div>    
+</div>
 
 
 {% endblock content %}
@@ -115,15 +115,24 @@
     owl.owlCarousel({
       loop: false,
       margin: 20,
+      touchDrag:true, 
+      mouseDrag:true,
+
       responsive: {
         0: {
-          items: 1.5
+          items: 1, 
+          slideBy:1,
+          rewind:false,
+          stagePadding: 50,
+          
         },
-        600: {
-          items: 1.5
-        },
+   
         960: {
-          items: 2.5
+          items: 2,
+          items: 1, 
+          slideBy:1,
+          rewind:false,
+          stagePadding: 100,
         },
         1200: {
           items: 3
