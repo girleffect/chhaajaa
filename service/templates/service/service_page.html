@@ -81,7 +81,7 @@
           {% if page.external_link|integer == True %}
           <a target="_blank" href="tel:{{page.external_link}}" class="btn btn_web">Call Now</a>
           {% else %}
-          <a target="_blank" href="{{page.external_link}}" class="btn btn_web">Visit Website</a>
+          <a target="_blank" href="{{page.external_link}}" class="btn btn_web block">Visit Website</a>
           {% endif %}
           {% comment %}
           <a target="_blank" href=href="javascript:void(0);" data-toggle="modal" data-target="#addTagPopup" class="send_data_icon">
@@ -279,22 +279,25 @@
       owl.owlCarousel({
         loop: false,
         margin: 20,
+        touchDrag: true,
+        mouseDrag: true,
+
         responsive: {
           0: {
-            items: 1, items: 1,
+            items: 1,
+            slideBy: 1,
+            rewind: false,
+            stagePadding: 50,
+
+          },
+
+          640: {
+            items: 2,
             slideBy: 1,
             rewind: false,
             stagePadding: 50,
           },
-
-          960: {
-            items: 2,
-            items: 1,
-            slideBy: 1,
-            rewind: false,
-            stagePadding: 100,
-          },
-          1200: {
+          1024: {
             items: 3
           }
         },
