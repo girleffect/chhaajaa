@@ -24,7 +24,8 @@ class Contacts:
         df['language']=pd.Series([response['urns'][0][0:3] for response in responses[0]])
         df = df[['uuid', 'name', 'language', 'blocked', 'stopped','created_on', 'modified_on','fields','language']]
         df['created_on'] = pd.to_datetime(df['created_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
-        df['modified_on'] = pd.to_datetime(df['modified_on'], format="%Y-%m-%dT%H:%M:%S.%fZ") 
+        df['modified_on'] = pd.to_datetime(df['modified_on'], format="%Y-%m-%dT%H:%M:%S.%fZ")
+        df['name'] = df['name'].str.slice(0,255)
         Na = np.nan
         df["id"], df["created_by_id"], df["is_active"], df["is_test"], df["org_id"], df["is_active"], df["modified_by_id"] = Na,Na,Na,Na,Na,Na,Na
         try:
