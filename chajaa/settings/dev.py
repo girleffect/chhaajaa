@@ -40,8 +40,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': dj_database_url.config(
-        # default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
-        default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
+        default=os.environ.get('DATABASE_URL', ''),
         engine='django.db.backends.postgresql_psycopg2')
  }
 MEDIA_ROOT = os.path.join(BASE_DIR, 'data', 'media', 'static')
