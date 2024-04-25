@@ -233,3 +233,4 @@ WAGTAILEMBEDS_RESPONSIVE_HTML = True
 DEFAULT_AUTO_FIELD="django.db.models.BigAutoField"
 
 SITE_ID=1
+
