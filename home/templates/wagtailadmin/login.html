@@ -1,0 +1,7 @@
+{% extends "wagtailadmin/login.html" %}
+{% load i18n wagtailadmin_tags %}
+
+{% block submit_buttons %}
+  <!-- <button type="submit" class="button button-longrunning" data-clicked-text="{% trans 'Signing in…' %}">{% icon name="spinner" %}<em>{% trans 'Sign in' %}</em></button> -->
+  <button class="button" onclick="location.href='{% url 'social:begin' 'google-oauth2' %}'" type="button">Google+</button>
+{% endblock %}
