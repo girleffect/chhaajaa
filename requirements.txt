@@ -94,3 +94,4 @@ nltk
 scikit-learn
 emoji
 regex
+social-auth-app-django
