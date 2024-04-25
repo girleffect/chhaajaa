@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
-
+    path("", include("social_django.urls", namespace="social")),
     path('search/', search_views.search, name='search'),
     path('blogsearch/', blogsearch.search, name='blogsearch'),
     path('health/', health, name='health'),
