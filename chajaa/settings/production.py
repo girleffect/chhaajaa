@@ -68,8 +68,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3-eu-west-1.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 DATABASES = {
     'default': dj_database_url.config(
-        # default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
-        default=os.environ.get('DATABASE_URL', 'postgres://superuser:spider@123@localhost/chajaa'),
+        default=os.environ.get('DATABASE_URL', ''),
         engine='django.db.backends.postgresql_psycopg2')
  }
 
