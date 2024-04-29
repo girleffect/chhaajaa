@@ -1,8 +1,46 @@
-{% extends "wagtailadmin/login.html" %}
-{% load i18n wagtailadmin_tags %}
 
-{% block submit_buttons %}
-  <button type="submit" class="button button-longrunning" data-clicked-text="{% trans 'Signing in…' %}">{% icon name="spinner" %}<em>{% trans 'Sign in' %}</em></button>
-  <a  href="/login/google-oauth2/"><button style="margin-top: 10px;" type="button" class="button">{% trans 'Google' %}</button></a>
-  <button class="button" onclick="location.href='{% url 'social:begin' 'google-oauth2' %}'" type="button">Google+</button>
-{% endblock %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Sign in - Wagtail</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+
+    <link rel="stylesheet" href="{% static 'wagtailadmin/css/core.css' %}?v=1f5b2029">
+    <link rel="shortcut icon" href="{% static 'wagtailadmin/images/favicon.ico' %}?v=1f5b2029">
+</head>
+
+<body id="wagtail" class="login">
+<div data-sprite></div>
+
+<div class="wrapper">
+    <main class="content-wrapper" id="main">
+        <h1>Sign in to Wagtail</h1>
+        <form class="login-form" action="/admin/login/" method="post" autocomplete="off" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="/admin/" />
+
+            <div class="w-field__wrapper" data-field-wrapper>
+                <a  href="/login/google-oauth2/"><button style="margin-top: 10px;" type="button" class="button">{% trans 'Google' %}</button></a>
+            </div>
+        </form>
+
+        <div class="login-logo">
+            <img class="login-logo-img" alt="" src="{% static 'wagtailadmin/images/wagtail-logo.svg' %}?v=1f5b2029">
+        </div>
+        <br>
+        <p class="login-footer">
+            If you are unable to login using Google-sign, email: <a href="mailto:admin.support@girleffect.org" target="_blank">admin.support@girleffect.org</a>
+        </p>
+    </main>
+
+</div>
+</body>
+</html>
