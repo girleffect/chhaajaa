@@ -16,7 +16,6 @@ from wagtail.contrib.settings.models import BaseSetting, register_setting
 from wagtail.core import blocks
 from wagtail.core.fields import StreamField
 from wagtail.core.models import Page
-from wagtail.images.blocks import ImageChooserBlock
 
 
 
@@ -221,7 +220,6 @@ class CommunityGuidline(Page):
         FieldPanel('footer_description', classname='full'),
         StreamFieldPanel("cards"),
     ]
-
 
 
 

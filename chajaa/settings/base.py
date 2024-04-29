@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'service',
     'blog',
     'bakBakGangIndex',
-
+    'wagtail.contrib.settings',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',

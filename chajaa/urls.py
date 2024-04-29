@@ -35,7 +35,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap),
     url(r'rss/', RssFeed(), name='rssfeed'),
     url(r'atom/', AtomFeed(), name='atomfeed'),
-
+    path("i18n/", include("django.conf.urls.i18n")),
 
 ]
 
