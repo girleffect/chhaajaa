@@ -27,7 +27,7 @@ urlpatterns = [
 
     path('admin/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
-
+    path("", include("social_django.urls", namespace="social")),
     path('search/', search_views.search, name='search'),
     path('blogsearch/', blogsearch.search, name='blogsearch'),
     path('health/', health, name='health'),
@@ -35,7 +35,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap),
     url(r'rss/', RssFeed(), name='rssfeed'),
     url(r'atom/', AtomFeed(), name='atomfeed'),
-
+    path("i18n/", include("django.conf.urls.i18n")),
 
 ]
 

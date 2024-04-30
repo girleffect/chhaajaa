@@ -12,6 +12,13 @@ from home.block import FAQCard, SimpleCrousal, AdvanceCrousal, TermPageCard
 from sahi_salah.models import UpcomingEventsArticle
 from django.utils.timezone import now
 
+from wagtail.contrib.settings.models import BaseSetting, register_setting
+from wagtail.core import blocks
+from wagtail.core.fields import StreamField
+from wagtail.core.models import Page
+
+
+
 
 class HomePage(Page):
 
@@ -212,4 +219,20 @@ class CommunityGuidline(Page):
         FieldPanel('description', classname='full'),
         FieldPanel('footer_description', classname='full'),
         StreamFieldPanel("cards"),
+    ]
+
+
+
+@register_setting
+class SiteSettings(BaseSetting):
+    allowed_emails = StreamField(
+        [
+            ("email_address", blocks.EmailBlock()),
+        ],
+        blank=True,
+        null=True,
+    )
+
+    panels = [
+        FieldPanel("allowed_emails"),
     ]

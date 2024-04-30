@@ -41,6 +41,10 @@ RUN chown wagtail:wagtail /app
 COPY --chown=wagtail:wagtail . .
 
 # Install the project requirements.
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
+
+# Install the project requirements.
 #COPY requirements.txt ./
 RUN python -m pip install --upgrade pip
 
