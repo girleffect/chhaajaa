@@ -38,7 +38,7 @@ sqlparse==0.4.2
 tablib==3.1.0
 telepath==0.2
 typing_extensions==4.1.1
-urllib3==1.26.8
+urllib3==2.2.2
 webencodings==0.5.1
 Willow==1.4
 xlrd==2.0.1
