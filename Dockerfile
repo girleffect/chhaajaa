@@ -9,8 +9,13 @@ RUN addgroup --system --gid 107 wagtail \
     # && mkdir /etc/gunicorn
 
 # Install system packages required by Wagtail and Django.
-RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
+RUN apt-get update --yes --quiet \
+    && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
+    python3-dev \
+    libatlas-base-dev \
+    liblapack-dev \
+    gfortran \
     libpq-dev \
     libmariadbclient-dev \
     libjpeg62-turbo-dev \
@@ -18,9 +23,10 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     libwebp-dev \
     nginx \
     gosu \
-    # Below required for RapidPro cronjobs
-    unixodbc unixodbc-dev \
- && rm -rf /var/lib/apt/lists/*
+    unixodbc \
+    unixodbc-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 
 # Add nginx user to wagtail group so that Nginx can read/write to gunicorn socket
